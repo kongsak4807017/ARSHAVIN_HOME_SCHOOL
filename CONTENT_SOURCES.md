@@ -30,21 +30,11 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. UNICEF — Digital literacy for children: https://www.unicef.org/innocenti/documents/digital-literacy-children-10-things-you-need-know
 
 ## AI-02 — Personal Data, Digital Footprints and Consent
-1. **UNICEF Parenting — Online privacy checklist for parents**  
-   https://www.unicef.org/parenting/child-care/online-privacy  
-   Used for age-appropriate definitions of privacy, examples of personal information, the lasting nature of digital footprints, checking privacy settings, and encouraging children to seek help from a trusted adult.
-2. **UNICEF Child Rights and Business — Children and online privacy** (October 2019)  
-   https://www.unicef.org/childrightsandbusiness/reports/children-and-online-privacy  
-   Used to ground privacy as a child-rights issue and to explain that digital services can collect, infer, combine and reuse children's data.
-3. **UNICEF — Policy on Personal Data Protection**  
-   https://www.unicef.org/learningpassport/unicef-policy-personal-data-protection-annex  
-   Used for the concept that valid consent should be informed, specific and freely given; the lesson simplifies this without giving legal advice.
-4. **UNICEF Innocenti — Children's rights-by-design standard for data use by tech companies** (November 2020)  
-   https://www.unicef.org/innocenti/reports/childrens-rights-design-standard-data-use-tech-companies  
-   Used to avoid teaching that parental consent alone makes every data practice safe; providers also carry design and protection responsibilities.
-5. **UNESCO — Guidance for generative AI in education and research** (published 2023; page updated 2026-01-16)  
-   https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research  
-   Used for privacy protection, human-centred use and age-appropriate adult oversight when children use public generative-AI services.
+1. UNICEF Parenting — Online privacy checklist for parents: https://www.unicef.org/parenting/child-care/online-privacy
+2. UNICEF Child Rights and Business — Children and online privacy: https://www.unicef.org/childrightsandbusiness/reports/children-and-online-privacy
+3. UNICEF — Policy on Personal Data Protection: https://www.unicef.org/learningpassport/unicef-policy-personal-data-protection-annex
+4. UNICEF Innocenti — Children's rights-by-design standard for data use by tech companies: https://www.unicef.org/innocenti/reports/childrens-rights-design-standard-data-use-tech-companies
+5. UNESCO — Guidance for generative AI in education and research: https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research
 
 ## ENV-01 — Read the Air, Choose a Safer Action
 1. กรมอนามัย — ฝุ่น PM2.5 กับสุขภาพเด็กไทย: https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
@@ -53,6 +43,23 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 4. WHO — Health consequences of air pollution: https://www.who.int/news/item/25-06-2024-what-are-health-consequences-of-air-pollution-on-populations
 5. WHO — Ambient outdoor air pollution: https://www.who.int/news-room/fact-sheets/detail/ambient-%28outdoor%29-air-quality-and-health
 6. AirNow.gov — Student Air Pollution and Health: https://www.airnow.gov/education/students/air-pollution-and-health/
+
+## ENV-02 — Water, the Water Cycle and Responsible Use
+1. **U.S. Geological Survey — Water Cycle** (accessed 2026-07-20)  
+   https://www.usgs.gov/special-topics/water-science-school/water-cycle  
+   Used for the continuous movement of water, solar energy and gravity as drivers, evaporation, infiltration, groundwater movement and human effects on water quantity, timing and quality.
+2. **U.S. Geological Survey — Water Cycle Diagrams for Kids** (accessed 2026-07-20)  
+   https://www.usgs.gov/water-science-school/science/water-cycle-diagrams  
+   Used to confirm K–5 suitability and that a water cycle can be represented with multiple connected pathways rather than a single rigid start point.
+3. **NASA Global Precipitation Measurement — The Water Cycle** (accessed 2026-07-20)  
+   https://gpm.nasa.gov/education/water-cycle  
+   Used for age-appropriate explanations of evaporation, condensation, precipitation and collection.
+4. **UN-Water — Water and Sustainable Development** (accessed 2026-07-20)  
+   https://www.unwater.org/water-facts/water-and-sustainable-development  
+   Used for responsible use, pollution prevention and the link between water availability, communities and sustainable development.
+5. **กรมทรัพยากรน้ำ — ความรู้และการบริหารจัดการทรัพยากรน้ำ** (accessed 2026-07-20)  
+   https://www.dwr.go.th/  
+   Used for Thai terminology and the watershed-management context; the Chiang Rai scenarios remain fictional and are not current local water-quality reports.
 
 ## MAKER-01 — Levers Make Work Easier
 1. OpenStax Physics — 9.3 Simple Machines: https://openstax.org/books/physics/pages/9-3-simple-machines
@@ -69,9 +76,9 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 6. Council of Europe — Digital Citizenship Education Handbook: https://book.coe.int/en/human-rights-democratic-citizenship-and-interculturalism/7852-digital-citizenship-education-handbook.html
 
 ## Source-use rules
-- Health statements are educational and do not diagnose or treat a condition.
+- Health and water statements are educational and do not diagnose, treat, or certify local water safety.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
 - No child-specific identity data, passwords, addresses, precise location, images, health records or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
-- Consent is not presented as the only protection: data minimization, purpose checks, provider responsibility and trusted-adult support also matter.
+- Children do not taste unknown water or handle wastewater, oil, chemicals or unidentified containers; adult escalation is required.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
