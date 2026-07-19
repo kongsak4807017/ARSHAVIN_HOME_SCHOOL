@@ -18,6 +18,7 @@
     <h1>เรียนรู้จากชีวิตจริง<br><span>Learn from real life</span></h1>
     <p>เว็บไซต์แบบ static-first ไม่สมัครบัญชี ไม่ติดตามผู้เรียน และเก็บความก้าวหน้าไว้ในอุปกรณ์เท่านั้น</p>
   </section>
+  <div data-progress-overview></div>
   <section aria-labelledby="available-title">
     <h2 id="available-title">บทเรียนที่พร้อมใช้ / Available lessons</h2>
     <article class="lesson-card">
@@ -41,11 +42,12 @@
   </section>
 </main>
 <footer><p>ผู้ใหญ่ควรกำกับกิจกรรม ช่วยตรวจแหล่งข้อมูล และช่วยเด็กขอคำแนะนำเมื่อเรื่องนั้นเกี่ยวกับสุขภาพ ความปลอดภัย หรือข้อมูลส่วนตัว</p></footer>
+<script src="assets/js/learning-shell.js"></script>
 <script>
 if ('serviceWorker' in navigator) addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
 document.querySelector('#clear-progress').addEventListener('click',()=>{
   ['arshavin.sleep.lesson.v1','arshavin.ai.claims.v1'].forEach(key=>localStorage.removeItem(key));
-  document.querySelector('#clear-status').textContent='ล้างข้อมูลในเครื่องแล้ว / Local progress cleared.';
+  document.querySelector('#clear-status').textContent='ล้างข้อมูลในเครื่องแล้ว / Local progress cleared. โหลดหน้าใหม่เพื่ออัปเดตภาพรวม / Reload to refresh the overview.';
 });
 </script>
 </body>
