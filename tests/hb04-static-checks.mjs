@@ -38,5 +38,5 @@ assert.match(shell, /HB-04/);
 assert.match(index, /breathing-gas-exchange-safer-air\.html/);
 assert.match(index, /arshavin\.humanbody\.breathing\.v1/);
 ['breathing-gas-exchange-safer-air.html','breathing-air-lesson.js','breathing-gas-exchange-safer-air-a4.html','breathing-gas-exchange-safer-air-guide.html'].forEach(file => assert.ok(sw.includes(file), file));
-assert.match(sw, /arshavin-grade4-v13/);
+assert.match(sw, /arshavin-grade4-v\d+/);
 console.log('PASS HB-04 focused static checks');

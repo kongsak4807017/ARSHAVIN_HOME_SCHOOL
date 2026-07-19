@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+
+const read = path => fs.readFileSync(path, 'utf8');
+const assert = (condition, message) => { if (!condition) throw new Error(message); };
+const lesson = read('subjects/ai-science/learning-from-data-and-bias.html');
+const script = read('assets/js/data-bias-lesson.js');
+const worksheet = read('worksheets/student/learning-from-data-and-bias-a4.html');
+const guide = read('worksheets/teacher-guides/learning-from-data-and-bias-guide.html');
+const index = read('index.html');
+const shell = read('assets/js/learning-shell.js');
+const sw = read('service-worker.js');
+
+new vm.Script(script);
+assert(lesson.includes('แบบจำลองเรียนรู้จากข้อมูลและอคติ') && lesson.includes('Learning from Data and Bias'), 'AI-03 bilingual title missing');
+assert(lesson.includes('data-current-lesson="AI-03"'), 'AI-03 learning shell id missing');
+assert(lesson.includes('FAIR') && lesson.includes('Find gaps') && lesson.includes('Report limits'), 'FAIR framework missing');
+assert(lesson.includes('fieldset') && lesson.includes('legend') && lesson.includes('aria-live="polite"'), 'Accessible controls or feedback missing');
+assert(!lesson.includes('draggable=') && !script.match(/drag(start|over|end)|drop/i), 'Drag-only interaction detected');
+assert(script.includes("arshavin.ai.databias.v1"), 'AI-03 local storage key missing');
+assert(script.includes('trainerComplete') && script.includes('fairnessComplete') && script.includes('quizComplete'), 'Completion gates missing');
+assert(!script.match(/fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon/), 'Outbound lesson network API detected');
+assert((worksheet.match(/class="worksheet"/g) || []).length === 2, 'AI-03 must have exactly two worksheet pages');
+assert(worksheet.includes('@page') && worksheet.includes('size:A4 portrait'), 'A4 print rule missing');
+assert(guide.includes('Rubric 4 ระดับ') && guide.includes('Safeguarding, privacy and fairness boundary'), 'Teacher rubric or safeguard boundary missing');
+assert(lesson.includes('ไม่ขอชื่อ') && lesson.includes('ไม่ใช้ AI ตัดสินคุณค่า'), 'Child-data or human-value boundary missing');
+assert(index.includes('learning-from-data-and-bias.html') && index.includes('arshavin.ai.databias.v1'), 'Homepage or reset integration missing');
+assert(shell.includes("id: 'AI-03'") && shell.includes('arshavin.ai.databias.v1'), 'Shared shell integration missing');
+for (const path of ['./subjects/ai-science/learning-from-data-and-bias.html','./assets/js/data-bias-lesson.js','./worksheets/student/learning-from-data-and-bias-a4.html','./worksheets/teacher-guides/learning-from-data-and-bias-guide.html']) assert(sw.includes(path), `Offline precache missing ${path}`);
+assert(/arshavin-grade4-v\d+/.test(sw), 'Versioned cache missing');
+console.log('AI-03 focused static checks passed.');

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI-03 ใบงาน · Learning from Data and Bias</title><style>
+@page{size:A4 portrait;margin:12mm 14mm}*{box-sizing:border-box}body{font-family:system-ui,"Noto Sans Thai",sans-serif;color:#111;margin:0}.worksheet{min-height:267mm;break-after:page;page-break-after:always;padding:2mm}.worksheet:last-child{break-after:auto;page-break-after:auto}h1{font-size:22px;margin:0 0 5mm}h2{font-size:17px;margin:5mm 0 2mm}.meta{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-bottom:5mm}.line{border-bottom:1px solid #333;min-height:8mm}.box{border:1.5px solid #222;border-radius:4px;padding:4mm;margin:3mm 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm}table{width:100%;border-collapse:collapse}th,td{border:1px solid #333;padding:2.5mm;vertical-align:top}.write{height:18mm}.tall{height:38mm}.small{font-size:12px}.no-print{margin:10px}@media print{.no-print{display:none!important}}
+</style></head><body>
+<button class="no-print" onclick="print()">พิมพ์ / Print</button>
+<section class="worksheet">
+  <h1>AI-03 ใบงาน 1: นักออกแบบข้อมูลฝึก<br><span>Training Data Designer</span></h1>
+  <div class="meta"><div>ชื่อ / Name: <span class="line">________________</span></div><div>วันที่ / Date: <span class="line">________________</span></div></div>
+  <div class="box"><strong>คำศัพท์ / Vocabulary:</strong> training data ข้อมูลฝึก · label ป้ายกำกับ · model แบบจำลอง · bias อคติของระบบ</div>
+  <h2>1. เรียงกระบวนการ / Order the process</h2>
+  <p>ใส่เลข 1–4: ___ ทดสอบตัวอย่างใหม่ ___ ให้ป้ายกำกับ ___ ตรวจข้อผิดพลาด ___ รวบรวมตัวอย่างสมมติ</p>
+  <h2>2. ตรวจชุดข้อมูล / Inspect a dataset</h2>
+  <table><tr><th>หมวด / Class</th><th>ตัวอย่างที่มี / Examples</th><th>ช่องว่างที่พบ / Gap</th></tr><tr><td>แอปเปิล / Apple</td><td>แดง กลม 6 ใบ</td><td class="write"></td></tr><tr><td>กล้วย / Banana</td><td>เหลือง ยาว 1 ผล</td><td class="write"></td></tr></table>
+  <h2>3. ใช้ FAIR / Use FAIR</h2>
+  <div class="grid"><div class="box"><strong>F — Find gaps</strong><div class="write"></div></div><div class="box"><strong>A — Add variety</strong><div class="write"></div></div><div class="box"><strong>I — Inspect errors</strong><div class="write"></div></div><div class="box"><strong>R — Report limits</strong><div class="write"></div></div></div>
+  <h2>4. อธิบาย / Explain</h2><p>ทำไม “เพิ่มตัวอย่างจำนวนมาก” อาจยังไม่พอ ถ้าป้ายกำกับผิดหรือวัตถุประสงค์ไม่เหมาะสม?</p><div class="box tall"></div>
+  <p class="small">ใช้เฉพาะตัวอย่างสมมติ ห้ามใส่ชื่อ ภาพ หรือข้อมูลจริงของบุคคล / Use fictional examples only; do not add real people’s names, images or personal data.</p>
+</section>
+<section class="worksheet">
+  <h1>AI-03 ใบงาน 2: ห้องทดลองความเป็นธรรม<br><span>Fairness Investigation Lab</span></h1>
+  <div class="meta"><div>ชื่อ / Name: <span class="line">________________</span></div><div>วันที่ / Date: <span class="line">________________</span></div></div>
+  <div class="box"><strong>รายงานสมมติ / Fictional report:</strong> แบบจำลองอ่านป้ายภาษาไทยถูก 9/10 และภาษาอังกฤษถูก 4/10 เพราะข้อมูลฝึกภาษาอังกฤษมีน้อยและรูปแบบซ้ำกัน</div>
+  <h2>1. อ่านผลแยกกลุ่ม / Compare group results</h2>
+  <table><tr><th>กลุ่มตัวอย่าง</th><th>ถูก / Correct</th><th>ผิด / Incorrect</th><th>สิ่งที่ควรตรวจ</th></tr><tr><td>ภาษาไทย</td><td>9</td><td>1</td><td class="write"></td></tr><tr><td>ภาษาอังกฤษ</td><td>4</td><td>6</td><td class="write"></td></tr></table>
+  <h2>2. เลือกหลักฐาน / Choose evidence</h2>
+  <p>ทำเครื่องหมาย ✓ สิ่งที่ช่วยตรวจระบบ: □ คะแนนรวมอย่างเดียว □ คะแนนแยกกลุ่ม □ ตัวอย่างที่ทายผิด □ จำนวนและความหลากหลายของข้อมูล □ สีของหน้าจอ □ ความถูกต้องของป้ายกำกับ</p>
+  <h2>3. แผนปรับปรุง / Improvement plan</h2>
+  <div class="box tall">เราจะเพิ่ม/แก้ข้อมูลอะไร? / What data will we add or fix?</div>
+  <div class="box tall">เราจะทดสอบอย่างไรและบอกข้อจำกัดอะไร? / How will we test and report limits?</div>
+  <h2>4. Human check / คนตรวจรับผิดชอบ</h2>
+  <p>ถ้าผลลัพธ์กระทบโอกาสของคน ใครควรตรวจ และผู้ได้รับผลกระทบควรมีทางแก้ไขอย่างไร?</p><div class="box tall"></div>
+  <div class="box"><strong>Exit ticket:</strong> A model prediction is not a fact because… / การคาดเดาของแบบจำลองไม่ใช่ข้อเท็จจริง เพราะ…</div>
+</section></body></html>

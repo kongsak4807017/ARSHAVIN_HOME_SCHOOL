@@ -44,6 +44,13 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 4. UNICEF Innocenti — Children's rights-by-design standard for data use by tech companies: https://www.unicef.org/innocenti/reports/childrens-rights-design-standard-data-use-tech-companies
 5. UNESCO — Guidance for generative AI in education and research: https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research
 
+## AI-03 — Learning from Data and Bias
+1. **UNESCO — AI Competency Framework for Students** (published 2024-08-08; updated 2026-01-16; accessed 2026-07-20): https://www.unesco.org/en/articles/ai-competency-framework-students — supports age-appropriate understanding of AI techniques, ethics, critical judgement, human-centred design and inclusive AI across understand/apply/create progression.
+2. **UNICEF Innocenti — Guidance on AI and children, version 3.0** (2025; accessed 2026-07-20): https://www.unicef.org/innocenti/reports/policy-guidance-ai-children — supports non-discrimination, fairness, transparency, explainability, accountability, inclusion, child rights and adult/system responsibility.
+3. **UNICEF Digital Impact — Child-Centric AI** (published 2026; accessed 2026-07-20): https://www.unicef.org/digitalimpact/stories/child-centric-ai — supports fairness and inclusion by design, representative testing across linguistic/cultural contexts, age-appropriate explanations and meaningful child agency.
+4. **UNICEF Innocenti — Generative AI: Risks and opportunities for children** (accessed 2026-07-20): https://www.unicef.org/innocenti/generative-ai-risks-and-opportunities-children — supports explaining algorithmic bias, limits and transparency without treating model output as fact.
+5. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, non-colour-only communication, polite live feedback and alternatives to dragging.
+
 ## ENV-01 — Read the Air, Choose a Safer Action
 1. กรมอนามัย — ฝุ่น PM2.5 กับสุขภาพเด็กไทย: https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
 2. กรมอนามัย — คำแนะนำผู้ปกครองและเด็กเมื่อค่าฝุ่นสูง: https://anamai.moph.go.th/th/news-anamai/44705
@@ -91,6 +98,7 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 ## Source-use rules
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
+- AI activities use fictional examples and must not classify, rank or predict children, sensitive traits, health, disability, ethnicity, religion, gender, behaviour, worth or access to opportunities.
 - No child-specific identity data, passwords, addresses, precise location, images, health records, symptoms or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
 - Breathing lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing or exertion challenges.

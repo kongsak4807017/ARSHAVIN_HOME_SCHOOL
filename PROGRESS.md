@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **12 / 52**
-- A4 student worksheets: **24 / 104 minimum**
-- Teacher guides/rubrics: **11 complete guides**
+- Interactive bilingual lessons: **13 / 52**
+- A4 student worksheets: **26 / 104 minimum**
+- Teacher guides/rubrics: **12 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -44,8 +44,17 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives and four-level rubric
 - [x] Homepage, twelve-lesson shell, reset key, service-worker v13, complete regression manifest and focused HB-04 checks integrated
 
+### 2026-07-20 — AI-03 Learning from Data and Bias
+- [x] Complete bilingual lesson explaining training examples, labels, models, predictions and system bias
+- [x] Local-only fictional fruit trainer comparing narrow and varied datasets without uploads or real child data
+- [x] Keyboard-native fairness investigation using disaggregated fictional results and the FAIR framework
+- [x] Human-review, non-discrimination, no-ranking and no-sensitive-trait safeguards
+- [x] Guarded local-only completion under `arshavin.ai.databias.v1`
+- [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives and four-level rubric
+- [x] Homepage, thirteen-lesson shell, reset key, service-worker v14, complete regression manifest and focused AI-03 checks integrated
+
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — twelve lessons, twenty-four printable A4 sheets and eleven teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — thirteen lessons, twenty-six printable A4 sheets and twelve teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **AI-03 แบบจำลองเรียนรู้จากข้อมูลและอคติ / Learning from Data and Bias** with a local-only labelled-example trainer, balanced-data comparison, age-appropriate fairness safeguards, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **ENV-03 ดิน การชะล้าง และการอนุรักษ์ดิน / Soil, Erosion and Soil Conservation** with an accessible simulated erosion comparison, Chiang Rai slope/headwater context, safe tray-investigation alternative, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
