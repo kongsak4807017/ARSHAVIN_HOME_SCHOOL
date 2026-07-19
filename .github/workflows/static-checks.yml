@@ -27,6 +27,7 @@ jobs:
           node tests/env02-static-checks.mjs > env02-static.log 2>&1 || status=1
           node tests/maker02-static-checks.mjs > maker02-static.log 2>&1 || status=1
           node tests/cit02-static-checks.mjs > cit02-static.log 2>&1 || status=1
+          node tests/hb04-static-checks.mjs > hb04-static.log 2>&1 || status=1
           echo "STATIC_STATUS=$status" >> "$GITHUB_ENV"
       - name: Upload static-check evidence
         if: always()
@@ -40,5 +41,5 @@ jobs:
         if: always()
         shell: bash
         run: |
-          cat complete-static.log env02-static.log maker02-static.log cit02-static.log
+          cat complete-static.log env02-static.log maker02-static.log cit02-static.log hb04-static.log
           test "${STATIC_STATUS:-1}" -eq 0
