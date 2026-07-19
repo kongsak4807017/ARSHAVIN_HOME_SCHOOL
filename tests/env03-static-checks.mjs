@@ -1,0 +1,36 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+
+const read = path => fs.readFileSync(path, 'utf8');
+const assert = (condition, message) => { if (!condition) throw new Error(message); };
+const lessonPath = 'subjects/environment/soil-erosion-conservation.html';
+const scriptPath = 'assets/js/soil-erosion-lesson.js';
+const worksheetPath = 'worksheets/student/soil-erosion-conservation-a4.html';
+const guidePath = 'worksheets/teacher-guides/soil-erosion-conservation-guide.html';
+const lesson = read(lessonPath);
+const script = read(scriptPath);
+const worksheet = read(worksheetPath);
+const guide = read(guidePath);
+const index = read('index.html');
+const shell = read('assets/js/learning-shell.js');
+const worker = read('service-worker.js');
+
+new vm.Script(script, { filename: scriptPath });
+assert(lesson.includes('ENV-03') && lesson.includes('Soil, Erosion and Soil Conservation'), 'ENV-03 bilingual identity missing');
+assert(lesson.includes('data-current-lesson="ENV-03"'), 'ENV-03 learning-shell marker missing');
+assert(lesson.includes('fieldset') && lesson.includes('legend') && lesson.includes('aria-live="polite"'), 'Accessible form semantics missing');
+assert(!/draggable|ondrag|dropzone/i.test(lesson + script), 'ENV-03 must not require drag-only interaction');
+assert(script.includes("arshavin.environment.soil.v1"), 'Local progress key missing');
+assert(script.includes('comparisonComplete') && script.includes('slopeComplete') && script.includes('quizComplete'), 'Completion gates missing');
+assert(!/(fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script), 'Outbound lesson API found');
+assert(lesson.includes('ดัชนีสมมติ') && lesson.includes('ไม่ใช่ค่าการสูญเสียดินจริง'), 'Simulation limitation missing');
+assert(lesson.includes('อยู่ห่าง') && lesson.includes('แจ้งผู้ใหญ่'), 'Unstable-ground safety boundary missing');
+assert(guide.includes('ห้าม') && guide.includes('ตลิ่ง') && guide.includes('ล้างมือ'), 'Tray-investigation safety guidance missing');
+assert((worksheet.match(/class="worksheet"/g) || []).length === 2, 'Exactly two A4 worksheets required');
+assert(worksheet.includes('@page') && worksheet.includes('A4 portrait'), 'A4 print rule missing');
+assert(index.includes(lessonPath), 'Homepage link missing');
+assert(index.includes('arshavin.environment.soil.v1'), 'Homepage reset key missing');
+assert(shell.includes("id: 'ENV-03'") && shell.includes('arshavin.environment.soil.v1'), 'Learning shell integration missing');
+for (const path of [lessonPath, scriptPath, worksheetPath, guidePath]) assert(worker.includes(`./${path}`), `Offline precache missing ${path}`);
+assert(/arshavin-grade4-v\d+/.test(worker), 'Versioned service-worker cache missing');
+console.log('ENV-03 focused static checks passed.');
