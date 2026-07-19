@@ -8,6 +8,7 @@ const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const exists = relative => fs.existsSync(path.join(root, relative));
 const lessonFiles = [
   'subjects/human-body/sleep-ready-brain.html',
+  'subjects/human-body/bones-joints-safer-posture.html',
   'subjects/ai-science/fact-opinion-ai-claims.html',
   'subjects/environment/pm25-safer-action.html',
   'subjects/maker-engineering/levers-make-work-easier.html',
@@ -15,12 +16,14 @@ const lessonFiles = [
 ];
 const worksheetFiles = [
   'worksheets/student/sleep-ready-brain-a4.html',
+  'worksheets/student/bones-joints-safer-posture-a4.html',
   'worksheets/student/fact-opinion-ai-claims-a4.html',
   'worksheets/student/pm25-safer-action-a4.html',
   'worksheets/student/levers-make-work-easier-a4.html',
   'worksheets/student/rights-responsibilities-digital-kindness-a4.html'
 ];
 const guideFiles = [
+  'worksheets/teacher-guides/bones-joints-safer-posture-guide.html',
   'worksheets/teacher-guides/fact-opinion-ai-claims-guide.html',
   'worksheets/teacher-guides/pm25-safer-action-guide.html',
   'worksheets/teacher-guides/levers-make-work-easier-guide.html',
@@ -28,6 +31,7 @@ const guideFiles = [
 ];
 const jsFiles = [
   'assets/js/sleep-lesson.js',
+  'assets/js/bones-posture-lesson.js',
   'assets/js/ai-claims-lesson.js',
   'assets/js/pm25-lesson.js',
   'assets/js/levers-lesson.js',
@@ -90,7 +94,7 @@ check('service worker precaches shared shell and all lesson assets', () => {
   const sw = read('service-worker.js');
   ['assets/js/learning-shell.js', ...jsFiles.filter(file => file.startsWith('assets/js/') && file !== 'assets/js/learning-shell.js'), ...lessonFiles, ...worksheetFiles, ...guideFiles]
     .forEach(file => assert.ok(sw.includes(`./${file}`), file));
-  assert.match(sw, /arshavin-grade4-v6/);
+  assert.match(sw, /arshavin-grade4-v7/);
 });
 
 check('homepage exposes lessons, local progress overview and clear control', () => {
@@ -101,11 +105,33 @@ check('homepage exposes lessons, local progress overview and clear control', () 
   lessonFiles.forEach(file => assert.ok(html.includes(file), file));
   [
     'arshavin.sleep.lesson.v1',
+    'arshavin.humanbody.bones.v1',
     'arshavin.ai.claims.v1',
     'arshavin.environment.pm25.v1',
     'arshavin.maker.levers.v1',
     'arshavin.citizenship.rights.v1'
   ].forEach(key => assert.ok(html.includes(key), key));
+});
+
+check('HB-02 health boundaries and adult-supervised model safeguards exist', () => {
+  const lesson = read('subjects/human-body/bones-joints-safer-posture.html');
+  const guide = read('worksheets/teacher-guides/bones-joints-safer-posture-guide.html');
+  assert.match(lesson, /ผู้ใหญ่/);
+  assert.match(lesson, /ไม่ใช้วินิจฉัยโรค/);
+  assert.match(lesson, /ไม่ทดลองดัดข้อต่อของคนเกินช่วงที่สบาย/);
+  assert.match(guide, /ไม่ใช้วินิจฉัย scoliosis/);
+});
+
+check('HB-02 interactions are native-control, local-only and completion-gated', () => {
+  const lesson = read('subjects/human-body/bones-joints-safer-posture.html');
+  const script = read('assets/js/bones-posture-lesson.js');
+  assert.match(lesson, /<fieldset>/);
+  assert.match(lesson, /aria-live="polite"/);
+  assert.match(script, /arshavin\.humanbody\.bones\.v1/);
+  assert.match(script, /jointComplete/);
+  assert.match(script, /postureComplete/);
+  assert.match(script, /quizComplete/);
+  assert.doesNotMatch(script, /fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
 });
 
 check('ENV-01 safety and fictional-data labels exist', () => {
