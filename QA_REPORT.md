@@ -1,45 +1,47 @@
 # QA REPORT
 
-## Build status through HB-02
+## Build status through HB-03
 Date: 2026-07-19
 
-Earlier builds HB-01, AI-01, ENV-01, MAKER-01 and CIT-01 remain accepted with conditions. The shared dependency-free static suite and GitHub Actions workflow remain the baseline regression mechanism.
+Earlier builds HB-01, AI-01, ENV-01, MAKER-01, CIT-01 and HB-02 remain accepted with conditions. HB-02 PR #1 initially exposed a mismatched literal health-boundary assertion; the lesson wording was aligned, GitHub Actions run 7 passed, and the PR was squash-merged to `main` at `53f8553c5be53ad5e9516e8eb8ea420139867c04`.
 
-## HB-02 — Bones, Joints and Safer Posture
+## HB-03 — Muscles, Rest and Age-Appropriate Movement
 
-| Area | Result | Exact source-level evidence |
+| Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | NIAMS/NIH Grade 4–6 educational resources, NIAMS joint/bone material and AAP backpack guidance recorded in `CONTENT_SOURCES.md` |
-| Bilingual lesson structure | PASS | Thai document language; bilingual title, goals, vocabulary, facts, activities, feedback and adult note |
-| Concept accuracy | PASS (source review) | Skeleton support/protection/movement; joint defined as connection between bones; hinge and ball-and-socket examples separated |
-| Health boundary | PASS | Lesson states it is not diagnostic and escalates persistent pain, swelling, numbness, weakness or injury to an adult/professional |
-| Activity safety | PASS | Adult performs hole-punching/fastener step; no drill, knife, cutter, wire or forced human-joint movement |
-| Keyboard/accessibility structure | PASS (source review) | Native radio controls, buttons, anchors, forms, fieldsets, legends, status regions and no drag-only task |
-| Incomplete-form handling | PASS (source review) | Joint, posture and quiz interactions require selections before feedback/scoring |
-| Corrective feedback | PASS (source review) | Bilingual explanations distinguish elbow, shoulder and skull; posture feedback explains two straps, close load, position change and adult help |
-| Local-only progress | PASS (source review) | Guarded JSON storage under `arshavin.humanbody.bones.v1`; only completion flags, score and timestamp; no network API in lesson script |
-| A4 worksheet structure | PASS (source review) | Exactly two `.worksheet` sections with vocabulary, joint map, model evidence, backpack/desk audit and self-rubric |
-| Teacher support | PASS | 60–90-minute flow, answer guidance, multiple response modes, mobility inclusion, safety boundary and four-level rubric |
-| Homepage/shared shell | PASS (source review) | HB-02 card, ordered six-lesson navigation, current-page semantics and matching reset key |
-| Offline integration | PASS (source review) | Service worker advanced to `arshavin-grade4-v7` and lists lesson, script, worksheet and guide |
-| Automated checks | PASS (source review) | Manifests expanded to six lessons, twelve A4 sheets, five guides and six progress keys; HB-02 safety/privacy assertions added |
+| Authoritative grounding | PASS | NIAMS Grade 4–6 muscle material plus current CDC and WHO child physical-activity guidance recorded in `CONTENT_SOURCES.md` |
+| Bilingual lesson structure | PASS | Thai document language; bilingual title, goals, vocabulary, facts, interactions, feedback, exit ticket and source section |
+| Concept accuracy | PASS (source review) | Muscle roles include movement, breathing, pumping blood and moving food; activity guidance uses a flexible daily total and varied age-appropriate movement |
+| Health and body-image boundary | PASS | Lesson states it is not diagnostic, does not compare body shape/speed/strength, and directs warning signs to stop and tell an adult |
+| Keyboard/accessibility structure | PASS (source review) | Native radio, checkbox, button, anchor, form, fieldset, legend and polite live-status controls; no drag-only interaction |
+| Talk-test decision support | PASS (source review) | Fictional light/moderate/stop situations provide explanatory bilingual feedback and explicit escalation for dizziness, chest pain or unusual breathing difficulty |
+| Movement-plan completion gate | PASS (source review) | Requires at least two activities plus a recovery choice; completion is stored only when the safer rest option is selected |
+| Accessible chart output | PASS (source review) | Text-based numbered activity chart is emitted into a polite live region and remains understandable without color or pointer input |
+| Corrective assessment | PASS (source review) | Three required questions; completion requires all correct, with review guidance otherwise |
+| Local-only progress | PASS (source review) | Guarded JSON storage under `arshavin.humanbody.muscles.v1`; no account, upload, analytics or network API in lesson script |
+| A4 worksheet structure | PASS (source review) | Exactly two `.worksheet` sections with muscle-role matching, talk-test reasoning, safety rule, daily plan, pencil bar chart and reflection |
+| Teacher support | PASS | 60–90-minute flow, answer guidance, disability-inclusive alternatives, safety escalation, privacy limits and four-level rubric |
+| Homepage/shared shell | PASS (source review) | HB-03 card, ordered seven-lesson navigation, matching local reset key and completion predicate |
+| Offline integration | PASS (source review) | Service worker advanced to `arshavin-grade4-v8` and lists lesson, script, worksheet and guide |
+| Automated checks | PASS | GitHub Actions `Static learning-site checks` run **29694875646**, run number **9**, completed successfully on PR #2 head `f53c7842958be39b03f3879b998732cbde99a8a7` before this evidence-only update |
 
 ## Functional cases inspected
-1. Joint explorer rejects an empty selection and provides specific feedback for elbow, shoulder and skull.
-2. Posture activity requires all three answers and stores completion only for the fully safer plan.
-3. Quiz requires all answers; perfect completion is required by the shared learning shell.
-4. Storage read/write errors are caught, so blocked or corrupt storage does not prevent learning.
-5. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon` call.
-6. Worksheet and guide local links, lesson IDs, storage key and service-worker entries are aligned in source.
+1. Talk-test explorer rejects an empty selection and distinguishes light, moderate and stop/escalate situations.
+2. Movement planner requires at least two activities and one rest choice; unsafe competitive persistence does not set `planComplete`.
+3. Quiz requires all three answers and stores completion only at 3/3.
+4. Storage read/write failures are caught, so unavailable or corrupt local storage does not block learning.
+5. HB-03 lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon` call.
+6. Worksheet/guide links, lesson ID, storage key, shared-shell predicate, homepage reset key and service-worker entries are aligned in source.
+7. Print stylesheet declares A4 portrait and page breaks between exactly two worksheet sections.
 
 ## Verification still required
-- Run `node tests/static-checks.mjs` through GitHub Actions on the exact PR/final commit and inspect the job result.
+- Confirm GitHub Actions also passes on the final documentation-only head after the CI-evidence update.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad test, 200% text zoom, keyboard-only path and visible focus.
 - NVDA/VoiceOver reading order and live-status announcement test.
 - Physical A4/PDF inspection for clipping, table boundaries, handwriting space and exact two-page output.
 - GitHub Pages HTTPS deployment and offline reload after first visit.
-- Adult-supervised real-material check for the paper joint model.
+- Adult-supervised real-world review of suggested movement options for the learner's environment, weather and health context.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — six complete lessons, twelve A4 sheets and five teacher guides are integrated. No browser, assistive-technology, physical print, exact CI, GitHub Pages or offline-runtime result is fabricated.
+**ACCEPTED WITH CONDITIONS** — seven complete lessons, fourteen A4 sheets and six teacher guides are integrated, and dependency-free static checks passed on the substantive HB-03 implementation head. No browser, assistive-technology, physical print, GitHub Pages or offline-runtime result is fabricated.
