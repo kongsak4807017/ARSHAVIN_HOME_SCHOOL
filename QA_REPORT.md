@@ -7,7 +7,7 @@ Earlier builds HB-01, AI-01, ENV-01, MAKER-01, CIT-01 and HB-02 remain accepted 
 
 ## HB-03 — Muscles, Rest and Age-Appropriate Movement
 
-| Area | Result | Exact source-level evidence |
+| Area | Result | Exact evidence |
 |---|---|---|
 | Authoritative grounding | PASS | NIAMS Grade 4–6 muscle material plus current CDC and WHO child physical-activity guidance recorded in `CONTENT_SOURCES.md` |
 | Bilingual lesson structure | PASS | Thai document language; bilingual title, goals, vocabulary, facts, interactions, feedback, exit ticket and source section |
@@ -23,7 +23,7 @@ Earlier builds HB-01, AI-01, ENV-01, MAKER-01, CIT-01 and HB-02 remain accepted 
 | Teacher support | PASS | 60–90-minute flow, answer guidance, disability-inclusive alternatives, safety escalation, privacy limits and four-level rubric |
 | Homepage/shared shell | PASS (source review) | HB-03 card, ordered seven-lesson navigation, matching local reset key and completion predicate |
 | Offline integration | PASS (source review) | Service worker advanced to `arshavin-grade4-v8` and lists lesson, script, worksheet and guide |
-| Automated checks | PASS (source review) | Manifests expanded to seven lessons, fourteen A4 sheets, six guides and seven progress keys; HB-03 safety/local-only assertions added |
+| Automated checks | PASS | GitHub Actions `Static learning-site checks` run **29694875646**, run number **9**, completed successfully on PR #2 head `f53c7842958be39b03f3879b998732cbde99a8a7` before this evidence-only update |
 
 ## Functional cases inspected
 1. Talk-test explorer rejects an empty selection and distinguishes light, moderate and stop/escalate situations.
@@ -35,7 +35,7 @@ Earlier builds HB-01, AI-01, ENV-01, MAKER-01, CIT-01 and HB-02 remain accepted 
 7. Print stylesheet declares A4 portrait and page breaks between exactly two worksheet sections.
 
 ## Verification still required
-- Run `node tests/static-checks.mjs` through GitHub Actions on the exact HB-03 PR head and inspect the result.
+- Confirm GitHub Actions also passes on the final documentation-only head after the CI-evidence update.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad test, 200% text zoom, keyboard-only path and visible focus.
 - NVDA/VoiceOver reading order and live-status announcement test.
@@ -44,4 +44,4 @@ Earlier builds HB-01, AI-01, ENV-01, MAKER-01, CIT-01 and HB-02 remain accepted 
 - Adult-supervised real-world review of suggested movement options for the learner's environment, weather and health context.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — seven complete lessons, fourteen A4 sheets and six teacher guides are integrated at source level. No browser, assistive-technology, physical print, exact final CI, GitHub Pages or offline-runtime result is fabricated.
+**ACCEPTED WITH CONDITIONS** — seven complete lessons, fourteen A4 sheets and six teacher guides are integrated, and dependency-free static checks passed on the substantive HB-03 implementation head. No browser, assistive-technology, physical print, GitHub Pages or offline-runtime result is fabricated.
