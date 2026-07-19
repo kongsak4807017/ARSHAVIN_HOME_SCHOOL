@@ -1,8 +1,9 @@
-const CACHE = 'arshavin-grade4-v2';
+const CACHE = 'arshavin-grade4-v3';
 const CORE = [
   './',
   './index.html',
   './assets/css/site.css',
+  './assets/js/learning-shell.js',
   './assets/js/sleep-lesson.js',
   './assets/js/ai-claims-lesson.js',
   './subjects/human-body/sleep-ready-brain.html',
