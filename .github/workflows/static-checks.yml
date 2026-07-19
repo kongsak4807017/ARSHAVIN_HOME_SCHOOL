@@ -19,8 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Run dependency-free static checks
-        run: |
-          node tests/static-checks.mjs
-          node tests/env02-static-checks.mjs
-          node tests/maker02-static-checks.mjs
+      - name: Run complete static regression suite
+        run: node tests/static-checks.mjs
+      - name: Run ENV-02 focused checks
+        run: node tests/env02-static-checks.mjs
+      - name: Run MAKER-02 focused checks
+        run: node tests/maker02-static-checks.mjs
