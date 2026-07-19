@@ -1,4 +1,4 @@
-const CACHE = 'arshavin-grade4-v5';
+const CACHE = 'arshavin-grade4-v6';
 const CORE = [
   './',
   './index.html',
@@ -8,17 +8,21 @@ const CORE = [
   './assets/js/ai-claims-lesson.js',
   './assets/js/pm25-lesson.js',
   './assets/js/levers-lesson.js',
+  './assets/js/citizenship-lesson.js',
   './subjects/human-body/sleep-ready-brain.html',
   './subjects/ai-science/fact-opinion-ai-claims.html',
   './subjects/environment/pm25-safer-action.html',
   './subjects/maker-engineering/levers-make-work-easier.html',
+  './subjects/citizenship/rights-responsibilities-digital-kindness.html',
   './worksheets/student/sleep-ready-brain-a4.html',
   './worksheets/student/fact-opinion-ai-claims-a4.html',
   './worksheets/student/pm25-safer-action-a4.html',
   './worksheets/student/levers-make-work-easier-a4.html',
+  './worksheets/student/rights-responsibilities-digital-kindness-a4.html',
   './worksheets/teacher-guides/fact-opinion-ai-claims-guide.html',
   './worksheets/teacher-guides/pm25-safer-action-guide.html',
   './worksheets/teacher-guides/levers-make-work-easier-guide.html',
+  './worksheets/teacher-guides/rights-responsibilities-digital-kindness-guide.html',
   './manifest.webmanifest'
 ];
 self.addEventListener('install', event => {
