@@ -10,6 +10,7 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - A4 student worksheets: **4 / 104 minimum**
 - Teacher guides/rubrics: **1 complete guide**
 - Subjects represented in the runtime: **2 / 5**
+- Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks**
 
 ## Completed
 
@@ -38,10 +39,22 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Homepage, clear-progress control, and offline cache updated for the second unit
 - [x] No search requirement, third-party script, analytics, account, upload, or remote child-data collection
 
+### 2026-07-19 — Shared learning shell and automated static QA
+
+- [x] Reusable `assets/js/learning-shell.js` used by HB-01 and AI-01
+- [x] Previous/overview/next navigation with `rel=prev` and `rel=next`
+- [x] Current lesson marked with `aria-current=page`
+- [x] Local-only progress summary on homepage and lesson pages
+- [x] Corrupt or unavailable progress data degrades to an empty state without blocking lessons
+- [x] Responsive single-column navigation at small viewports
+- [x] Progress/navigation hidden from A4 print output
+- [x] Service-worker cache advanced to `arshavin-grade4-v3` and includes the shared script
+- [x] Dependency-free Node static checks for required files, JavaScript parsing, local links, bilingual headings, two-sheet worksheet structure, and precache coverage
+
 ## Acceptance status
 
-**ACCEPTED WITH CONDITIONS** — both units are implemented and structurally reviewed. Real browser/device, screen-reader, GitHub Pages, offline-reload, and physical A4 print verification remain required before calling the MVP production-ready.
+**ACCEPTED WITH CONDITIONS** — two lessons and the shared learning shell are implemented and structurally reviewed. The dependency-free static-check suite passed against a reconstructed repository fixture before persistence. Real browser/device, screen-reader, GitHub Pages, offline-reload, and physical A4 print verification remain required before calling the MVP production-ready.
 
 ## Next action
 
-Build a reusable subject-navigation and lesson-progress component, integrate it into HB-01 and AI-01 without changing their lesson-specific logic, and add automated static checks for local links, required bilingual headings, print worksheet count, and service-worker precache coverage.
+Build ENV-01 as the first complete Environmental Science lesson: **PM2.5: Read the Air, Choose a Safer Action**, including a bilingual interactive AQI/PM2.5 evidence activity, two A4 worksheets, teacher guide/rubric, authoritative Thai and international sources, shared-shell registration, offline precache, and static-check coverage.
