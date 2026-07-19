@@ -80,6 +80,38 @@ Accessed: 2026-07-19
    https://www.grc.nasa.gov/www/k-12/Summer_Training/KaeAvenueES/Resource_Chart.html  
    Used to cross-check age-appropriate lever definitions and everyday examples such as seesaw, shovel, nutcracker and tweezers.
 
+## CIT-01 — สิทธิ หน้าที่ และน้ำใจดิจิทัล / Rights, Responsibilities and Digital Kindness
+
+Accessed: 2026-07-19
+
+1. **UNICEF — Convention on the Rights of the Child: full text**  
+   https://www.unicef.org/child-rights-convention/convention-text  
+   Used for non-discrimination, best interests, participation, expression, privacy, reputation, access to information and protection from harm. The lesson translates these principles into age-appropriate school and online-community situations without presenting legal advice.
+
+2. **UNICEF — Children’s version of the Convention on the Rights of the Child**  
+   https://www.unicef.org/child-rights-convention/convention-text-childrens-version  
+   Used for child-readable framing of the right to be heard, expression that does not harm others, privacy, information access and the role of adults in helping children exercise their rights.
+
+3. **UNICEF Digital Education — Online Safety and Data Protection**  
+   https://www.unicef.org/digitaleducation/online-safety-and-data-protection  
+   Used for the lesson’s privacy, trusted-adult support, child online protection and non-disclosure principles.
+
+4. **UNICEF — Keeping Children Safe Online: Trends in Online Platform Regulation and Emerging Lessons** (analysis current to June 2025)  
+   https://www.unicef.org/documents/keeping-children-safe-online  
+   Used to ground the principle that children’s online participation and rights must be accompanied by protection from violence, abuse and exploitation.
+
+5. **Council of Europe — Digital Citizenship Education**  
+   https://www.coe.int/en/web/education/digital-citizenship-education  
+   Used for the definition of active, continuous and responsible participation in online and offline communities and the link between rights, responsibilities, human dignity and democratic participation.
+
+6. **Council of Europe — Digital Citizenship Education Handbook, 2022 edition**  
+   https://book.coe.int/en/human-rights-democratic-citizenship-and-interculturalism/7852-digital-citizenship-education-handbook.html  
+   Used for the domains of ethics and empathy, active participation, rights and responsibilities, privacy and security, and positive communication.
+
+7. **Council of Europe Charter on Education for Democratic Citizenship and Human Rights Education**  
+   https://www.coe.int/en/web/compass/council-of-europe-charter-on-education-for-democratic-citizenship-and-human-rights-education  
+   Used for the educational goal of helping learners exercise and defend rights and responsibilities, value diversity and participate actively in democratic life.
+
 ## Source-use rules
 
 - Health statements are educational and do not diagnose or treat a condition.
@@ -88,4 +120,5 @@ Accessed: 2026-07-19
 - No child-specific health observations, identity data, passwords, addresses, images, or private records are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are marked clearly so they are not mistaken for current public announcements or live readings.
 - Maker activities use light, non-breakable, non-sharp materials, adult supervision, stable surfaces and no projectile-style release. They are not instructions for lifting heavy objects or using workshop tools.
+- Citizenship scenarios are fictional and must not solicit public disclosure of a child’s real experiences. Online-safety concerns are escalated to a trusted adult; evidence is preserved only as necessary and is not redistributed.
 - Future updates must record access date, source owner, claim supported, and any changed recommendation.
