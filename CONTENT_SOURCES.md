@@ -29,24 +29,15 @@ Accessed: 2026-07-19
 Accessed: 2026-07-19
 
 1. **UNESCO — AI Competency Framework for Students** (published 2024; page updated 2026-01-16)  
-   https://www.unesco.org/en/articles/ai-competency-framework-students  
-   Used for the human-centred, ethical, critical-judgement approach to AI literacy and the progression from understanding to applying and creating.
-
-2. **OECD and European Commission — Empowering Learners for the Age of AI: An AI Literacy Framework for Primary and Secondary Education** (2026-06-18)  
-   https://www.oecd.org/en/publications/empowering-learners-for-the-age-of-ai_65cd27d4-en.html  
-   Used for critical evaluation of outputs and ethical, creative use.
-
+   https://www.unesco.org/en/articles/ai-competency-framework-students
+2. **OECD and European Commission — Empowering Learners for the Age of AI** (2026-06-18)  
+   https://www.oecd.org/en/publications/empowering-learners-for-the-age-of-ai_65cd27d4-en.html
 3. **UNICEF Innocenti — Digital misinformation/disinformation and children** (2021)  
-   https://www.unicef.org/innocenti/reports/digital-misinformation-disinformation-and-children  
-   Used for child-appropriate media literacy and trusted-adult support.
-
+   https://www.unicef.org/innocenti/reports/digital-misinformation-disinformation-and-children
 4. **OECD — The OECD Truth Quest Survey** (2024-06-28)  
-   https://www.oecd.org/en/publications/the-oecd-truth-quest-survey_92a94c0f-en.html  
-   Used for source, context, evidence and labelling checks.
-
+   https://www.oecd.org/en/publications/the-oecd-truth-quest-survey_92a94c0f-en.html
 5. **UNICEF — Digital literacy for children: 10 things you need to know**  
    https://www.unicef.org/innocenti/documents/digital-literacy-children-10-things-you-need-know
-
 6. **W3C — Web Content Accessibility Guidelines (WCAG) 2.2**  
    https://www.w3.org/TR/WCAG22/
 
@@ -55,32 +46,39 @@ Accessed: 2026-07-19
 Accessed: 2026-07-19
 
 1. **กรมอนามัย กระทรวงสาธารณสุข — ฝุ่น PM2.5 กับสุขภาพเด็กไทย** (2024-04-26)  
-   https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/  
-   Used for the child-health framing: children may be more affected because lungs and immune systems are still developing and breathing rates are higher.
-
+   https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
 2. **กรมอนามัย — คำแนะนำผู้ปกครองและเด็กเมื่อค่าฝุ่นสูง** (2026-01-09)  
-   https://anamai.moph.go.th/th/news-anamai/44705  
-   Used for reducing outdoor activity time at orange-level conditions, adult supervision, following current official advice, and the caution that N95 use in children requires age-appropriate consideration.
-
+   https://anamai.moph.go.th/th/news-anamai/44705
 3. **กรมอนามัย — การป้องกันเด็กจาก PM2.5 และสังเกตอาการ** (2026-04-01)  
-   https://www.anamai.moph.go.th/th/news-anamai/44903  
-   Used for avoiding heavy outdoor activity when pollution is elevated, creating cleaner indoor space, hygiene after exposure, symptom observation, and seeking medical care when needed.
-
+   https://www.anamai.moph.go.th/th/news-anamai/44903
 4. **World Health Organization — Health consequences of air pollution** (2024-06-25)  
-   https://www.who.int/news/item/25-06-2024-what-are-health-consequences-of-air-pollution-on-populations  
-   Used for the explanation that PM2.5 particles are 2.5 micrometres or smaller, about one-thirtieth of average human-hair width, and can penetrate deep into the lungs.
-
+   https://www.who.int/news/item/25-06-2024-what-are-health-consequences-of-air-pollution-on-populations
 5. **World Health Organization — Ambient outdoor air pollution** (updated 2024-10-24)  
-   https://www.who.int/news-room/fact-sheets/detail/ambient-%28outdoor%29-air-quality-and-health  
-   Used for the statement that air pollution is a major environmental risk to child health and for non-alarmist health-risk framing.
-
+   https://www.who.int/news-room/fact-sheets/detail/ambient-%28outdoor%29-air-quality-and-health
 6. **AirNow.gov — Student Air Pollution and Health**  
-   https://www.airnow.gov/education/students/air-pollution-and-health/  
-   Used for age-appropriate explanations of AQI categories, sensitive groups, symptom awareness, and telling parents or teachers when breathing feels uncomfortable.
-
+   https://www.airnow.gov/education/students/air-pollution-and-health/
 7. **AirNow.gov — Air Quality Flag Program**  
-   https://www.airnow.gov/air-quality-flag-program/  
-   Used for the educational practice of connecting colour-coded air-quality information to adjusted physical activity while keeping children appropriately active.
+   https://www.airnow.gov/air-quality-flag-program/
+
+## MAKER-01 — คานช่วยผ่อนแรง / Levers Make Work Easier
+
+Accessed: 2026-07-19
+
+1. **OpenStax Physics — 9.3 Simple Machines**  
+   https://openstax.org/books/physics/pages/9-3-simple-machines  
+   Used for the definitions of lever, fulcrum, effort force, resistance/load, effort and resistance arms, ideal mechanical advantage, and the force-distance tradeoff. The Grade 4 lesson simplifies the quantitative model while preserving the principle that a machine does not create energy.
+
+2. **OpenStax College Physics — 9.5 Simple Machines**  
+   https://openstax.org/books/college-physics/pages/9-5-simple-machines  
+   Corroborates that a lever is a rigid bar pivoted at a fulcrum and that simple machines may multiply force at the expense of distance.
+
+3. **NASA STEMonstrations — Simple Machines** (page updated 2024-05-09)  
+   https://www.nasa.gov/stem-content/stemonstrations-simple-machines/  
+   Used for the Grade 3–5 engineering context, the six simple-machine family, and criteria/constraints-oriented solution comparison.
+
+4. **NASA Glenn Research Center — Simple Machines Resource Chart**  
+   https://www.grc.nasa.gov/www/k-12/Summer_Training/KaeAvenueES/Resource_Chart.html  
+   Used to cross-check age-appropriate lever definitions and everyday examples such as seesaw, shovel, nutcracker and tweezers.
 
 ## Source-use rules
 
@@ -88,6 +86,6 @@ Accessed: 2026-07-19
 - Child-facing text uses age-appropriate language and directs persistent or high-impact concerns to a trusted adult or relevant professional.
 - AI output is treated as a claim to evaluate, not as an authority merely because it is fluent or confident.
 - No child-specific health observations, identity data, passwords, addresses, images, or private records are transmitted or stored remotely.
-- Fictional scenarios and simulated measurements are marked clearly so they are not mistaken for current public announcements or live air-quality readings.
-- Air-quality colours and thresholds can differ by national system; activities must not present the lesson's simplified bands as a replacement for current official local guidance.
+- Fictional scenarios and simulated measurements are marked clearly so they are not mistaken for current public announcements or live readings.
+- Maker activities use light, non-breakable, non-sharp materials, adult supervision, stable surfaces and no projectile-style release. They are not instructions for lifting heavy objects or using workshop tools.
 - Future updates must record access date, source owner, claim supported, and any changed recommendation.
