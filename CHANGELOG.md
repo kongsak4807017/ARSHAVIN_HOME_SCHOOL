@@ -23,6 +23,7 @@ All notable interactive-web changes are recorded here.
 - Shared learning shell now places HB-03 after HB-02 and reports progress across seven lessons.
 - Service-worker cache advanced to `arshavin-grade4-v8` and precaches all HB-03 lesson, script, worksheet and guide assets.
 - Static checks now cover seven lessons, fourteen A4 sheets, six teacher guides, service-worker v8, seven local progress keys and HB-03 health/body-image/privacy assertions.
+- GitHub Actions static checks passed on substantive PR #2 head `f53c7842958be39b03f3879b998732cbde99a8a7` in workflow run `29694875646` (run number 9).
 - Completion counters advanced to 7/52 lessons, 14/104 A4 sheets and 6 teacher guides.
 - Next executable increment advanced to **AI-02 Personal Data, Digital Footprints and Consent**.
 
@@ -32,4 +33,4 @@ All notable interactive-web changes are recorded here.
 - Storage reads/writes are guarded; unavailable or corrupt storage does not block lesson use.
 - HB-03 does not request body weight or health history, does not rank bodies, and does not present exercise as punishment or competition.
 - Dizziness, chest pain, unusual breathing difficulty, acute pain or other concerning symptoms trigger stop-and-tell-adult guidance.
-- Exact final CI, browser, assistive-technology, device, GitHub Pages, offline runtime and physical print verification remain pending.
+- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending.
