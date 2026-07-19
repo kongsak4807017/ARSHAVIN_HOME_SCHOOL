@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="บทเรียน ป.4 สองภาษาเรื่องรอก เฟือง การเปลี่ยนทิศแรง และการส่งผ่านการหมุน">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <title>รอก เฟือง และการส่งผ่านแรง · Pulleys, Gears and Transferring Force</title>
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปเนื้อหา / Skip to content</a>
+<header class="site-header"><div><strong>นักประดิษฐ์และวิศวกรรม · Maker Engineering</strong><a class="button secondary" href="../../index.html">หน้าหลัก / Home</a></div></header>
+<main id="main" class="container">
+  <section class="hero">
+    <p class="eyebrow">MAKER-02 · บทเรียน 10 / Lesson 10</p>
+    <h1>รอก เฟือง และการส่งผ่านแรง<br><span>Pulleys, Gears and Transferring Force</span></h1>
+    <p><strong>คำถามนำ / Big question:</strong> เครื่องกลช่วยเปลี่ยนทิศทาง ขนาด หรือความเร็วของแรงได้อย่างไร โดยไม่สร้างพลังงานขึ้นใหม่?</p>
+  </section>
+  <div data-learning-shell data-current-lesson="MAKER-02"></div>
+  <nav class="panel no-print" aria-label="ทางลัดบทเรียน / Lesson shortcuts"><strong>ไปที่ / Jump to:</strong> <a href="#learn">เรียนรู้</a> · <a href="#pulley">รอก</a> · <a href="#gears">เฟือง</a> · <a href="#design">ออกแบบ</a> · <a href="#quiz">แบบฝึกหัด</a></nav>
+
+  <section class="panel" id="learn">
+    <h2>เป้าหมาย / Learning goals</h2>
+    <ul>
+      <li>อธิบายได้ว่ารอกตรึงช่วยเปลี่ยนทิศแรง และรอกหลายเส้นช่วยแบ่งแรงโดยแลกกับการดึงเชือกไกลขึ้น</li>
+      <li>ทำนายทิศและความเร็วสัมพัทธ์ของเฟืองสองตัวที่ขบกัน</li>
+      <li>เลือกเครื่องกลให้เหมาะกับงาน พร้อมระบุข้อจำกัดและกติกาความปลอดภัย</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>คำศัพท์ / Vocabulary</h2>
+    <dl>
+      <dt><strong>pulley — รอก</strong></dt><dd>ล้อมีร่องที่ใช้เชือกหรือสายพาดเพื่อเปลี่ยนทิศแรงหรือช่วยแบ่งแรง</dd>
+      <dt><strong>supporting rope segment — ช่วงเชือกที่พยุงวัตถุ</strong></dt><dd>แต่ละช่วงที่รับน้ำหนักร่วมกันในแบบจำลองรอก</dd>
+      <dt><strong>gear — เฟือง</strong></dt><dd>ล้อมีฟันที่ส่งผ่านการหมุนและแรงบิดไปยังเฟืองอีกตัว</dd>
+      <dt><strong>driver / driven gear — เฟืองขับ / เฟืองตาม</strong></dt><dd>เฟืองที่เราเริ่มหมุน และเฟืองที่รับการหมุนต่อ</dd>
+      <dt><strong>trade-off — สิ่งที่ต้องแลก</strong></dt><dd>ได้ประโยชน์ด้านหนึ่ง แต่ต้องยอมเสียระยะทาง ความเร็ว หรือความสะดวกอีกด้านหนึ่ง</dd>
+    </dl>
+  </section>
+
+  <section class="panel">
+    <h2>หลักสำคัญ / Key ideas</h2>
+    <ul>
+      <li>เครื่องกลอย่างง่ายไม่สร้างพลังงานใหม่ แต่ช่วยเปลี่ยนวิธีที่แรงกระทำ</li>
+      <li>รอกตรึงหนึ่งตัวมักช่วยให้เราดึงลงเพื่อยกของขึ้น ซึ่งสะดวกกว่าในบางงาน แต่ในแบบอุดมคติไม่ได้ลดแรง</li>
+      <li>เมื่อมีช่วงเชือกพยุงวัตถุมากขึ้น แรงดึงในแบบอุดมคติลดลง แต่ต้องดึงเชือกยาวขึ้นเพื่อยกของสูงเท่าเดิม</li>
+      <li>เฟืองสองตัวที่ขบกันหมุนคนละทิศ เฟืองเล็กมักหมุนรอบมากกว่าเฟืองใหญ่ในเวลาเดียวกัน</li>
+    </ul>
+    <p><small>แบบจำลองนี้ละเลยแรงเสียดทาน น้ำหนักเชือก และการบิดงอของวัสดุ ผลจริงจึงอาจต่างออกไป / This model ignores friction, rope mass and material flex.</small></p>
+  </section>
+
+  <section class="panel no-print" id="pulley" aria-labelledby="pulley-title">
+    <h2 id="pulley-title">กิจกรรม 1: รอกแบ่งแรงอย่างไร / How a pulley shares force</h2>
+    <p>เลือกจำนวนช่วงเชือกที่พยุงวัตถุ 600 นิวตัน แล้วดูแรงดึงและระยะเชือกในแบบจำลองอุดมคติ</p>
+    <label for="rope-segments"><strong>ช่วงเชือกพยุง / Supporting segments:</strong> <output id="segment-output" for="rope-segments">2</output></label>
+    <input id="rope-segments" type="range" min="1" max="6" step="1" value="2">
+    <div id="pulley-result" class="lesson-card" role="status" aria-live="polite"></div>
+    <fieldset>
+      <legend>เมื่อเพิ่มช่วงเชือกพยุงจาก 2 เป็น 4 ช่วง ข้อใดอธิบายแบบอุดมคติได้ดีที่สุด?</legend>
+      <label class="choice"><input type="radio" name="pulley-prediction" value="tradeoff">แรงดึงลดลงประมาณครึ่งหนึ่ง แต่ต้องดึงเชือกประมาณสองเท่าเพื่อยกสูงเท่าเดิม</label>
+      <label class="choice"><input type="radio" name="pulley-prediction" value="free">ยกได้โดยไม่ต้องใช้แรงหรือระยะทาง</label>
+      <label class="choice"><input type="radio" name="pulley-prediction" value="same">แรงและระยะเชือกเท่าเดิมเสมอ</label>
+    </fieldset>
+    <button id="check-pulley" type="button">ตรวจคำตอบ / Check answer</button>
+    <p id="pulley-feedback" class="feedback" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel no-print" id="gears" aria-labelledby="gear-title">
+    <h2 id="gear-title">กิจกรรม 2: คู่เฟือง / Gear-pair explorer</h2>
+    <p>เลือกจำนวนฟันของเฟืองขับและเฟืองตาม แล้วทำนายทิศและจำนวนรอบโดยประมาณ</p>
+    <div class="classification-grid">
+      <label>เฟืองขับ / Driver teeth
+        <select id="driver-teeth"><option>8</option><option selected>12</option><option>24</option><option>36</option></select>
+      </label>
+      <label>เฟืองตาม / Driven teeth
+        <select id="driven-teeth"><option>8</option><option>12</option><option selected>24</option><option>36</option></select>
+      </label>
+    </div>
+    <div id="gear-result" class="lesson-card" role="status" aria-live="polite"></div>
+    <fieldset>
+      <legend>ถ้าเฟืองขับ 12 ฟันหมุนตามเข็มนาฬิกา 2 รอบ และขบกับเฟืองตาม 24 ฟัน เฟืองตามจะเป็นอย่างไร?</legend>
+      <label class="choice"><input type="radio" name="gear-prediction" value="correct">หมุนทวนเข็มนาฬิกาประมาณ 1 รอบ</label>
+      <label class="choice"><input type="radio" name="gear-prediction" value="same">หมุนตามเข็มนาฬิกา 2 รอบ</label>
+      <label class="choice"><input type="radio" name="gear-prediction" value="faster">หมุนทวนเข็มนาฬิกา 4 รอบ</label>
+    </fieldset>
+    <button id="check-gears" type="button">ตรวจคำตอบ / Check answer</button>
+    <p id="gear-feedback" class="feedback" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel" id="design">
+    <h2>กิจกรรม 3: เลือกเครื่องกลให้เหมาะกับงาน / Choose a machine for the job</h2>
+    <form id="design-form">
+      <fieldset><legend>ยกถุงกระดาษเบาจากพื้นขึ้นโต๊ะ โดยอยากดึงลงแทนการยกขึ้น</legend><label class="choice"><input type="radio" name="task1" value="pulley">รอกตรึง / Fixed pulley</label><label class="choice"><input type="radio" name="task1" value="gear">คู่เฟือง / Gear pair</label></fieldset>
+      <fieldset><legend>ต้องการส่งการหมุนจากแกนหนึ่งไปอีกแกน และให้หมุนคนละทิศ</legend><label class="choice"><input type="radio" name="task2" value="pulley">รอกตรึง / Fixed pulley</label><label class="choice"><input type="radio" name="task2" value="gear">คู่เฟือง / Gear pair</label></fieldset>
+      <fieldset><legend>กติกาความปลอดภัยใดสำคัญที่สุด?</legend><label class="choice"><input type="radio" name="task3" value="safe">ใช้เฉพาะของเบา เก็บนิ้ว ผม และเสื้อผ้าห่างจากจุดหนีบ และให้ผู้ใหญ่ช่วยตัดหรือเจาะ</label><label class="choice"><input type="radio" name="task3" value="fast">หมุนให้เร็วที่สุดเพื่อให้เห็นผลชัด</label></fieldset>
+      <button type="submit">ตรวจแผน / Check plan</button>
+    </form>
+    <p id="design-feedback" class="feedback" role="status" aria-live="polite"></p>
+    <div class="callout"><strong>ความปลอดภัย / Safety:</strong> ใช้กระดาษแข็ง ฝาขวดพลาสติกขนาดใหญ่ หรือชิ้นส่วนสำเร็จรูปที่ไม่มีคมเท่านั้น ห้ามใช้รอกยกคน สัตว์ ของหนัก ของแตกได้ หรือแขวนเหนือศีรษะ ห้ามเอานิ้ว ผม เชือก หรือเสื้อผ้าเข้าใกล้เฟืองที่กำลังหมุน ผู้ใหญ่เป็นผู้ตัด เจาะ และผูกปม</div>
+  </section>
+
+  <section class="panel no-print" id="quiz">
+    <h2>แบบฝึกหัด / Quick check</h2>
+    <form id="maker-quiz">
+      <fieldset><legend>1) รอกตรึงหนึ่งตัวช่วยเด่นที่สุดในเรื่องใด?</legend><label class="choice"><input type="radio" name="q1" value="a">เปลี่ยนทิศแรง / Change force direction</label><label class="choice"><input type="radio" name="q1" value="b">สร้างพลังงานใหม่</label></fieldset>
+      <fieldset><legend>2) เฟืองสองตัวที่ขบกันหมุนอย่างไร?</legend><label class="choice"><input type="radio" name="q2" value="a">คนละทิศ / Opposite directions</label><label class="choice"><input type="radio" name="q2" value="b">ทิศเดียวกันเสมอ</label></fieldset>
+      <fieldset><legend>3) เมื่อใช้ช่วงเชือกพยุงมากขึ้น สิ่งใดเป็น trade-off?</legend><label class="choice"><input type="radio" name="q3" value="a">แรงลดลง แต่ต้องดึงเชือกไกลขึ้น</label><label class="choice"><input type="radio" name="q3" value="b">แรงและระยะทางลดลงพร้อมกันโดยไม่มีข้อแลกเปลี่ยน</label></fieldset>
+      <button type="submit">ส่งคำตอบ / Submit answers</button>
+    </form>
+    <p id="quiz-feedback" class="feedback" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel">
+    <h2>เอกสารประกอบ / Print materials</h2>
+    <p><a href="../../worksheets/student/pulleys-gears-transfer-force-a4.html">ใบงานนักเรียน 2 หน้า A4 / Two-page student worksheet</a></p>
+    <p><a href="../../worksheets/teacher-guides/pulleys-gears-transfer-force-guide.html">คู่มือผู้สอนและ rubric / Teacher guide and rubric</a></p>
+  </section>
+
+  <section class="panel">
+    <h2>แหล่งอ้างอิง / References</h2>
+    <ul>
+      <li>OpenStax Physics — Simple Machines</li>
+      <li>TeachEngineering — Pulley and Gear educational resources</li>
+      <li>Exploratorium Science Snacks — Gears</li>
+    </ul>
+  </section>
+</main>
+<footer><p>บทเรียนนี้ใช้แบบจำลองอุดมคติและของเบา ไม่ใช้แทนคำแนะนำด้านวิศวกรรมหรือการยกของจริง / Idealized educational models only.</p></footer>
+<script src="../../assets/js/learning-shell.js"></script>
+<script src="../../assets/js/pulleys-gears-lesson.js"></script>
+</body>
+</html>
