@@ -21,7 +21,7 @@ HB-04 is present on `main` at squash merge `66ec19f177b38e743c7e397f033a0427554e
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 `@page`; training-data design and fairness-investigation sheets |
 | Teacher support | PASS | 60–90-minute flow, answer guidance, accessible alternatives, sensitive-trait boundary, human-review guidance and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, thirteen-lesson shell, reset key and service-worker v14 paths align |
-| Automated regression | READY | Complete manifest plus `tests/ai03-static-checks.mjs`; CI executes complete, ENV-02, MAKER-02, CIT-02, HB-04 and AI-03 suites with downloadable logs |
+| Automated regression | PASS | GitHub Actions `Static learning-site checks` run #37, run ID `29706081815`, exact head `25246b8aef4cbf46e74c4dfce30ddfd53f765b97`, conclusion `success`; complete, ENV-02, MAKER-02, CIT-02, HB-04 and AI-03 suites all passed |
 
 ## Functional cases inspected
 1. Dataset trainer requires a dataset selection and reports different simulated error patterns for narrow and varied datasets.
@@ -34,9 +34,9 @@ HB-04 is present on `main` at squash merge `66ec19f177b38e743c7e397f033a0427554e
 8. Complete regression manifest contains thirteen lessons, twenty-six worksheet pages, twelve guides and thirteen local progress keys.
 9. Service worker cache advanced to `arshavin-grade4-v14` and includes all AI-03 runtime assets.
 10. Focused assertions reject outbound APIs, drag-only interaction, missing human-value boundaries, missing two-page A4 structure and incomplete offline integration.
+11. The first PR run correctly failed because the older HB-04 focused suite hard-coded cache v13; the assertion was generalized to require a versioned cache while retaining HB-04 asset checks, and run #37 then passed.
 
 ## Verification still required
-- Confirm GitHub Actions passes on the exact final AI-03 PR head.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -44,4 +44,4 @@ HB-04 is present on `main` at squash merge `66ec19f177b38e743c7e397f033a0427554e
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirteen lessons, twenty-six A4 sheets and twelve teacher guides are integrated at source level. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — thirteen lessons, twenty-six A4 sheets and twelve teacher guides are integrated and exact static CI passed. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
