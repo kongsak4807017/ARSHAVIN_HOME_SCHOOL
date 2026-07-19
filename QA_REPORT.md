@@ -1,40 +1,41 @@
 # QA REPORT
 
-## Build status through AI-03
+## Build status through ENV-03
 Date: 2026-07-20
 
-HB-04 is present on `main` at squash merge `66ec19f177b38e743c7e397f033a0427554e8deb`. No open pull request existed at the start of this AI-03 increment. `DECISIONS.md` was requested during inspection but returned GitHub 404; no replacement governance file was invented.
+AI-03 is present on `main` at squash merge `74166f0ab82d5f3a8a4629d9ba3318f9132516db`. No open pull request existed at the start of this ENV-03 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
 
-## AI-03 — Learning from Data and Bias
+## ENV-03 — Soil, Erosion and Soil Conservation
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | UNESCO AI Competency Framework for Students, UNICEF Guidance on AI and children v3.0, UNICEF Child-Centric AI, UNICEF generative-AI child-rights explainer and WCAG 2.2 recorded in `CONTENT_SOURCES.md` |
-| Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, explanations, interactions, assessment, exit ticket and resource links |
-| Foundational ML concepts | PASS (source inspection) | Training data, labels, model, prediction, test results and system bias are separated in age-appropriate language |
-| Dataset comparison | PASS (source inspection) | Fictional narrow and varied fruit datasets produce explicitly simulated, disaggregated outcomes; no upload or real data |
-| Fairness reasoning | PASS (source inspection) | FAIR framework covers finding gaps, adding relevant variety, inspecting errors and reporting limits; bilingual-label scenario requires disaggregated testing |
-| Keyboard/accessibility | PASS (source inspection) | Native radio, button, form, fieldset and legend controls; polite live regions; no drag-only interaction; alternatives in teacher guide |
-| Corrective feedback | PASS (source inspection) | Missing-choice handling, dataset-specific explanation, fairness correction and bilingual three-question quiz feedback |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.ai.databias.v1`; no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon` in lesson script |
-| Child-rights safeguards | PASS | Fictional fruit/text examples only; no names, faces, voices, health, disability, ethnicity, religion, gender, behaviour or opportunity prediction; no learner ranking |
-| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 `@page`; training-data design and fairness-investigation sheets |
-| Teacher support | PASS | 60–90-minute flow, answer guidance, accessible alternatives, sensitive-trait boundary, human-review guidance and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, thirteen-lesson shell, reset key and service-worker v14 paths align |
-| Automated regression | PASS | GitHub Actions `Static learning-site checks` run #37, run ID `29706081815`, exact head `25246b8aef4cbf46e74c4dfce30ddfd53f765b97`, conclusion `success`; complete, ENV-02, MAKER-02, CIT-02, HB-04 and AI-03 suites all passed |
+| Authoritative grounding | PASS | Thai Land Development Department erosion process, national dataset, conservation guidance and Chiang Rai soil-and-water project; USGS soil-cover material; WCAG 2.2 recorded in `CONTENT_SOURCES.md` |
+| Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, key ideas, interactions, assessment, adult note and resource links |
+| Soil-science concepts | PASS (source inspection) | Soil/topsoil, runoff, detachment/erosion, transport and deposition are separated in age-appropriate language |
+| Erosion comparison | PASS (source inspection) | Native radio/select/form controls compare bare, mulched and vegetated soil across gentle, medium and steep simulated slopes |
+| Evidence boundary | PASS | Result is explicitly a fictional comparative index, not a real soil-loss quantity, hazard forecast or site certification |
+| Conservation reasoning | PASS | COVER framework addresses cover, observation, vegetation, slowing/distributing flow and review after rainfall |
+| Chiang Rai context | PASS | Fictional slope/headwater situations connect upland soil loss and downstream sediment without identifying a real child, home, farm or village |
+| Keyboard/accessibility | PASS (source inspection) | Native select, radio, button, form, fieldset and legend controls; polite live regions; no drag-only interaction; response alternatives in guide |
+| Corrective feedback | PASS (source inspection) | Missing-choice handling, cover/slope explanation, three scenario corrections and three-question bilingual quiz feedback |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.environment.soil.v1`; no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon` in lesson script |
+| Field/tray safety | PASS | No entry to unstable slopes, banks or drainage cuts; adult-prepared shallow trays only; clean known soil, low water volume, unknown-material avoidance and handwashing |
+| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 `@page`; evidence investigation and slope-conservation planning sheets |
+| Teacher support | PASS | 60–90-minute flow, answer guidance, accessible alternatives, optional safe tray protocol, source limitations and four-level rubric |
+| Navigation/offline | PASS (source inspection) | Homepage, fourteen-lesson shell, reset key and service-worker v15 paths align |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks` run #40, run ID `29707908049`, head `6fe822d617e745d607c46e67caed744b63171e23`; job `88247826821` and all six steps concluded `success`. Exact final documentation head must also pass before merge. |
 
 ## Functional cases inspected
-1. Dataset trainer requires a dataset selection and reports different simulated error patterns for narrow and varied datasets.
-2. Trainer saves `trainerComplete` without collecting or transmitting examples.
-3. Fairness form requires a choice and saves `fairnessComplete` only for the plan that adds relevant variety, checks labels, tests groups and reports limits.
+1. Erosion comparison requires a cover choice and varies the fictional index by cover and slope.
+2. Save evidence is disabled until a simulation has run and then saves `comparisonComplete` locally.
+3. Slope form requires all three decisions and saves `slopeComplete` only for cover/adult-help/evidence choices.
 4. Quiz requires all three answers and saves `quizComplete` only at 3/3.
-5. Lesson completion requires `trainerComplete`, `fairnessComplete` and `quizComplete` in the shared shell.
+5. Lesson completion requires `comparisonComplete`, `slopeComplete` and `quizComplete` in the shared shell.
 6. Storage reads/writes are caught; storage failure does not block learning.
 7. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-8. Complete regression manifest contains thirteen lessons, twenty-six worksheet pages, twelve guides and thirteen local progress keys.
-9. Service worker cache advanced to `arshavin-grade4-v14` and includes all AI-03 runtime assets.
-10. Focused assertions reject outbound APIs, drag-only interaction, missing human-value boundaries, missing two-page A4 structure and incomplete offline integration.
-11. The first PR run correctly failed because the older HB-04 focused suite hard-coded cache v13; the assertion was generalized to require a versioned cache while retaining HB-04 asset checks, and run #37 then passed.
+8. Complete regression manifest contains fourteen lessons, twenty-eight worksheet pages, thirteen guides and fourteen local progress keys.
+9. Service worker cache advanced to `arshavin-grade4-v15` and includes all ENV-03 runtime assets.
+10. Focused assertions reject outbound APIs, drag-only interaction, missing simulation limits, missing unstable-ground safety, missing two-page A4 structure and incomplete offline integration.
 
 ## Verification still required
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
@@ -44,4 +45,4 @@ HB-04 is present on `main` at squash merge `66ec19f177b38e743c7e397f033a0427554e
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirteen lessons, twenty-six A4 sheets and twelve teacher guides are integrated and exact static CI passed. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — fourteen lessons, twenty-eight A4 sheets and thirteen teacher guides are integrated. Implementation-head static CI passed; merge requires exact final-head CI. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
