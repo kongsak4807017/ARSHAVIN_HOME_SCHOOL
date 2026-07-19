@@ -5,36 +5,30 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-19
 
 ### Added
-
-- Responsive bilingual Grade 4 homepage (`index.html`).
-- Complete interactive lessons HB-01, AI-01, ENV-01 and MAKER-01 with local-only progress, A4 worksheets and offline integration.
-- Reusable `assets/js/learning-shell.js` for ordered lesson navigation and privacy-preserving local evidence status.
-- Dependency-free `tests/static-checks.mjs` baseline suite.
-- Complete interactive lesson **CIT-01 สิทธิ หน้าที่ และน้ำใจดิจิทัล / Rights, Responsibilities and Digital Kindness**.
-- CIT-01 CLEAR fair-rule evaluator with native controls and explanatory bilingual feedback.
-- CIT-01 fictional image-sharing scenario covering consent, non-forwarding, respectful harm interruption and trusted-adult escalation.
-- CIT-01 STOP–SAVE–TELL–SUPPORT help-seeking routine for unsafe, frightening or privacy-related online situations.
-- CIT-01 three-question formative assessment with guarded local-only evidence storage.
-- CIT-01 two-page A4 worksheet with rights/responsibilities matching, CLEAR rule analysis, rule rewrite, help plan, vocabulary and self-rubric.
-- CIT-01 teacher guide with 60–90-minute flow, answer guidance, differentiation, safeguarding note, portfolio limits and four-level rubric.
-- UNICEF child-rights/online-safety and Council of Europe digital-citizenship source records.
-- GitHub Actions workflow `.github/workflows/static-checks.yml` to run dependency-free static checks on pushes to `main` and pull requests.
+- Responsive bilingual Grade 4 homepage and privacy-first local progress controls.
+- Complete interactive lessons HB-01, AI-01, ENV-01, MAKER-01 and CIT-01 with printable worksheets and offline integration.
+- Reusable `assets/js/learning-shell.js`, dependency-free `tests/static-checks.mjs`, and GitHub Actions static QA workflow.
+- Complete interactive lesson **HB-02 ระบบโครงกระดูก ข้อต่อ และท่าทางที่ปลอดภัยกว่า / Bones, Joints and Safer Posture**.
+- HB-02 joint explorer using native radio controls with bilingual explanations for elbow, shoulder and skull movement.
+- HB-02 posture/backpack decision activity covering two straps, close-to-body load, position changes, removal of unnecessary items and adult help.
+- HB-02 three-question formative assessment with guarded local-only evidence storage under `arshavin.humanbody.bones.v1`.
+- HB-02 adult-supervised paper hinge-joint model with explicit sharp-tool and forced-movement prohibitions.
+- HB-02 two-page A4 worksheet with skeleton functions, joint map, model evidence, backpack/desk audit, reflection and self-rubric.
+- HB-02 teacher guide with 60–90-minute flow, answer guidance, inclusion options, health/safety boundary and four-level rubric.
+- NIAMS/NIH and American Academy of Pediatrics source records for bones, joints and backpack safety.
 
 ### Changed
-
-- Homepage now lists five lessons, representing all five curriculum subjects, and clears all five known local progress keys.
-- Shared learning shell now registers CIT-01 after MAKER-01 and reports progress across five lessons.
-- Service-worker cache advanced to `arshavin-grade4-v6` and precaches the CIT-01 lesson, script, worksheet and teacher guide.
-- Static checks now cover all five lessons, ten A4 sheets, four teacher guides, service-worker v6, all local progress keys and subject-specific safety labels.
-- Completion counters advanced to 5/52 lessons, 10/104 A4 sheets, 4 teacher guides and 5/5 subjects represented.
-- Next priority corrected from the out-of-scope MATH-01 proposal to curriculum-aligned **HB-02 Bones, Joints and Safer Posture**.
+- Homepage now lists six lessons and clears all six known local progress keys.
+- Shared learning shell now places HB-02 after HB-01 and reports progress across six lessons.
+- Service-worker cache advanced to `arshavin-grade4-v7` and precaches all HB-02 lesson, script, worksheet and guide assets.
+- Static checks now cover six lessons, twelve A4 sheets, five teacher guides, service-worker v7, six local progress keys and HB-02 health/safety/privacy assertions.
+- Completion counters advanced to 6/52 lessons, 12/104 A4 sheets and 5 teacher guides.
+- Next executable increment advanced to **HB-03 Muscles, Rest and Age-Appropriate Movement**.
 
 ### Safety, accessibility and privacy
-
 - No account, analytics, advertising, upload, chat, third-party runtime script or remote child-data collection.
-- CIT-01 uses native radio, button, anchor, form, fieldset and legend controls with live status feedback and no drag-only dependency.
-- Fictional scenarios are clearly separated from personal disclosure; learners are not asked to describe real incidents publicly.
-- Consent is required before sharing another person’s image or work; harmful content is not redistributed as “evidence.”
-- Threatening, frightening or personal-data requests are escalated to trusted adults; the teacher guide includes non-leading safeguarding handling.
-- Local-storage reads and writes are guarded; unavailable or corrupt storage does not block learning.
-- Final GitHub Actions result, browser, assistive-technology, device, GitHub Pages, offline runtime, physical print and local safeguarding-procedure verification remain explicitly pending.
+- HB-02 uses native radio, button, anchor, form, fieldset and legend controls with polite live status feedback and no drag-only dependency.
+- Storage reads/writes are guarded; unavailable or corrupt storage does not block lesson use.
+- No child body weight is requested or stored online; persistent pain, swelling, numbness, weakness or injury is escalated to an adult/professional.
+- Hole-punching and fastener work is adult-supervised; children are not instructed to use knives, drills, cutters, sharp wire or forced joint movement.
+- Exact CI, browser, assistive-technology, device, GitHub Pages, offline runtime and physical print verification remain pending.

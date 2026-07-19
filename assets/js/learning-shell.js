@@ -3,6 +3,7 @@
 
   const LESSONS = [
     { id: 'HB-01', title: 'การนอนเพื่อสมองพร้อมเรียน · Sleep for a Ready Brain', href: '../../subjects/human-body/sleep-ready-brain.html', storageKey: 'arshavin.sleep.lesson.v1', isComplete: data => Array.isArray(data.routine) && data.routine.length > 0 },
+    { id: 'HB-02', title: 'ระบบโครงกระดูก ข้อต่อ และท่าทางที่ปลอดภัยกว่า · Bones, Joints and Safer Posture', href: '../../subjects/human-body/bones-joints-safer-posture.html', storageKey: 'arshavin.humanbody.bones.v1', isComplete: data => Boolean(data.jointComplete && data.postureComplete && data.quizComplete) },
     { id: 'AI-01', title: 'จริง คิด หรือควรตรวจ? · Fact, Opinion or Check?', href: '../../subjects/ai-science/fact-opinion-ai-claims.html', storageKey: 'arshavin.ai.claims.v1', isComplete: data => Boolean(data.sorterComplete && data.quizComplete) },
     { id: 'ENV-01', title: 'อ่านอากาศ เลือกทางปลอดภัยกว่า · Read the Air, Choose a Safer Action', href: '../../subjects/environment/pm25-safer-action.html', storageKey: 'arshavin.environment.pm25.v1', isComplete: data => Boolean(data.readingComplete && data.plannerComplete && data.quizComplete) },
     { id: 'MAKER-01', title: 'คานช่วยผ่อนแรง · Levers Make Work Easier', href: '../../subjects/maker-engineering/levers-make-work-easier.html', storageKey: 'arshavin.maker.levers.v1', isComplete: data => Boolean(data.simulatorComplete && data.classesComplete && data.quizComplete) },
