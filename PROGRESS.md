@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **13 / 52**
-- A4 student worksheets: **26 / 104 minimum**
-- Teacher guides/rubrics: **12 complete guides**
+- Interactive bilingual lessons: **14 / 52**
+- A4 student worksheets: **28 / 104 minimum**
+- Teacher guides/rubrics: **13 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -26,7 +26,7 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] AI-02 Personal Data, Digital Footprints and Consent
 - [x] ENV-02 Water, the Water Cycle and Responsible Use
 - [x] MAKER-02 Pulleys, Gears and Transferring Force
-- [x] PR #5 reconciled after exact CI failures in A4 and water-safety assertions; full and focused suites passed on head `aa09a27...` before squash merge `a7389f0...`
+- [x] PR #5 reconciled after exact CI failures in A4 and water-safety assertions; full and focused suites passed before squash merge
 
 ### 2026-07-20 — CIT-02 Community, Rules and Shared Decisions
 - [x] Complete bilingual lesson using VOICE to examine fair, inclusive and reviewable community rules
@@ -34,15 +34,13 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Minority-voice, accessibility, voluntary-participation and fictional-scenario safeguards
 - [x] Guarded local-only completion under `arshavin.citizenship.community.v1`
 - [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with answer guidance and four-level rubric
-- [x] Homepage, eleven-lesson shell, reset key, service-worker v12, full regression suite and focused CIT-02 checks integrated
 
 ### 2026-07-20 — HB-04 Breathing, Gas Exchange and Safer Air
 - [x] Complete bilingual lesson covering airway sequence, alveolar gas exchange and safer-air decisions
 - [x] Non-exertion, button-based breathing-path explorer with no breath-holding, timed breathing or drag-only dependency
 - [x] Fictional air-condition decision activity with official-information, adult-help and symptom-escalation boundaries
 - [x] Guarded local-only completion under `arshavin.humanbody.breathing.v1`
-- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives and four-level rubric
-- [x] Homepage, twelve-lesson shell, reset key, service-worker v13, complete regression manifest and focused HB-04 checks integrated
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide
 
 ### 2026-07-20 — AI-03 Learning from Data and Bias
 - [x] Complete bilingual lesson explaining training examples, labels, models, predictions and system bias
@@ -50,11 +48,19 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Keyboard-native fairness investigation using disaggregated fictional results and the FAIR framework
 - [x] Human-review, non-discrimination, no-ranking and no-sensitive-trait safeguards
 - [x] Guarded local-only completion under `arshavin.ai.databias.v1`
-- [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives and four-level rubric
-- [x] Homepage, thirteen-lesson shell, reset key, service-worker v14, complete regression manifest and focused AI-03 checks integrated
+- [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide
+
+### 2026-07-20 — ENV-03 Soil, Erosion and Soil Conservation
+- [x] Complete bilingual lesson covering soil, topsoil, runoff, erosion, deposition and conservation
+- [x] Keyboard-native simulated comparison of bare, mulched and vegetated soil across three slope levels
+- [x] Explicit fictional-index boundary: comparative evidence only, not a real soil-loss estimate
+- [x] Chiang Rai slope/headwater decision activity using the COVER framework and unstable-ground safeguards
+- [x] Guarded local-only completion under `arshavin.environment.soil.v1`
+- [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with safe optional tray investigation and four-level rubric
+- [x] Homepage, fourteen-lesson shell, reset key, service-worker v15, complete regression manifest and focused ENV-03 checks integrated
 
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — thirteen lessons, twenty-six printable A4 sheets and twelve teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — fourteen lessons, twenty-eight printable A4 sheets and thirteen teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **ENV-03 ดิน การชะล้าง และการอนุรักษ์ดิน / Soil, Erosion and Soil Conservation** with an accessible simulated erosion comparison, Chiang Rai slope/headwater context, safe tray-investigation alternative, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **MAKER-03 ล้อ เพลา และการออกแบบการเคลื่อนที่ / Wheels, Axles and Designing Motion** with an accessible force-distance comparison, safe paper-wheel design activity using light materials, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
