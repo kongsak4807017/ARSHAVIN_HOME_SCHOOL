@@ -18,6 +18,8 @@
     <p><strong>คำถามนำ / Big question:</strong> เมื่อ AI ตอบอย่างมั่นใจ เราจะรู้ได้อย่างไรว่าควรเชื่อ ใช้เป็นความคิดเห็น หรือหยุดตรวจสอบก่อน?</p>
   </section>
 
+  <div data-learning-shell data-current-lesson="AI-01"></div>
+
   <nav class="panel no-print" aria-label="ทางลัดบทเรียน / Lesson shortcuts">
     <strong>ไปที่ / Jump to:</strong>
     <a href="#learn">เรียนรู้</a> · <a href="#sorter">จำแนกข้อความ</a> · <a href="#verify">ภารกิจตรวจสอบ</a> · <a href="#quiz">แบบฝึกหัด</a> · <a href="#adult">สำหรับผู้ใหญ่</a>
@@ -46,14 +48,12 @@
   <section class="panel">
     <h2>หลักสำคัญ / Key idea</h2>
     <p>AI สร้างคำตอบจากรูปแบบในข้อมูลและคำสั่งที่ได้รับ ไม่ได้ “รู้ความจริง” แบบมนุษย์ และอาจสร้างรายละเอียดที่ดูน่าเชื่อแต่ผิดได้ เราจึงไม่ตัดสินจากความลื่นไหลหรือความมั่นใจของคำตอบ แต่ตัดสินจาก <strong>หลักฐาน แหล่งข้อมูล วันที่ และบริบท</strong></p>
-    <div class="lesson-card" aria-label="ขั้นตอนตรวจสอบสี่ขั้น">
-      <ol>
-        <li><strong>STOP — หยุด:</strong> อย่ารีบแชร์หรือทำตาม โดยเฉพาะเรื่องสุขภาพ เงิน ความปลอดภัย และข่าวด่วน</li>
-        <li><strong>TRACE — ตามที่มา:</strong> ใครเป็นผู้กล่าว? มาจากแหล่งใด? มีวันที่หรือไม่?</li>
-        <li><strong>CHECK — ตรวจ:</strong> เปรียบเทียบกับแหล่งอิสระที่น่าเชื่อถืออย่างน้อยสองแหล่ง หรือถามผู้ใหญ่/ผู้เชี่ยวชาญ</li>
-        <li><strong>DECIDE — ตัดสินใจ:</strong> ใช้ แชร์ แก้ไข หรือระบุว่า “ยังไม่แน่ใจ” พร้อมบอกเหตุผล</li>
-      </ol>
-    </div>
+    <div class="lesson-card" aria-label="ขั้นตอนตรวจสอบสี่ขั้น"><ol>
+      <li><strong>STOP — หยุด:</strong> อย่ารีบแชร์หรือทำตาม โดยเฉพาะเรื่องสุขภาพ เงิน ความปลอดภัย และข่าวด่วน</li>
+      <li><strong>TRACE — ตามที่มา:</strong> ใครเป็นผู้กล่าว? มาจากแหล่งใด? มีวันที่หรือไม่?</li>
+      <li><strong>CHECK — ตรวจ:</strong> เปรียบเทียบกับแหล่งอิสระที่น่าเชื่อถืออย่างน้อยสองแหล่ง หรือถามผู้ใหญ่/ผู้เชี่ยวชาญ</li>
+      <li><strong>DECIDE — ตัดสินใจ:</strong> ใช้ แชร์ แก้ไข หรือระบุว่า “ยังไม่แน่ใจ” พร้อมบอกเหตุผล</li>
+    </ol></div>
     <p><small>กติกาปลอดภัย: อย่าใส่ชื่อจริง ที่อยู่ ภาพส่วนตัว รหัสผ่าน หรือข้อมูลสุขภาพส่วนบุคคลลงในเครื่องมือ AI สาธารณะ</small></p>
   </section>
 
@@ -73,8 +73,7 @@
   <section class="panel no-print" id="verify" aria-labelledby="verify-title">
     <h2 id="verify-title">กิจกรรม 2: นักสืบหลักฐาน / Evidence detective</h2>
     <p><strong>สถานการณ์:</strong> มีข้อความว่า “AI บอกว่าโรงเรียนทุกแห่งในเชียงรายหยุดพรุ่งนี้ เพราะฝุ่น PM2.5 สูง” คุณควรทำอย่างไร?</p>
-    <fieldset>
-      <legend>เลือกการตรวจสอบที่ควรทำก่อนแชร์ (เลือกได้หลายข้อ)</legend>
+    <fieldset><legend>เลือกการตรวจสอบที่ควรทำก่อนแชร์ (เลือกได้หลายข้อ)</legend>
       <label class="choice"><input type="checkbox" name="evidence" value="date">ตรวจวันที่ เวลา และพื้นที่ที่กล่าวถึง</label>
       <label class="choice"><input type="checkbox" name="evidence" value="official">ดูประกาศจากโรงเรียน หน่วยงานการศึกษา หรือหน่วยงานท้องถิ่นที่รับผิดชอบ</label>
       <label class="choice"><input type="checkbox" name="evidence" value="air">ตรวจข้อมูลคุณภาพอากาศจากแหล่งทางการ และดูว่าข้อมูลอัปเดตเมื่อใด</label>
@@ -108,34 +107,21 @@
     </form>
   </section>
 
-  <section class="panel">
-    <h2>Exit ticket</h2>
-    <p>เขียนหนึ่งประโยคที่คุณจะใช้เมื่อยังตรวจข้อมูลไม่ครบ เช่น “ตอนนี้ฉันยังไม่แน่ใจ เพราะ…”</p>
-    <div class="worksheet-lines" aria-label="พื้นที่เขียนคำตอบ"></div>
-  </section>
+  <section class="panel"><h2>Exit ticket</h2><p>เขียนหนึ่งประโยคที่คุณจะใช้เมื่อยังตรวจข้อมูลไม่ครบ เช่น “ตอนนี้ฉันยังไม่แน่ใจ เพราะ…”</p><div class="worksheet-lines" aria-label="พื้นที่เขียนคำตอบ"></div></section>
 
-  <section class="panel no-print">
-    <h2>ใบงานและคู่มือ / Worksheet & guide</h2>
-    <p><a class="button" href="../../worksheets/student/fact-opinion-ai-claims-a4.html">ใบงาน A4 สองหน้า / Two-page worksheet</a> <a class="button secondary" href="../../worksheets/teacher-guides/fact-opinion-ai-claims-guide.html">คู่มือผู้สอน / Teacher guide</a></p>
-  </section>
+  <section class="panel no-print"><h2>ใบงานและคู่มือ / Worksheet & guide</h2><p><a class="button" href="../../worksheets/student/fact-opinion-ai-claims-a4.html">ใบงาน A4 สองหน้า / Two-page worksheet</a> <a class="button secondary" href="../../worksheets/teacher-guides/fact-opinion-ai-claims-guide.html">คู่มือผู้สอน / Teacher guide</a></p></section>
 
-  <section class="panel" id="adult">
-    <h2>สำหรับผู้ใหญ่ / Adult note</h2>
-    <p>เป้าหมายไม่ใช่ให้เด็กไม่เชื่อทุกอย่าง แต่ให้ถามอย่างมีเหตุผล: “ข้อความนี้เป็นชนิดใด? หลักฐานอยู่ไหน? ใครรับผิดชอบข้อมูล? ฉันควรขอความช่วยเหลือจากใคร?” หลีกเลี่ยงการให้เด็กค้นข่าวอันตรายหรือเนื้อหาที่ไม่เหมาะกับวัยโดยลำพัง ใช้ตัวอย่างที่ผู้ใหญ่คัดเลือกไว้</p>
-    <p><strong>หลักฐานในแฟ้มสะสมงาน:</strong> ใบงานที่มีเหตุผลประกอบ แผนตรวจสอบแหล่งข้อมูล และประโยคสะท้อนคิดหนึ่งย่อหน้า</p>
-  </section>
+  <section class="panel" id="adult"><h2>สำหรับผู้ใหญ่ / Adult note</h2><p>เป้าหมายไม่ใช่ให้เด็กไม่เชื่อทุกอย่าง แต่ให้ถามอย่างมีเหตุผล: “ข้อความนี้เป็นชนิดใด? หลักฐานอยู่ไหน? ใครรับผิดชอบข้อมูล? ฉันควรขอความช่วยเหลือจากใคร?” หลีกเลี่ยงการให้เด็กค้นข่าวอันตรายหรือเนื้อหาที่ไม่เหมาะกับวัยโดยลำพัง ใช้ตัวอย่างที่ผู้ใหญ่คัดเลือกไว้</p><p><strong>หลักฐานในแฟ้มสะสมงาน:</strong> ใบงานที่มีเหตุผลประกอบ แผนตรวจสอบแหล่งข้อมูล และประโยคสะท้อนคิดหนึ่งย่อหน้า</p></section>
 
-  <section class="panel">
-    <h2>แหล่งอ้างอิง / References</h2>
-    <ul>
-      <li>UNESCO, <em>AI Competency Framework for Students</em> (2024; page updated 16 January 2026).</li>
-      <li>OECD & European Commission, <em>Empowering Learners for the Age of AI</em> (18 June 2026).</li>
-      <li>UNICEF Innocenti, <em>Digital misinformation/disinformation and children</em> (2021).</li>
-      <li>OECD, <em>The OECD Truth Quest Survey</em> (2024).</li>
-    </ul>
-  </section>
+  <section class="panel"><h2>แหล่งอ้างอิง / References</h2><ul>
+    <li>UNESCO, <em>AI Competency Framework for Students</em> (2024; page updated 16 January 2026).</li>
+    <li>OECD & European Commission, <em>Empowering Learners for the Age of AI</em> (18 June 2026).</li>
+    <li>UNICEF Innocenti, <em>Digital misinformation/disinformation and children</em> (2021).</li>
+    <li>OECD, <em>The OECD Truth Quest Survey</em> (2024).</li>
+  </ul></section>
 </main>
 <footer><p>คิดก่อนเชื่อ ตรวจสอบก่อนแชร์ และขอความช่วยเหลือเมื่อข้อมูลอาจกระทบสุขภาพ ความปลอดภัย หรือผู้อื่น</p></footer>
+<script src="../../assets/js/learning-shell.js"></script>
 <script src="../../assets/js/ai-claims-lesson.js"></script>
 </body>
 </html>
