@@ -6,11 +6,11 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
 
-- Interactive bilingual lessons: **4 / 52**
-- A4 student worksheets: **8 / 104 minimum**
-- Teacher guides/rubrics: **3 complete guides**
-- Subjects represented in the runtime: **4 / 5**
-- Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks**
+- Interactive bilingual lessons: **5 / 52**
+- A4 student worksheets: **10 / 104 minimum**
+- Teacher guides/rubrics: **4 complete guides**
+- Subjects represented in the runtime: **5 / 5**
+- Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA**
 
 ## Completed
 
@@ -44,6 +44,7 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Local-only progress summary with corrupt-storage fallback
 - [x] Responsive and print-safe navigation
 - [x] Dependency-free Node static checks
+- [x] GitHub Actions workflow for push and pull-request checks
 
 ### 2026-07-19 — Unit ENV-01: Read the Air, Choose a Safer Action
 
@@ -66,10 +67,23 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Homepage, shared-shell, local reset and service-worker v5 integration
 - [x] OpenStax and NASA authoritative sources recorded
 
+### 2026-07-19 — Unit CIT-01: Rights, Responsibilities and Digital Kindness
+
+- [x] Complete bilingual Thai and Digital Citizenship lesson covering rights, responsibilities, fair rules, consent, participation and help-seeking
+- [x] CLEAR fair-rule evaluator using native radio controls and bilingual explanatory feedback
+- [x] Fictional digital-kindness scenario teaching non-forwarding, consent, harm interruption and trusted-adult escalation
+- [x] STOP–SAVE–TELL–SUPPORT child-safe help-seeking routine
+- [x] Three-question formative assessment and guarded local completion record under `arshavin.citizenship.rights.v1`
+- [x] Two-page A4 student worksheet with rule analysis, rewrite, trusted-adult map and reflection
+- [x] Teacher guide with 60–90-minute flow, answer guidance, differentiation, safeguarding note and four-level rubric
+- [x] Homepage, five-lesson shared shell, local reset and service-worker v6 integration
+- [x] Static checks expanded through all five lessons and GitHub Actions workflow added
+- [x] UNICEF child-rights/online-safety and Council of Europe digital-citizenship sources recorded
+
 ## Acceptance status
 
-**ACCEPTED WITH CONDITIONS** — four lessons are implemented and structurally reviewed. Real browser/device, screen-reader, GitHub Pages, offline-reload, full-checkout test execution and physical A4 print verification remain required before calling the MVP production-ready.
+**ACCEPTED WITH CONDITIONS** — five lessons now represent all five curriculum subjects and are structurally reviewed. Real browser/device, screen-reader, GitHub Pages, offline-reload, complete CI result review and physical A4 print verification remain required before calling the MVP production-ready.
 
 ## Next action
 
-Build MATH-01 as the first complete Mathematics lesson: **Plan a Chiang Rai Market Budget / วางแผนงบตลาดเชียงราย**, including accessible money arithmetic, estimation and change-making interactions, two A4 worksheets, teacher guide/rubric, official Thai currency and Grade 4 mathematics sources, shared-shell registration, offline precache and static-check coverage.
+Build **HB-02 ระบบโครงกระดูกและท่าทาง / Bones, Joints and Safer Posture** from the approved Human Body chapter 2 enrichment: accessible posture-and-backpack decision interactions, a paper joint model with adult-supervised fastener safety, two A4 worksheets, teacher guide/rubric, authoritative child ergonomics and skeletal-system sources, shared-shell registration, offline precache and static-check coverage.
