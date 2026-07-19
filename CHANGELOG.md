@@ -23,18 +23,25 @@ All notable interactive-web changes are recorded here.
 - Local-only AI lesson completion record under `arshavin.ai.claims.v1`.
 - UNESCO, OECD/European Commission, UNICEF, and W3C source record for AI and media literacy.
 - Completion counters in `PROGRESS.md` for lessons, worksheets, teacher guides, and subjects represented.
+- Reusable `assets/js/learning-shell.js` component for lesson sequence navigation and local evidence status.
+- Homepage local-progress overview using the same data source as lesson navigation.
+- Dependency-free `tests/static-checks.mjs` suite covering required files, JavaScript parsing, local links, bilingual lesson structure, two-sheet worksheets, and service-worker precache coverage.
 
 ### Changed
 
-- Homepage now lists both available lessons and clears both known local progress keys.
-- Service-worker cache advanced from `arshavin-grade4-v1` to `arshavin-grade4-v2` and precaches AI-01 lesson, JavaScript, worksheet, and teacher guide.
-- QA report expanded with AI-01 privacy, child-safety, accessibility, local-storage resilience, print, offline, and integration evidence.
-- Next priority changed to a reusable subject-navigation/progress component plus automated static checks.
+- Homepage now lists both available lessons, shows local-only progress, and clears both known local progress keys.
+- HB-01 and AI-01 now share previous/overview/next navigation with current-page semantics.
+- Shared stylesheet now includes responsive progress cards, navigation states, mobile pager layout, and print suppression for runtime-only controls.
+- Service-worker cache advanced to `arshavin-grade4-v3` and precaches `assets/js/learning-shell.js`.
+- QA report records seven passing static-check groups against a reconstructed fixture and distinguishes this from full-checkout/browser verification.
+- Next priority changed to ENV-01, a complete PM2.5 evidence-and-safer-action Environmental Science unit.
 
 ### Safety and privacy
 
 - No account, analytics, advertising, upload, chat, third-party runtime script, or remote child-data collection.
+- Shared progress reports only whether lesson evidence exists; it does not expose identity or detailed responses.
+- Corrupt or unavailable local storage falls back safely without blocking lesson content.
 - Added trusted-adult and relevant-expert escalation for health, safety, privacy, and high-impact claims.
 - Explicitly warns against entering names, passwords, addresses, images, or personal health information into public AI tools.
 - Clearly marks the PM2.5 closure exercise as a fictional practice scenario, not a current announcement.
-- Marked browser, assistive-technology, device, GitHub Pages, offline runtime, and physical print verification as pending rather than claiming unperformed tests.
+- Marked browser, assistive-technology, device, GitHub Pages, offline runtime, full-checkout CI, and physical print verification as pending rather than claiming unperformed tests.
