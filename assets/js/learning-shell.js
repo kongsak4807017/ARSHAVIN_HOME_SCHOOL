@@ -15,6 +15,13 @@
       href: '../../subjects/ai-science/fact-opinion-ai-claims.html',
       storageKey: 'arshavin.ai.claims.v1',
       isComplete: data => Boolean(data.sorterComplete && data.quizComplete)
+    },
+    {
+      id: 'ENV-01',
+      title: 'อ่านอากาศ เลือกทางปลอดภัยกว่า · Read the Air, Choose a Safer Action',
+      href: '../../subjects/environment/pm25-safer-action.html',
+      storageKey: 'arshavin.environment.pm25.v1',
+      isComplete: data => Boolean(data.readingComplete && data.plannerComplete && data.quizComplete)
     }
   ];
 
