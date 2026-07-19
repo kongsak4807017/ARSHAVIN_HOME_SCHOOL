@@ -23,6 +23,23 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
    https://www.healthychildren.org/English/safety-prevention/at-play/Pages/backpack-safety.aspx  
    Used for two broad shoulder straps, close-to-body fit, heavy items nearest the back, compartment use, removing unnecessary items, bending the knees to lift, and adult/clinician escalation when pain persists. The lesson does not collect body weight or calculate a child-specific load online.
 
+## HB-03 — Muscles, Rest and Age-Appropriate Movement
+1. **NIAMS/NIH — Health Lesson: Learning About Muscles**  
+   https://www.niams.nih.gov/health-topics/educational-resources/health-lesson-learning-about-muscles  
+   Used for Grade 4–6 framing and the fact that muscles help with limb movement, breathing, pumping blood and moving food through the digestive system.
+2. **NIAMS/NIH — Educational Resources for Students and Teachers** (updated June 2025)  
+   https://www.niams.nih.gov/health-topics/educational-resources  
+   Used to confirm that the science-based bones, joints, muscles and skin materials are designed for Grades 4–6.
+3. **CDC — Child Activity: An Overview** (updated 2025-12-04)  
+   https://www.cdc.gov/physical-activity-basics/guidelines/children.html  
+   Used for the recommendation that children and adolescents aged 6–17 should have at least 60 minutes of moderate-to-vigorous physical activity each day, including varied aerobic, muscle-strengthening and bone-strengthening activity. The lesson presents this as a flexible daily total, not a competitive target.
+4. **CDC — Physical Activity Guidelines for School-Aged Children and Adolescents** (reviewed 2024-07-03)  
+   https://www.cdc.gov/physical-activity-education/guidelines/index.html  
+   Used for the importance of age-appropriate, enjoyable and varied activity and for brain, bone and muscle benefits.
+5. **WHO Europe — Physical activity recommendations**  
+   https://www.who.int/europe/news-room/fact-sheets/item/physical-activity  
+   Used to corroborate an average of at least 60 minutes/day of moderate-to-vigorous, mostly aerobic activity across the week for ages 5–17, including children living with disability.
+
 ## AI-01 — Fact, Opinion or Check?
 1. UNESCO — AI Competency Framework for Students: https://www.unesco.org/en/articles/ai-competency-framework-students
 2. OECD and European Commission — Empowering Learners for the Age of AI: https://www.oecd.org/en/publications/empowering-learners-for-the-age-of-ai_65cd27d4-en.html
@@ -55,6 +72,7 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 ## Source-use rules
 - Health statements are educational and do not diagnose or treat a condition.
 - Child-facing text uses age-appropriate language and directs persistent pain, swelling, numbness, weakness, injury or other high-impact concerns to an adult and relevant professional.
+- Physical-activity guidance is not used to rank bodies or prescribe individualized exercise; activities must be enjoyable, age-appropriate and adaptable to disability, illness, weather and professional advice.
 - No child-specific body weight, health observations, identity data, passwords, addresses, images or private records are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
 - Activities involving scissors, holes, fasteners or other potential hazards require adult supervision; children do not use sharp workshop tools.
