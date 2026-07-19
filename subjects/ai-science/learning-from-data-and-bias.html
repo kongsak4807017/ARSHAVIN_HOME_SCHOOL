@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="บทเรียน ป.4 เรื่องแบบจำลองเรียนรู้จากข้อมูลและอคติ">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <title>แบบจำลองเรียนรู้จากข้อมูลและอคติ · Learning from Data and Bias</title>
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปเนื้อหา / Skip to content</a>
+<header class="site-header"><div><strong>วิทยาศาสตร์ปัญญาประดิษฐ์ · AI Science</strong><a class="button secondary" href="../../index.html">หน้าหลัก / Home</a></div></header>
+<main id="main" class="container">
+  <section class="hero">
+    <p class="eyebrow">AI-03 · บทเรียน 3 / Lesson 3</p>
+    <h1>แบบจำลองเรียนรู้จากข้อมูลและอคติ<br><span>Learning from Data and Bias</span></h1>
+    <p><strong>คำถามนำ / Big question:</strong> ถ้าแบบจำลองได้เห็นตัวอย่างไม่ครบหรือไม่สมดุล ผลลัพธ์จะยุติธรรมและน่าเชื่อถือได้อย่างไร?</p>
+  </section>
+  <div data-learning-shell data-current-lesson="AI-03"></div>
+
+  <nav class="panel no-print" aria-label="ทางลัดบทเรียน / Lesson shortcuts"><strong>ไปที่ / Jump to:</strong> <a href="#learn">เรียนรู้</a> · <a href="#trainer">ฝึกแบบจำลอง</a> · <a href="#compare">เปรียบเทียบข้อมูล</a> · <a href="#quiz">แบบฝึกหัด</a> · <a href="#adult">สำหรับผู้ใหญ่</a></nav>
+
+  <section class="panel" id="learn">
+    <h2>เป้าหมาย / Learning goals</h2>
+    <ul>
+      <li>อธิบายว่าแบบจำลองเรียนจาก <strong>ตัวอย่างที่มีป้ายกำกับ / labelled examples</strong></li>
+      <li>สังเกตว่าชุดข้อมูลที่ไม่สมดุลอาจทำให้ความแม่นยำต่างกันระหว่างกลุ่มตัวอย่าง</li>
+      <li>ใช้กรอบ <strong>FAIR — Find gaps, Add variety, Inspect errors, Report limits</strong></li>
+      <li>เข้าใจว่าผลของแบบจำลองเป็นการคาดเดา ไม่ใช่ความจริงแน่นอนหรือคำตัดสินคุณค่าของคน</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>คำศัพท์ / Vocabulary</h2>
+    <dl>
+      <dt><strong>training data — ข้อมูลฝึก</strong></dt><dd>ตัวอย่างที่ใช้ให้แบบจำลองเรียนรู้รูปแบบ</dd>
+      <dt><strong>label — ป้ายกำกับ</strong></dt><dd>คำตอบที่บอกว่าตัวอย่างนั้นอยู่ในหมวดใด</dd>
+      <dt><strong>model — แบบจำลอง</strong></dt><dd>กฎหรือระบบที่เรียนรู้รูปแบบจากตัวอย่างเพื่อคาดเดาตัวอย่างใหม่</dd>
+      <dt><strong>bias — อคติของระบบ</strong></dt><dd>ความเอนเอียงที่ทำให้ผลลัพธ์ผิดพลาดหรือไม่เป็นธรรมต่อบางกลุ่ม โดยอาจเกิดจากข้อมูล การออกแบบ หรือวิธีใช้</dd>
+    </dl>
+  </section>
+
+  <section class="panel">
+    <h2>หลักสำคัญ / Key idea</h2>
+    <p>แบบจำลองไม่ “รู้” โลกเหมือนคน แต่ค้นหารูปแบบจากตัวอย่างที่เราให้ ถ้าตัวอย่างมีน้อย ซ้ำกัน มีป้ายผิด หรือขาดความหลากหลาย แบบจำลองอาจเรียนผิดและทำพลาดซ้ำ</p>
+    <ol>
+      <li><strong>FIND GAPS — หาช่องว่าง:</strong> ตัวอย่างแบบใดหายไป?</li>
+      <li><strong>ADD VARIETY — เพิ่มความหลากหลาย:</strong> เพิ่มสภาพ สี รูปร่าง ภาษา หรือบริบทที่เกี่ยวข้องกับงาน</li>
+      <li><strong>INSPECT ERRORS — ตรวจข้อผิดพลาด:</strong> แบบจำลองพลาดกับตัวอย่างแบบใดมากกว่า?</li>
+      <li><strong>REPORT LIMITS — บอกข้อจำกัด:</strong> อธิบายสิ่งที่แบบจำลองยังทำไม่ได้และให้คนตรวจงานสำคัญ</li>
+    </ol>
+    <p class="privacy-note"><strong>ขอบเขตบทเรียน:</strong> ใช้เพียงบัตรผลไม้และรูปร่างสมมติ ไม่ขอชื่อ ภาพใบหน้า เสียง เชื้อชาติ ศาสนา ความพิการ สุขภาพ ตำแหน่ง หรือข้อมูลจริงของผู้เรียน และไม่ใช้ AI ตัดสินคุณค่าหรือโอกาสของบุคคล</p>
+  </section>
+
+  <section class="panel no-print" id="trainer" aria-labelledby="trainer-title">
+    <h2 id="trainer-title">กิจกรรม 1: ฝึกแบบจำลองผลไม้สมมติ / Fictional fruit trainer</h2>
+    <p>เลือกชุดข้อมูลฝึก แล้วกดทดสอบ แบบจำลองง่ายนี้ใช้กฎจากตัวอย่างสีและรูปทรง ไม่มีภาพหรือข้อมูลจริงถูกอัปโหลด</p>
+    <fieldset>
+      <legend>เลือกชุดข้อมูล / Choose a dataset</legend>
+      <label class="choice"><input type="radio" name="dataset" value="narrow">ชุด A: แอปเปิลแดงกลม 6 ใบ กล้วยเหลืองยาว 1 ผล / 6 red round apples, 1 yellow long banana</label>
+      <label class="choice"><input type="radio" name="dataset" value="balanced">ชุด B: แอปเปิลหลายสีและกล้วยหลายขนาด อย่างละ 6 ตัวอย่าง / 6 varied apples and 6 varied bananas</label>
+    </fieldset>
+    <button id="train-model" type="button">ฝึกและทดสอบ / Train and test</button>
+    <div id="trainer-result" class="feedback" role="status" aria-live="polite"></div>
+  </section>
+
+  <section class="panel no-print" id="compare" aria-labelledby="compare-title">
+    <h2 id="compare-title">กิจกรรม 2: นักสืบความเป็นธรรม / Fairness detective</h2>
+    <p>อ่านรายงานผลสมมติ แล้วเลือกการปรับปรุงที่เหมาะสมที่สุด</p>
+    <form id="fairness-form">
+      <fieldset><legend>แบบจำลองอ่านป้ายสองภาษาได้ถูกต้อง: ภาษาไทย 9/10 แต่ภาษาอังกฤษ 4/10 เพราะข้อมูลฝึกมีภาษาอังกฤษน้อยมาก ควรทำอย่างไร?</legend>
+        <label class="choice"><input type="radio" name="fairness" value="ignore">ใช้ต่อโดยไม่บอกใคร เพราะคะแนนรวมยังพอใช้</label>
+        <label class="choice"><input type="radio" name="fairness" value="remove">ตัดตัวอย่างภาษาอังกฤษออกทั้งหมด</label>
+        <label class="choice"><input type="radio" name="fairness" value="improve">เพิ่มตัวอย่างภาษาอังกฤษที่หลากหลาย ตรวจป้ายกำกับ ทดสอบแยกกลุ่ม และรายงานข้อจำกัด</label>
+      </fieldset>
+      <button type="submit">ตรวจแผน / Check plan</button>
+    </form>
+    <p id="fairness-feedback" class="feedback" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel no-print" id="quiz">
+    <h2>แบบฝึกหัด / Quick check</h2>
+    <form id="bias-quiz">
+      <fieldset><legend>1) ข้อมูลฝึกมีหน้าที่อะไร?</legend><label class="choice"><input type="radio" name="q1" value="a">เป็นตัวอย่างให้แบบจำลองเรียนรู้รูปแบบ</label><label class="choice"><input type="radio" name="q1" value="b">รับรองว่าแบบจำลองถูกเสมอ</label><label class="choice"><input type="radio" name="q1" value="c">ซ่อนข้อผิดพลาดจากผู้ใช้</label></fieldset>
+      <fieldset><legend>2) ข้อใดเป็นสัญญาณว่าควรตรวจอคติ?</legend><label class="choice"><input type="radio" name="q2" value="a">คะแนนทุกกลุ่มใกล้กันและตรวจซ้ำแล้ว</label><label class="choice"><input type="radio" name="q2" value="b">แบบจำลองผิดกับตัวอย่างบางชนิดมากกว่าชนิดอื่นอย่างต่อเนื่อง</label><label class="choice"><input type="radio" name="q2" value="c">หน้าจอมีสีสวย</label></fieldset>
+      <fieldset><legend>3) งานสำคัญที่กระทบคนควรทำอย่างไร?</legend><label class="choice"><input type="radio" name="q3" value="a">ให้ AI ตัดสินลำพัง</label><label class="choice"><input type="radio" name="q3" value="b">ซ่อนข้อจำกัด</label><label class="choice"><input type="radio" name="q3" value="c">ให้คนรับผิดชอบตรวจผล เปิดเผยข้อจำกัด และมีช่องทางแก้ไข</label></fieldset>
+      <button type="submit">ตรวจคำตอบ / Check answers</button>
+    </form>
+    <p id="quiz-feedback" class="feedback" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel">
+    <h2>สรุปและหลักฐาน / Exit ticket and evidence</h2>
+    <p>เขียนหนึ่งประโยค: “ชุดข้อมูลที่ดีขึ้นควร… เพราะ…” / Write one sentence: “A better dataset should… because…”</p>
+    <p><a class="button" href="../../worksheets/student/learning-from-data-and-bias-a4.html">ใบงาน A4 / A4 worksheets</a> <a class="button secondary" href="../../worksheets/teacher-guides/learning-from-data-and-bias-guide.html">คู่มือผู้สอน / Teacher guide</a></p>
+  </section>
+
+  <section class="panel" id="adult">
+    <h2>สำหรับผู้ใหญ่ / Adult note</h2>
+    <p>เน้นว่า “อคติ” ในบทนี้หมายถึงรูปแบบความผิดพลาดของระบบ ไม่ใช่การติดป้ายเด็ก หลีกเลี่ยงข้อมูลส่วนบุคคลและลักษณะอ่อนไหว ใช้ตัวอย่างสมมติ ให้ผู้เรียนวิจารณ์ระบบไม่ใช่วิจารณ์คน และย้ำว่าการเพิ่มข้อมูลอย่างเดียวไม่พอ ต้องตรวจป้ายกำกับ วัตถุประสงค์ ผลกระทบ และสิทธิอุทธรณ์ด้วย</p>
+  </section>
+
+  <section class="panel references"><h2>แหล่งอ้างอิง / References</h2><ul><li>UNESCO — AI Competency Framework for Students</li><li>UNICEF — Guidance on AI and children, version 3.0</li><li>UNICEF — Child-Centric AI: fairness and inclusion by design</li><li>W3C — WCAG 2.2</li></ul></section>
+</main>
+<footer><p>เรียนรู้เพื่อถาม ตรวจ และปรับปรุงระบบ ไม่ใช้ AI ตัดสินคุณค่าของคน / Learn to question, test and improve systems—not to judge people.</p></footer>
+<script src="../../assets/js/learning-shell.js"></script>
+<script src="../../assets/js/data-bias-lesson.js"></script>
+</body></html>
