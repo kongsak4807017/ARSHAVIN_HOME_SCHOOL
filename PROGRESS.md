@@ -6,10 +6,10 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
 
-- Interactive bilingual lessons: **2 / 52**
-- A4 student worksheets: **4 / 104 minimum**
-- Teacher guides/rubrics: **1 complete guide**
-- Subjects represented in the runtime: **2 / 5**
+- Interactive bilingual lessons: **3 / 52**
+- A4 student worksheets: **6 / 104 minimum**
+- Teacher guides/rubrics: **2 complete guides**
+- Subjects represented in the runtime: **3 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks**
 
 ## Completed
@@ -34,27 +34,34 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] STOP–TRACE–CHECK–DECIDE verification routine
 - [x] Three-question formative assessment with corrective feedback
 - [x] Local-only completion and score record under `arshavin.ai.claims.v1`
-- [x] Two-page A4 student worksheet covering classification, source quality, privacy, and reflection
-- [x] Teacher guide with lesson flow, answer guidance, differentiation, portfolio evidence, and four-level rubric
-- [x] Homepage, clear-progress control, and offline cache updated for the second unit
-- [x] No search requirement, third-party script, analytics, account, upload, or remote child-data collection
+- [x] Two-page A4 student worksheet and teacher guide/rubric
+- [x] Homepage and offline cache integration
 
 ### 2026-07-19 — Shared learning shell and automated static QA
 
-- [x] Reusable `assets/js/learning-shell.js` used by HB-01 and AI-01
-- [x] Previous/overview/next navigation with `rel=prev` and `rel=next`
-- [x] Current lesson marked with `aria-current=page`
-- [x] Local-only progress summary on homepage and lesson pages
-- [x] Corrupt or unavailable progress data degrades to an empty state without blocking lessons
-- [x] Responsive single-column navigation at small viewports
-- [x] Progress/navigation hidden from A4 print output
-- [x] Service-worker cache advanced to `arshavin-grade4-v3` and includes the shared script
-- [x] Dependency-free Node static checks for required files, JavaScript parsing, local links, bilingual headings, two-sheet worksheet structure, and precache coverage
+- [x] Reusable `assets/js/learning-shell.js`
+- [x] Previous/overview/next navigation and `aria-current=page`
+- [x] Local-only progress summary with corrupt-storage fallback
+- [x] Responsive and print-safe navigation
+- [x] Dependency-free Node static checks
+
+### 2026-07-19 — Unit ENV-01: Read the Air, Choose a Safer Action
+
+- [x] Complete bilingual Environmental Science lesson grounded in PM2.5 evidence literacy
+- [x] Interactive simulated PM2.5 reader with value, context and action feedback
+- [x] Safer-action scenario for adjusting activity time, intensity and location with adult support
+- [x] Three-question formative assessment with corrective feedback
+- [x] Local-only completion record under `arshavin.environment.pm25.v1`
+- [x] Explicit fictional-data/current-advisory separation and non-diagnostic health language
+- [x] Two-page A4 student worksheet with data table, Plan A/Plan B and self-rubric
+- [x] Teacher guide with 60–90-minute flow, answer guidance, differentiation, safety and four-level rubric
+- [x] Homepage, shared shell, clear-progress, offline cache and static-check integration
+- [x] Authoritative Department of Health Thailand, WHO and AirNow sources recorded
 
 ## Acceptance status
 
-**ACCEPTED WITH CONDITIONS** — two lessons and the shared learning shell are implemented and structurally reviewed. The dependency-free static-check suite passed against a reconstructed repository fixture before persistence. Real browser/device, screen-reader, GitHub Pages, offline-reload, and physical A4 print verification remain required before calling the MVP production-ready.
+**ACCEPTED WITH CONDITIONS** — three lessons are implemented and structurally reviewed. Real browser/device, screen-reader, GitHub Pages, offline-reload, full-checkout test execution and physical A4 print verification remain required before calling the MVP production-ready.
 
 ## Next action
 
-Build ENV-01 as the first complete Environmental Science lesson: **PM2.5: Read the Air, Choose a Safer Action**, including a bilingual interactive AQI/PM2.5 evidence activity, two A4 worksheets, teacher guide/rubric, authoritative Thai and international sources, shared-shell registration, offline precache, and static-check coverage.
+Build MAKER-01 as the first complete Maker Engineering lesson: **Levers Make Work Easier / คานช่วยผ่อนแรง**, including an accessible click-and-slider simulation, safe household investigation, two A4 worksheets, teacher guide/rubric, authoritative science/safety sources, shared-shell registration, offline precache, and static-check coverage.
