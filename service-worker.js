@@ -1,4 +1,4 @@
-const CACHE = 'arshavin-grade4-v9';
+const CACHE = 'arshavin-grade4-v10';
 const CORE = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const CORE = [
   './assets/js/ai-claims-lesson.js',
   './assets/js/privacy-consent-lesson.js',
   './assets/js/pm25-lesson.js',
+  './assets/js/water-cycle-lesson.js',
   './assets/js/levers-lesson.js',
   './assets/js/citizenship-lesson.js',
   './subjects/human-body/sleep-ready-brain.html',
@@ -18,6 +19,7 @@ const CORE = [
   './subjects/ai-science/fact-opinion-ai-claims.html',
   './subjects/ai-science/personal-data-digital-footprints-consent.html',
   './subjects/environment/pm25-safer-action.html',
+  './subjects/environment/water-cycle-responsible-use.html',
   './subjects/maker-engineering/levers-make-work-easier.html',
   './subjects/citizenship/rights-responsibilities-digital-kindness.html',
   './worksheets/student/sleep-ready-brain-a4.html',
@@ -26,6 +28,7 @@ const CORE = [
   './worksheets/student/fact-opinion-ai-claims-a4.html',
   './worksheets/student/personal-data-digital-footprints-consent-a4.html',
   './worksheets/student/pm25-safer-action-a4.html',
+  './worksheets/student/water-cycle-responsible-use-a4.html',
   './worksheets/student/levers-make-work-easier-a4.html',
   './worksheets/student/rights-responsibilities-digital-kindness-a4.html',
   './worksheets/teacher-guides/bones-joints-safer-posture-guide.html',
@@ -33,6 +36,7 @@ const CORE = [
   './worksheets/teacher-guides/fact-opinion-ai-claims-guide.html',
   './worksheets/teacher-guides/personal-data-digital-footprints-consent-guide.html',
   './worksheets/teacher-guides/pm25-safer-action-guide.html',
+  './worksheets/teacher-guides/water-cycle-responsible-use-guide.html',
   './worksheets/teacher-guides/levers-make-work-easier-guide.html',
   './worksheets/teacher-guides/rights-responsibilities-digital-kindness-guide.html',
   './manifest.webmanifest'
