@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **11 / 52**
-- A4 student worksheets: **22 / 104 minimum**
-- Teacher guides/rubrics: **10 complete guides**
+- Interactive bilingual lessons: **12 / 52**
+- A4 student worksheets: **24 / 104 minimum**
+- Teacher guides/rubrics: **11 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -36,8 +36,16 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with answer guidance and four-level rubric
 - [x] Homepage, eleven-lesson shell, reset key, service-worker v12, full regression suite and focused CIT-02 checks integrated
 
+### 2026-07-20 — HB-04 Breathing, Gas Exchange and Safer Air
+- [x] Complete bilingual lesson covering airway sequence, alveolar gas exchange and safer-air decisions
+- [x] Non-exertion, button-based breathing-path explorer with no breath-holding, timed breathing or drag-only dependency
+- [x] Fictional air-condition decision activity with official-information, adult-help and symptom-escalation boundaries
+- [x] Guarded local-only completion under `arshavin.humanbody.breathing.v1`
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives and four-level rubric
+- [x] Homepage, twelve-lesson shell, reset key, service-worker v13, complete regression manifest and focused HB-04 checks integrated
+
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — eleven lessons, twenty-two printable A4 sheets and ten teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — twelve lessons, twenty-four printable A4 sheets and eleven teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **HB-04 ระบบหายใจ การแลกเปลี่ยนก๊าซ และอากาศที่ปลอดภัยกว่า / Breathing, Gas Exchange and Safer Air** with a non-exertion breathing-path explorer, fictional air-condition decisions, two A4 worksheets, teacher guide/rubric, health safeguards, offline integration and focused static regression coverage.
+Build **AI-03 แบบจำลองเรียนรู้จากข้อมูลและอคติ / Learning from Data and Bias** with a local-only labelled-example trainer, balanced-data comparison, age-appropriate fairness safeguards, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.

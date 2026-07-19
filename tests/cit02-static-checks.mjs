@@ -30,7 +30,7 @@ assert.match(worksheet,/@page\{size:A4/);
 assert.match(guide,/Rubric 4 ระดับ/);
 assert.match(guide,/ไม่เปิดเผยเหตุการณ์ขัดแย้งจริง/);
 for(const p of [lessonPath,scriptPath,worksheetPath,guidePath])assert.ok(sw.includes(`./${p}`),`offline precache missing ${p}`);
-assert.match(sw,/arshavin-grade4-v12/);
+assert.match(sw,/arshavin-grade4-v(?:1[0-9]|[2-9][0-9])/);
 assert.ok(index.includes(lessonPath)&&index.includes('arshavin.citizenship.community.v1'));
 assert.ok(shell.includes("id: 'CIT-02'")&&shell.includes('ruleComplete && data.decisionComplete && data.quizComplete'));
 console.log('CIT-02 focused static checks passed.');

@@ -42,7 +42,7 @@ assert.match(worksheet, /@page\{size:A4 portrait/);
 assert.match(guide, /Rubric 4 ระดับ/);
 assert.match(guide, /(ไม่|ห้าม)ชิมน้ำ(?:ทดลอง|จากแหล่งทดลอง)?/);
 required.forEach(path => assert.ok(sw.includes(`./${path}`) || path === scriptPath && sw.includes('./assets/js/water-cycle-lesson.js'), path));
-assert.match(sw, /arshavin-grade4-v1[012]/);
+assert.match(sw, /arshavin-grade4-v(?:1[0-9]|[2-9][0-9])/);
 assert.ok(index.includes(lessonPath));
 assert.ok(index.includes('arshavin.environment.water.v1'));
 assert.ok(shell.includes("id: 'ENV-02'"));
