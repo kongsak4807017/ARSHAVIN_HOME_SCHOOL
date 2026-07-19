@@ -95,10 +95,13 @@ check('local links resolve', () => {
 });
 
 check('each worksheet contains exactly two printable sheets', () => {
+  const sharedCss = read('assets/css/site.css');
+  assert.match(sharedCss, /@page\s*\{[\s\S]*size:\s*A4/);
   worksheetFiles.forEach(file => {
-    const count = (read(file).match(/class="worksheet(?:\s|\")/g) || []).length;
+    const html = read(file);
+    const count = (html.match(/class="worksheet(?:\s|\")/g) || []).length;
     assert.equal(count, 2, `${file} has ${count}`);
-    assert.match(read(file), /@page\{size:A4/);
+    assert.ok(/@page\s*\{[\s\S]*size:\s*A4/.test(html) || /assets\/css\/site\.css/.test(html), `${file} lacks A4 print CSS`);
   });
 });
 
@@ -191,7 +194,7 @@ check('ENV-02 water-cycle and safety boundaries exist', () => {
   assert.match(lesson, /condensation/i);
   assert.match(lesson, /precipitation/i);
   assert.match(lesson, /CARE/);
-  assert.match(lesson + guide, /ไม่ชิมน้ำ/);
+  assert.match(lesson + guide, /(ไม่|ห้าม)ชิมน้ำ/);
   assert.match(lesson + guide, /สถานการณ์จำลอง/);
   assert.match(script, /arshavin\.environment\.water\.v1/);
 });
