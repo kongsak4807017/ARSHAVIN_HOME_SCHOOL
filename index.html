@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="สื่อการเรียนรู้สองภาษา ป.4 แบบไม่เก็บข้อมูลส่วนบุคคล">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <title>ARSHAVIN HOME SCHOOL ป.4</title>
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปเนื้อหา / Skip to content</a>
+<header class="site-header"><div><strong>ARSHAVIN HOME SCHOOL</strong><span>ป.4 · Grade 4</span></div></header>
+<main id="main" class="container">
+  <section class="hero">
+    <p class="eyebrow">เรียนรู้สองภาษา · Bilingual learning</p>
+    <h1>เรียนรู้จากชีวิตจริง<br><span>Learn from real life</span></h1>
+    <p>เว็บไซต์แบบ static-first ไม่สมัครบัญชี ไม่ติดตามผู้เรียน และเก็บความก้าวหน้าไว้ในอุปกรณ์เท่านั้น</p>
+  </section>
+  <section aria-labelledby="available-title">
+    <h2 id="available-title">บทเรียนที่พร้อมใช้ / Available lesson</h2>
+    <article class="lesson-card">
+      <p class="badge">ร่างกายมนุษย์ · Human Body</p>
+      <h3>การนอนเพื่อสมองพร้อมเรียน<br><span>Sleep for a Ready Brain</span></h3>
+      <p>สำรวจเวลานอน วางแผนกิจวัตร และทำแบบฝึกหัดพร้อมคำอธิบายทันที</p>
+      <a class="button" href="subjects/human-body/sleep-ready-brain.html">เริ่มบทเรียน / Start lesson</a>
+    </article>
+  </section>
+  <section class="privacy-note" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">ความเป็นส่วนตัว / Privacy</h2>
+    <p>ไม่มีโฆษณา ไม่มี analytics และไม่ขอชื่อจริง ภาพถ่าย วันเกิด ที่อยู่ หรือข้อมูลสุขภาพ</p>
+    <button id="clear-progress" type="button">ล้างความก้าวหน้าในเครื่อง / Clear local progress</button>
+    <p id="clear-status" role="status" aria-live="polite"></p>
+  </section>
+</main>
+<footer><p>ผู้ใหญ่ควรกำกับกิจกรรมและช่วยเด็กขอคำแนะนำจากบุคลากรสุขภาพเมื่อมีปัญหาการนอนต่อเนื่อง</p></footer>
+<script>
+if ('serviceWorker' in navigator) addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
+document.querySelector('#clear-progress').addEventListener('click',()=>{localStorage.removeItem('arshavin.sleep.lesson.v1');document.querySelector('#clear-status').textContent='ล้างข้อมูลในเครื่องแล้ว / Local progress cleared.';});
+</script>
+</body>
+</html>
