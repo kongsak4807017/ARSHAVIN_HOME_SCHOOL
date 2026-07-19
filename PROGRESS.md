@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **7 / 52**
-- A4 student worksheets: **14 / 104 minimum**
-- Teacher guides/rubrics: **6 complete guides**
+- Interactive bilingual lessons: **8 / 52**
+- A4 student worksheets: **16 / 104 minimum**
+- Teacher guides/rubrics: **7 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA**
 
@@ -49,13 +49,19 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Native-control talk-test explorer with stop-and-tell-adult escalation for warning signs
 - [x] Movement-plan builder requiring activity variety and a safe recovery choice, with an accessible text chart
 - [x] Three-question formative assessment and guarded local completion record under `arshavin.humanbody.muscles.v1`
-- [x] Two-page A4 worksheet with muscle roles, talk-test reasoning, one-day plan, pencil bar chart and reflection
-- [x] Teacher guide with 60–90-minute flow, answer guidance, disability-inclusive alternatives, health boundary and four-level rubric
-- [x] NIAMS, CDC and WHO sources recorded; homepage, seven-lesson shell, local reset, service-worker v8 and static checks integrated
-- [x] GitHub Actions static checks passed on substantive PR #2 head `f53c7842958be39b03f3879b998732cbde99a8a7` in workflow run `29694875646`
+- [x] Two-page A4 worksheet and teacher guide with inclusive alternatives and four-level rubric
+- [x] NIAMS, CDC and WHO sources; homepage, shell, local reset, service-worker v8 and static checks integrated
+
+### 2026-07-20 — AI-02 Personal Data, Digital Footprints and Consent
+- [x] Complete bilingual lesson distinguishing personal data, digital footprints, informed consent and minimum-necessary sharing
+- [x] Native-control local-only data-sharing simulator covering nickname, precise location, another person's image and password
+- [x] Footprint-preview activity covering school identifiers, live location, another person's image and lower-risk artwork
+- [x] PAUSE–PURPOSE–PERMISSION–PROTECT routine, three-question corrective assessment and guarded local completion under `arshavin.ai.privacy.v1`
+- [x] Two-page A4 worksheet and teacher guide with 60–90-minute flow, answer guidance, safeguarding boundaries and four-level rubric
+- [x] UNICEF and UNESCO authoritative sources, homepage, eight-lesson shell, reset key, service-worker v9 and static checks integrated
 
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — seven lessons, fourteen printable A4 sheets and six teacher guides are structurally integrated, and dependency-free static checks passed on the substantive HB-03 implementation. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — eight lessons, sixteen printable A4 sheets and seven teacher guides are structurally integrated. Source-level checks cover HTML, links, JavaScript syntax, offline manifests, privacy boundaries and completion keys. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **AI-02 ข้อมูลส่วนตัว ร่องรอยดิจิทัล และการให้ความยินยอม / Personal Data, Digital Footprints and Consent** with a local-only data-sharing decision simulator, current Thai-context privacy examples without legal advice, two A4 worksheets, teacher guide/rubric, authoritative child-safety and privacy sources, offline integration and static regression coverage.
+Build **ENV-02 น้ำ วัฏจักรน้ำ และการใช้น้ำอย่างรับผิดชอบ / Water, the Water Cycle and Responsible Use** with an accessible water-cycle explorer, Chiang Rai household/watershed decision activity, two A4 worksheets, teacher guide/rubric, authoritative Thai and international sources, offline integration and static regression coverage.

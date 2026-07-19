@@ -11,6 +11,7 @@ const lessonFiles = [
   'subjects/human-body/bones-joints-safer-posture.html',
   'subjects/human-body/muscles-rest-movement.html',
   'subjects/ai-science/fact-opinion-ai-claims.html',
+  'subjects/ai-science/personal-data-digital-footprints-consent.html',
   'subjects/environment/pm25-safer-action.html',
   'subjects/maker-engineering/levers-make-work-easier.html',
   'subjects/citizenship/rights-responsibilities-digital-kindness.html'
@@ -20,6 +21,7 @@ const worksheetFiles = [
   'worksheets/student/bones-joints-safer-posture-a4.html',
   'worksheets/student/muscles-rest-movement-a4.html',
   'worksheets/student/fact-opinion-ai-claims-a4.html',
+  'worksheets/student/personal-data-digital-footprints-consent-a4.html',
   'worksheets/student/pm25-safer-action-a4.html',
   'worksheets/student/levers-make-work-easier-a4.html',
   'worksheets/student/rights-responsibilities-digital-kindness-a4.html'
@@ -28,6 +30,7 @@ const guideFiles = [
   'worksheets/teacher-guides/bones-joints-safer-posture-guide.html',
   'worksheets/teacher-guides/muscles-rest-movement-guide.html',
   'worksheets/teacher-guides/fact-opinion-ai-claims-guide.html',
+  'worksheets/teacher-guides/personal-data-digital-footprints-consent-guide.html',
   'worksheets/teacher-guides/pm25-safer-action-guide.html',
   'worksheets/teacher-guides/levers-make-work-easier-guide.html',
   'worksheets/teacher-guides/rights-responsibilities-digital-kindness-guide.html'
@@ -37,6 +40,7 @@ const jsFiles = [
   'assets/js/bones-posture-lesson.js',
   'assets/js/muscles-movement-lesson.js',
   'assets/js/ai-claims-lesson.js',
+  'assets/js/privacy-consent-lesson.js',
   'assets/js/pm25-lesson.js',
   'assets/js/levers-lesson.js',
   'assets/js/citizenship-lesson.js',
@@ -45,13 +49,8 @@ const jsFiles = [
 ];
 
 function check(name, fn) {
-  try {
-    fn();
-    console.log(`PASS ${name}`);
-  } catch (error) {
-    console.error(`FAIL ${name}: ${error.message}`);
-    process.exitCode = 1;
-  }
+  try { fn(); console.log(`PASS ${name}`); }
+  catch (error) { console.error(`FAIL ${name}: ${error.message}`); process.exitCode = 1; }
 }
 
 check('required runtime files exist', () => {
@@ -98,7 +97,7 @@ check('service worker precaches shared shell and all lesson assets', () => {
   const sw = read('service-worker.js');
   ['assets/js/learning-shell.js', ...jsFiles.filter(file => file.startsWith('assets/js/') && file !== 'assets/js/learning-shell.js'), ...lessonFiles, ...worksheetFiles, ...guideFiles]
     .forEach(file => assert.ok(sw.includes(`./${file}`), file));
-  assert.match(sw, /arshavin-grade4-v8/);
+  assert.match(sw, /arshavin-grade4-v9/);
 });
 
 check('homepage exposes lessons, local progress overview and clear control', () => {
@@ -112,10 +111,29 @@ check('homepage exposes lessons, local progress overview and clear control', () 
     'arshavin.humanbody.bones.v1',
     'arshavin.humanbody.muscles.v1',
     'arshavin.ai.claims.v1',
+    'arshavin.ai.privacy.v1',
     'arshavin.environment.pm25.v1',
     'arshavin.maker.levers.v1',
     'arshavin.citizenship.rights.v1'
   ].forEach(key => assert.ok(html.includes(key), key));
+});
+
+check('AI-02 privacy, consent and child-safety boundaries exist', () => {
+  const lesson = read('subjects/ai-science/personal-data-digital-footprints-consent.html');
+  const guide = read('worksheets/teacher-guides/personal-data-digital-footprints-consent-guide.html');
+  const script = read('assets/js/privacy-consent-lesson.js');
+  assert.match(lesson, /PAUSE–PURPOSE–PERMISSION–PROTECT/);
+  assert.match(lesson, /ข้อมูลส่วนตัว/);
+  assert.match(lesson, /ร่องรอยดิจิทัล/);
+  assert.match(lesson, /การยินยอม/);
+  assert.match(lesson, /ไม่ใช่คำแนะนำทางกฎหมาย/);
+  assert.match(lesson, /สถานการณ์จำลอง/);
+  assert.match(guide, /ใช้สถานการณ์จำลองเท่านั้น/);
+  assert.match(script, /arshavin\.ai\.privacy\.v1/);
+  assert.match(script, /sharingComplete/);
+  assert.match(script, /footprintComplete/);
+  assert.match(script, /quizComplete/);
+  assert.doesNotMatch(script, /fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
 });
 
 check('HB-02 health boundaries and adult-supervised model safeguards exist', () => {
