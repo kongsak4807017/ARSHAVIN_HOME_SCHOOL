@@ -13,51 +13,56 @@ Static source review passed for privacy, child safety, explicit fictional/curren
 ## Build: Shared learning shell and static-check suite
 Date: 2026-07-19
 
-The dependency-free `tests/static-checks.mjs` suite previously passed 7/7 groups against a reconstructed repository fixture. It checks required files, JavaScript parsing, bilingual lesson structure, local links, two-sheet worksheets, service-worker coverage and homepage progress controls. Full-checkout execution remains pending.
+The dependency-free `tests/static-checks.mjs` suite previously passed 7/7 groups against a reconstructed repository fixture. Full-checkout execution remains pending.
 
 ## Build: ENV-01 Read the Air, Choose a Safer Action
+Date: 2026-07-19
+
+Static source and integration review passed for authoritative grounding, fictional/live-data separation, health safety, threshold caution, privacy, native keyboard structure, dynamic feedback, incomplete-form handling, guarded storage, two-page A4 structure, teacher support, shared shell, homepage and offline coverage.
+
+## Build: MAKER-01 Levers Make Work Easier
 Date: 2026-07-19
 
 ### Static and integration review
 
 | Area | Result | Evidence |
 |---|---|---|
-| Authoritative grounding | PASS | Department of Health Thailand, WHO and AirNow sources recorded with access date and supported claims |
-| Fictional/live-data separation | PASS | Lesson, simulation and worksheet explicitly say data are fictional practice data and not current advice |
-| Health safety | PASS | Non-diagnostic language; children stop activity, tell a trusted adult and follow personal clinical advice rather than changing medicine independently |
-| Threshold caution | PASS | Lesson explains that colour systems can use different ranges; simplified bands are not presented as a new official standard |
-| Privacy | PASS | No account, analytics, tracker, upload, name, address, image or health-history field; only activity completion and score are stored locally |
-| Keyboard structure | PASS (source review) | Native range, radio, button, anchor, fieldset and legend controls; no drag-only interaction or keyboard trap |
-| Dynamic feedback | PASS (source review) | Air card and three activity feedback regions use status/live-region semantics |
-| Incomplete-form handling | PASS (source review) | Reading, planning and quiz activities return bilingual prompts when answers are missing |
+| Authoritative grounding | PASS | OpenStax Physics/College Physics and NASA STEM sources recorded with access date and supported concepts |
+| Concept accuracy | PASS (source review) | Lever, fulcrum, load, effort, three lever classes and qualitative force-distance tradeoff align with recorded sources |
+| Model transparency | PASS | Interactive output is labelled as an ideal simplified model; friction and material effects are explicitly excluded |
+| Child safety | PASS | Only light, non-breakable, non-sharp materials; adult supervision; stable surface; no heavy lifting, workshop tools or projectile-style release |
+| Privacy | PASS | No account, analytics, upload or identity field; only activity completion and score are guarded in local storage |
+| Keyboard structure | PASS (source review) | Native range control supports arrow keys; radio, button, anchor, fieldset and legend controls; no drag-only interaction |
+| Dynamic feedback | PASS (source review) | Simulation, classifier and quiz feedback use status/live-region semantics |
+| Incomplete-form handling | PASS (source review) | Simulation question, all three classifications and all quiz items require completion and return bilingual prompts |
 | Storage resilience | PASS (source review) | JSON parsing and writes are guarded; blocked or corrupt storage does not prevent lesson use |
-| A4 structure | PASS (source review) | Student file contains exactly two `.worksheet` sections using shared A4 print rules |
-| Teacher support | PASS | 60–90-minute flow, answer guidance, safety, differentiation, portfolio evidence and four-level rubric included |
-| Shared-shell integration | PASS (source review) | ENV-01 registered after AI-01 with current-page semantics and previous navigation |
-| Homepage integration | PASS (source review) | Third lesson card added; clear-progress removes `arshavin.environment.pm25.v1` |
-| Offline coverage | PASS (source review) | Cache advanced to `arshavin-grade4-v4` and includes lesson, script, worksheet and guide |
-| Regression checks | PASS (source update) | Static suite expanded to three lessons, three two-sheet worksheets, two guides, PM2.5 script, homepage registration and fictional-data safety labels |
+| A4 structure | PASS (source review) | Student file contains exactly two `.worksheet` sections with lever map, evidence tables, criteria/constraints and self-rubric |
+| Teacher support | PASS | 60–90-minute flow, answer guidance, differentiation, explicit safety preparation and four-level rubric included |
+| Shared-shell integration | PASS (source review) | MAKER-01 registered after ENV-01 with current-page semantics and previous navigation |
+| Homepage integration | PASS (source review) | Fourth lesson card added; clear-progress removes `arshavin.maker.levers.v1` |
+| Offline coverage | PASS (source review) | Cache advanced to `arshavin-grade4-v5` and includes lesson, script, worksheet and guide |
 
 ### Functional cases reviewed in source
 
-1. Slider updates the simulated PM2.5 value and returns one of four age-appropriate action descriptions.
-2. The activity does not claim its simplified bands are an official Thai AQI conversion.
-3. Data-reading answer rewards checking type, unit, time, place and source rather than panicking or ignoring the value.
-4. Safer-action answer rewards reducing time/intensity or changing location with adult support; it rejects “mask makes risk zero”.
-5. Quiz requires all three answers and provides concept-specific review messages.
-6. Completion requires reading, planning and a perfect three-item check; partial work remains usable without being marked complete.
-7. No lesson JavaScript performs a network request or transmits learner data.
+1. Range input from 1–8 units updates effort-arm output and an ideal-model effort estimate.
+2. Increasing effort-arm distance decreases the displayed required force for the fixed simulated load and load arm.
+3. The lesson rejects the misconception that a lever creates energy.
+4. Classification requires all three answers and maps fulcrum-middle, load-middle and effort-middle to classes 1, 2 and 3.
+5. Quiz requires all three answers and gives concept-specific bilingual review prompts.
+6. Completion requires simulator, classifier and perfect quiz evidence; partial work remains usable.
+7. Lesson JavaScript contains no network request or remote data transmission.
 
 ## Verification still required
 
-- Run `node tests/static-checks.mjs` against a full local checkout or CI runner.
+- Run `node tests/static-checks.mjs` against a full local checkout or CI runner and extend it to assert MAKER-01 files, two-sheet worksheet, homepage registration and v5 precache.
 - Real browser smoke test on current Chrome, Safari, Firefox and Edge.
 - Android phone and iPad inspection at 200% text zoom.
 - NVDA/VoiceOver reading order, range-control and status-announcement test.
 - Keyboard-only test with visible focus at every control.
 - Printed A4/PDF inspection for clipping, table boundaries, handwriting space and exact two-page output.
+- Supervised physical check using only approved light materials.
 - GitHub Pages HTTPS deployment and offline reload after first visit.
 
 ## Current QA decision
 
-**ACCEPTED WITH CONDITIONS** — three complete lessons, six A4 sheets, two teacher guides, shared navigation/progress and expanded static checks are persisted. No claim is made that full-checkout tests, browser/device, assistive-technology, physical print, GitHub Pages or offline runtime verification has been executed.
+**ACCEPTED WITH CONDITIONS** — four complete lessons, eight A4 sheets, three teacher guides, shared navigation/progress and offline v5 assets are persisted. No claim is made that full-checkout tests, browser/device, assistive-technology, physical print, physical maker activity, GitHub Pages or offline runtime verification has been executed.
