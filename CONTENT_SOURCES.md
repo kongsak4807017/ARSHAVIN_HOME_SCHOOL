@@ -22,6 +22,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 4. CDC — Physical Activity Guidelines for School-Aged Children and Adolescents: https://www.cdc.gov/physical-activity-education/guidelines/index.html
 5. WHO Europe — Physical activity recommendations: https://www.who.int/europe/news-room/fact-sheets/item/physical-activity
 
+## HB-04 — Breathing, Gas Exchange and Safer Air
+1. **NIH/NHLBI — How the Lungs Work** (accessed 2026-07-20): https://www.nhlbi.nih.gov/health/lungs — supports the airway sequence, alveoli and oxygen/carbon-dioxide exchange explained at an age-appropriate level.
+2. **WHO — Ambient (outdoor) air pollution** (updated 2024-10-24; accessed 2026-07-20): https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health — supports air pollution as a child-health risk and exposure-reduction framing.
+3. **WHO — Children’s environmental health** (accessed 2026-07-20): https://www.who.int/health-topics/children-environmental-health — supports children’s increased vulnerability and adult/community responsibility for safer environments.
+4. **WHO — Health effects of air pollution: evidence and implications** (published 2026-06-21; accessed 2026-07-20): https://www.who.int/publications/i/item/B09563 — current evidence summary for respiratory and wider health effects; no numeric claims are required in the child activity.
+5. **กรมอนามัย กระทรวงสาธารณสุข — PM2.5 และสุขภาพเด็ก** (accessed 2026-07-20): https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/ — Thai safer-air context and adult-guided exposure reduction.
+6. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — keyboard-native buttons/radios, visible labels, polite live feedback and non-drag alternatives.
+
 ## AI-01 — Fact, Opinion or Check?
 1. UNESCO — AI Competency Framework for Students: https://www.unesco.org/en/articles/ai-competency-framework-students
 2. OECD and European Commission — Empowering Learners for the Age of AI: https://www.oecd.org/en/publications/empowering-learners-for-the-age-of-ai_65cd27d4-en.html
@@ -58,11 +66,11 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 4. NASA Glenn — Simple Machines Resource Chart: https://www.grc.nasa.gov/www/k-12/Summer_Training/KaeAvenueES/Resource_Chart.html
 
 ## MAKER-02 — Pulleys, Gears and Transferring Force
-1. **OpenStax Physics — 9.3 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines — ideal mechanical advantage, conservation of work and force–distance trade-offs.
-2. **OpenStax College Physics — 9.5 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/college-physics/pages/9-5-simple-machines — ideal calculations versus friction-affected real systems.
-3. **TeachEngineering — Pulleys and Gears educational resources** (accessed 2026-07-20): https://www.teachengineering.org/ — age-appropriate design framing and light-material prototyping.
-4. **Exploratorium Science Snacks — Gears** (accessed 2026-07-20): https://www.exploratorium.edu/snacks/gears — meshed-gear direction and relative-turn reasoning.
-5. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — keyboard-native controls, labels, feedback and non-drag alternatives.
+1. OpenStax Physics — 9.3 Simple Machines: https://openstax.org/books/physics/pages/9-3-simple-machines
+2. OpenStax College Physics — 9.5 Simple Machines: https://openstax.org/books/college-physics/pages/9-5-simple-machines
+3. TeachEngineering — Pulleys and Gears educational resources: https://www.teachengineering.org/
+4. Exploratorium Science Snacks — Gears: https://www.exploratorium.edu/snacks/gears
+5. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## CIT-01 — Rights, Responsibilities and Digital Kindness
 1. UNICEF — Convention on the Rights of the Child: https://www.unicef.org/child-rights-convention/convention-text
@@ -73,18 +81,19 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 6. Council of Europe — Digital Citizenship Education Handbook: https://book.coe.int/en/human-rights-democratic-citizenship-and-interculturalism/7852-digital-citizenship-education-handbook.html
 
 ## CIT-02 — Community, Rules and Shared Decisions
-1. **UNICEF — Convention on the Rights of the Child, Article 12** (accessed 2026-07-20): https://www.unicef.org/child-rights-convention/convention-text — supports children expressing views in matters affecting them and those views receiving due weight according to age and maturity.
-2. **UNICEF Innocenti — Why participation matters** (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/why-participation-matters — supports meaningful, inclusive, safe and accountable participation rather than token consultation.
-3. **UNESCO — Global Citizenship Education: Topics and Learning Objectives** (accessed 2026-07-20): https://unesdoc.unesco.org/ark:/48223/pf0000232993 — supports age-appropriate cognitive, socio-emotional and behavioural learning for respectful participation.
-4. **UNESCO Bangkok/APCEIU — GCED handbooks for teachers, parents and communities** (accessed 2026-07-20): https://bangkok.unesco.org/content/global-citizenship-education-gced-handbooks-teachers-parents-and-communities — supports school-family-community participation and dialogue.
-5. **สำนักงานเลขาธิการสภาผู้แทนราษฎร — รัฐธรรมนูญและการรับฟังความคิดเห็นตามมาตรา 77** (accessed 2026-07-20): https://www.parliament.go.th/ — Thai civic context for evidence, consultation and explaining public decisions; lesson scenarios remain non-partisan and fictional.
-6. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, polite feedback and non-drag alternatives.
+1. UNICEF — Convention on the Rights of the Child, Article 12: https://www.unicef.org/child-rights-convention/convention-text
+2. UNICEF Innocenti — Why participation matters: https://www.unicef.org/innocenti/reports/why-participation-matters
+3. UNESCO — Global Citizenship Education: Topics and Learning Objectives: https://unesdoc.unesco.org/ark:/48223/pf0000232993
+4. UNESCO Bangkok/APCEIU — GCED handbooks: https://bangkok.unesco.org/content/global-citizenship-education-gced-handbooks-teachers-parents-and-communities
+5. สำนักงานเลขาธิการสภาผู้แทนราษฎร: https://www.parliament.go.th/
+6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## Source-use rules
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
-- No child-specific identity data, passwords, addresses, precise location, images, health records or private communications are transmitted or stored remotely.
+- No child-specific identity data, passwords, addresses, precise location, images, health records, symptoms or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
+- Breathing lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing or exertion challenges.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information or report political preferences.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
