@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **6 / 52**
-- A4 student worksheets: **12 / 104 minimum**
-- Teacher guides/rubrics: **5 complete guides**
+- Interactive bilingual lessons: **7 / 52**
+- A4 student worksheets: **14 / 104 minimum**
+- Teacher guides/rubrics: **6 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA**
 
@@ -39,17 +39,22 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ### 2026-07-19 — HB-02 Bones, Joints and Safer Posture
 - [x] Complete bilingual lesson covering skeleton functions, joints, hinge and ball-and-socket movement
-- [x] Native-control joint explorer with explanatory bilingual feedback
-- [x] Three-scenario posture/backpack decision activity focused on two straps, close-to-body load, position changes and adult help
-- [x] Three-question formative assessment and guarded local completion record under `arshavin.humanbody.bones.v1`
-- [x] Adult-supervised paper hinge-joint model with explicit sharp-tool and movement-boundary safeguards
-- [x] Two-page A4 student worksheet with skeleton jobs, joint map, model evidence, backpack/desk audit and reflection
-- [x] Teacher guide with 60–90-minute flow, answer guidance, inclusion, safety/health boundary and four-level rubric
-- [x] NIAMS/NIH and American Academy of Pediatrics sources recorded
-- [x] Homepage, six-lesson shared shell, local reset, service-worker v7 and static-check integration
+- [x] Native-control joint explorer, posture/backpack decisions, formative assessment and guarded local progress
+- [x] Adult-supervised paper hinge-joint model, two-page A4 worksheet and teacher guide/rubric
+- [x] NIAMS/NIH and American Academy of Pediatrics sources, homepage, shared shell, service-worker v7 and static checks
+- [x] GitHub Actions failure corrected by aligning the health-boundary assertion; PR #1 passed and merged to `main`
+
+### 2026-07-19 — HB-03 Muscles, Rest and Age-Appropriate Movement
+- [x] Complete bilingual lesson on muscle functions, contraction/recovery and non-competitive movement planning
+- [x] Native-control talk-test explorer with stop-and-tell-adult escalation for warning signs
+- [x] Movement-plan builder requiring activity variety and a safe recovery choice, with an accessible text chart
+- [x] Three-question formative assessment and guarded local completion record under `arshavin.humanbody.muscles.v1`
+- [x] Two-page A4 worksheet with muscle roles, talk-test reasoning, one-day plan, pencil bar chart and reflection
+- [x] Teacher guide with 60–90-minute flow, answer guidance, disability-inclusive alternatives, health boundary and four-level rubric
+- [x] NIAMS, CDC and WHO sources recorded; homepage, seven-lesson shell, local reset, service-worker v8 and static checks integrated
 
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — six lessons, twelve printable A4 sheets and five teacher guides are structurally integrated. Exact final CI, browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — seven lessons, fourteen printable A4 sheets and six teacher guides are structurally integrated. Exact final CI, browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **HB-03 ระบบกล้ามเนื้อ การพัก และการเคลื่อนไหว / Muscles, Rest and Age-Appropriate Movement** from Human Body chapter 3: a non-competitive personal activity/rest observation, accessible graph builder, hydration and recovery decisions, two A4 worksheets, teacher guide/rubric, authoritative sources, shared-shell registration, offline precache and static-check coverage.
+Build **AI-02 ข้อมูลส่วนตัว ร่องรอยดิจิทัล และการให้ความยินยอม / Personal Data, Digital Footprints and Consent** with a local-only data-sharing decision simulator, current Thai-context privacy examples without legal advice, two A4 worksheets, teacher guide/rubric, authoritative child-safety and privacy sources, offline integration and static regression coverage.
