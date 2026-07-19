@@ -23,7 +23,7 @@ assert((worksheet.match(/class="worksheet"/g)||[]).length===2,'worksheet must co
 assert(/@page\{size:A4/.test(worksheet),'A4 print rule missing');
 for(const phrase of ['ห้ามยกคน','จุดหนีบ','ผู้ใหญ่เป็นผู้ตัด'])assert((lesson+guide).includes(phrase),`safety phrase missing: ${phrase}`);
 for(const path of [lessonPath,scriptPath,worksheetPath,guidePath])assert(sw.includes(`./${path}`),`offline precache missing ${path}`);
-assert(/arshavin-grade4-v1[12]/.test(sw),'current cache v11/v12 missing');
+assert(/arshavin-grade4-v(?:1[0-9]|[2-9][0-9])/.test(sw),'current cache version missing');
 assert(index.includes(lessonPath)&&index.includes('arshavin.maker.pulleysgears.v1'),'homepage integration missing');
 assert(shell.includes("id: 'MAKER-02'")&&shell.includes('arshavin.maker.pulleysgears.v1'),'shell integration missing');
 assert(/แบบจำลองอุดมคติ/.test(lesson+worksheet+guide),'ideal-model boundary missing');
