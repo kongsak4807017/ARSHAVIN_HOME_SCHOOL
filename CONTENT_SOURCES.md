@@ -45,27 +45,24 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 6. AirNow.gov — Student Air Pollution and Health: https://www.airnow.gov/education/students/air-pollution-and-health/
 
 ## ENV-02 — Water, the Water Cycle and Responsible Use
-1. **U.S. Geological Survey — Water Cycle** (accessed 2026-07-20)  
-   https://www.usgs.gov/special-topics/water-science-school/water-cycle  
-   Used for the continuous movement of water, solar energy and gravity as drivers, evaporation, infiltration, groundwater movement and human effects on water quantity, timing and quality.
-2. **U.S. Geological Survey — Water Cycle Diagrams for Kids** (accessed 2026-07-20)  
-   https://www.usgs.gov/water-science-school/science/water-cycle-diagrams  
-   Used to confirm K–5 suitability and that a water cycle can be represented with multiple connected pathways rather than a single rigid start point.
-3. **NASA Global Precipitation Measurement — The Water Cycle** (accessed 2026-07-20)  
-   https://gpm.nasa.gov/education/water-cycle  
-   Used for age-appropriate explanations of evaporation, condensation, precipitation and collection.
-4. **UN-Water — Water and Sustainable Development** (accessed 2026-07-20)  
-   https://www.unwater.org/water-facts/water-and-sustainable-development  
-   Used for responsible use, pollution prevention and the link between water availability, communities and sustainable development.
-5. **กรมทรัพยากรน้ำ — ความรู้และการบริหารจัดการทรัพยากรน้ำ** (accessed 2026-07-20)  
-   https://www.dwr.go.th/  
-   Used for Thai terminology and the watershed-management context; the Chiang Rai scenarios remain fictional and are not current local water-quality reports.
+1. USGS — Water Cycle: https://www.usgs.gov/special-topics/water-science-school/water-cycle
+2. USGS — Water Cycle Diagrams for Kids: https://www.usgs.gov/water-science-school/science/water-cycle-diagrams
+3. NASA GPM — The Water Cycle: https://gpm.nasa.gov/education/water-cycle
+4. UN-Water — Water and Sustainable Development: https://www.unwater.org/water-facts/water-and-sustainable-development
+5. กรมทรัพยากรน้ำ: https://www.dwr.go.th/
 
 ## MAKER-01 — Levers Make Work Easier
 1. OpenStax Physics — 9.3 Simple Machines: https://openstax.org/books/physics/pages/9-3-simple-machines
 2. OpenStax College Physics — 9.5 Simple Machines: https://openstax.org/books/college-physics/pages/9-5-simple-machines
 3. NASA — STEMonstrations: Simple Machines: https://www.nasa.gov/stem-content/stemonstrations-simple-machines/
 4. NASA Glenn — Simple Machines Resource Chart: https://www.grc.nasa.gov/www/k-12/Summer_Training/KaeAvenueES/Resource_Chart.html
+
+## MAKER-02 — Pulleys, Gears and Transferring Force
+1. **OpenStax Physics — 9.3 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines — used for ideal mechanical advantage, conservation of work and force–distance trade-offs.
+2. **OpenStax College Physics — 9.5 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/college-physics/pages/9-5-simple-machines — used to distinguish ideal calculations from friction-affected real systems.
+3. **TeachEngineering — Pulleys and Gears educational resources** (accessed 2026-07-20): https://www.teachengineering.org/ — used for age-appropriate engineering-design framing, input/output observation and light-material prototyping.
+4. **Exploratorium Science Snacks — Gears** (accessed 2026-07-20): https://www.exploratorium.edu/snacks/gears — used for meshed-gear direction and relative-turn reasoning.
+5. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — used for keyboard-native controls, visible labels, live feedback and non-drag alternatives.
 
 ## CIT-01 — Rights, Responsibilities and Digital Kindness
 1. UNICEF — Convention on the Rights of the Child: https://www.unicef.org/child-rights-convention/convention-text
@@ -76,9 +73,9 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 6. Council of Europe — Digital Citizenship Education Handbook: https://book.coe.int/en/human-rights-democratic-citizenship-and-interculturalism/7852-digital-citizenship-education-handbook.html
 
 ## Source-use rules
-- Health and water statements are educational and do not diagnose, treat, or certify local water safety.
+- Health, water and engineering statements are educational and do not diagnose, certify local safety or replace professional engineering judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
 - No child-specific identity data, passwords, addresses, precise location, images, health records or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
-- Children do not taste unknown water or handle wastewater, oil, chemicals or unidentified containers; adult escalation is required.
+- Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required for cutting, boring and knots.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
