@@ -19,18 +19,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Run complete static regression suite
-        id: complete
-        continue-on-error: true
-        run: node tests/static-checks.mjs > complete-static.log 2>&1
-      - name: Run ENV-02 focused checks
-        id: env02
-        continue-on-error: true
-        run: node tests/env02-static-checks.mjs > env02-static.log 2>&1
-      - name: Run MAKER-02 focused checks
-        id: maker02
-        continue-on-error: true
-        run: node tests/maker02-static-checks.mjs > maker02-static.log 2>&1
+      - name: Run all static suites and capture evidence
+        shell: bash
+        run: |
+          status=0
+          node tests/static-checks.mjs > complete-static.log 2>&1 || status=1
+          node tests/env02-static-checks.mjs > env02-static.log 2>&1 || status=1
+          node tests/maker02-static-checks.mjs > maker02-static.log 2>&1 || status=1
+          node tests/cit02-static-checks.mjs > cit02-static.log 2>&1 || status=1
+          echo "STATIC_STATUS=$status" >> "$GITHUB_ENV"
       - name: Upload static-check evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -41,8 +38,7 @@ jobs:
           retention-days: 7
       - name: Enforce static-check results
         if: always()
+        shell: bash
         run: |
-          cat complete-static.log env02-static.log maker02-static.log
-          test "${{ steps.complete.outcome }}" = success
-          test "${{ steps.env02.outcome }}" = success
-          test "${{ steps.maker02.outcome }}" = success
+          cat complete-static.log env02-static.log maker02-static.log cit02-static.log
+          test "${STATIC_STATUS:-1}" -eq 0

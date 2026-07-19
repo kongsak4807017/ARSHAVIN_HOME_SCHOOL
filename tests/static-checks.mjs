@@ -16,7 +16,8 @@ const lessonFiles = [
   'subjects/environment/water-cycle-responsible-use.html',
   'subjects/maker-engineering/levers-make-work-easier.html',
   'subjects/maker-engineering/pulleys-gears-transfer-force.html',
-  'subjects/citizenship/rights-responsibilities-digital-kindness.html'
+  'subjects/citizenship/rights-responsibilities-digital-kindness.html',
+  'subjects/citizenship/community-rules-shared-decisions.html'
 ];
 const worksheetFiles = [
   'worksheets/student/sleep-ready-brain-a4.html',
@@ -28,7 +29,8 @@ const worksheetFiles = [
   'worksheets/student/water-cycle-responsible-use-a4.html',
   'worksheets/student/levers-make-work-easier-a4.html',
   'worksheets/student/pulleys-gears-transfer-force-a4.html',
-  'worksheets/student/rights-responsibilities-digital-kindness-a4.html'
+  'worksheets/student/rights-responsibilities-digital-kindness-a4.html',
+  'worksheets/student/community-rules-shared-decisions-a4.html'
 ];
 const guideFiles = [
   'worksheets/teacher-guides/bones-joints-safer-posture-guide.html',
@@ -39,7 +41,8 @@ const guideFiles = [
   'worksheets/teacher-guides/water-cycle-responsible-use-guide.html',
   'worksheets/teacher-guides/levers-make-work-easier-guide.html',
   'worksheets/teacher-guides/pulleys-gears-transfer-force-guide.html',
-  'worksheets/teacher-guides/rights-responsibilities-digital-kindness-guide.html'
+  'worksheets/teacher-guides/rights-responsibilities-digital-kindness-guide.html',
+  'worksheets/teacher-guides/community-rules-shared-decisions-guide.html'
 ];
 const jsFiles = [
   'assets/js/sleep-lesson.js',
@@ -52,6 +55,7 @@ const jsFiles = [
   'assets/js/levers-lesson.js',
   'assets/js/pulleys-gears-lesson.js',
   'assets/js/citizenship-lesson.js',
+  'assets/js/community-decisions-lesson.js',
   'assets/js/learning-shell.js',
   'service-worker.js'
 ];
@@ -109,7 +113,7 @@ check('service worker precaches shared shell and all lesson assets', () => {
   const sw = read('service-worker.js');
   ['assets/js/learning-shell.js', ...jsFiles.filter(file => file.startsWith('assets/js/') && file !== 'assets/js/learning-shell.js'), ...lessonFiles, ...worksheetFiles, ...guideFiles]
     .forEach(file => assert.ok(sw.includes(`./${file}`), file));
-  assert.match(sw, /arshavin-grade4-v11/);
+  assert.match(sw, /arshavin-grade4-v12/);
 });
 
 check('homepage exposes lessons, local progress overview and clear control', () => {
@@ -128,7 +132,8 @@ check('homepage exposes lessons, local progress overview and clear control', () 
     'arshavin.environment.water.v1',
     'arshavin.maker.levers.v1',
     'arshavin.maker.pulleysgears.v1',
-    'arshavin.citizenship.rights.v1'
+    'arshavin.citizenship.rights.v1',
+    'arshavin.citizenship.community.v1'
   ].forEach(key => assert.ok(html.includes(key), key));
 });
 
@@ -226,6 +231,23 @@ check('CIT-01 safeguarding, consent and help-seeking labels exist', () => {
   assert.match(lesson, /ผู้ใหญ่ที่ไว้ใจได้/);
   assert.match(lesson, /ไม่ส่งต่อ/);
   assert.match(lesson, /สถานการณ์จำลอง/);
+});
+
+check('CIT-02 shared decisions are inclusive, local-only and reviewable', () => {
+  const lesson = read('subjects/citizenship/community-rules-shared-decisions.html');
+  const guide = read('worksheets/teacher-guides/community-rules-shared-decisions-guide.html');
+  const script = read('assets/js/community-decisions-lesson.js');
+  assert.match(lesson, /VOICE/);
+  assert.match(lesson, /vote/i);
+  assert.match(lesson, /consensus/i);
+  assert.match(lesson, /เสียงส่วนน้อย/);
+  assert.match(lesson, /ไม่ใช้ชื่อจริง/);
+  assert.match(lesson + guide, /สถานการณ์จำลอง/);
+  assert.match(guide, /ไม่เปิดเผยเหตุการณ์ขัดแย้งจริง/);
+  assert.match(script, /arshavin\.citizenship\.community\.v1/);
+  assert.match(script, /ruleComplete/);
+  assert.match(script, /decisionComplete/);
+  assert.match(script, /quizComplete/);
 });
 
 if (process.exitCode) process.exit(process.exitCode);

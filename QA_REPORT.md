@@ -1,37 +1,37 @@
 # QA REPORT
 
-## Build status through MAKER-02
+## Build status through CIT-02
 Date: 2026-07-20
 
-Earlier builds through ENV-02 remain accepted with conditions. ENV-02 PR #4 was reconciled and squash-merged before MAKER-02 branch creation.
+PR #5 MAKER-02 was reconciled after exact CI evidence identified stale A4 and water-safety assertions. Full and focused suites passed on exact head `aa09a27ea3a09f6c102651d9c0f95acad29ff76e`, then PR #5 was squash-merged as `a7389f0e41a706242248a549c1a7e58f6e47fe97` before CIT-02 branch creation.
 
-## MAKER-02 — Pulleys, Gears and Transferring Force
+## CIT-02 — Community, Rules and Shared Decisions
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | OpenStax, TeachEngineering, Exploratorium and WCAG 2.2 records in `CONTENT_SOURCES.md` |
-| Bilingual structure | PASS (source review) | Thai document language; bilingual title, goals, vocabulary, explanations, feedback and references |
-| Pulley science | PASS (source review) | Fixed-pulley direction, supporting-segment ideal force and force–distance trade-off are explicit; friction boundary included |
-| Gear science | PASS (source review) | Meshed gears use opposite directions and tooth ratios for relative turns; ideal-model limitation included |
-| Keyboard/accessibility | PASS (source review) | Native range, select, radio, button, form, fieldset and legend controls; polite live regions; no drag-only dependency |
-| Corrective feedback | PASS | Empty-answer handling and bilingual corrective feedback for pulley, gear, design and quiz activities |
-| Local-only progress | PASS (source review) | Guarded storage under `arshavin.maker.pulleysgears.v1`; no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon` in lesson script |
-| Child safety | PASS | Light loads only; no people/animals/heavy or overhead loads; adult-only cutting/boring/knots; pinch-point, hair and loose-clothing controls |
-| A4 worksheet | PASS (source review) | Exactly two `.worksheet` sections and A4 `@page`; pulley table, gear predictions, design sketch and reflection |
-| Teacher support | PASS | 60–90-minute flow, answer key, accessible alternatives, four-level rubric and engineering-use boundary |
-| Navigation/offline | PASS (source review) | Homepage, ten-lesson shell, reset key and service-worker v11 paths align |
-| Automated regression | PASS (configuration/source review) | `tests/maker02-static-checks.mjs` parses JS and asserts bilingual, accessibility, privacy, safety, A4, cache and integration requirements; workflow runs it |
+| Authoritative grounding | PASS | UNICEF Article 12 and participation guidance, UNESCO GCED resources, Thai parliamentary consultation context and WCAG 2.2 recorded in `CONTENT_SOURCES.md` |
+| Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, explanations, activities, feedback and portfolio task |
+| Civic concepts | PASS (source inspection) | Fair/reviewable rules, vote, consensus, minority voice, evidence, impact review and decision record are distinguished |
+| Keyboard/accessibility | PASS (source inspection) | Native radio, form, button, fieldset and legend controls; polite live regions; no drag-only dependency; alternative response modes in guide |
+| Corrective feedback | PASS (source inspection) | Incomplete-answer handling plus bilingual explanations for rule, decision-process and quiz activities |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.citizenship.community.v1`; no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon` in lesson script |
+| Child safeguarding | PASS | Fictional scenarios, no real names/conflicts/family details, voluntary participation, no voting on persons or punishment, trusted-adult escalation |
+| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 `@page`; VOICE rule designer and vote/consensus decision record |
+| Teacher support | PASS | 60–90-minute flow, answer guidance, accessible alternatives, safeguarding protocol and four-level rubric |
+| Navigation/offline | PASS (source inspection) | Homepage, eleven-lesson shell, reset key and service-worker v12 paths align |
+| Automated regression | READY | Complete suite plus `tests/cit02-static-checks.mjs`; CI workflow produces per-suite downloadable logs and enforces all outcomes |
 
 ## Functional cases inspected
-1. Pulley range calculates `600 / supporting segments` and matching rope distance for a one-metre lift in the ideal model.
-2. Gear explorer calculates driven turns from driver teeth divided by driven teeth and labels opposite rotation.
-3. Design form requires all three choices and accepts only the pulley/gear/safety combination.
-4. Quiz requires all answers and saves completion only at 3/3.
-5. Storage read/write errors are caught; no child data leaves the device.
+1. Rule form requires all three answers and saves only the fair/inclusive/reviewable combination.
+2. Decision form distinguishes a time-limited safe vote from consensus required for access/rights impacts, then requires review.
+3. Quiz requires all answers and saves completion only at 3/3.
+4. Completion requires `ruleComplete`, `decisionComplete` and `quizComplete`.
+5. Storage failures are caught; no child data leaves the device.
 6. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
+7. Full regression manifest contains eleven lessons, twenty-two worksheet pages, ten guides and eleven local progress keys.
 
 ## Verification still required
-- Confirm GitHub Actions passes on the exact PR head.
+- Confirm GitHub Actions passes on the exact final CIT-02 PR head.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -39,4 +39,4 @@ Earlier builds through ENV-02 remain accepted with conditions. ENV-02 PR #4 was 
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — ten lessons, twenty A4 sheets and nine teacher guides are integrated at source level. No browser, assistive-technology, physical-print, GitHub Pages, offline-runtime or CI result is claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — eleven lessons, twenty-two A4 sheets and ten teacher guides are integrated at source level. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.

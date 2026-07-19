@@ -58,11 +58,11 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 4. NASA Glenn — Simple Machines Resource Chart: https://www.grc.nasa.gov/www/k-12/Summer_Training/KaeAvenueES/Resource_Chart.html
 
 ## MAKER-02 — Pulleys, Gears and Transferring Force
-1. **OpenStax Physics — 9.3 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines — used for ideal mechanical advantage, conservation of work and force–distance trade-offs.
-2. **OpenStax College Physics — 9.5 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/college-physics/pages/9-5-simple-machines — used to distinguish ideal calculations from friction-affected real systems.
-3. **TeachEngineering — Pulleys and Gears educational resources** (accessed 2026-07-20): https://www.teachengineering.org/ — used for age-appropriate engineering-design framing, input/output observation and light-material prototyping.
-4. **Exploratorium Science Snacks — Gears** (accessed 2026-07-20): https://www.exploratorium.edu/snacks/gears — used for meshed-gear direction and relative-turn reasoning.
-5. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — used for keyboard-native controls, visible labels, live feedback and non-drag alternatives.
+1. **OpenStax Physics — 9.3 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines — ideal mechanical advantage, conservation of work and force–distance trade-offs.
+2. **OpenStax College Physics — 9.5 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/college-physics/pages/9-5-simple-machines — ideal calculations versus friction-affected real systems.
+3. **TeachEngineering — Pulleys and Gears educational resources** (accessed 2026-07-20): https://www.teachengineering.org/ — age-appropriate design framing and light-material prototyping.
+4. **Exploratorium Science Snacks — Gears** (accessed 2026-07-20): https://www.exploratorium.edu/snacks/gears — meshed-gear direction and relative-turn reasoning.
+5. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — keyboard-native controls, labels, feedback and non-drag alternatives.
 
 ## CIT-01 — Rights, Responsibilities and Digital Kindness
 1. UNICEF — Convention on the Rights of the Child: https://www.unicef.org/child-rights-convention/convention-text
@@ -72,10 +72,19 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. Council of Europe — Digital Citizenship Education: https://www.coe.int/en/web/education/digital-citizenship-education
 6. Council of Europe — Digital Citizenship Education Handbook: https://book.coe.int/en/human-rights-democratic-citizenship-and-interculturalism/7852-digital-citizenship-education-handbook.html
 
+## CIT-02 — Community, Rules and Shared Decisions
+1. **UNICEF — Convention on the Rights of the Child, Article 12** (accessed 2026-07-20): https://www.unicef.org/child-rights-convention/convention-text — supports children expressing views in matters affecting them and those views receiving due weight according to age and maturity.
+2. **UNICEF Innocenti — Why participation matters** (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/why-participation-matters — supports meaningful, inclusive, safe and accountable participation rather than token consultation.
+3. **UNESCO — Global Citizenship Education: Topics and Learning Objectives** (accessed 2026-07-20): https://unesdoc.unesco.org/ark:/48223/pf0000232993 — supports age-appropriate cognitive, socio-emotional and behavioural learning for respectful participation.
+4. **UNESCO Bangkok/APCEIU — GCED handbooks for teachers, parents and communities** (accessed 2026-07-20): https://bangkok.unesco.org/content/global-citizenship-education-gced-handbooks-teachers-parents-and-communities — supports school-family-community participation and dialogue.
+5. **สำนักงานเลขาธิการสภาผู้แทนราษฎร — รัฐธรรมนูญและการรับฟังความคิดเห็นตามมาตรา 77** (accessed 2026-07-20): https://www.parliament.go.th/ — Thai civic context for evidence, consultation and explaining public decisions; lesson scenarios remain non-partisan and fictional.
+6. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, polite feedback and non-drag alternatives.
+
 ## Source-use rules
-- Health, water and engineering statements are educational and do not diagnose, certify local safety or replace professional engineering judgment.
+- Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
 - No child-specific identity data, passwords, addresses, precise location, images, health records or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
-- Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required for cutting, boring and knots.
+- Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
+- Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information or report political preferences.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
