@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **8 / 52**
-- A4 student worksheets: **16 / 104 minimum**
-- Teacher guides/rubrics: **7 complete guides**
+- Interactive bilingual lessons: **9 / 52**
+- A4 student worksheets: **18 / 104 minimum**
+- Teacher guides/rubrics: **8 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA**
 
@@ -42,26 +42,25 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Native-control joint explorer, posture/backpack decisions, formative assessment and guarded local progress
 - [x] Adult-supervised paper hinge-joint model, two-page A4 worksheet and teacher guide/rubric
 - [x] NIAMS/NIH and American Academy of Pediatrics sources, homepage, shared shell, service-worker v7 and static checks
-- [x] GitHub Actions failure corrected by aligning the health-boundary assertion; PR #1 passed and merged to `main`
 
 ### 2026-07-19 — HB-03 Muscles, Rest and Age-Appropriate Movement
 - [x] Complete bilingual lesson on muscle functions, contraction/recovery and non-competitive movement planning
-- [x] Native-control talk-test explorer with stop-and-tell-adult escalation for warning signs
-- [x] Movement-plan builder requiring activity variety and a safe recovery choice, with an accessible text chart
-- [x] Three-question formative assessment and guarded local completion record under `arshavin.humanbody.muscles.v1`
-- [x] Two-page A4 worksheet and teacher guide with inclusive alternatives and four-level rubric
-- [x] NIAMS, CDC and WHO sources; homepage, shell, local reset, service-worker v8 and static checks integrated
+- [x] Talk-test explorer, movement-plan builder, two-page A4 worksheet, teacher guide and service-worker v8 integration
 
 ### 2026-07-20 — AI-02 Personal Data, Digital Footprints and Consent
-- [x] Complete bilingual lesson distinguishing personal data, digital footprints, informed consent and minimum-necessary sharing
-- [x] Native-control local-only data-sharing simulator covering nickname, precise location, another person's image and password
-- [x] Footprint-preview activity covering school identifiers, live location, another person's image and lower-risk artwork
-- [x] PAUSE–PURPOSE–PERMISSION–PROTECT routine, three-question corrective assessment and guarded local completion under `arshavin.ai.privacy.v1`
-- [x] Two-page A4 worksheet and teacher guide with 60–90-minute flow, answer guidance, safeguarding boundaries and four-level rubric
-- [x] UNICEF and UNESCO authoritative sources, homepage, eight-lesson shell, reset key, service-worker v9 and static checks integrated
+- [x] Local-only data-sharing and footprint simulations, PAUSE–PURPOSE–PERMISSION–PROTECT, assessment and two-page A4 worksheet
+- [x] Teacher guide, UNICEF/UNESCO sources, service-worker v9 and static checks; PR #3 passed and merged to `main`
+
+### 2026-07-20 — ENV-02 Water, the Water Cycle and Responsible Use
+- [x] Complete bilingual lesson explaining evaporation, condensation, precipitation, collection/infiltration and watersheds
+- [x] Keyboard-operable water-drop journey with corrective feedback and local completion under `arshavin.environment.water.v1`
+- [x] Chiang Rai watershed decision activity covering safe reuse, unknown oil/chemical escalation and drought-aware watering
+- [x] CARE routine, three-question assessment, two-page print-ready A4 worksheet and 60–90-minute teacher guide/rubric
+- [x] Homepage, nine-lesson shell, local reset, service-worker v10 and focused dependency-free CI checks integrated
+- [x] USGS, NASA, UN-Water and Thailand Department of Water Resources sources recorded
 
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — eight lessons, sixteen printable A4 sheets and seven teacher guides are structurally integrated. Source-level checks cover HTML, links, JavaScript syntax, offline manifests, privacy boundaries and completion keys. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — nine lessons, eighteen printable A4 sheets and eight teacher guides are structurally integrated. Source-level checks cover HTML, links, JavaScript syntax, offline manifests, privacy/safety boundaries and completion keys. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **ENV-02 น้ำ วัฏจักรน้ำ และการใช้น้ำอย่างรับผิดชอบ / Water, the Water Cycle and Responsible Use** with an accessible water-cycle explorer, Chiang Rai household/watershed decision activity, two A4 worksheets, teacher guide/rubric, authoritative Thai and international sources, offline integration and static regression coverage.
+Build **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** with accessible non-drag simulations, a safe paper-machine investigation using light loads, two A4 worksheets, teacher guide/rubric, authoritative engineering sources, offline integration and static regression coverage.
