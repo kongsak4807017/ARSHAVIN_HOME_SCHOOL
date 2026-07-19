@@ -63,7 +63,39 @@ Date: 2026-07-19
 6. No network request is made by lesson JavaScript.
 7. Service worker cache name changed from `arshavin-grade4-v1` to `arshavin-grade4-v2`, causing old cache cleanup on activation.
 
-## Verification still required for both units
+## Build: Shared learning shell and static-check suite
+Date: 2026-07-19
+
+### Automated checks executed
+
+Command: `node tests/static-checks.mjs`
+
+Result against a reconstructed repository fixture: **PASS — 7/7 check groups**
+
+1. Required runtime files exist.
+2. JavaScript files parse with Node `vm.Script`.
+3. Both lessons expose Thai document language, bilingual H1 structure, shared-shell host, and shared-shell script.
+4. Local `href` and `src` paths resolve for homepage, lessons, and student worksheets.
+5. Each student worksheet contains exactly two printable `.worksheet` sheets.
+6. Service worker includes the shared shell, both lessons, and both student worksheets.
+7. Homepage contains the local progress overview and clear-progress control.
+
+### Source and integration review
+
+| Area | Result | Evidence |
+|---|---|---|
+| Shared navigation | PASS | Both lessons register a unique current lesson ID and render previous/overview/next navigation from one data source |
+| Current-page semantics | PASS | Active lesson list item receives `aria-current="page"` |
+| Keyboard access | PASS (source review) | Navigation uses native anchors; no custom key handling or keyboard trap |
+| Local-only progress | PASS | Reads only the two existing `localStorage` keys and performs no fetch, form submission, analytics, or remote write |
+| Corrupt storage handling | PASS (source review) | JSON parsing is guarded and falls back to an empty object |
+| Data minimisation | PASS | Displays only completion evidence status, not child identity or detailed answers |
+| Mobile layout | PASS (source review) | Progress cards and pager collapse to a one-column layout below 600px |
+| Print protection | PASS (source review) | Shared shell and homepage progress summary are hidden under print media rules |
+| Offline integration | PASS (source review) | Cache advanced to `arshavin-grade4-v3` and adds `assets/js/learning-shell.js` |
+| Regression scope | PASS | Existing lesson-specific scripts and storage keys were not renamed or merged |
+
+## Verification still required
 
 - Real browser smoke test on current Chrome, Safari, Firefox, and Edge.
 - Android phone and iPad responsive inspection at 200% text zoom.
@@ -71,8 +103,8 @@ Date: 2026-07-19
 - Keyboard-only test with visible focus at every control.
 - Printed A4/PDF inspection for clipping, table boundaries, handwriting space, and exact two-page output.
 - GitHub Pages HTTPS deployment test and offline reload after first visit.
-- Automated local-link, JavaScript syntax, bilingual-heading, worksheet-count, and precache-coverage checks are not yet present.
+- Run `node tests/static-checks.mjs` against a full local checkout or CI runner; the current pass was executed against a reconstructed fixture because this execution environment could not resolve `github.com` through the shell.
 
 ## Current QA decision
 
-**ACCEPTED WITH CONDITIONS** — source implementation and static structural review are complete for two units. No claim is made that browser, assistive-technology, device, physical print, GitHub Pages, or offline runtime tests have been executed.
+**ACCEPTED WITH CONDITIONS** — source implementation, shared navigation/progress integration, and dependency-free static checks are complete. No claim is made that browser, assistive-technology, device, physical print, GitHub Pages, full-checkout CI, or offline runtime tests have been executed.
