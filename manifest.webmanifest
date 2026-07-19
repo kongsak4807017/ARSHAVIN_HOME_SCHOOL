@@ -1,0 +1,11 @@
+{
+  "name": "ARSHAVIN HOME SCHOOL Grade 4",
+  "short_name": "ARSHAVIN ป.4",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#17324d",
+  "lang": "th",
+  "description": "สื่อการเรียนรู้สองภาษา ป.4 แบบ privacy-first"
+}
