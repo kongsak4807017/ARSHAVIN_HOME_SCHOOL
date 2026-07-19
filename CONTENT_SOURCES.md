@@ -66,6 +66,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 4. UN-Water — Water and Sustainable Development: https://www.unwater.org/water-facts/water-and-sustainable-development
 5. กรมทรัพยากรน้ำ: https://www.dwr.go.th/
 
+## ENV-03 — Soil, Erosion and Soil Conservation
+1. **กรมพัฒนาที่ดิน — สถานภาพการชะล้างพังทลายของดินในประเทศไทย** (accessed 2026-07-20): https://e-library.ldd.go.th/library/flip/bib10329f/files/basic-html/page21.html — supports detachment, transportation and deposition, with water erosion identified as a major erosion agent in Thailand.
+2. **กรมพัฒนาที่ดิน — ชุดข้อมูลการชะล้างพังทลายของดิน** (released 2024-07-05; updated 2025-10-07; accessed 2026-07-20): https://lddcatalog.ldd.go.th/dataset/lpd06 — supports the multi-factor nature of erosion assessment: rainfall, slope/DEM, soil, geology, land use and conservation practice.
+3. **กรมพัฒนาที่ดิน — มาตรการอนุรักษ์ดินและน้ำ** (published 2024-10-10; accessed 2026-07-20): https://lddnews.ldd.go.th/page_pr_dt?ID=22 — supports cover, organic matter, contour/terrace, runoff-slowing, vetiver and infiltration-oriented measures under adult/expert planning.
+4. **กรมพัฒนาที่ดิน — ระบบอนุรักษ์ดินและน้ำพื้นที่เสี่ยง จังหวัดเชียงราย** (published 2025-10-04; accessed 2026-07-20): https://lddnews.ldd.go.th/page_executive_dt?ID=1809 — supports the Chiang Rai slope/headwater context and use of sediment traps, contour structures, farm ponds, vetiver and mixed planting; lesson scenarios remain fictional and do not certify site risk.
+5. **USGS — Soils** (published 2022; accessed 2026-07-20): https://www.usgs.gov/publications/soils — supports soil cover, vegetation, infiltration and reduced runoff/erosion relationships.
+6. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, text feedback, visible labels and non-drag interaction.
+
 ## MAKER-01 — Levers Make Work Easier
 1. OpenStax Physics — 9.3 Simple Machines: https://openstax.org/books/physics/pages/9-3-simple-machines
 2. OpenStax College Physics — 9.5 Simple Machines: https://openstax.org/books/college-physics/pages/9-5-simple-machines
@@ -101,6 +109,7 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - AI activities use fictional examples and must not classify, rank or predict children, sensitive traits, health, disability, ethnicity, religion, gender, behaviour, worth or access to opportunities.
 - No child-specific identity data, passwords, addresses, precise location, images, health records, symptoms or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
+- Environmental simulations do not certify current air, water, soil, slope or landslide safety; real sites require adult and qualified local assessment.
 - Breathing lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing or exertion challenges.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information or report political preferences.
