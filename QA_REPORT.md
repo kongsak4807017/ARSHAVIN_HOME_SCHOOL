@@ -13,7 +13,7 @@ Static source review passed for privacy, child safety, explicit fictional/curren
 ## Build: Shared learning shell and static-check suite
 Date: 2026-07-19
 
-The dependency-free `tests/static-checks.mjs` suite previously passed 7/7 groups against a reconstructed repository fixture. Full-checkout execution remains pending.
+The dependency-free `tests/static-checks.mjs` suite previously passed 7/7 groups against a reconstructed repository fixture. The suite now covers all five implemented lessons, ten A4 sheets, four teacher guides, five local progress keys, service-worker v6 and topic-specific safety assertions. A GitHub Actions workflow now runs the suite on pushes to `main` and pull requests. The result of the new workflow must be inspected before claiming CI passage.
 
 ## Build: ENV-01 Read the Air, Choose a Safer Action
 Date: 2026-07-19
@@ -23,46 +23,54 @@ Static source and integration review passed for authoritative grounding, fiction
 ## Build: MAKER-01 Levers Make Work Easier
 Date: 2026-07-19
 
+Static and integration review passed for authoritative grounding, concept accuracy, ideal-model transparency, child safety, privacy, keyboard structure, dynamic feedback, incomplete-form handling, storage resilience, two-page A4 structure, teacher support, shared-shell integration, homepage integration and service-worker v5 coverage. Physical materials and real browser/assistive-technology checks remain pending.
+
+## Build: CIT-01 Rights, Responsibilities and Digital Kindness
+Date: 2026-07-19
+
 ### Static and integration review
 
 | Area | Result | Evidence |
 |---|---|---|
-| Authoritative grounding | PASS | OpenStax Physics/College Physics and NASA STEM sources recorded with access date and supported concepts |
-| Concept accuracy | PASS (source review) | Lever, fulcrum, load, effort, three lever classes and qualitative force-distance tradeoff align with recorded sources |
-| Model transparency | PASS | Interactive output is labelled as an ideal simplified model; friction and material effects are explicitly excluded |
-| Child safety | PASS | Only light, non-breakable, non-sharp materials; adult supervision; stable surface; no heavy lifting, workshop tools or projectile-style release |
-| Privacy | PASS | No account, analytics, upload or identity field; only activity completion and score are guarded in local storage |
-| Keyboard structure | PASS (source review) | Native range control supports arrow keys; radio, button, anchor, fieldset and legend controls; no drag-only interaction |
-| Dynamic feedback | PASS (source review) | Simulation, classifier and quiz feedback use status/live-region semantics |
-| Incomplete-form handling | PASS (source review) | Simulation question, all three classifications and all quiz items require completion and return bilingual prompts |
-| Storage resilience | PASS (source review) | JSON parsing and writes are guarded; blocked or corrupt storage does not prevent lesson use |
-| A4 structure | PASS (source review) | Student file contains exactly two `.worksheet` sections with lever map, evidence tables, criteria/constraints and self-rubric |
-| Teacher support | PASS | 60–90-minute flow, answer guidance, differentiation, explicit safety preparation and four-level rubric included |
-| Shared-shell integration | PASS (source review) | MAKER-01 registered after ENV-01 with current-page semantics and previous navigation |
-| Homepage integration | PASS (source review) | Fourth lesson card added; clear-progress removes `arshavin.maker.levers.v1` |
-| Offline coverage | PASS (source review) | Cache advanced to `arshavin-grade4-v5` and includes lesson, script, worksheet and guide |
+| Authoritative grounding | PASS | UNICEF Convention/child-friendly text, UNICEF online-safety resources and Council of Europe digital-citizenship resources recorded with access date and supported concepts |
+| Curriculum alignment | PASS | Implements the fifth required subject: Thai and Digital Citizenship; covers rights, responsibilities, fair rules, participation, privacy, consent and help-seeking |
+| Child-rights accuracy | PASS (educational source review) | Rights are framed as connected to dignity, participation, privacy and protection; responsibilities are not presented as conditions for possessing rights |
+| Scenario transparency | PASS | Image-sharing and teasing case is explicitly labelled fictional and does not ask learners to disclose personal incidents |
+| Safeguarding | PASS | STOP–SAVE–TELL–SUPPORT directs threatening, frightening or privacy-related concerns to trusted adults; teacher guide includes non-leading disclosure handling |
+| Privacy | PASS | No account, analytics, upload, identity field or remote transmission; only completion flags, score and timestamp are guarded in local storage |
+| Consent and non-forwarding | PASS | Lesson teaches permission before sharing another person’s image/work and interruption of harm without redistributing content |
+| Keyboard structure | PASS (source review) | Native radio, button, anchor, form, fieldset and legend controls; no drag-only interaction |
+| Dynamic feedback | PASS (source review) | Rule, kindness and quiz feedback use status/live-region semantics and bilingual corrective explanations |
+| Incomplete-form handling | PASS (source review) | Both single-choice activities and all three quiz items require completion before scoring |
+| Storage resilience | PASS (source review) | JSON read/write operations are guarded; blocked or corrupt storage does not prevent lesson use |
+| A4 structure | PASS (source review) | Student file contains exactly two `.worksheet` sections with CLEAR analysis, rule rewrite, help plan, vocabulary and self-rubric |
+| Teacher support | PASS | 60–90-minute flow, answer guidance, language/differentiation options, safeguarding note, portfolio limits and four-level rubric |
+| Shared-shell integration | PASS (source review) | CIT-01 registered as lesson five with current-page semantics and previous navigation from MAKER-01 |
+| Homepage integration | PASS (source review) | Fifth lesson card added; clear-progress removes `arshavin.citizenship.rights.v1` |
+| Offline coverage | PASS (source review) | Cache advanced to `arshavin-grade4-v6` and includes lesson, script, worksheet and guide |
+| Automated-check coverage | PASS (source review) | Test manifest includes all five lessons; CIT-01 asserts consent, trusted-adult, non-forwarding and fictional-scenario labels |
 
 ### Functional cases reviewed in source
 
-1. Range input from 1–8 units updates effort-arm output and an ideal-model effort estimate.
-2. Increasing effort-arm distance decreases the displayed required force for the fixed simulated load and load arm.
-3. The lesson rejects the misconception that a lever creates energy.
-4. Classification requires all three answers and maps fulcrum-middle, load-middle and effort-middle to classes 1, 2 and 3.
-5. Quiz requires all three answers and gives concept-specific bilingual review prompts.
-6. Completion requires simulator, classifier and perfect quiz evidence; partial work remains usable.
-7. Lesson JavaScript contains no network request or remote data transmission.
+1. Fair-rule activity requires a choice and identifies a repair-and-retry rule as more inclusive than silencing or favouritism.
+2. Digital-kindness activity requires a choice and prioritizes non-forwarding, stopping ridicule and respecting consent.
+3. Quiz requires all three answers and provides concept-specific review prompts.
+4. Local completion requires rule, kindness and perfect-quiz evidence; partial work remains usable.
+5. Lesson JavaScript contains no fetch, XMLHttpRequest, WebSocket, beacon or remote child-data transmission.
+6. Clear-progress and learning-shell mappings use the same CIT-01 storage key.
+7. Service-worker v6 lists all CIT-01 runtime and printable assets.
 
 ## Verification still required
 
-- Run `node tests/static-checks.mjs` against a full local checkout or CI runner and extend it to assert MAKER-01 files, two-sheet worksheet, homepage registration and v5 precache.
+- Inspect the GitHub Actions result for `node tests/static-checks.mjs` on the exact final commit.
 - Real browser smoke test on current Chrome, Safari, Firefox and Edge.
 - Android phone and iPad inspection at 200% text zoom.
-- NVDA/VoiceOver reading order, range-control and status-announcement test.
+- NVDA/VoiceOver reading order and live-status announcement test.
 - Keyboard-only test with visible focus at every control.
 - Printed A4/PDF inspection for clipping, table boundaries, handwriting space and exact two-page output.
-- Supervised physical check using only approved light materials.
+- Safeguarding review by the responsible parent/teacher for local escalation procedures and trusted-adult wording.
 - GitHub Pages HTTPS deployment and offline reload after first visit.
 
 ## Current QA decision
 
-**ACCEPTED WITH CONDITIONS** — four complete lessons, eight A4 sheets, three teacher guides, shared navigation/progress and offline v5 assets are persisted. No claim is made that full-checkout tests, browser/device, assistive-technology, physical print, physical maker activity, GitHub Pages or offline runtime verification has been executed.
+**ACCEPTED WITH CONDITIONS** — five complete lessons, ten A4 sheets and four teacher guides now represent all five curriculum subjects. Shared navigation/progress, offline v6 assets, expanded static checks and a CI workflow are persisted. No claim is made that the final CI run, browser/device, assistive-technology, physical print, local safeguarding procedure, GitHub Pages or offline runtime verification has passed.
