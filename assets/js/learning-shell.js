@@ -6,14 +6,13 @@
     { id: 'HB-02', title: 'ระบบโครงกระดูก ข้อต่อ และท่าทางที่ปลอดภัยกว่า · Bones, Joints and Safer Posture', href: '../../subjects/human-body/bones-joints-safer-posture.html', storageKey: 'arshavin.humanbody.bones.v1', isComplete: data => Boolean(data.jointComplete && data.postureComplete && data.quizComplete) },
     { id: 'HB-03', title: 'กล้ามเนื้อ การพัก และการเคลื่อนไหวที่เหมาะกับวัย · Muscles, Rest and Age-Appropriate Movement', href: '../../subjects/human-body/muscles-rest-movement.html', storageKey: 'arshavin.humanbody.muscles.v1', isComplete: data => Boolean(data.talkComplete && data.planComplete && data.quizComplete) },
     { id: 'AI-01', title: 'จริง คิด หรือควรตรวจ? · Fact, Opinion or Check?', href: '../../subjects/ai-science/fact-opinion-ai-claims.html', storageKey: 'arshavin.ai.claims.v1', isComplete: data => Boolean(data.sorterComplete && data.quizComplete) },
+    { id: 'AI-02', title: 'ข้อมูลส่วนตัว ร่องรอยดิจิทัล และการยินยอม · Personal Data, Digital Footprints and Consent', href: '../../subjects/ai-science/personal-data-digital-footprints-consent.html', storageKey: 'arshavin.ai.privacy.v1', isComplete: data => Boolean(data.sharingComplete && data.footprintComplete && data.quizComplete) },
     { id: 'ENV-01', title: 'อ่านอากาศ เลือกทางปลอดภัยกว่า · Read the Air, Choose a Safer Action', href: '../../subjects/environment/pm25-safer-action.html', storageKey: 'arshavin.environment.pm25.v1', isComplete: data => Boolean(data.readingComplete && data.plannerComplete && data.quizComplete) },
     { id: 'MAKER-01', title: 'คานช่วยผ่อนแรง · Levers Make Work Easier', href: '../../subjects/maker-engineering/levers-make-work-easier.html', storageKey: 'arshavin.maker.levers.v1', isComplete: data => Boolean(data.simulatorComplete && data.classesComplete && data.quizComplete) },
     { id: 'CIT-01', title: 'สิทธิ หน้าที่ และน้ำใจดิจิทัล · Rights, Responsibilities and Digital Kindness', href: '../../subjects/citizenship/rights-responsibilities-digital-kindness.html', storageKey: 'arshavin.citizenship.rights.v1', isComplete: data => Boolean(data.ruleComplete && data.kindnessComplete && data.quizComplete) }
   ];
 
-  function safeRead(key) {
-    try { const value = JSON.parse(localStorage.getItem(key) || '{}'); return value && typeof value === 'object' ? value : {}; } catch { return {}; }
-  }
+  function safeRead(key) { try { const value = JSON.parse(localStorage.getItem(key) || '{}'); return value && typeof value === 'object' ? value : {}; } catch { return {}; } }
   function getStatus(lesson) { return lesson.isComplete(safeRead(lesson.storageKey)) ? 'complete' : 'not-started'; }
   function renderLessonShell(host) {
     const currentId = host.dataset.currentLesson;
