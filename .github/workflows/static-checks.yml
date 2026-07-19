@@ -20,4 +20,6 @@ jobs:
         with:
           node-version: '22'
       - name: Run dependency-free static checks
-        run: node tests/static-checks.mjs
+        run: |
+          node tests/static-checks.mjs
+          node tests/env02-static-checks.mjs
