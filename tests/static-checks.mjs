@@ -9,21 +9,29 @@ const exists = relative => fs.existsSync(path.join(root, relative));
 const lessonFiles = [
   'subjects/human-body/sleep-ready-brain.html',
   'subjects/ai-science/fact-opinion-ai-claims.html',
-  'subjects/environment/pm25-safer-action.html'
+  'subjects/environment/pm25-safer-action.html',
+  'subjects/maker-engineering/levers-make-work-easier.html',
+  'subjects/citizenship/rights-responsibilities-digital-kindness.html'
 ];
 const worksheetFiles = [
   'worksheets/student/sleep-ready-brain-a4.html',
   'worksheets/student/fact-opinion-ai-claims-a4.html',
-  'worksheets/student/pm25-safer-action-a4.html'
+  'worksheets/student/pm25-safer-action-a4.html',
+  'worksheets/student/levers-make-work-easier-a4.html',
+  'worksheets/student/rights-responsibilities-digital-kindness-a4.html'
 ];
 const guideFiles = [
   'worksheets/teacher-guides/fact-opinion-ai-claims-guide.html',
-  'worksheets/teacher-guides/pm25-safer-action-guide.html'
+  'worksheets/teacher-guides/pm25-safer-action-guide.html',
+  'worksheets/teacher-guides/levers-make-work-easier-guide.html',
+  'worksheets/teacher-guides/rights-responsibilities-digital-kindness-guide.html'
 ];
 const jsFiles = [
   'assets/js/sleep-lesson.js',
   'assets/js/ai-claims-lesson.js',
   'assets/js/pm25-lesson.js',
+  'assets/js/levers-lesson.js',
+  'assets/js/citizenship-lesson.js',
   'assets/js/learning-shell.js',
   'service-worker.js'
 ];
@@ -80,8 +88,9 @@ check('each worksheet contains exactly two printable sheets', () => {
 
 check('service worker precaches shared shell and all lesson assets', () => {
   const sw = read('service-worker.js');
-  ['assets/js/learning-shell.js', 'assets/js/pm25-lesson.js', ...lessonFiles, ...worksheetFiles, ...guideFiles]
+  ['assets/js/learning-shell.js', ...jsFiles.filter(file => file.startsWith('assets/js/') && file !== 'assets/js/learning-shell.js'), ...lessonFiles, ...worksheetFiles, ...guideFiles]
     .forEach(file => assert.ok(sw.includes(`./${file}`), file));
+  assert.match(sw, /arshavin-grade4-v6/);
 });
 
 check('homepage exposes lessons, local progress overview and clear control', () => {
@@ -90,7 +99,13 @@ check('homepage exposes lessons, local progress overview and clear control', () 
   assert.match(html, /id="clear-progress"/);
   assert.match(html, /assets\/js\/learning-shell\.js/);
   lessonFiles.forEach(file => assert.ok(html.includes(file), file));
-  assert.match(html, /arshavin\.environment\.pm25\.v1/);
+  [
+    'arshavin.sleep.lesson.v1',
+    'arshavin.ai.claims.v1',
+    'arshavin.environment.pm25.v1',
+    'arshavin.maker.levers.v1',
+    'arshavin.citizenship.rights.v1'
+  ].forEach(key => assert.ok(html.includes(key), key));
 });
 
 check('ENV-01 safety and fictional-data labels exist', () => {
@@ -98,6 +113,21 @@ check('ENV-01 safety and fictional-data labels exist', () => {
   assert.match(lesson, /ข้อมูลจำลอง/);
   assert.match(lesson, /ไม่ใช่ประกาศคุณภาพอากาศปัจจุบัน/);
   assert.match(lesson, /บอกผู้ใหญ่/);
+});
+
+check('MAKER-01 safety and ideal-model labels exist', () => {
+  const lesson = read('subjects/maker-engineering/levers-make-work-easier.html');
+  assert.match(lesson, /แบบจำลอง/);
+  assert.match(lesson, /ของเบา/);
+  assert.match(lesson, /ผู้ใหญ่/);
+});
+
+check('CIT-01 safeguarding, consent and help-seeking labels exist', () => {
+  const lesson = read('subjects/citizenship/rights-responsibilities-digital-kindness.html');
+  assert.match(lesson, /การยินยอม/);
+  assert.match(lesson, /ผู้ใหญ่ที่ไว้ใจได้/);
+  assert.match(lesson, /ไม่ส่งต่อ/);
+  assert.match(lesson, /สถานการณ์จำลอง/);
 });
 
 if (process.exitCode) process.exit(process.exitCode);
