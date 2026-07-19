@@ -20,8 +20,29 @@ jobs:
         with:
           node-version: '22'
       - name: Run complete static regression suite
-        run: node tests/static-checks.mjs
+        id: complete
+        continue-on-error: true
+        run: node tests/static-checks.mjs > complete-static.log 2>&1
       - name: Run ENV-02 focused checks
-        run: node tests/env02-static-checks.mjs
+        id: env02
+        continue-on-error: true
+        run: node tests/env02-static-checks.mjs > env02-static.log 2>&1
       - name: Run MAKER-02 focused checks
-        run: node tests/maker02-static-checks.mjs
+        id: maker02
+        continue-on-error: true
+        run: node tests/maker02-static-checks.mjs > maker02-static.log 2>&1
+      - name: Upload static-check evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-check-evidence
+          path: '*-static.log'
+          if-no-files-found: error
+          retention-days: 7
+      - name: Enforce static-check results
+        if: always()
+        run: |
+          cat complete-static.log env02-static.log maker02-static.log
+          test "${{ steps.complete.outcome }}" = success
+          test "${{ steps.env02.outcome }}" = success
+          test "${{ steps.maker02.outcome }}" = success
