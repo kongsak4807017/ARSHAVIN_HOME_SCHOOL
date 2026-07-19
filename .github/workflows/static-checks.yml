@@ -23,3 +23,4 @@ jobs:
         run: |
           node tests/static-checks.mjs
           node tests/env02-static-checks.mjs
+          node tests/maker02-static-checks.mjs
