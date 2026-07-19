@@ -52,9 +52,10 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Two-page A4 worksheet with muscle roles, talk-test reasoning, one-day plan, pencil bar chart and reflection
 - [x] Teacher guide with 60–90-minute flow, answer guidance, disability-inclusive alternatives, health boundary and four-level rubric
 - [x] NIAMS, CDC and WHO sources recorded; homepage, seven-lesson shell, local reset, service-worker v8 and static checks integrated
+- [x] GitHub Actions static checks passed on substantive PR #2 head `f53c7842958be39b03f3879b998732cbde99a8a7` in workflow run `29694875646`
 
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — seven lessons, fourteen printable A4 sheets and six teacher guides are structurally integrated. Exact final CI, browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — seven lessons, fourteen printable A4 sheets and six teacher guides are structurally integrated, and dependency-free static checks passed on the substantive HB-03 implementation. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
 Build **AI-02 ข้อมูลส่วนตัว ร่องรอยดิจิทัล และการให้ความยินยอม / Personal Data, Digital Footprints and Consent** with a local-only data-sharing decision simulator, current Thai-context privacy examples without legal advice, two A4 worksheets, teacher guide/rubric, authoritative child-safety and privacy sources, offline integration and static regression coverage.
