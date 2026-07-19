@@ -19,7 +19,30 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Run dependency-free static checks
+      - name: Run complete static regression suite
+        id: complete
+        continue-on-error: true
+        run: node tests/static-checks.mjs > complete-static.log 2>&1
+      - name: Run ENV-02 focused checks
+        id: env02
+        continue-on-error: true
+        run: node tests/env02-static-checks.mjs > env02-static.log 2>&1
+      - name: Run MAKER-02 focused checks
+        id: maker02
+        continue-on-error: true
+        run: node tests/maker02-static-checks.mjs > maker02-static.log 2>&1
+      - name: Upload static-check evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-check-evidence
+          path: '*-static.log'
+          if-no-files-found: error
+          retention-days: 7
+      - name: Enforce static-check results
+        if: always()
         run: |
-          node tests/static-checks.mjs
-          node tests/env02-static-checks.mjs
+          cat complete-static.log env02-static.log maker02-static.log
+          test "${{ steps.complete.outcome }}" = success
+          test "${{ steps.env02.outcome }}" = success
+          test "${{ steps.maker02.outcome }}" = success
