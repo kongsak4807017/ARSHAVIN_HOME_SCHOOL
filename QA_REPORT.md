@@ -3,108 +3,61 @@
 ## Build: HB-01 Sleep for a Ready Brain
 Date: 2026-07-19
 
-### Static review completed
-
-| Area | Result | Evidence |
-|---|---|---|
-| Privacy | PASS | No analytics, ad, account, upload, network form, child name, date of birth, address, image, or health-data fields |
-| Bilingual content | PASS | Thai headings and instructions paired with practical English throughout lesson and worksheet |
-| Keyboard structure | PASS (source review) | Native links, buttons, time input, radio buttons, checkboxes, fieldset/legend, skip link |
-| Focus visibility | PASS (source review) | `:focus-visible` uses a 4px high-contrast outline and offset |
-| Touch targets | PASS (source review) | Buttons have a minimum 44px height; choice rows enlarge selection targets |
-| Dynamic feedback | PASS (source review) | Calculations, saves, and quiz feedback use `role=status`/`aria-live=polite` |
-| Drag alternative | PASS | No drag-only interaction |
-| Responsive layout | PASS (source review) | Fluid type, capped container, single-column mobile rules |
-| Reduced motion | PASS | `prefers-reduced-motion` disables animation/transition behavior |
-| A4 output | PASS (source review) | `@page` A4 portrait, print-only cleanup, page breaks between two worksheets |
-| Offline architecture | PASS (source review) | Manifest plus service-worker precache of homepage, lesson, JS, CSS, worksheet |
-| Health safety | PASS | General education only; trusted-adult and health-professional escalation included |
-
-### Functional cases reviewed in source
-
-1. Wake-up time is converted to a 9–12-hour bedtime interval with midnight wraparound.
-2. Empty time input returns an accessible instruction rather than failing.
-3. Routine choices are stored only under `arshavin.sleep.lesson.v1` in localStorage.
-4. Selecting late-night gaming produces corrective, non-punitive feedback.
-5. Quiz requires both responses and explains the learning point when incorrect.
-6. Homepage clear button removes the lesson progress key.
-7. Service worker ignores non-GET requests and maintains a versioned cache.
+Static source review passed for privacy, bilingual content, native keyboard controls, visible focus, touch targets, live feedback, responsive layout, reduced motion, two-page A4 structure, offline architecture, local-only storage and general health-safety escalation.
 
 ## Build: AI-01 Fact, Opinion or Check?
 Date: 2026-07-19
 
-### Static review completed
-
-| Area | Result | Evidence |
-|---|---|---|
-| Privacy | PASS | No accounts, analytics, external scripts, uploads, search forms, names, addresses, passwords, images, or health-data collection; only completion/score fields are stored locally |
-| Child safety | PASS | High-impact claims direct the child to stop, verify, and ask a trusted adult or relevant expert; private-data examples are explicit |
-| Fiction/current-event separation | PASS | PM2.5 school-closure scenario is labelled as fictional practice in the worksheet and framed as a claim in the lesson |
-| Authoritative content grounding | PASS | UNESCO, OECD/European Commission, UNICEF, and W3C sources recorded with access date and supported use |
-| Bilingual content | PASS | Goals, vocabulary, instructions, feedback, worksheet labels, and teacher-facing structure use Thai with functional English |
-| Keyboard structure | PASS (source review) | Native anchors, buttons, checkboxes, radios, fieldsets, legends, skip link, and a focusable live claim card; no custom keyboard trap |
-| Non-drag alternative | PASS | Claim sorter is button-operated; no drag gesture is required |
-| Dynamic feedback | PASS (source review) | Sorter, evidence activity, and quiz use status regions with `aria-live=polite` |
-| Incomplete-form handling | PASS (source review) | Quiz and evidence activity return instructions instead of failing when selections are missing |
-| Local storage resilience | PASS (source review) | JSON parse is guarded; storage writes are wrapped so blocked storage does not stop lesson use |
-| Formative feedback | PASS (source review) | Six claim explanations, evidence-plan correction, and per-question quiz review are included |
-| A4 structure | PASS (source review) | Two `.worksheet` articles use shared A4 portrait print rules and page breaks; print/back controls are removed in print mode |
-| Teacher support | PASS | Guide includes preparation, 60–90-minute flow, answer guidance, differentiation, safety cautions, portfolio evidence, and a four-level rubric |
-| Offline coverage | PASS (source review) | Cache version incremented to v2 and includes AI lesson, JS, worksheet, guide, homepage, shared CSS, manifest, and first unit assets |
-| Homepage integration | PASS (source review) | Second lesson card added and clear-progress now removes both known local storage keys |
-
-### Functional cases reviewed in source
-
-1. Six claim cards advance in order and disable classifier buttons at completion.
-2. Correct classification count is stored locally only after the activity completes.
-3. Evidence detective requires date/place, responsible authority, and current official air data while rejecting “share first” and “confident style” reasoning.
-4. Quiz requires all three answers, scores against explicit keys, and explains each missed concept.
-5. The lesson remains usable when localStorage is unavailable or contains invalid JSON.
-6. No network request is made by lesson JavaScript.
-7. Service worker cache name changed from `arshavin-grade4-v1` to `arshavin-grade4-v2`, causing old cache cleanup on activation.
+Static source review passed for privacy, child safety, explicit fictional/current-event separation, authoritative grounding, bilingual content, keyboard operation, non-drag interaction, live feedback, incomplete-form handling, guarded local storage, two-page A4 structure, teacher support, offline coverage and homepage integration.
 
 ## Build: Shared learning shell and static-check suite
 Date: 2026-07-19
 
-### Automated checks executed
+The dependency-free `tests/static-checks.mjs` suite previously passed 7/7 groups against a reconstructed repository fixture. It checks required files, JavaScript parsing, bilingual lesson structure, local links, two-sheet worksheets, service-worker coverage and homepage progress controls. Full-checkout execution remains pending.
 
-Command: `node tests/static-checks.mjs`
+## Build: ENV-01 Read the Air, Choose a Safer Action
+Date: 2026-07-19
 
-Result against a reconstructed repository fixture: **PASS — 7/7 check groups**
-
-1. Required runtime files exist.
-2. JavaScript files parse with Node `vm.Script`.
-3. Both lessons expose Thai document language, bilingual H1 structure, shared-shell host, and shared-shell script.
-4. Local `href` and `src` paths resolve for homepage, lessons, and student worksheets.
-5. Each student worksheet contains exactly two printable `.worksheet` sheets.
-6. Service worker includes the shared shell, both lessons, and both student worksheets.
-7. Homepage contains the local progress overview and clear-progress control.
-
-### Source and integration review
+### Static and integration review
 
 | Area | Result | Evidence |
 |---|---|---|
-| Shared navigation | PASS | Both lessons register a unique current lesson ID and render previous/overview/next navigation from one data source |
-| Current-page semantics | PASS | Active lesson list item receives `aria-current="page"` |
-| Keyboard access | PASS (source review) | Navigation uses native anchors; no custom key handling or keyboard trap |
-| Local-only progress | PASS | Reads only the two existing `localStorage` keys and performs no fetch, form submission, analytics, or remote write |
-| Corrupt storage handling | PASS (source review) | JSON parsing is guarded and falls back to an empty object |
-| Data minimisation | PASS | Displays only completion evidence status, not child identity or detailed answers |
-| Mobile layout | PASS (source review) | Progress cards and pager collapse to a one-column layout below 600px |
-| Print protection | PASS (source review) | Shared shell and homepage progress summary are hidden under print media rules |
-| Offline integration | PASS (source review) | Cache advanced to `arshavin-grade4-v3` and adds `assets/js/learning-shell.js` |
-| Regression scope | PASS | Existing lesson-specific scripts and storage keys were not renamed or merged |
+| Authoritative grounding | PASS | Department of Health Thailand, WHO and AirNow sources recorded with access date and supported claims |
+| Fictional/live-data separation | PASS | Lesson, simulation and worksheet explicitly say data are fictional practice data and not current advice |
+| Health safety | PASS | Non-diagnostic language; children stop activity, tell a trusted adult and follow personal clinical advice rather than changing medicine independently |
+| Threshold caution | PASS | Lesson explains that colour systems can use different ranges; simplified bands are not presented as a new official standard |
+| Privacy | PASS | No account, analytics, tracker, upload, name, address, image or health-history field; only activity completion and score are stored locally |
+| Keyboard structure | PASS (source review) | Native range, radio, button, anchor, fieldset and legend controls; no drag-only interaction or keyboard trap |
+| Dynamic feedback | PASS (source review) | Air card and three activity feedback regions use status/live-region semantics |
+| Incomplete-form handling | PASS (source review) | Reading, planning and quiz activities return bilingual prompts when answers are missing |
+| Storage resilience | PASS (source review) | JSON parsing and writes are guarded; blocked or corrupt storage does not prevent lesson use |
+| A4 structure | PASS (source review) | Student file contains exactly two `.worksheet` sections using shared A4 print rules |
+| Teacher support | PASS | 60–90-minute flow, answer guidance, safety, differentiation, portfolio evidence and four-level rubric included |
+| Shared-shell integration | PASS (source review) | ENV-01 registered after AI-01 with current-page semantics and previous navigation |
+| Homepage integration | PASS (source review) | Third lesson card added; clear-progress removes `arshavin.environment.pm25.v1` |
+| Offline coverage | PASS (source review) | Cache advanced to `arshavin-grade4-v4` and includes lesson, script, worksheet and guide |
+| Regression checks | PASS (source update) | Static suite expanded to three lessons, three two-sheet worksheets, two guides, PM2.5 script, homepage registration and fictional-data safety labels |
+
+### Functional cases reviewed in source
+
+1. Slider updates the simulated PM2.5 value and returns one of four age-appropriate action descriptions.
+2. The activity does not claim its simplified bands are an official Thai AQI conversion.
+3. Data-reading answer rewards checking type, unit, time, place and source rather than panicking or ignoring the value.
+4. Safer-action answer rewards reducing time/intensity or changing location with adult support; it rejects “mask makes risk zero”.
+5. Quiz requires all three answers and provides concept-specific review messages.
+6. Completion requires reading, planning and a perfect three-item check; partial work remains usable without being marked complete.
+7. No lesson JavaScript performs a network request or transmits learner data.
 
 ## Verification still required
 
-- Real browser smoke test on current Chrome, Safari, Firefox, and Edge.
-- Android phone and iPad responsive inspection at 200% text zoom.
-- NVDA/VoiceOver reading order and status-announcement test.
+- Run `node tests/static-checks.mjs` against a full local checkout or CI runner.
+- Real browser smoke test on current Chrome, Safari, Firefox and Edge.
+- Android phone and iPad inspection at 200% text zoom.
+- NVDA/VoiceOver reading order, range-control and status-announcement test.
 - Keyboard-only test with visible focus at every control.
-- Printed A4/PDF inspection for clipping, table boundaries, handwriting space, and exact two-page output.
-- GitHub Pages HTTPS deployment test and offline reload after first visit.
-- Run `node tests/static-checks.mjs` against a full local checkout or CI runner; the current pass was executed against a reconstructed fixture because this execution environment could not resolve `github.com` through the shell.
+- Printed A4/PDF inspection for clipping, table boundaries, handwriting space and exact two-page output.
+- GitHub Pages HTTPS deployment and offline reload after first visit.
 
 ## Current QA decision
 
-**ACCEPTED WITH CONDITIONS** — source implementation, shared navigation/progress integration, and dependency-free static checks are complete. No claim is made that browser, assistive-technology, device, physical print, GitHub Pages, full-checkout CI, or offline runtime tests have been executed.
+**ACCEPTED WITH CONDITIONS** — three complete lessons, six A4 sheets, two teacher guides, shared navigation/progress and expanded static checks are persisted. No claim is made that full-checkout tests, browser/device, assistive-technology, physical print, GitHub Pages or offline runtime verification has been executed.
