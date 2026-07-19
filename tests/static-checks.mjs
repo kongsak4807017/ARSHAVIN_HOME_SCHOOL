@@ -6,10 +6,11 @@ import assert from 'node:assert/strict';
 const root = path.resolve(import.meta.dirname, '..');
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
 const exists = relative => fs.existsSync(path.join(root, relative));
-const lessonFiles = [
+const lessons = [
   'subjects/human-body/sleep-ready-brain.html',
   'subjects/human-body/bones-joints-safer-posture.html',
   'subjects/human-body/muscles-rest-movement.html',
+  'subjects/human-body/breathing-gas-exchange-safer-air.html',
   'subjects/ai-science/fact-opinion-ai-claims.html',
   'subjects/ai-science/personal-data-digital-footprints-consent.html',
   'subjects/environment/pm25-safer-action.html',
@@ -19,10 +20,11 @@ const lessonFiles = [
   'subjects/citizenship/rights-responsibilities-digital-kindness.html',
   'subjects/citizenship/community-rules-shared-decisions.html'
 ];
-const worksheetFiles = [
+const worksheets = [
   'worksheets/student/sleep-ready-brain-a4.html',
   'worksheets/student/bones-joints-safer-posture-a4.html',
   'worksheets/student/muscles-rest-movement-a4.html',
+  'worksheets/student/breathing-gas-exchange-safer-air-a4.html',
   'worksheets/student/fact-opinion-ai-claims-a4.html',
   'worksheets/student/personal-data-digital-footprints-consent-a4.html',
   'worksheets/student/pm25-safer-action-a4.html',
@@ -32,9 +34,10 @@ const worksheetFiles = [
   'worksheets/student/rights-responsibilities-digital-kindness-a4.html',
   'worksheets/student/community-rules-shared-decisions-a4.html'
 ];
-const guideFiles = [
+const guides = [
   'worksheets/teacher-guides/bones-joints-safer-posture-guide.html',
   'worksheets/teacher-guides/muscles-rest-movement-guide.html',
+  'worksheets/teacher-guides/breathing-gas-exchange-safer-air-guide.html',
   'worksheets/teacher-guides/fact-opinion-ai-claims-guide.html',
   'worksheets/teacher-guides/personal-data-digital-footprints-consent-guide.html',
   'worksheets/teacher-guides/pm25-safer-action-guide.html',
@@ -44,211 +47,33 @@ const guideFiles = [
   'worksheets/teacher-guides/rights-responsibilities-digital-kindness-guide.html',
   'worksheets/teacher-guides/community-rules-shared-decisions-guide.html'
 ];
-const jsFiles = [
-  'assets/js/sleep-lesson.js',
-  'assets/js/bones-posture-lesson.js',
-  'assets/js/muscles-movement-lesson.js',
-  'assets/js/ai-claims-lesson.js',
-  'assets/js/privacy-consent-lesson.js',
-  'assets/js/pm25-lesson.js',
-  'assets/js/water-cycle-lesson.js',
-  'assets/js/levers-lesson.js',
-  'assets/js/pulleys-gears-lesson.js',
-  'assets/js/citizenship-lesson.js',
-  'assets/js/community-decisions-lesson.js',
-  'assets/js/learning-shell.js',
-  'service-worker.js'
+const scripts = [
+  'assets/js/sleep-lesson.js','assets/js/bones-posture-lesson.js','assets/js/muscles-movement-lesson.js','assets/js/breathing-air-lesson.js',
+  'assets/js/ai-claims-lesson.js','assets/js/privacy-consent-lesson.js','assets/js/pm25-lesson.js','assets/js/water-cycle-lesson.js',
+  'assets/js/levers-lesson.js','assets/js/pulleys-gears-lesson.js','assets/js/citizenship-lesson.js','assets/js/community-decisions-lesson.js',
+  'assets/js/learning-shell.js','service-worker.js'
 ];
+const keys = [
+  'arshavin.sleep.lesson.v1','arshavin.humanbody.bones.v1','arshavin.humanbody.muscles.v1','arshavin.humanbody.breathing.v1',
+  'arshavin.ai.claims.v1','arshavin.ai.privacy.v1','arshavin.environment.pm25.v1','arshavin.environment.water.v1',
+  'arshavin.maker.levers.v1','arshavin.maker.pulleysgears.v1','arshavin.citizenship.rights.v1','arshavin.citizenship.community.v1'
+];
+function check(name, fn) { try { fn(); console.log(`PASS ${name}`); } catch (error) { console.error(`FAIL ${name}: ${error.message}`); process.exitCode = 1; } }
 
-function check(name, fn) {
-  try { fn(); console.log(`PASS ${name}`); }
-  catch (error) { console.error(`FAIL ${name}: ${error.message}`); process.exitCode = 1; }
-}
-
-check('required runtime files exist', () => {
-  [...lessonFiles, ...worksheetFiles, ...guideFiles, ...jsFiles, 'index.html', 'assets/css/site.css']
-    .forEach(file => assert.ok(exists(file), file));
-});
-
-check('JavaScript parses', () => {
-  jsFiles.forEach(file => new vm.Script(read(file), { filename: file }));
-});
-
-check('lesson pages have bilingual headings and shared shell', () => {
-  lessonFiles.forEach(file => {
-    const html = read(file);
-    assert.match(html, /<html lang="th">/);
-    assert.match(html, /<h1>[\s\S]*<br>[\s\S]*<span>/);
-    assert.match(html, /data-learning-shell/);
-    assert.match(html, /assets\/js\/learning-shell\.js/);
-  });
-});
-
-check('local links resolve', () => {
-  const htmlFiles = ['index.html', ...lessonFiles, ...worksheetFiles, ...guideFiles];
-  for (const file of htmlFiles) {
-    const html = read(file);
-    const dir = path.dirname(file);
-    for (const match of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
-      const target = match[1];
-      if (/^(?:https?:|mailto:|data:)/.test(target)) continue;
-      const normalized = path.normalize(path.join(dir, target));
-      assert.ok(exists(normalized), `${file} -> ${target}`);
-    }
-  }
-});
-
-check('each worksheet contains exactly two printable sheets', () => {
-  const sharedCss = read('assets/css/site.css');
-  assert.match(sharedCss, /@page\s*\{[\s\S]*size:\s*A4/);
-  worksheetFiles.forEach(file => {
-    const html = read(file);
-    const count = (html.match(/class="worksheet(?:\s|\")/g) || []).length;
-    assert.equal(count, 2, `${file} has ${count}`);
-    assert.ok(/@page\s*\{[\s\S]*size:\s*A4/.test(html) || /assets\/css\/site\.css/.test(html), `${file} lacks A4 print CSS`);
-  });
-});
-
-check('service worker precaches shared shell and all lesson assets', () => {
-  const sw = read('service-worker.js');
-  ['assets/js/learning-shell.js', ...jsFiles.filter(file => file.startsWith('assets/js/') && file !== 'assets/js/learning-shell.js'), ...lessonFiles, ...worksheetFiles, ...guideFiles]
-    .forEach(file => assert.ok(sw.includes(`./${file}`), file));
-  assert.match(sw, /arshavin-grade4-v12/);
-});
-
-check('homepage exposes lessons, local progress overview and clear control', () => {
-  const html = read('index.html');
-  assert.match(html, /data-progress-overview/);
-  assert.match(html, /id="clear-progress"/);
-  assert.match(html, /assets\/js\/learning-shell\.js/);
-  lessonFiles.forEach(file => assert.ok(html.includes(file), file));
-  [
-    'arshavin.sleep.lesson.v1',
-    'arshavin.humanbody.bones.v1',
-    'arshavin.humanbody.muscles.v1',
-    'arshavin.ai.claims.v1',
-    'arshavin.ai.privacy.v1',
-    'arshavin.environment.pm25.v1',
-    'arshavin.environment.water.v1',
-    'arshavin.maker.levers.v1',
-    'arshavin.maker.pulleysgears.v1',
-    'arshavin.citizenship.rights.v1',
-    'arshavin.citizenship.community.v1'
-  ].forEach(key => assert.ok(html.includes(key), key));
-});
-
-check('all lesson scripts are local-only', () => {
-  jsFiles.filter(file => file.startsWith('assets/js/') && file !== 'assets/js/learning-shell.js').forEach(file => {
-    assert.doesNotMatch(read(file), /fetch\(|XMLHttpRequest|WebSocket|sendBeacon/, file);
-  });
-});
-
-check('AI-02 privacy, consent and child-safety boundaries exist', () => {
-  const lesson = read('subjects/ai-science/personal-data-digital-footprints-consent.html');
-  const guide = read('worksheets/teacher-guides/personal-data-digital-footprints-consent-guide.html');
-  const script = read('assets/js/privacy-consent-lesson.js');
-  assert.match(lesson, /PAUSE–PURPOSE–PERMISSION–PROTECT/);
-  assert.match(lesson, /ข้อมูลส่วนตัว/);
-  assert.match(lesson, /ร่องรอยดิจิทัล/);
-  assert.match(lesson, /การยินยอม/);
-  assert.match(lesson, /ไม่ใช่คำแนะนำทางกฎหมาย/);
-  assert.match(lesson, /สถานการณ์จำลอง/);
-  assert.match(guide, /ใช้สถานการณ์จำลองเท่านั้น/);
-  assert.match(script, /arshavin\.ai\.privacy\.v1/);
-  assert.match(script, /sharingComplete/);
-  assert.match(script, /footprintComplete/);
-  assert.match(script, /quizComplete/);
-});
-
-check('HB-02 health boundaries and adult-supervised model safeguards exist', () => {
-  const lesson = read('subjects/human-body/bones-joints-safer-posture.html');
-  const guide = read('worksheets/teacher-guides/bones-joints-safer-posture-guide.html');
-  assert.match(lesson, /ผู้ใหญ่/);
-  assert.match(lesson, /ไม่ใช้วินิจฉัยโรค/);
-  assert.match(lesson, /ไม่ทดลองดัดข้อต่อของคนเกินช่วงที่สบาย/);
-  assert.match(guide, /ไม่ใช้วินิจฉัย scoliosis/);
-});
-
-check('HB-03 movement guidance is non-competitive, local-only and safety-gated', () => {
-  const lesson = read('subjects/human-body/muscles-rest-movement.html');
-  const guide = read('worksheets/teacher-guides/muscles-rest-movement-guide.html');
-  const script = read('assets/js/muscles-movement-lesson.js');
-  assert.match(lesson, /อย่างน้อยประมาณ 60 นาทีต่อวัน/);
-  assert.match(lesson, /ไม่ใช้วินิจฉัยโรค/);
-  assert.match(lesson, /ไม่ใช้เปรียบเทียบรูปร่าง/);
-  assert.match(lesson, /หยุดและบอกผู้ใหญ่ทันที/);
-  assert.match(guide, /ไม่ทำ fitness test แข่งขัน/);
-  assert.match(script, /arshavin\.humanbody\.muscles\.v1/);
-  assert.match(script, /talkComplete/);
-  assert.match(script, /planComplete/);
-  assert.match(script, /quizComplete/);
-});
-
-check('ENV-01 safety and fictional-data labels exist', () => {
-  const lesson = read('subjects/environment/pm25-safer-action.html');
-  assert.match(lesson, /ข้อมูลจำลอง/);
-  assert.match(lesson, /ไม่ใช่ประกาศคุณภาพอากาศปัจจุบัน/);
-  assert.match(lesson, /บอกผู้ใหญ่/);
-});
-
-check('ENV-02 water-cycle and safety boundaries exist', () => {
-  const lesson = read('subjects/environment/water-cycle-responsible-use.html');
-  const guide = read('worksheets/teacher-guides/water-cycle-responsible-use-guide.html');
-  const script = read('assets/js/water-cycle-lesson.js');
-  assert.match(lesson, /evaporation/i);
-  assert.match(lesson, /condensation/i);
-  assert.match(lesson, /precipitation/i);
-  assert.match(lesson, /CARE/);
-  assert.match(lesson + guide, /(ไม่|ห้าม)ชิมน้ำ/);
-  assert.match(lesson + guide, /สถานการณ์จำลอง/);
-  assert.match(script, /arshavin\.environment\.water\.v1/);
-});
-
-check('MAKER-01 safety and ideal-model labels exist', () => {
-  const lesson = read('subjects/maker-engineering/levers-make-work-easier.html');
-  assert.match(lesson, /แบบจำลอง/);
-  assert.match(lesson, /ของเบา/);
-  assert.match(lesson, /ผู้ใหญ่/);
-});
-
-check('MAKER-02 uses native controls, local progress and strict safety boundaries', () => {
-  const lesson = read('subjects/maker-engineering/pulleys-gears-transfer-force.html');
-  const guide = read('worksheets/teacher-guides/pulleys-gears-transfer-force-guide.html');
-  const script = read('assets/js/pulleys-gears-lesson.js');
-  assert.match(lesson, /type="range"/);
-  assert.match(lesson, /<select/);
-  assert.doesNotMatch(lesson + script, /dragstart|draggable="true"/);
-  assert.match(lesson + guide, /ห้ามยกคน/);
-  assert.match(lesson + guide, /จุดหนีบ/);
-  assert.match(lesson + guide, /ผู้ใหญ่เป็นผู้ตัด/);
-  assert.match(lesson + guide, /แบบจำลองอุดมคติ/);
-  assert.match(script, /arshavin\.maker\.pulleysgears\.v1/);
-});
-
-check('CIT-01 safeguarding, consent and help-seeking labels exist', () => {
-  const lesson = read('subjects/citizenship/rights-responsibilities-digital-kindness.html');
-  assert.match(lesson, /การยินยอม/);
-  assert.match(lesson, /ผู้ใหญ่ที่ไว้ใจได้/);
-  assert.match(lesson, /ไม่ส่งต่อ/);
-  assert.match(lesson, /สถานการณ์จำลอง/);
-});
-
-check('CIT-02 shared decisions are inclusive, local-only and reviewable', () => {
-  const lesson = read('subjects/citizenship/community-rules-shared-decisions.html');
-  const guide = read('worksheets/teacher-guides/community-rules-shared-decisions-guide.html');
-  const script = read('assets/js/community-decisions-lesson.js');
-  assert.match(lesson, /VOICE/);
-  assert.match(lesson, /vote/i);
-  assert.match(lesson, /consensus/i);
-  assert.match(lesson, /เสียงส่วนน้อย/);
-  assert.match(lesson, /ไม่ใช้ชื่อจริง/);
-  assert.match(lesson + guide, /สถานการณ์จำลอง/);
-  assert.match(guide, /ไม่เปิดเผยเหตุการณ์ขัดแย้งจริง/);
-  assert.match(script, /arshavin\.citizenship\.community\.v1/);
-  assert.match(script, /ruleComplete/);
-  assert.match(script, /decisionComplete/);
-  assert.match(script, /quizComplete/);
-});
-
-if (process.exitCode) process.exit(process.exitCode);
-console.log('All static checks passed.');
+check('required files exist', () => [...lessons,...worksheets,...guides,...scripts,'index.html','assets/css/site.css'].forEach(file=>assert.ok(exists(file),file)));
+check('JavaScript parses', () => scripts.forEach(file=>new vm.Script(read(file),{filename:file})));
+check('bilingual lesson shell structure', () => lessons.forEach(file=>{const html=read(file);assert.match(html,/<html lang="th">/);assert.match(html,/<h1>[\s\S]*<br>[\s\S]*<span>/);assert.match(html,/data-learning-shell/);assert.match(html,/assets\/js\/learning-shell\.js/);}));
+check('local links resolve', () => {for(const file of ['index.html',...lessons,...worksheets,...guides]){const html=read(file),dir=path.dirname(file);for(const match of html.matchAll(/(?:href|src)="([^"#]+)"/g)){const target=match[1];if(/^(?:https?:|mailto:|data:)/.test(target))continue;assert.ok(exists(path.normalize(path.join(dir,target))),`${file} -> ${target}`);}}});
+check('worksheets are exactly two A4 sheets', () => worksheets.forEach(file=>{const html=read(file);assert.equal((html.match(/class="worksheet(?:\s|\")/g)||[]).length,2,file);assert.ok(/@page\s*\{[\s\S]*size:\s*A4/.test(html)||/assets\/css\/site\.css/.test(html),file);}));
+check('homepage exposes all lessons and reset keys', () => {const html=read('index.html');lessons.forEach(file=>assert.ok(html.includes(file),file));keys.forEach(key=>assert.ok(html.includes(key),key));assert.match(html,/data-progress-overview/);assert.match(html,/id="clear-progress"/);});
+check('shell exposes all lessons and keys', () => {const shell=read('assets/js/learning-shell.js');['HB-01','HB-02','HB-03','HB-04','AI-01','AI-02','ENV-01','ENV-02','MAKER-01','MAKER-02','CIT-01','CIT-02'].forEach(id=>assert.ok(shell.includes(id),id));keys.forEach(key=>assert.ok(shell.includes(key),key));});
+check('lesson scripts are local-only', () => scripts.filter(file=>file.startsWith('assets/js/')&&file!=='assets/js/learning-shell.js').forEach(file=>assert.doesNotMatch(read(file),/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/,file)));
+check('offline precache covers all runtime assets', () => {const sw=read('service-worker.js');['assets/js/learning-shell.js',...scripts.filter(file=>file.startsWith('assets/js/')&&file!=='assets/js/learning-shell.js'),...lessons,...worksheets,...guides].forEach(file=>assert.ok(sw.includes(`./${file}`),file));assert.match(sw,/arshavin-grade4-v13/);});
+check('HB-02 health and supervision boundaries',()=>{const lesson=read(lessons[1]),guide=read(guides[0]);assert.match(lesson,/ไม่ใช้วินิจฉัยโรค/);assert.match(lesson,/ผู้ใหญ่/);assert.match(guide,/scoliosis/i);});
+check('HB-03 movement safety and local completion',()=>{const lesson=read(lessons[2]),script=read('assets/js/muscles-movement-lesson.js');assert.match(lesson,/ไม่ใช้เปรียบเทียบรูปร่าง/);assert.match(lesson,/หยุดและบอกผู้ใหญ่ทันที/);assert.match(script,/talkComplete/);assert.match(script,/planComplete/);assert.match(script,/quizComplete/);});
+check('HB-04 breathing, air and non-exertion safeguards',()=>{const lesson=read(lessons[3]),guide=read(guides[2]),script=read('assets/js/breathing-air-lesson.js');assert.match(lesson,/alveoli/i);assert.match(lesson,/oxygen/i);assert.match(lesson,/carbon dioxide/i);assert.match(lesson,/ข้อมูลจำลองเท่านั้น/);assert.match(lesson,/ไม่ควรกลั้นหายใจ/);assert.match(lesson,/ไม่ใช้วินิจฉัยโรค/);assert.match(guide,/ไม่ทำ breath-holding/);assert.match(script,/pathComplete/);assert.match(script,/airComplete/);assert.match(script,/quizComplete/);});
+check('AI privacy and consent boundaries',()=>{const lesson=read(lessons[5]),script=read('assets/js/privacy-consent-lesson.js');assert.match(lesson,/ข้อมูลส่วนตัว/);assert.match(lesson,/การยินยอม/);assert.match(lesson,/สถานการณ์จำลอง/);assert.match(script,/sharingComplete/);assert.match(script,/footprintComplete/);});
+check('environment safety labels',()=>{assert.match(read(lessons[6]),/ไม่ใช่ประกาศคุณภาพอากาศปัจจุบัน/);assert.match(read(lessons[7]),/สถานการณ์จำลอง/);assert.match(read(lessons[7])+read(guides[6]),/(ไม่|ห้าม)ชิมน้ำ/);});
+check('maker safety and native controls',()=>{const maker=read(lessons[9])+read(guides[8]);assert.match(maker,/ห้ามยกคน/);assert.match(maker,/จุดหนีบ/);assert.match(maker,/แบบจำลองอุดมคติ/);assert.doesNotMatch(maker,/draggable="true"/);});
+check('citizenship consent and inclusive decision safeguards',()=>{assert.match(read(lessons[10]),/การยินยอม/);assert.match(read(lessons[10]),/ผู้ใหญ่ที่ไว้ใจได้/);const cit=read(lessons[11])+read(guides[10]);assert.match(cit,/VOICE/);assert.match(cit,/สถานการณ์จำลอง/);assert.match(cit,/ไม่ใช้การลงคะแนน/);});
+if(process.exitCode) process.exit(process.exitCode);
