@@ -1,11 +1,15 @@
-const CACHE = 'arshavin-grade4-v1';
+const CACHE = 'arshavin-grade4-v2';
 const CORE = [
   './',
   './index.html',
   './assets/css/site.css',
   './assets/js/sleep-lesson.js',
+  './assets/js/ai-claims-lesson.js',
   './subjects/human-body/sleep-ready-brain.html',
+  './subjects/ai-science/fact-opinion-ai-claims.html',
   './worksheets/student/sleep-ready-brain-a4.html',
+  './worksheets/student/fact-opinion-ai-claims-a4.html',
+  './worksheets/teacher-guides/fact-opinion-ai-claims-guide.html',
   './manifest.webmanifest'
 ];
 self.addEventListener('install', event => {
