@@ -118,6 +118,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 4. TeachEngineering — Let’s Move It! (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_simple_lesson03
 5. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
+## MAKER-04 — Structures, Shapes and Strength
+1. TeachEngineering — Race to the Top! Modeling Skyscrapers (Grade 4; accessed 2026-07-20): https://www.teachengineering.org/activities/view/ucd_kapablocks_activity1 — supports Grade 4 criteria, constraints, iterative testing and redesign of lightweight load-bearing models.
+2. TeachEngineering — Triangles & Trusses (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_trusses_lesson01 — supports triangle stability, diagonal bracing and comparing deformation of unbraced polygons.
+3. TeachEngineering — Polygons, Angles and Trusses, Oh My! (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_polygons_angles_trusses_lesson01 — supports structural members, compression/tension context and triangles as stable elemental shapes.
+4. TeachEngineering — History and Testing Shapes of Strength for Buildings (accessed 2026-07-20): https://www.teachengineering.org/activities/view/cub_intro_lesson01_activity1 — supports testing paper shapes and using engineering evidence while this lesson applies stricter lightweight-only safety limits.
+5. OpenStax Physics — 9.3 Simple Machines (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines — supports force–distance trade-offs, conservation of energy and explicit ideal-model limitations.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, textual feedback and non-drag alternatives.
+
 ## CIT-01 — Rights, Responsibilities and Digital Kindness
 1. UNICEF — Convention on the Rights of the Child: https://www.unicef.org/child-rights-convention/convention-text
 2. UNICEF — Children’s version: https://www.unicef.org/child-rights-convention/convention-text-childrens-version
@@ -152,5 +160,6 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Waste activities use clean fictional cards or prepared clean materials only; children do not search, open, photograph, weigh or touch real waste, sharps, broken glass, leaking batteries, chemicals, medicines, hygiene waste, animal remains or unknown materials.
 - Breathing and circulation lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing, pulse challenges, diagnostic interpretation or exertion tests.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
+- Maker structure activities use paper, tape and lightweight test objects only; they do not certify real structures and prohibit climbing, overhead tests, people/animals on models and child use of cutting, drilling or hot-glue tools.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
