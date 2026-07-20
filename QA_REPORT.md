@@ -21,7 +21,7 @@ MAKER-03 is present on `main` at commit `2197a1adf032871a01cd3b41da087dd8a9ec545
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, safeguarding and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, sixteen-lesson shell, reset key and service-worker v17 paths align |
-| Automated regression | PENDING exact PR head | Complete and focused CIT-03 suites are configured in GitHub Actions; final-head result must pass before merge |
+| Automated regression | PASS on pre-evidence head | GitHub Actions workflow `Static learning-site checks`, run #48, run ID `29711049865`, head `49c83779b31084d9c75aa6c168d9946ac899a749`, conclusion `success`; the documentation-only evidence commit must also pass before merge |
 
 ## Functional cases inspected
 1. Source comparison refuses incomplete answers and saves only after all three evidence choices are correct.
@@ -36,7 +36,7 @@ MAKER-03 is present on `main` at commit `2197a1adf032871a01cd3b41da087dd8a9ec545
 10. Focused assertions reject outbound APIs, drag-only interaction, missing fictional-scenario labels, unsafe child investigation and incomplete offline integration.
 
 ## Verification still required
-- Exact final-head GitHub Actions result.
+- Exact final-head GitHub Actions result after this evidence-only commit.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
