@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="บทเรียน ป.4 เรื่องรูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <title>รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้ · Patterns, Features and Edge Cases</title>
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปเนื้อหา / Skip to content</a>
+<header class="site-header"><div><strong>วิทยาศาสตร์ปัญญาประดิษฐ์ · AI Science</strong><a class="button secondary" href="../../index.html">หน้าหลัก / Home</a></div></header>
+<main id="main" class="container">
+  <section class="hero">
+    <p class="eyebrow">AI-04 · บทเรียน 4 / Lesson 4</p>
+    <h1>รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้<br><span>Patterns, Features and Edge Cases</span></h1>
+    <p><strong>คำถามนำ / Big question:</strong> กฎที่ดูเหมือนใช้ได้กับตัวอย่างฝึก จะยังใช้ได้กับของชิ้นใหม่ที่แตกต่างออกไปหรือไม่?</p>
+  </section>
+  <div data-learning-shell data-current-lesson="AI-04"></div>
+
+  <nav class="panel no-print" aria-label="ทางลัดบทเรียน / Lesson shortcuts"><strong>ไปที่ / Jump to:</strong> <a href="#learn">เรียนรู้</a> · <a href="#classifier">สร้างกฎ</a> · <a href="#edge">ทดสอบกรณีพิเศษ</a> · <a href="#quiz">แบบฝึกหัด</a> · <a href="#adult">สำหรับผู้ใหญ่</a></nav>
+
+  <section class="panel" id="learn">
+    <h2>เป้าหมาย / Learning goals</h2>
+    <ul>
+      <li>อธิบายความหมายของ <strong>pattern, feature, label, training example, test example</strong></li>
+      <li>สร้างกฎจำแนกจากคุณลักษณะที่สังเกตได้ของสิ่งของสมมติ</li>
+      <li>แยกตัวอย่างฝึกออกจากตัวอย่างทดสอบ เพื่อดูว่ากฎใช้กับของใหม่ได้จริงหรือไม่</li>
+      <li>ค้นหา <strong>edge case — กรณีพิเศษ</strong> และปรับกฎโดยไม่กล่าวโทษคนหรือข้อมูล</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>คำศัพท์ / Vocabulary</h2>
+    <dl>
+      <dt><strong>pattern — รูปแบบ</strong></dt><dd>สิ่งที่เกิดซ้ำหรือความสัมพันธ์ที่เราสังเกตพบ</dd>
+      <dt><strong>feature — คุณลักษณะ</strong></dt><dd>ข้อมูลที่ใช้พิจารณา เช่น วัสดุ รูปร่าง มีฝาปิดหรือไม่</dd>
+      <dt><strong>training example — ตัวอย่างฝึก</strong></dt><dd>ตัวอย่างที่ใช้สร้างหรือปรับกฎ</dd>
+      <dt><strong>test example — ตัวอย่างทดสอบ</strong></dt><dd>ตัวอย่างใหม่ที่ไม่ควรใช้สร้างกฎ เพื่อดูว่ากฎทำงานกับสิ่งที่ยังไม่เคยเห็นหรือไม่</dd>
+      <dt><strong>edge case — กรณีพิเศษ</strong></dt><dd>ตัวอย่างที่ต่างจากกรณีทั่วไปและอาจทำให้กฎผิดพลาด</dd>
+    </dl>
+  </section>
+
+  <section class="panel">
+    <h2>หลักสำคัญ / Key idea</h2>
+    <p>การจำแนกสิ่งของเริ่มจากเลือกคุณลักษณะที่เกี่ยวข้อง สังเกตรูปแบบจากตัวอย่างฝึก แล้วตรวจด้วยตัวอย่างทดสอบที่แยกไว้ หากเราแอบดูคำตอบของชุดทดสอบและแก้กฎตามทุกข้อ ผลทดสอบจะไม่น่าเชื่อถือ</p>
+    <ol>
+      <li><strong>LOOK — มอง:</strong> ระบุคุณลักษณะที่วัดหรือสังเกตได้</li>
+      <li><strong>LEARN — เรียน:</strong> สร้างกฎจากตัวอย่างฝึก</li>
+      <li><strong>LOCK — แยก:</strong> เก็บตัวอย่างทดสอบไว้ ไม่ใช้สร้างกฎ</li>
+      <li><strong>TEST — ทดสอบ:</strong> ตรวจของใหม่และบันทึกทั้งถูกและผิด</li>
+      <li><strong>REVISE — ปรับ:</strong> อธิบายข้อจำกัด เพิ่มตัวอย่างที่เหมาะสม แล้วทดสอบใหม่ด้วยชุดใหม่</li>
+    </ol>
+    <p class="privacy-note"><strong>ขอบเขตบทเรียน:</strong> ใช้เฉพาะสิ่งของในบ้านแบบสมมติ ไม่ขอภาพ เสียง ชื่อ ตำแหน่ง สุขภาพ ผลการเรียน หรือลักษณะส่วนบุคคล และห้ามใช้กฎนี้จัดประเภท ประเมิน หรือตัดสินคน</p>
+  </section>
+
+  <section class="panel no-print" id="classifier" aria-labelledby="classifier-title">
+    <h2 id="classifier-title">กิจกรรม 1: นักออกแบบกฎจำแนก / Rule-builder lab</h2>
+    <p>ตัวอย่างฝึกมี 4 ชิ้น: กล่องกระดาษมีฝาและขวดพลาสติกมีฝาเป็น “ภาชนะเก็บของ”; ช้อนโลหะและผ้าเช็ดมือเป็น “ไม่ใช่ภาชนะเก็บของ” เลือกคุณลักษณะหลักให้กฎของคุณ</p>
+    <fieldset>
+      <legend>กฎใดเหมาะสมที่สุดกับตัวอย่างฝึก? / Which rule best fits the training examples?</legend>
+      <label class="choice"><input type="radio" name="rule" value="color">เป็นสีสด / It has a bright colour</label>
+      <label class="choice"><input type="radio" name="rule" value="lid">เก็บของไว้ภายในได้และมีวิธีปิด / It can hold items inside and can be closed</label>
+      <label class="choice"><input type="radio" name="rule" value="size">มีขนาดเล็ก / It is small</label>
+    </fieldset>
+    <button id="build-rule" type="button">สร้างกฎ / Build rule</button>
+    <div id="rule-feedback" class="feedback" role="status" aria-live="polite"></div>
+  </section>
+
+  <section class="panel no-print" id="edge" aria-labelledby="edge-title">
+    <h2 id="edge-title">กิจกรรม 2: ชุดทดสอบและกรณีพิเศษ / Test set and edge cases</h2>
+    <p>ใช้กฎเดิมกับของใหม่ที่ไม่อยู่ในตัวอย่างฝึก แล้วเลือกคำอธิบายที่รับผิดชอบที่สุด</p>
+    <form id="edge-form">
+      <fieldset><legend>ถุงผ้ามีเชือกรูดเก็บของได้ แต่ไม่ใช่กล่องหรือขวด กฎ “ต้องแข็งและมีฝา” จัดผิด เราควรทำอย่างไร?</legend>
+        <label class="choice"><input type="radio" name="edge" value="hide">ซ่อนผลผิด เพราะตัวอย่างส่วนใหญ่ถูก</label>
+        <label class="choice"><input type="radio" name="edge" value="rename">เปลี่ยนชื่อถุงผ้าให้ตรงกับกฎ</label>
+        <label class="choice"><input type="radio" name="edge" value="revise">บันทึกว่าเป็น edge case ตรวจว่าคุณลักษณะ “เก็บของและปิดได้” สำคัญกว่าวัสดุแข็ง แล้วทดสอบกฎใหม่กับชุดทดสอบใหม่</label>
+      </fieldset>
+      <button type="submit">ตรวจแผน / Check plan</button>
+    </form>
+    <p id="edge-feedback" class="feedback" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel no-print" id="quiz">
+    <h2>แบบฝึกหัด / Quick check</h2>
+    <form id="patterns-quiz">
+      <fieldset><legend>1) คุณลักษณะ / feature คืออะไร?</legend><label class="choice"><input type="radio" name="q1" value="a">ข้อมูลที่ใช้พิจารณาตัวอย่าง</label><label class="choice"><input type="radio" name="q1" value="b">คำตอบที่ถูกเสมอ</label><label class="choice"><input type="radio" name="q1" value="c">ชื่อของผู้ใช้</label></fieldset>
+      <fieldset><legend>2) ทำไมต้องแยกชุดทดสอบออกจากชุดฝึก?</legend><label class="choice"><input type="radio" name="q2" value="a">เพื่อให้กฎจำคำตอบชุดทดสอบ</label><label class="choice"><input type="radio" name="q2" value="b">เพื่อดูว่ากฎใช้กับตัวอย่างใหม่ที่ไม่เคยใช้สร้างกฎได้หรือไม่</label><label class="choice"><input type="radio" name="q2" value="c">เพื่อไม่ต้องบันทึกข้อผิดพลาด</label></fieldset>
+      <fieldset><legend>3) เมื่อพบ edge case ควรทำอย่างไร?</legend><label class="choice"><input type="radio" name="q3" value="a">กล่าวโทษตัวอย่าง</label><label class="choice"><input type="radio" name="q3" value="b">ซ่อนผลผิด</label><label class="choice"><input type="radio" name="q3" value="c">บันทึกข้อจำกัด ทบทวนคุณลักษณะ และทดสอบใหม่อย่างเป็นธรรม</label></fieldset>
+      <button type="submit">ตรวจคำตอบ / Check answers</button>
+    </form>
+    <p id="quiz-feedback" class="feedback" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel">
+    <h2>สรุปและหลักฐาน / Exit ticket and evidence</h2>
+    <p>เติมประโยค: “กฎของฉันใช้ไม่ได้กับ… เพราะ… ฉันจะตรวจต่อโดย…” / Complete: “My rule failed on… because… I will check next by…”</p>
+    <p><a class="button" href="../../worksheets/student/patterns-features-edge-cases-a4.html">ใบงาน A4 / A4 worksheets</a> <a class="button secondary" href="../../worksheets/teacher-guides/patterns-features-edge-cases-guide.html">คู่มือผู้สอน / Teacher guide</a></p>
+  </section>
+
+  <section class="panel" id="adult">
+    <h2>สำหรับผู้ใหญ่ / Adult note</h2>
+    <p>ใช้บัตรคำหรือของจำลองที่สะอาดแทนการอัปโหลดภาพจริง ชวนเด็กอธิบายว่าทำไมเลือก feature นั้น แยกการ “ปรับกฎ” ออกจากการ “แอบแก้คำตอบชุดทดสอบ” และย้ำว่าระบบจำแนกไม่ควรใช้ตัดสินคุณค่า ความสามารถ พฤติกรรม หรือโอกาสของเด็ก</p>
+  </section>
+
+  <section class="panel references"><h2>แหล่งอ้างอิง / References</h2><ul><li>UNESCO — AI Competency Framework for Students (updated 16 January 2026)</li><li>UNICEF — Guidance on AI and Children, version 3.0</li><li>Google for Developers — Machine Learning Crash Course: datasets, features, training and test sets</li><li>W3C — WCAG 2.2</li></ul></section>
+</main>
+<footer><p>ทดสอบกฎกับของใหม่ บันทึกข้อผิดพลาด และไม่ใช้ AI ตัดสินคุณค่าของคน / Test rules on new examples, record errors, and never use AI to judge a person’s worth.</p></footer>
+<script src="../../assets/js/learning-shell.js"></script>
+<script src="../../assets/js/patterns-features-lesson.js"></script>
+</body></html>
