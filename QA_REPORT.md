@@ -20,7 +20,7 @@ AI-04 is present on `main` at commit `e70f716d5c7e6b2f1eb2c678ce75afb1442b0980`.
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit `@page` A4 portrait print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, hygiene boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, nineteen-lesson shell, reset key and service-worker v20 paths align |
-| Automated regression | PENDING exact PR head | Complete manifest and focused `tests/env04-static-checks.mjs` are wired into GitHub Actions; exact final-head result must pass before merge |
+| Automated regression | PASS on pre-evidence head | GitHub Actions workflow `Static learning-site checks`, run #59, run ID `29717016102`, head `9503a78d32c43528a93a538b1ba158d6706e766d`, job `88272181164`, conclusion `success`; this evidence-only commit must also pass before merge |
 
 ## Functional cases inspected
 1. Waste-audit form refuses incomplete answers and saves only after all four preferred actions are selected.
@@ -35,7 +35,7 @@ AI-04 is present on `main` at commit `e70f716d5c7e6b2f1eb2c678ce75afb1442b0980`.
 10. Focused assertions reject outbound APIs, drag-only interaction, missing 5R order, missing A4 structure and missing no-contact/hazard safeguards.
 
 ## Verification still required
-- Exact final-head GitHub Actions result.
+- Exact final-head GitHub Actions result after this evidence-only commit.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
