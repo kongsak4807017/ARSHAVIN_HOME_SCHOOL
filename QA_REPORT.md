@@ -20,7 +20,7 @@ ENV-04 is present on `main` at commit `26e2c9fe9dd4b5e1e69cd3609bae1245c8b388ea`
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit `@page` A4 portrait print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, safety boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, twenty-lesson shell, reset key and service-worker v21 paths align |
-| Automated regression | PENDING exact PR head | Complete suite and focused `tests/maker04-static-checks.mjs` are wired into GitHub Actions; exact final-head result must be recorded before merge |
+| Automated regression | PASS on pre-evidence head | GitHub Actions `Static learning-site checks`, run #63, run ID `29719205052`, head `24647cdf31fc2f5703dfcd53ccedeb0d7c0ddb1d`, job `88278402090`, conclusion `success`; this evidence-only commit must also pass before merge |
 
 ## Functional cases inspected
 1. Frame and load-position selectors provide textual comparison without relying on colour.
@@ -35,7 +35,6 @@ ENV-04 is present on `main` at commit `26e2c9fe9dd4b5e1e69cd3609bae1245c8b388ea`
 10. Focused assertions reject outbound APIs, drag-only interaction, missing A4 structure, missing load-path terms and missing lightweight/adult-supervision/non-certification safeguards.
 
 ## Verification still required
-- Exact final-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -43,4 +42,4 @@ ENV-04 is present on `main` at commit `26e2c9fe9dd4b5e1e69cd3609bae1245c8b388ea`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — twenty lessons, forty A4 sheets and nineteen teacher guides are integrated at source level. Merge requires exact final-head CI. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — twenty lessons, forty A4 sheets and nineteen teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
