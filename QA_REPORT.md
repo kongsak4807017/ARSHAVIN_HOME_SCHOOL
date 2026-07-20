@@ -21,7 +21,7 @@ CIT-03 is present on `main` at commit `4301c17f8339a3d456ee0fd3030654f419fa2929`
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, health boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, seventeen-lesson shell, reset key and service-worker v18 paths align |
-| Automated regression | PENDING | Exact final-head GitHub Actions result is required before merge |
+| Automated regression | PASS on pre-evidence head | GitHub Actions workflow `Static learning-site checks`, run #52, run ID `29712664344`, head `582f627db90acc14f7b6f497eed937cbd9ab20b8`, conclusion `success`; the documentation-only evidence commit must also pass before merge |
 
 ## Functional cases inspected
 1. Blood-flow activity rejects out-of-order choices and saves only after all five steps are completed.
@@ -34,9 +34,10 @@ CIT-03 is present on `main` at commit `4301c17f8339a3d456ee0fd3030654f419fa2929`
 8. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
 9. Complete regression manifest contains seventeen lessons, thirty-four worksheet pages, sixteen guides and seventeen progress keys.
 10. Focused assertions reject outbound APIs, drag-only interaction, missing fictional-scenario labels, pulse measurement, diagnostic language and incomplete offline integration.
+11. A prior CIT-03 focused suite regression caused by a cache-version literal was corrected to verify a versioned cache while retaining exact asset-path checks.
 
 ## Verification still required
-- Exact final-head GitHub Actions result.
+- Exact final-head GitHub Actions result after this evidence-only commit.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
