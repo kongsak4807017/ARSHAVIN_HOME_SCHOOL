@@ -1,39 +1,39 @@
 # QA REPORT
 
-## Build status through AI-07
+## Build status through ENV-07
 Date: 2026-07-21
 
-HB-08 is present on `main` at commit `3e7c82bdc77607e9b46b78527b2a750b50d553e9`. No open pull request existed at the start of this AI-07 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
+AI-07 is present on `main` at commit `18ea916d41c7159dc02837a9d3456ea5c54f1509`. No open pull request existed at the start of this ENV-07 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
 
-## AI-07 — Robots, Sensors and Fail-Safe Systems
+## ENV-07 — Ecosystems, Biodiversity and Responsible Observation
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | UNESCO AI Competency Framework for Students; UNICEF Guidance on AI and Children; NIST AI Risk Management Framework; W3C WCAG 2.2 |
+| Authoritative grounding | PASS | UNEP TEEB for ecosystem and biodiversity value; Convention on Biological Diversity definitions and conservation principles; W3C WCAG 2.2 for keyboard, focus and non-drag operation |
 | Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interaction feedback, assessment, worksheets and teacher guidance |
-| Input–Process–Output model | PASS (source inspection) | Fictional moisture and rain inputs produce visible process reasoning and text outputs without controlling a real device |
-| Sensor limits | PASS (source inspection) | Missing and conflicting readings trigger an explicit stop rather than guessing; limitations and need for repeated evidence are stated |
-| Fail-safe and human escalation | PASS (source inspection) | SAFE framework requires Sense, Assess, Fail safely and Escalate to a responsible human |
-| Keyboard/accessibility | PASS (source inspection) | Native selects, radio controls and buttons; fieldsets, legends, explicit labels and focusable polite live feedback; no drag-only interaction or timer |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.ai.robots.v1`; no outbound lesson APIs |
-| Child privacy | PASS | No camera, microphone, location, identity, behaviour tracking or child profiling; no real device connection |
-| Electrical/water safety | PASS | Lesson and guide prohibit mains wiring, pump repair, exposed batteries and water near electrical equipment; abnormal equipment routes to an adult |
+| Food-web reasoning | PASS (source inspection) | Fictional Chiang Rai context includes producer, consumer and decomposer roles with food-to-eater energy arrows |
+| Habitat-change reasoning | PASS (source inspection) | Learners distinguish possible effects from certainty, request repeated evidence and disclose model limits |
+| Responsible observation | PASS (source inspection) | CARE framework covers permission, safety, avoidance of disturbance, broad-area recording and limitation disclosure |
+| Wildlife-location protection | PASS | Lesson, worksheet and guide prohibit precise nest or sensitive-species coordinates and public location sharing |
+| Fieldwork safety | PASS | No fieldwork is required; guide prohibits night search, water entry, climbing, close wildlife approach, capture, feeding and specimen collection |
+| Keyboard/accessibility | PASS (source inspection) | Native select, radio controls and buttons; fieldsets, legends, explicit labels and focusable polite live feedback; no drag-only interaction or timer |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.environment.biodiversity.v1`; no outbound lesson APIs |
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait print rule and explicit page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, accessibility alternatives, safety boundaries and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, thirty-three-lesson shell, reset key and service-worker v34 paths align |
-| Automated regression | PASS on exact implementation head | GitHub Actions `Static learning-site checks`, run #107, run ID `29773853269`, job ID `88458392847`, exact implementation head `06fe520f8f98dd270ad88ae231f1e5ada5bae1b9`, conclusion `success`; checkout, Node setup, complete regression, focused AI-07 checks, evidence upload and enforcement all passed. This evidence-only documentation head must also pass before merge. |
+| Navigation/offline | PASS (source inspection) | Homepage, thirty-four-lesson shell, reset key and service-worker v35 paths align |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #110, run ID `29776152538`, job ID `88465867801`, exact implementation head `04f73ee7e73b452513cdc8a35097c902589736d6`, conclusion `success`; checkout, Node setup, complete regression, focused ENV-07 checks, evidence upload and enforcement all passed. This evidence-only documentation head must also pass before merge. |
 
 ## Functional cases inspected
-1. IPO simulator rejects incomplete input and displays text feedback.
-2. Missing or conflicting sensor data produces a stop-and-alert-human result.
-3. Dry/no-rain data produces an adult-review recommendation only; it does not activate equipment.
-4. Fail-safe activity rejects guessing, risky continuation and child-data collection.
+1. Food-web form rejects incomplete input and displays bilingual text feedback.
+2. Correct food-web answers require plant producer, plausible food-to-eater pathway and decomposer nutrient return.
+3. Habitat activity requires a scenario, evidence-limited conclusion and safe observation method.
+4. Habitat feedback avoids certainty and displays scenario-specific model limitations.
 5. Quiz requires all three answers and saves completion only at 3/3.
-6. Lesson completion requires `ipoComplete`, `failsafeComplete` and `quizComplete`.
+6. Lesson completion requires `foodwebComplete`, `habitatComplete` and `quizComplete`.
 7. Storage reads/writes are guarded; storage failure does not block learning.
 8. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
 9. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-10. Complete regression manifest contains thirty-three lessons, sixty-six worksheet pages, thirty-two guides and thirty-three progress keys.
+10. Complete regression manifest contains thirty-four lessons, sixty-eight worksheet pages, thirty-three guides and thirty-four progress keys.
 11. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
@@ -45,4 +45,4 @@ HB-08 is present on `main` at commit `3e7c82bdc77607e9b46b78527b2a750b50d553e9`.
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty-three lessons, sixty-six A4 sheets and thirty-two teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — thirty-four lessons, sixty-eight A4 sheets and thirty-three teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
