@@ -5,6 +5,13 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
+- Complete interactive lesson **CIT-04 การสื่อสารเมื่อเห็นต่างและการแก้ความขัดแย้งอย่างสันติ / Disagreement, Dialogue and Peaceful Conflict Resolution**.
+- Keyboard-native fictional dialogue lab using CALM: Check safety, Attend and listen, Label facts/feelings/needs, Make a workable request.
+- Fact–feeling–need analysis with trusted-adult escalation for threats, bullying, blocking, harm or unsafe feelings.
+- Guarded local-only completion under `arshavin.citizenship.dialogue.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, safeguarding and four-level rubric.
+- Focused dependency-free `tests/cit04-static-checks.mjs` plus expanded complete regression coverage.
+- UNESCO, UNICEF, Council of Europe and WCAG 2.2 source records.
 - Complete interactive lesson **MAKER-04 โครงสร้าง รูปทรง และความแข็งแรง / Structures, Shapes and Strength**.
 - Keyboard-native load-path comparison covering an unbraced square, triangle and diagonally braced square with textual feedback.
 - Safe paper-structure design challenge using lightweight materials, one-variable testing, repeated evidence and explicit non-certification boundaries.
@@ -18,28 +25,9 @@ All notable interactive-web changes are recorded here.
 - Guarded local-only completion under `arshavin.environment.waste.v1` and a three-question corrective assessment.
 - Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, hygiene boundaries and four-level rubric.
 - Focused dependency-free `tests/env04-static-checks.mjs` plus expanded complete regression coverage.
-- US EPA, UNEP and WCAG 2.2 source records.
-- Complete interactive lesson **AI-04 รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้ / Patterns, Features and Edge Cases**.
-- Keyboard-native fictional household-object rule builder covering pattern, feature, label and classification rules.
-- Explicit separation of training examples from unseen test examples, plus transparent edge-case recording and fresh-test-set revision.
-- Guarded local-only completion under `arshavin.ai.patterns.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, child-data safeguards and four-level rubric.
-- Focused dependency-free `tests/ai04-static-checks.mjs` plus expanded complete regression coverage.
-- UNESCO, UNICEF, Google Machine Learning Crash Course and WCAG 2.2 source records.
-- Complete interactive lesson **HB-05 ระบบไหลเวียนเลือด หัวใจ และการดูแลอย่างปลอดภัย / Circulation, the Heart and Safer Care**.
-- Keyboard-native five-step blood-flow sequence covering body, right heart, lungs, left heart and return to the body.
-- Fictional health-information decisions that reject diagnosis from one claim or unexplained app number and escalate danger signs to an adult.
-- Guarded local-only completion under `arshavin.humanbody.circulation.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, health safeguards and four-level rubric.
-- Focused dependency-free `tests/hb05-static-checks.mjs` plus expanded complete regression coverage.
-- NIH/NHLBI, WHO and WCAG 2.2 source records.
-- Complete interactive lesson **CIT-03 สื่อ ข่าวสาร และการตรวจสอบหลักฐาน / Media, Public Information and Evidence Checking**.
-- Keyboard-native fictional source-comparison activity using TRACE: Trace the source, Read beyond, Ask the purpose, Check evidence/context and Examine another source.
-- Fictional Chiang Rai community-notice scenarios covering unsupported closures, stale flood images, privacy protection and adult-guided official verification.
-- Guarded local-only completion under `arshavin.citizenship.media.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, safeguarding and four-level rubric.
-- Focused dependency-free `tests/cit03-static-checks.mjs` plus expanded complete regression coverage.
-- UNESCO, UNICEF Innocenti, Council of Europe and WCAG 2.2 source records.
+- Complete interactive lesson **AI-04 รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้ / Patterns, Features and Edge Cases** and its full deliverable set.
+- Complete interactive lesson **HB-05 ระบบไหลเวียนเลือด หัวใจ และการดูแลอย่างปลอดภัย / Circulation, the Heart and Safer Care** and its full deliverable set.
+- Complete interactive lesson **CIT-03 สื่อ ข่าวสาร และการตรวจสอบหลักฐาน / Media, Public Information and Evidence Checking** and its full deliverable set.
 - Complete interactive lesson **MAKER-03 ล้อ เพลา และการออกแบบการเคลื่อนที่ / Wheels, Axles and Designing Motion** and its full deliverable set.
 - Complete interactive lesson **ENV-03 ดิน การชะล้าง และการอนุรักษ์ดิน / Soil, Erosion and Soil Conservation** and its full deliverable set.
 - Complete interactive lesson **AI-03 แบบจำลองเรียนรู้จากข้อมูลและอคติ / Learning from Data and Bias** and its full deliverable set.
@@ -48,19 +36,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists twenty lessons and clears all twenty known local progress keys.
-- Shared learning shell places MAKER-04 after MAKER-03 and reports progress across twenty lessons.
-- Service-worker cache advanced to `arshavin-grade4-v21` and precaches all MAKER-04 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to twenty lessons, forty A4 sheets and nineteen guides.
-- GitHub Actions runs complete and focused suites through MAKER-04 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 20/52 lessons, 40/104 A4 sheets and 19 teacher guides.
-- Next executable increment advanced to **CIT-04 Disagreement, Dialogue and Peaceful Conflict Resolution**.
+- Homepage now lists twenty-one lessons and clears all twenty-one known local progress keys.
+- Shared learning shell places CIT-04 after CIT-03 and reports progress across twenty-one lessons.
+- Service-worker cache advanced to `arshavin-grade4-v22` and precaches all CIT-04 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to twenty-one lessons, forty-two A4 sheets and twenty guides.
+- GitHub Actions runs complete and focused suites through CIT-04 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 21/52 lessons, 42/104 A4 sheets and 20 teacher guides.
+- Next executable increment advanced to **HB-06 Digestion, Nutrients and Responsible Food Information**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- MAKER-04 uses native select, radio, button, form, fieldset and legend controls with polite live feedback and no drag-only dependency or timer.
-- MAKER-04 uses paper, tape and one lightweight test object on a flat table; adults handle cutting or drilling.
-- Heavy loads, glass, powered tools, hot glue, climbing, overhead tests, people/animals on models and certification of real structures are prohibited.
+- CIT-04 uses native radio, button, form, fieldset and legend controls with focusable polite live feedback and no drag-only dependency or timer.
+- CIT-04 uses fictional scenarios only and does not request real-conflict disclosure, names, family details, political views or distressing experiences.
+- Forced apology, forced reconciliation, pairing real opponents for role-play, voting on blame/punishment/popularity and sending a child back to manage unsafe conflict alone are prohibited.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19
