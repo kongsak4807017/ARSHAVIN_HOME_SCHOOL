@@ -75,6 +75,13 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. Google for Developers — Datasets, Generalization and Overfitting (accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/overfitting
 6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
+## AI-05 — AI Decisions, Confidence and Human Escalation
+1. UNESCO — AI Competency Framework for Students (updated 2026-01-16; accessed 2026-07-20): https://www.unesco.org/en/articles/ai-competency-framework-students — supports human-centred judgement, ethics, critical evaluation of AI solutions and responsible AI system design.
+2. UNICEF Innocenti — Guidance on AI and children, version 3.0 (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/policy-guidance-ai-children — supports oversight, safety, fairness, privacy, transparency, explainability and accountability for children.
+3. UNICEF Digital Impact — UNICEF AI Strategy 2025–2030: AI for Every Child (accessed 2026-07-20): https://www.unicef.org/digitalimpact/unicef-ai-strategy-2025-2030-ai-every-child — supports human oversight, transparency, explainability, accountability and child-rights guardrails.
+4. UNICEF Innocenti — How to design AI for children (accessed 2026-07-20): https://www.unicef.org/innocenti/stories/how-to-design-ai-for-children — supports clear explanation that qualified humans remain responsible for consequential assessments.
+5. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard operation, labelled controls, visible focus and non-drag alternatives.
+
 ## ENV-01 — Read the Air, Choose a Safer Action
 1. กรมอนามัย — ฝุ่น PM2.5 กับสุขภาพเด็กไทย: https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
 2. กรมอนามัย — คำแนะนำผู้ปกครองและเด็กเมื่อค่าฝุ่นสูง: https://anamai.moph.go.th/th/news-anamai/44705
@@ -170,6 +177,7 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
 - AI activities use fictional examples and must not classify, rank or predict children, sensitive traits, health, disability, ethnicity, religion, gender, behaviour, worth or access to opportunities.
+- AI confidence scores are estimates, not guarantees; high-impact decisions require accountable human review, limitation disclosure and a challenge/review route.
 - No child-specific identity data, passwords, addresses, precise location, images, health records, symptoms or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
 - Environmental simulations do not certify current air, water, soil, slope, landslide or waste-system safety; real sites require adult and qualified local assessment.
