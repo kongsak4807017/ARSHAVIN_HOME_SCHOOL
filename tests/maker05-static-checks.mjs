@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const root=path.resolve(import.meta.dirname,'..');
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const exists=p=>fs.existsSync(path.join(root,p));
+const lesson='subjects/maker-engineering/materials-properties-responsible-selection.html';
+const script='assets/js/materials-properties-lesson.js';
+const worksheet='worksheets/student/materials-properties-responsible-selection-a4.html';
+const guide='worksheets/teacher-guides/materials-properties-responsible-selection-guide.html';
+function check(name,fn){try{fn();console.log(`PASS ${name}`)}catch(error){console.error(`FAIL ${name}: ${error.message}`);process.exitCode=1}}
+check('MAKER-05 files exist',()=>[lesson,script,worksheet,guide].forEach(file=>assert.ok(exists(file),file)));
+check('lesson JavaScript parses',()=>new vm.Script(read(script),{filename:script}));
+check('bilingual semantic lesson',()=>{const html=read(lesson);assert.match(html,/<html lang="th">/);assert.match(html,/วัสดุ/);assert.match(html,/Materials, Properties and Responsible Selection/);assert.match(html,/data-learning-shell/);assert.match(html,/fieldset/);assert.match(html,/aria-live="polite"/);assert.doesNotMatch(html,/draggable="true"/)});
+check('material trade-offs and fair testing',()=>{const material=read(lesson)+read(guide)+read(worksheet);['strength','flexibility','water resistance','durability','life cycle'].forEach(term=>assert.match(material,new RegExp(term,'i')));assert.match(material,/ไม่มีวัสดุ.*ดีที่สุด.*ทุกงาน|no material.*best.*every/i);assert.match(material,/เปลี่ยนทีละหนึ่งตัวแปร|change one variable/i);assert.match(material,/ใช้ซ้ำ|reuse/i);assert.match(material,/ซ่อม|repair/i);assert.match(material,/แยกชิ้น|disassembl/i)});
+check('safety and non-certification boundaries',()=>{const material=read(lesson)+read(guide)+read(worksheet);assert.match(material,/ห้ามใช้ไฟ|no flames|เปลวไฟ/i);assert.match(material,/สารเคมี|chemicals/i);assert.match(material,/ของมีคม|sharp/i);assert.match(material,/ผู้ใหญ่.*ตัด|adult.*cut/i);assert.match(material,/ไม่รับรอง|does not certify/i);assert.match(material,/สะอาด.*น้ำหนักเบา|clean.*lightweight/i)});
+check('local-only completion',()=>{const js=read(script);['matrixComplete','designComplete','quizComplete','arshavin.maker.materials.v1'].forEach(term=>assert.match(js,new RegExp(term.replaceAll('.','\\.'))));assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/)});
+check('exactly two A4 sheets',()=>{const html=read(worksheet);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(html,/@page\{size:A4 portrait/)});
+check('offline and navigation integration',()=>{const home=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');[lesson,script,worksheet,guide].forEach(file=>assert.ok(sw.includes(`./${file}`),file));assert.ok(home.includes(lesson));assert.match(home,/arshavin\.maker\.materials\.v1/);assert.match(shell,/MAKER-05/);assert.match(shell,/arshavin\.maker\.materials\.v1/);assert.match(sw,/arshavin-grade4-v\d+/)});
+if(process.exitCode)process.exit(process.exitCode);
