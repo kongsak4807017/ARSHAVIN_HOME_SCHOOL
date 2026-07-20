@@ -21,7 +21,7 @@ ENV-07 is present on `main` at commit `658e1d56f6297d93ceaa9b0947ceb2fc391f2c47`
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait print rule and explicit page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, accessibility alternatives, safety boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, thirty-five-lesson shell, reset key and service-worker v36 paths align |
-| Automated regression | PENDING exact PR-head evidence | Complete regression and focused `tests/maker07-static-checks.mjs` are configured in GitHub Actions; exact final-head conclusion must be recorded before merge |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #114, run ID `29780195067`, exact implementation head `944e084242b25588468fcbfbee19a1d056e5cf0d`, conclusion `success`; complete regression, focused MAKER-07 checks, evidence upload and enforcement passed. This evidence-only documentation head must also pass before merge. |
 
 ## Functional cases inspected
 1. Material selector renders bilingual textual results for steel, aluminium, wood and plastic.
@@ -36,7 +36,7 @@ ENV-07 is present on `main` at commit `658e1d56f6297d93ceaa9b0947ceb2fc391f2c47`
 10. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final documentation-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -44,4 +44,4 @@ ENV-07 is present on `main` at commit `658e1d56f6297d93ceaa9b0947ceb2fc391f2c47`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty-five lessons, seventy A4 sheets and thirty-four teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — thirty-five lessons, seventy A4 sheets and thirty-four teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
