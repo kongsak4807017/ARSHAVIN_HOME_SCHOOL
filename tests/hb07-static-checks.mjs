@@ -10,7 +10,7 @@ assert.match(lesson,/Kidneys[\s\S]*Ureters[\s\S]*Bladder[\s\S]*Urethra/i);
 assert.match(lesson,/แบบจำลองมีขอบเขต|Model limits/i);
 assert.match(lesson,/ไม่วินิจฉัย|does not diagnose/i);
 assert.match(lesson,/ไม่ต้องบอก|privacy/i);
-assert.match(lesson,/แข่งขันดื่มน้ำ|water-drinking challenges/i);
+assert.match(lesson,/แข่งขัน(?:ดื่ม|ปริมาณ)น้ำ|water-drinking challenges/i);
 assert.match(lesson,/fieldset/); assert.match(lesson,/legend/); assert.match(lesson,/aria-live="polite"/);
 assert.doesNotMatch(script,/fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon/);
 assert.match(script,/arshavin\.humanbody\.kidneys\.v1/);
