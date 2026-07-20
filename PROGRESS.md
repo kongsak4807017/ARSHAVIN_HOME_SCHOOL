@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **15 / 52**
-- A4 student worksheets: **30 / 104 minimum**
-- Teacher guides/rubrics: **14 complete guides**
+- Interactive bilingual lessons: **16 / 52**
+- A4 student worksheets: **32 / 104 minimum**
+- Teacher guides/rubrics: **15 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -67,8 +67,16 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with four-level rubric
 - [x] Homepage, fifteen-lesson shell, reset key, service-worker v16, complete regression manifest and focused MAKER-03 checks integrated
 
+### 2026-07-20 — CIT-03 Media, Public Information and Evidence Checking
+- [x] Complete bilingual lesson separating source, claim, evidence, context and corroboration
+- [x] Keyboard-native fictional source-comparison activity using the TRACE framework
+- [x] Fictional Chiang Rai community-notice scenarios covering stale images, unsupported closures and privacy-protective responses
+- [x] Guarded local-only completion under `arshavin.citizenship.media.v1`
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, safeguarding and four-level rubric
+- [x] Homepage, sixteen-lesson shell, reset key, service-worker v17, complete regression manifest and focused CIT-03 checks integrated
+
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — fifteen lessons, thirty printable A4 sheets and fourteen teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — sixteen lessons, thirty-two printable A4 sheets and fifteen teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **CIT-03 สื่อ ข่าวสาร และการตรวจสอบหลักฐาน / Media, Public Information and Evidence Checking** with a keyboard-native source-comparison activity, fictional Chiang Rai community notice scenarios, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **HB-05 ระบบไหลเวียนเลือด หัวใจ และการดูแลอย่างปลอดภัย / Circulation, the Heart and Safer Care** with a keyboard-native blood-flow sequence, fictional health-information decision activity without pulse challenges or diagnosis, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
