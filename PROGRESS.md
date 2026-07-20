@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **16 / 52**
-- A4 student worksheets: **32 / 104 minimum**
-- Teacher guides/rubrics: **15 complete guides**
+- Interactive bilingual lessons: **17 / 52**
+- A4 student worksheets: **34 / 104 minimum**
+- Teacher guides/rubrics: **16 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -75,8 +75,16 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, safeguarding and four-level rubric
 - [x] Homepage, sixteen-lesson shell, reset key, service-worker v17, complete regression manifest and focused CIT-03 checks integrated
 
+### 2026-07-20 — HB-05 Circulation, the Heart and Safer Care
+- [x] Complete bilingual lesson covering heart, arteries, veins, capillaries and a simplified body–heart–lungs circulation loop
+- [x] Keyboard-native five-step blood-flow sequence without pulse measurement, exertion or body-performance comparison
+- [x] Fictional health-information decisions that separate general facts from diagnosis and require adult help for danger signs
+- [x] Guarded local-only completion under `arshavin.humanbody.circulation.v1`
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, safeguarding and four-level rubric
+- [x] Homepage, seventeen-lesson shell, reset key, service-worker v18, complete regression manifest and focused HB-05 checks integrated
+
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — sixteen lessons, thirty-two printable A4 sheets and fifteen teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — seventeen lessons, thirty-four printable A4 sheets and sixteen teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **HB-05 ระบบไหลเวียนเลือด หัวใจ และการดูแลอย่างปลอดภัย / Circulation, the Heart and Safer Care** with a keyboard-native blood-flow sequence, fictional health-information decision activity without pulse challenges or diagnosis, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **AI-04 รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้ / Patterns, Features and Edge Cases** with a keyboard-native household-object classifier, explicit training-versus-test separation, fictional non-personal examples, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
