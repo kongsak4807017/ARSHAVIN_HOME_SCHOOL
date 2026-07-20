@@ -5,6 +5,12 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-21
 
 ### Added
+- Complete interactive lesson **HB-08 ระบบประสาท สมอง ประสาทสัมผัส และข้อมูลสุขภาพที่รับผิดชอบ / Nervous System, Brain, Senses and Responsible Health Information**.
+- Keyboard-native signal-path model for fictional vision, hearing and touch examples using stimulus → receptor → nerve → brain/spinal cord → response.
+- Sensory-safety decision activity that rejects loudness challenges, reaction-time competition, neurological self-diagnosis and child ranking.
+- Guarded local-only completion under `arshavin.humanbody.nervous.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, AAC alternatives, safeguarding boundaries and a four-level rubric.
+- Focused dependency-free `tests/hb08-static-checks.mjs` plus expanded complete regression coverage through thirty-two lessons.
 - Complete interactive lesson **CIT-06 กติกาสาธารณะ ความเป็นธรรม และการทบทวนการตัดสินใจ / Public Rules, Fairness and Reviewing Decisions**.
 - FAIR framework for finding purpose, announcing criteria, inspecting impact and reviewing with evidence.
 - Keyboard-native fictional rule inspection distinguishing transparent criteria from favouritism and identical treatment from reasonable adjustment.
@@ -14,19 +20,21 @@ All notable interactive-web changes are recorded here.
 - Focused dependency-free `tests/cit06-static-checks.mjs` plus expanded complete regression coverage through thirty-one lessons.
 
 ### Changed
-- Homepage now lists thirty-one lessons and clears all thirty-one known local progress keys.
-- Shared learning shell places CIT-06 after CIT-05 and reports progress across thirty-one lessons.
-- Service-worker cache advanced to `arshavin-grade4-v32` and precaches all CIT-06 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to thirty-one lessons, sixty-two A4 sheets and thirty guides.
-- GitHub Actions runs complete and focused suites through CIT-06 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 31/52 lessons, 62/104 A4 sheets and 30 teacher guides.
-- Next executable increment advanced to **HB-08 Nervous System, Brain, Senses and Responsible Health Information**.
+- Homepage now lists thirty-two lessons and clears all thirty-two known local progress keys.
+- Shared learning shell places HB-08 after HB-07 and reports progress across thirty-two lessons.
+- Service-worker cache advanced to `arshavin-grade4-v33` and precaches all HB-08 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to thirty-two lessons, sixty-four A4 sheets and thirty-one guides.
+- GitHub Actions runs complete and focused suites through HB-08 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 32/52 lessons, 64/104 A4 sheets and 31 teacher guides.
+- Next executable increment advanced to **AI-07 Robots, Sensors and Fail-Safe Systems**.
 
 ### Safety, accessibility and privacy
-- CIT-06 uses native radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
-- All cases are fictional; the lesson does not collect real disputes, names, scores, health, disability, family information or political opinions.
-- Children do not confront, appeal or contact unfamiliar people alone; real concerns require an accountable adult and established safeguarding route.
+- HB-08 uses native select, radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency, timer or reaction-time ranking.
+- All HB-08 cases are fictional; the lesson does not collect symptoms, diagnoses, medicines, sensory scores, school scores or family-health information.
+- Sudden sensory change, severe headache, fainting, seizure, weakness, confusion or head injury routes to a trusted adult and health professional without public disclosure.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
+- CIT-06 uses native radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
+- CIT-06 cases are fictional and do not collect real disputes, names, scores, health, disability, family information or political opinions.
 
 ## 2026-07-20
 
@@ -52,26 +60,20 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **HB-05 ระบบไหลเวียนเลือด หัวใจ และการดูแลอย่างปลอดภัย / Circulation, the Heart and Safer Care** and its full deliverable set.
 - Complete interactive lesson **CIT-03 สื่อ ข่าวสาร และการตรวจสอบหลักฐาน / Media, Public Information and Evidence Checking** and its full deliverable set.
 - Complete interactive lesson **MAKER-03 ล้อ เพลา และการออกแบบการเคลื่อนที่ / Wheels, Axles and Designing Motion** and its full deliverable set.
-- Complete interactive lesson **ENV-03 ดิน การชะล้าง และการอนุรักษ์ดิน / Soil, Erosion and Soil Conservation** and its full deliverable set.
+- Complete interactive lesson **ENV-03 ดิน การชะล้าง และการอนุรักษ์ดิน / Soil, Erosion and Conservation** and its full deliverable set.
 - Complete interactive lesson **AI-03 แบบจำลองเรียนรู้จากข้อมูลและอคติ / Learning from Data and Bias** and its full deliverable set.
 - Complete interactive lesson **HB-04 การหายใจ การแลกเปลี่ยนก๊าซ และอากาศที่ปลอดภัยกว่า / Breathing, Gas Exchange and Safer Air** and its full deliverable set.
 - Complete interactive lesson **CIT-02 ชุมชน กติกา และการตัดสินใจร่วมกัน / Community, Rules and Shared Decisions** and its full deliverable set.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists thirty lessons and clears all thirty known local progress keys.
-- Shared learning shell places MAKER-06 after MAKER-05 and reports progress across thirty lessons.
-- Service-worker cache advanced to `arshavin-grade4-v31` and precaches all MAKER-06 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to thirty lessons, sixty A4 sheets and twenty-nine guides.
-- GitHub Actions runs complete and focused suites through MAKER-06 and uploads exact log evidence before enforcement.
+- Homepage, shared shell, offline cache and static regression were expanded through thirty lessons.
+- GitHub Actions runs complete and focused suites and uploads exact log evidence before enforcement.
 - Completion counters advanced to 30/52 lessons, 60/104 A4 sheets and 29 teacher guides.
-- Next executable increment advanced to **CIT-06 Public Rules, Fairness and Reviewing Decisions**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- MAKER-06 uses native select, radio and button controls with explicit labels, fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
-- MAKER-06 uses fictional data and clean lightweight materials on a low flat surface only.
-- Speed contests, high ramps, stairs, roads, heavy or sharp objects, and motion paths involving people or animals are prohibited.
+- Maker activities use fictional data and clean lightweight adult-prepared materials with explicit safety boundaries.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19

@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const root=process.cwd();
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const lessonPath='subjects/human-body/nervous-system-brain-senses-responsible-health-information.html';
+const scriptPath='assets/js/nervous-system-lesson.js';
+const worksheetPath='worksheets/student/nervous-system-brain-senses-a4.html';
+const guidePath='worksheets/teacher-guides/nervous-system-brain-senses-guide.html';
+const lesson=read(lessonPath),script=read(scriptPath),worksheet=read(worksheetPath),guide=read(guidePath),index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');
+const checks=[];
+function check(name,condition){checks.push({name,condition:Boolean(condition)})}
+check('lesson bilingual title',lesson.includes('ระบบประสาท สมอง ประสาทสัมผัส')&&lesson.includes('Nervous System, Brain, Senses and Responsible Health Information'));
+check('signal path complete',['สิ่งเร้า','ตัวรับ','เส้นประสาท','สมองหรือไขสันหลัง','การตอบสนอง'].every(x=>lesson.includes(x)));
+check('vision and hearing evidence',lesson.includes('จอประสาทตา')&&lesson.includes('เส้นประสาทตา')&&lesson.includes('คลื่นเสียง')&&lesson.includes('เส้นประสาทหู'));
+check('native accessible controls',lesson.includes('<fieldset>')&&lesson.includes('<legend>')&&lesson.includes('aria-live="polite"')&&lesson.includes('tabindex="-1"'));
+check('no drag or timer dependency',!lesson.includes('draggable="true"')&&!script.includes('setInterval(')&&!script.includes('setTimeout('));
+check('no reaction-time competition',lesson.includes('ไม่มีการจับเวลา')&&lesson.includes('ไม่มีการจัดอันดับความเร็ว'));
+check('health privacy and no diagnosis',lesson.includes('ไม่ต้องบอกอาการ')&&lesson.includes('ไม่ทดสอบสายตา')&&lesson.includes('ไม่วินิจฉัย')&&lesson.includes('ไม่ควรเปรียบเทียบคุณค่าของคน'));
+check('adult escalation safeguards',lesson.includes('บอกผู้ใหญ่ที่ไว้ใจได้')&&lesson.includes('บุคลากรสุขภาพ'));
+check('local only progress',script.includes('arshavin.humanbody.nervous.v1')&&script.includes('signalComplete')&&script.includes('safetyComplete')&&script.includes('quizComplete'));
+check('no outbound lesson APIs',!/(fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script));
+check('incomplete-answer feedback',(script.match(/กรุณาตอบให้ครบทั้ง 3 ข้อ/g)||[]).length===2);
+check('exactly two worksheets',(worksheet.match(/class="worksheet(?:\s|")/g)||[]).length===2&&worksheet.includes('@page{size:A4 portrait'));
+check('teacher guide complete',guide.includes('60–90 นาที')&&guide.includes('Rubric 4 ระดับ')&&guide.includes('AAC')&&guide.includes('ไม่มี timer'));
+check('homepage integration',index.includes(lessonPath)&&index.includes('arshavin.humanbody.nervous.v1'));
+check('shell integration',shell.includes("id: 'HB-08'")&&shell.includes('nervous-system-brain-senses-responsible-health-information.html')&&shell.includes('arshavin.humanbody.nervous.v1'));
+check('offline integration',[lessonPath,scriptPath,worksheetPath,guidePath].every(p=>sw.includes(`./${p}`)));
+for(const item of checks)console.log(`${item.condition?'PASS':'FAIL'} ${item.name}`);
+const failed=checks.filter(x=>!x.condition);
+if(failed.length){console.error(`HB-08 static checks failed: ${failed.map(x=>x.name).join(', ')}`);process.exit(1)}
+console.log(`HB-08 static checks passed (${checks.length}/${checks.length}).`);
