@@ -21,7 +21,7 @@ AI-05 is present on `main` at commit `46aeefb5bfc5144b1d7deaeebd4d1ca2e9ef6a46`.
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 portrait print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconception correction, accessible alternatives, safeguarding and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, twenty-four-lesson shell, reset key and service-worker v25 paths align |
-| Automated regression | PENDING exact PR-head evidence | Complete suite and focused `tests/env05-static-checks.mjs` are wired into GitHub Actions with log artifact retention |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #76, run ID `29731824022`, head `8ba5674697fee731d35293e0da80e4a2968c42e6`, job `88317822971`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
 
 ## Functional cases inspected
 1. Energy-flow activity refuses incomplete input and saves only after useful-output and dispersed-energy reasoning is correct.
@@ -37,7 +37,7 @@ AI-05 is present on `main` at commit `46aeefb5bfc5144b1d7deaeebd4d1ca2e9ef6a46`.
 11. Focused assertions check power-and-time reasoning, label context, no-bill/no-address privacy, electrical safety, local completion and exact two-page A4 structure.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
