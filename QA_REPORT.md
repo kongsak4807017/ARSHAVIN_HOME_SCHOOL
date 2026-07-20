@@ -1,42 +1,42 @@
 # QA REPORT
 
-## Build status through HB-07
+## Build status through ENV-06
 Date: 2026-07-20
 
-CIT-05 is present on `main` at commit `0293b29004374e3043f4d4a7a2f7731da3ac74a8`. No open pull request existed at the start of this HB-07 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
+AI-06 is present on `main` at commit `1500ec2405022b312925df7e8a2cd8c1a25fd348`. No open pull request existed at the start of this ENV-06 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
 
-## HB-07 — Excretion, Kidneys and Water Balance
+## ENV-06 — Climate, Weather and Responsible Preparedness
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | NIDDK/NIH kidney and urinary-tract explanations plus WCAG 2.2 support the content and interaction design |
+| Authoritative grounding | PASS | WMO weather/climate definitions and public-weather-service principles; Thai Meteorological Department Chiang Rai forecast/warning structure; Ready.gov preparedness guidance; WCAG 2.2 interaction requirements |
 | Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interaction feedback, assessment, worksheets and teacher guidance |
-| Core concepts | PASS (source inspection) | Excretion, kidney, nephron, ureter, bladder and water balance are defined and applied |
-| Model accuracy | PASS (source inspection) | Lesson distinguishes filtration and tubular return/reabsorption from a simple sieve; limitations are explicit |
-| Urinary-path activity | PASS (source inspection) | Native buttons require kidneys → ureters → bladder → urethra and provide corrective text feedback |
-| Water-balance decisions | PASS (source inspection) | Fictional scenarios cover heat, thirst, rest, bathroom access, privacy and adult escalation without prescribing a personal intake target |
-| Keyboard/accessibility | PASS (source inspection) | Native controls, forms, fieldsets and legends; focusable polite live feedback; no drag-only interaction or timer |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.humanbody.kidneys.v1`; no outbound lesson APIs |
-| Privacy and diagnosis boundary | PASS | No symptoms, urine colour/frequency, diagnoses, medication, weight or family health information are requested or stored |
-| Safety boundary | PASS | No water-drinking competition; real pain, blood in urine, inability to urinate, confusion, fainting or concern is escalated to a trusted adult and health personnel |
+| Weather–climate distinction | PASS | Lesson and worksheets distinguish short-term atmospheric conditions from long-term patterns and reject one-day climate conclusions |
+| Forecast-evidence activity | PASS | Native radio controls require source, issue time, forecast area, uncertainty and privacy reasoning |
+| Preparedness activity | PASS | Native select/radio controls cover fictional thunderstorm, accumulated-rain/flood and extreme-heat scenarios with before/during/review decisions |
+| Keyboard/accessibility | PASS (source inspection) | Native controls, fieldsets, legends, explicit labels and focusable polite live feedback; no drag-only interaction or timer |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.environment.climate.v1`; no outbound lesson APIs |
+| Privacy boundary | PASS | No address, household coordinates, routes, income, illness, medication or household-vulnerability data requested or stored |
+| Safety boundary | PASS | Children are not sent to observe floodwater, lightning, strong winds, unstable objects or extreme heat; real events defer to adults and current official warnings |
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 portrait print rule |
-| Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, privacy/health boundaries and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, twenty-seven-lesson shell, reset key and service-worker v28 paths align |
-| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #88, run ID `29747339221`, head `e303a7e4ab0e1ad280f4168b657eb9ce1333b8d2`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
+| Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safeguarding boundaries and four-level rubric |
+| Navigation/offline | PASS (source inspection) | Homepage, twenty-nine-lesson shell, reset key and service-worker v30 paths align |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #94, run ID `29755786773`, job ID `88397626867`, head `a3b9e27d3683f0894f6be22a03f60a58bf6c1dcb`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
 
 ## Functional cases inspected
-1. Path activity rejects out-of-order selections and saves only after the complete urinary path.
-2. Reset restarts the path without deleting previously saved completion evidence.
-3. Water-balance activity rejects incomplete responses and saves only after all three privacy/safety decisions are correct.
-4. Quiz requires all three answers and saves completion only at 3/3.
-5. Lesson completion requires `pathComplete`, `balanceComplete` and `quizComplete`.
-6. Storage reads/writes are caught; storage failure does not block learning.
-7. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
-8. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-9. Complete regression manifest contains twenty-seven lessons, fifty-four worksheet pages, twenty-six guides and twenty-seven progress keys.
-10. Focused assertions check kidney/nephron concepts, route sequence, model limits, no diagnosis, privacy, no water-drinking challenge and exact two-page A4 structure.
+1. Forecast comparison rejects incomplete responses and saves only when source, timescale and privacy choices are correct.
+2. Preparedness planning requires a fictional hazard plus correct before, during and update decisions.
+3. Quiz requires all three answers and saves completion only at 3/3.
+4. Lesson completion requires `evidenceComplete`, `preparednessComplete` and `quizComplete`.
+5. Storage reads/writes are guarded; storage failure does not block learning.
+6. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
+7. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
+8. Complete regression manifest contains twenty-nine lessons, fifty-eight worksheet pages, twenty-eight guides and twenty-nine progress keys.
+9. Focused assertions check weather–climate timescale, READY, accessible controls, privacy, hazard-observation prohibitions and exact two-page A4 structure.
+10. A previous AI-06 focused test hard-coded cache `v29`; the root cause was fixed by accepting a versioned cache pattern while retaining exact AI-06 asset assertions, and the full suite then passed on run #94.
 
 ## Verification still required
+- Exact final documentation-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -44,4 +44,4 @@ CIT-05 is present on `main` at commit `0293b29004374e3043f4d4a7a2f7731da3ac74a8`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — twenty-seven lessons, fifty-four A4 sheets and twenty-six teacher guides are integrated at source level. Exact final documentation-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — twenty-nine lessons, fifty-eight A4 sheets and twenty-eight teacher guides are integrated at source level. Exact final documentation-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
