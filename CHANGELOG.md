@@ -5,19 +5,14 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
+- Complete interactive lesson **ENV-05 พลังงานในบ้าน ประสิทธิภาพ และการตัดสินใจอย่างรับผิดชอบ / Household Energy, Efficiency and Responsible Choices**.
+- Keyboard-native energy-flow activity separating useful output from dispersed heat or sound.
+- Fictional equal-output appliance comparison using power × time, contextual label evidence, aggregate data and adult electrical-safety escalation.
+- Guarded local-only completion under `arshavin.environment.energy.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, privacy/electrical-safety safeguards and a four-level rubric.
+- Focused dependency-free `tests/env05-static-checks.mjs` plus expanded complete regression coverage through twenty-four lessons.
 - Complete interactive lesson **AI-05 การตัดสินใจของ AI ความมั่นใจ และการส่งต่อให้มนุษย์ / AI Decisions, Confidence and Human Escalation**.
-- Keyboard-native confidence-and-abstention simulator using fictional low, medium and high confidence values with corrective bilingual feedback.
-- Fictional low-, medium- and high-stakes cases that require accountable human review for decisions affecting children’s rights, health, safety or opportunities.
-- Guarded local-only completion under `arshavin.ai.confidence.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, child-rights safeguards and a four-level rubric.
-- Focused dependency-free `tests/ai05-static-checks.mjs` plus expanded complete regression coverage through twenty-three lessons.
 - Complete interactive lesson **HB-06 ระบบย่อยอาหาร สารอาหาร และข้อมูลอาหารที่รับผิดชอบ / Digestion, Nutrients and Responsible Food Information**.
-- Keyboard-native five-step digestion-path sequence covering mouth, esophagus, stomach, small intestine and large intestine with corrective bilingual feedback.
-- Fictional food-label activity using serving context, multiple information points, evidence limits and responsible health/body claims.
-- Guarded local-only completion under `arshavin.humanbody.digestion.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, nutrition safeguarding and four-level rubric.
-- Focused dependency-free `tests/hb06-static-checks.mjs` plus expanded complete regression coverage.
-- NIDDK/NIH, U.S. FDA, WHO and WCAG 2.2 source records.
 - Complete interactive lesson **CIT-04 การสื่อสารเมื่อเห็นต่างและการแก้ความขัดแย้งอย่างสันติ / Disagreement, Dialogue and Peaceful Conflict Resolution** and its full deliverable set.
 - Complete interactive lesson **MAKER-04 โครงสร้าง รูปทรง และความแข็งแรง / Structures, Shapes and Strength** and its full deliverable set.
 - Complete interactive lesson **ENV-04 ขยะ หลัก 5R และการออกแบบระบบลดของเสีย / Waste, the 5Rs and Designing a Lower-Waste System** and its full deliverable set.
@@ -32,19 +27,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists twenty-three lessons and clears all twenty-three known local progress keys.
-- Shared learning shell places AI-05 after AI-04 and reports progress across twenty-three lessons.
-- Service-worker cache advanced to `arshavin-grade4-v24` and precaches all AI-05 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to twenty-three lessons, forty-six A4 sheets and twenty-two guides.
-- GitHub Actions runs complete and focused suites through AI-05 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 23/52 lessons, 46/104 A4 sheets and 22 teacher guides.
-- Next executable increment advanced to **ENV-05 Household Energy, Efficiency and Responsible Choices**.
+- Homepage now lists twenty-four lessons and clears all twenty-four known local progress keys.
+- Shared learning shell places ENV-05 after ENV-04 and reports progress across twenty-four lessons.
+- Service-worker cache advanced to `arshavin-grade4-v25` and precaches all ENV-05 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to twenty-four lessons, forty-eight A4 sheets and twenty-three guides.
+- GitHub Actions runs complete and focused suites through ENV-05 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 24/52 lessons, 48/104 A4 sheets and 23 teacher guides.
+- Next executable increment advanced to **MAKER-05 Materials, Properties and Responsible Selection**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- AI-05 uses native select, radio and button controls with focusable polite live feedback and no drag-only dependency or timer.
-- AI-05 separates confidence from correctness, supports abstention, requires human accountability for high-impact decisions and prohibits automated decisions about children.
-- AI-05 does not collect names, images, voices, health data, grades, behaviour, location or family information.
+- ENV-05 uses native select, radio and button controls with focusable polite live feedback and no drag-only dependency or timer.
+- ENV-05 uses fictional or aggregate data and does not request addresses, utility account numbers, income, household schedules or utility-bill images.
+- Children do not open panels, disassemble appliances, handle wet/damaged electrical equipment or repair wiring; hazards require adult escalation.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19
