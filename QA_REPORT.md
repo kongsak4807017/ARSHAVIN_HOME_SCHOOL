@@ -1,42 +1,42 @@
 # QA REPORT
 
-## Build status through ENV-06
+## Build status through MAKER-06
 Date: 2026-07-20
 
-AI-06 is present on `main` at commit `1500ec2405022b312925df7e8a2cd8c1a25fd348`. No open pull request existed at the start of this ENV-06 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
+ENV-06 is present on `main` at commit `368c909ee78592eb60aa822974ca95f290832403`. No open pull request existed at the start of this MAKER-06 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
 
-## ENV-06 — Climate, Weather and Responsible Preparedness
+## MAKER-06 — Friction, Surfaces and Safer Motion Design
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | WMO weather/climate definitions and public-weather-service principles; Thai Meteorological Department Chiang Rai forecast/warning structure; Ready.gov preparedness guidance; WCAG 2.2 interaction requirements |
+| Authoritative grounding | PASS | OpenStax friction definition and general characteristics; W3C WCAG 2.2 keyboard, focus and non-drag requirements |
 | Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interaction feedback, assessment, worksheets and teacher guidance |
-| Weather–climate distinction | PASS | Lesson and worksheets distinguish short-term atmospheric conditions from long-term patterns and reject one-day climate conclusions |
-| Forecast-evidence activity | PASS | Native radio controls require source, issue time, forecast area, uncertainty and privacy reasoning |
-| Preparedness activity | PASS | Native select/radio controls cover fictional thunderstorm, accumulated-rain/flood and extreme-heat scenarios with before/during/review decisions |
-| Keyboard/accessibility | PASS (source inspection) | Native controls, fieldsets, legends, explicit labels and focusable polite live feedback; no drag-only interaction or timer |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.environment.climate.v1`; no outbound lesson APIs |
-| Privacy boundary | PASS | No address, household coordinates, routes, income, illness, medication or household-vulnerability data requested or stored |
-| Safety boundary | PASS | Children are not sent to observe floodwater, lightning, strong winds, unstable objects or extreme heat; real events defer to adults and current official warnings |
-| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 portrait print rule |
-| Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safeguarding boundaries and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, twenty-nine-lesson shell, reset key and service-worker v30 paths align |
-| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #94, run ID `29755786773`, job ID `88397626867`, head `a3b9e27d3683f0894f6be22a03f60a58bf6c1dcb`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
+| Core concept accuracy | PASS (source inspection) | Friction is described as opposing relative motion between surfaces in contact and as potentially useful or limiting depending on purpose |
+| Surface comparison | PASS (source inspection) | Native select plus textual output compares three fictional surfaces under an explicitly controlled object, start point and initial push |
+| Fair-test reasoning | PASS (source inspection) | Learners must hold object, start point and initial push constant while changing only surface and are prompted to repeat and limit conclusions |
+| Safer motion design | PASS (source inspection) | Design goal is short controlled movement that stops before an edge; speed competition and absolute “fastest is best” reasoning are rejected |
+| Keyboard/accessibility | PASS (source inspection) | Native select, radio controls, buttons, fieldsets, legends and focusable polite live feedback; no drag-only interaction or timer |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.maker.friction.v1`; no outbound lesson APIs |
+| Safety boundary | PASS | Clean lightweight materials on a low flat surface only; no high ramps, stairs, roads, heavy objects, sharp/breakable materials, people or animals in the motion path |
+| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 print rule and page breaks |
+| Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safety boundaries and four-level rubric |
+| Navigation/offline | PASS (source inspection) | Homepage, thirty-lesson shell, reset key and service-worker v31 paths align |
+| Automated regression | PENDING exact PR-head evidence | Complete regression and focused `tests/maker06-static-checks.mjs` are wired into GitHub Actions; exact final-head run must pass before merge |
 
 ## Functional cases inspected
-1. Forecast comparison rejects incomplete responses and saves only when source, timescale and privacy choices are correct.
-2. Preparedness planning requires a fictional hazard plus correct before, during and update decisions.
-3. Quiz requires all three answers and saves completion only at 3/3.
-4. Lesson completion requires `evidenceComplete`, `preparednessComplete` and `quizComplete`.
-5. Storage reads/writes are guarded; storage failure does not block learning.
-6. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
-7. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-8. Complete regression manifest contains twenty-nine lessons, fifty-eight worksheet pages, twenty-eight guides and twenty-nine progress keys.
-9. Focused assertions check weather–climate timescale, READY, accessible controls, privacy, hazard-observation prohibitions and exact two-page A4 structure.
-10. A previous AI-06 focused test hard-coded cache `v29`; the root cause was fixed by accepting a versioned cache pattern while retaining exact AI-06 asset assertions, and the full suite then passed on run #94.
+1. Surface selector provides text for surface name, relative friction and fictional motion result without relying on colour.
+2. Comparison activity rejects incomplete responses and saves only the evidence-limited conclusion.
+3. Design activity requires correct fair-test, controlled-motion and lightweight-safety choices.
+4. Quiz requires all three answers and saves completion only at 3/3.
+5. Lesson completion requires `comparisonComplete`, `designComplete` and `quizComplete`.
+6. Storage reads/writes are guarded; storage failure does not block learning.
+7. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
+8. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
+9. Complete regression manifest contains thirty lessons, sixty worksheet pages, twenty-nine guides and thirty progress keys.
+10. Focused assertions check friction/fair-test content, native accessible controls, no-speed/high-ramp safeguards and exact two-page A4 structure.
 
 ## Verification still required
-- Exact final documentation-head GitHub Actions result.
+- Exact final PR-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -44,4 +44,4 @@ AI-06 is present on `main` at commit `1500ec2405022b312925df7e8a2cd8c1a25fd348`.
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — twenty-nine lessons, fifty-eight A4 sheets and twenty-eight teacher guides are integrated at source level. Exact final documentation-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — thirty lessons, sixty A4 sheets and twenty-nine teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
