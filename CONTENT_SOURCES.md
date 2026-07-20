@@ -149,6 +149,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. OpenStax Physics — 9.3 Simple Machines (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines
 6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
+## MAKER-05 — Materials, Properties and Responsible Selection
+1. NIST — Materials (accessed 2026-07-20): https://www.nist.gov/materials — supports material characterization, measurement and the need for evidence-based property comparison.
+2. NIST — Measurement Methods for Materials Properties: Elasticity (accessed 2026-07-20): https://www.nist.gov/publications/measurement-methods-materials-properties-elasticity — supports controlled bending, tension, compression and repeated measurement of elastic behavior.
+3. NIST — Synchrotron Measurement Science and Technology: Enabling Next-Generation Materials Innovation (accessed 2026-07-20): https://www.nist.gov/property-fieldsection/synchrotron-measurement-science-and-technology-enabling-next-generation — supports relationships among structure, composition, strength, flexibility and performance.
+4. OpenStax University Physics Volume 1 — 12.3 Stress, Strain, and Elastic Modulus (accessed 2026-07-20): https://openstax.org/books/university-physics-volume-1/pages/12-3-stress-strain-and-elastic-modulus — supports material-dependent deformation and the distinction between rigid, brittle and elastic behavior.
+5. UNEP — Circularity (accessed 2026-07-20): https://www.unep.org/topics/finance-and-economic-transformations/scp-and-circularity/circularity — supports reduce-by-design and value-retention through reuse, repair, repurpose and recycling.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard operation, visible labels, focus and non-drag alternatives.
+
 ## CIT-01 — Rights, Responsibilities and Digital Kindness
 1. UNICEF — Convention on the Rights of the Child: https://www.unicef.org/child-rights-convention/convention-text
 2. UNICEF — Children’s version: https://www.unicef.org/child-rights-convention/convention-text-childrens-version
@@ -195,6 +203,7 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Digestion and food-information activities do not collect diet, weight, body, symptom, allergy or treatment data and do not prescribe calories, restriction, food-group elimination, diagnosis or body comparison.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
 - Maker structure activities use paper, tape and lightweight test objects only; they do not certify real structures and prohibit climbing, overhead tests, people/animals on models and child use of cutting, drilling or hot-glue tools.
+- Maker material activities use fictional data cards or clean lightweight adult-prepared samples only; they do not certify real products and prohibit flames, chemicals, solvents, batteries, sharp/powered tools, heavy loads and destructive testing.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.
 - Conflict-resolution activities use fictional scenarios, prohibit forced apology/reconciliation and require trusted-adult escalation for threats, bullying, harm, blocking or unsafe situations.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
