@@ -5,13 +5,14 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
+- Complete interactive lesson **MAKER-06 แรงเสียดทาน พื้นผิว และการออกแบบการเคลื่อนที่ที่ปลอดภัย / Friction, Surfaces and Safer Motion Design**.
+- Keyboard-native fictional comparison of clean smooth sheet, woven cloth and textured paper with textual relative-friction and motion feedback.
+- Fair-test workflow holding object, start point and initial push constant while changing only surface.
+- Controlled-motion design activity that rejects speed contests, high ramps and absolute “fastest is best” conclusions.
+- Guarded local-only completion under `arshavin.maker.friction.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, accessibility alternatives, safety boundaries and a four-level rubric.
+- Focused dependency-free `tests/maker06-static-checks.mjs` plus expanded complete regression coverage through thirty lessons.
 - Complete interactive lesson **ENV-06 ภูมิอากาศ สภาพอากาศ และการเตรียมพร้อมอย่างรับผิดชอบ / Climate, Weather and Responsible Preparedness**.
-- Keyboard-native fictional forecast-evidence comparison using source, issue time, forecast period, area, uncertainty and privacy.
-- READY framework for reading official information, examining time/place, asking what evidence says, deciding safely and yielding to updates.
-- Fictional Chiang Rai-relevant thunderstorm, accumulated-rain/flood and extreme-heat preparedness planner with no household location or vulnerability-data collection.
-- Guarded local-only completion under `arshavin.environment.climate.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, safeguarding boundaries and a four-level rubric.
-- Focused dependency-free `tests/env06-static-checks.mjs` plus expanded complete regression coverage through twenty-nine lessons.
 - Complete interactive lesson **HB-07 ระบบขับถ่าย ไต และสมดุลน้ำ / Excretion, Kidneys and Water Balance**.
 - Complete interactive lesson **CIT-05 ชุมชน หน่วยงานสาธารณะ และการมีส่วนร่วมอย่างรับผิดชอบ / Community Institutions and Responsible Participation**.
 - Complete interactive lesson **MAKER-05 วัสดุ สมบัติ และการเลือกใช้อย่างรับผิดชอบ / Materials, Properties and Responsible Selection**.
@@ -32,19 +33,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists twenty-nine lessons and clears all twenty-nine known local progress keys.
-- Shared learning shell places ENV-06 after ENV-05 and reports progress across twenty-nine lessons.
-- Service-worker cache advanced to `arshavin-grade4-v30` and precaches all ENV-06 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to twenty-nine lessons, fifty-eight A4 sheets and twenty-eight guides.
-- GitHub Actions runs complete and focused suites through ENV-06 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 29/52 lessons, 58/104 A4 sheets and 28 teacher guides.
-- Next executable increment advanced to **MAKER-06 Friction, Surfaces and Safer Motion Design**.
+- Homepage now lists thirty lessons and clears all thirty known local progress keys.
+- Shared learning shell places MAKER-06 after MAKER-05 and reports progress across thirty lessons.
+- Service-worker cache advanced to `arshavin-grade4-v31` and precaches all MAKER-06 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to thirty lessons, sixty A4 sheets and twenty-nine guides.
+- GitHub Actions runs complete and focused suites through MAKER-06 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 30/52 lessons, 60/104 A4 sheets and 29 teacher guides.
+- Next executable increment advanced to **CIT-06 Public Rules, Fairness and Reviewing Decisions**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- ENV-06 uses native select and radio controls with explicit labels, fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
-- ENV-06 uses fictional or broad public information and does not collect home coordinates, routes, income, illness, medication or household-vulnerability data.
-- Children are not sent to observe floodwater, lightning, strong wind, unstable objects or extreme heat; real events defer to adults and current official warnings.
+- MAKER-06 uses native select, radio and button controls with explicit labels, fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
+- MAKER-06 uses fictional data and clean lightweight materials on a low flat surface only.
+- Speed contests, high ramps, stairs, roads, heavy or sharp objects, and motion paths involving people or animals are prohibited.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19
