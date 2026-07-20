@@ -20,7 +20,7 @@ CIT-04 is present on `main` at commit `cb8744c25283399eaca985ff57aa338de7540e65`
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit `@page` A4 portrait print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, safeguarding response and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, twenty-two-lesson shell, reset key and service-worker v23 paths align |
-| Automated regression | PENDING exact PR-head run | Complete suite and focused `tests/hb06-static-checks.mjs` are wired into GitHub Actions with uploaded log evidence and result enforcement |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #70, run ID `29726613181`, head `363a90dd027f6a9cca1c4bb2d46f98d6af69a8e7`, job `88301086683`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only commit must also pass before merge. |
 
 ## Functional cases inspected
 1. Digestion-path buttons accept only mouth → esophagus → stomach → small intestine → large intestine and provide a corrective expected-step message.
@@ -33,9 +33,10 @@ CIT-04 is present on `main` at commit `cb8744c25283399eaca985ff57aa338de7540e65`
 8. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
 9. Complete regression manifest contains twenty-two lessons, forty-four worksheet pages, twenty-one guides and twenty-two progress keys.
 10. Focused assertions check digestive sequence, small-intestine absorption, serving context, no restriction/body judgement/diagnosis, local completion and exact two-page A4 structure.
+11. The first PR run correctly detected a stale CIT-04 cache-version assertion; it was changed from exact v22 matching to a versioned-cache assertion while retaining exact CIT-04 asset checks.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
