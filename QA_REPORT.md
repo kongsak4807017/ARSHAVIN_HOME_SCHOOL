@@ -21,7 +21,7 @@ CIT-06 is present on `main` at commit `adb8a270ddf0867448f77729f3a308ff704f2e23`
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 portrait print rule and page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safeguarding boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, thirty-two-lesson shell, reset key and service-worker v33 paths align |
-| Automated regression | PENDING exact PR-head CI | Complete static manifest and focused `tests/hb08-static-checks.mjs` are wired into GitHub Actions; exact final-head evidence will be recorded after the PR workflow completes |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #103, run ID `29769901245`, job ID `88445127353`, implementation head `ad4ecbb4d31875ed2c0274d73e36c386def771f4`, conclusion `success`; checkout, Node setup, complete regression, focused HB-08 checks, evidence upload and enforcement all passed. This evidence-only documentation head must also pass before merge. |
 
 ## Functional cases inspected
 1. Signal-path activity rejects out-of-order steps and saves completion only after all five stages are selected in order.
@@ -36,7 +36,7 @@ CIT-06 is present on `main` at commit `adb8a270ddf0867448f77729f3a308ff704f2e23`
 10. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final documentation-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -44,4 +44,4 @@ CIT-06 is present on `main` at commit `adb8a270ddf0867448f77729f3a308ff704f2e23`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty-two lessons, sixty-four A4 sheets and thirty-one teacher guides are integrated at source level. Exact PR-head CI, browser, assistive-technology, physical-print, GitHub Pages and offline-runtime evidence remain required before stronger acceptance.
+**ACCEPTED WITH CONDITIONS** — thirty-two lessons, sixty-four A4 sheets and thirty-one teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
