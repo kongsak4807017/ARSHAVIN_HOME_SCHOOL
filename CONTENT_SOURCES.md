@@ -189,6 +189,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. Council of Europe Charter on Education for Democratic Citizenship and Human Rights Education (accessed 2026-07-20): https://www.coe.int/en/web/compass/council-of-europe-charter-on-education-for-democratic-citizenship-and-human-rights-education
 6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
+## CIT-05 — Community Institutions and Responsible Participation
+1. UNICEF — Convention on the Rights of the Child, Article 12 (accessed 2026-07-20): https://www.unicef.org/child-rights-convention/convention-text — supports children expressing views in matters affecting them and those views receiving due weight according to age and maturity.
+2. UNICEF Innocenti — Why participation matters (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/why-participation-matters — supports meaningful, supported participation rather than token consultation.
+3. UNESCO — Global Citizenship Education: Topics and Learning Objectives (accessed 2026-07-20): https://www.unesco.org/en/articles/global-citizenship-education-topics-and-learning-objectives — supports cognitive, socio-emotional and behavioural learning for responsible participation.
+4. UNESCO Bangkok/APCEIU — Global citizenship education: a handbook for parents, community and learners in Asia-Pacific (published 2023; updated 2025-06-10; accessed 2026-07-20): https://www.unesco.org/en/articles/global-citizenship-education-handbook-parents-community-and-learners-asia-pacific — supports community participation and adaptable action planning.
+5. UNESCO — Global citizenship education: what you need to know (accessed 2026-07-20): https://www.unesco.org/en/global-citizenship-peace-education/need-know — supports active contribution to local and global communities for the collective good.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard operation, explicit labels, focus and status feedback.
+
 ## Source-use rules
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
@@ -206,4 +214,5 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Maker material activities use fictional data cards or clean lightweight adult-prepared samples only; they do not certify real products and prohibit flames, chemicals, solvents, batteries, sharp/powered tools, heavy loads and destructive testing.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.
 - Conflict-resolution activities use fictional scenarios, prohibit forced apology/reconciliation and require trusted-adult escalation for threats, bullying, harm, blocking or unsafe situations.
+- Public-service participation activities use fictional scenarios only; they do not collect real complaints, political preferences, names, addresses, phone numbers, personal images or family information, and children do not contact strangers or public agencies alone.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
