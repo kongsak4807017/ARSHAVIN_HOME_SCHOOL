@@ -1,40 +1,40 @@
 # QA REPORT
 
-## Build status through AI-05
+## Build status through ENV-05
 Date: 2026-07-20
 
-HB-06 is present on `main` at commit `2b24e07f31b1095780abba2b0532751bde954a65`. No open pull request existed at the start of this AI-05 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
+AI-05 is present on `main` at commit `46aeefb5bfc5144b1d7deaeebd4d1ca2e9ef6a46`. No open pull request existed at the start of this ENV-05 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
 
-## AI-05 — AI Decisions, Confidence and Human Escalation
+## ENV-05 — Household Energy, Efficiency and Responsible Choices
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | UNESCO AI Competency Framework for Students and UNICEF child-centred AI guidance support critical judgement, transparency, explainability, accountability and human oversight |
+| Authoritative grounding | PASS | EGAT Label No.5 and electricity-safety guidance, Ministry of Energy household-saving guidance, and WCAG 2.2 support the content and interaction design |
 | Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interaction feedback, assessment, worksheets and teacher guidance |
-| Core concepts | PASS (source inspection) | Prediction, confidence, threshold, abstention, human escalation, impact level and challenge/review pathways are defined and applied |
-| Confidence simulator | PASS (source inspection) | Native select, radio controls and button provide low/medium/high fictional confidence cases and corrective bilingual feedback |
-| Stakes activity | PASS (source inspection) | Fictional low-, medium- and high-impact cases distinguish reversible convenience tasks from decisions affecting children’s rights, health, safety or opportunities |
+| Core concepts | PASS (source inspection) | Energy, power, time, efficiency, useful output, dispersed energy, standby and energy-label evidence are defined and applied |
+| Energy-flow activity | PASS (source inspection) | Native select/radio/button controls distinguish appliance, useful output and dispersed heat/sound with corrective bilingual feedback |
+| Responsible-choice activity | PASS (source inspection) | Fictional equal-output lamp comparison uses power × time, multiple evidence points, aggregate data, privacy and adult safety escalation |
 | Keyboard/accessibility | PASS (source inspection) | Native select, radio controls, buttons, forms, fieldsets and legends; focusable polite live feedback; no drag-only interaction or timer |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.ai.confidence.v1`; no outbound lesson APIs |
-| Child-rights safeguards | PASS | No automated decision about children; no collection of identity, image, voice, health, grade, behaviour, location or family data; accountable human review and challenge path required |
-| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit `@page` A4 portrait print rule |
-| Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, safeguarding response and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, twenty-three-lesson shell, reset key and service-worker v24 paths align |
-| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #73, run ID `29728139325`, head `df0c6b7691b281557ab98c5fe9092538facc87c8`, job `88305930895`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.environment.energy.v1`; no outbound lesson APIs |
+| Electrical safety | PASS | Children do not open panels, disassemble appliances, touch wet/damaged equipment or repair wiring; hazards escalate to an adult |
+| Household privacy | PASS | No address, utility account number, income, household schedule or utility-bill image is requested or stored |
+| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 portrait print rule |
+| Teacher support | PASS | 60–90-minute sequence, answer guidance, misconception correction, accessible alternatives, safeguarding and four-level rubric |
+| Navigation/offline | PASS (source inspection) | Homepage, twenty-four-lesson shell, reset key and service-worker v25 paths align |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #76, run ID `29731824022`, head `8ba5674697fee731d35293e0da80e4a2968c42e6`, job `88317822971`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
 
 ## Functional cases inspected
-1. Confidence activity refuses incomplete input and evaluates both confidence level and chosen action.
-2. Low-confidence cases accept abstention or human review rather than forced prediction.
-3. Medium-confidence cases require impact-aware abstention or review.
-4. High-confidence, low-stakes cases may answer while explicitly preserving the possibility of error.
-5. High-stakes child-opportunity and health cases require accountable human escalation.
-6. Quiz requires all three answers and saves completion only at 3/3.
-7. Lesson completion requires `simulatorComplete`, `stakesComplete` and `quizComplete`.
-8. Storage reads/writes are caught; storage failure does not block learning.
-9. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
-10. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-11. Complete regression manifest contains twenty-three lessons, forty-six worksheet pages, twenty-two guides and twenty-three progress keys.
-12. Focused assertions check confidence-versus-correctness, abstention, human escalation, rights/health safeguards, local completion and exact two-page A4 structure.
+1. Energy-flow activity refuses incomplete input and saves only after useful-output and dispersed-energy reasoning is correct.
+2. Appliance-choice activity requires all four areas: device, evidence, privacy and safety.
+3. Equal-output comparison selects 9 W over 15 W for the same four-hour duration while preserving contextual limitations.
+4. Label evidence is not treated as a command to buy or replace equipment.
+5. Quiz requires all three answers and saves completion only at 3/3.
+6. Lesson completion requires `flowComplete`, `choiceComplete` and `quizComplete`.
+7. Storage reads/writes are caught; storage failure does not block learning.
+8. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
+9. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
+10. Complete regression manifest contains twenty-four lessons, forty-eight worksheet pages, twenty-three guides and twenty-four progress keys.
+11. Focused assertions check power-and-time reasoning, label context, no-bill/no-address privacy, electrical safety, local completion and exact two-page A4 structure.
 
 ## Verification still required
 - Exact final evidence-head GitHub Actions result.
@@ -45,4 +45,4 @@ HB-06 is present on `main` at commit `2b24e07f31b1095780abba2b0532751bde954a65`.
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — twenty-three lessons, forty-six A4 sheets and twenty-two teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — twenty-four lessons, forty-eight A4 sheets and twenty-three teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
