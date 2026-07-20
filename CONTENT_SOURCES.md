@@ -38,6 +38,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. WHO — Physical activity (published 2024-06-26; accessed 2026-07-20): https://www.who.int/news-room/fact-sheets/detail/physical-activity
 6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
+## HB-06 — Digestion, Nutrients and Responsible Food Information
+1. NIDDK/NIH — Your Digestive System & How it Works (accessed 2026-07-20): https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works — supports the digestive tract, helper organs, peristalsis, digestion, small-intestine nutrient absorption and large-intestine water absorption.
+2. U.S. FDA — How to Understand and Use the Nutrition Facts Label (accessed 2026-07-20): https://www.fda.gov/food/nutrition-facts-label/how-understand-and-use-nutrition-facts-label — supports checking serving information and reading multiple label elements in context.
+3. U.S. FDA — Serving Size on the Nutrition Facts Label (accessed 2026-07-20): https://www.fda.gov/food/nutrition-facts-label/serving-size-nutrition-facts-label — supports starting with serving size and servings per container and clarifies that serving size is not a recommendation of how much to eat.
+4. WHO — Healthy diet (published 2026-01-26; accessed 2026-07-20): https://www.who.int/news-room/fact-sheets/detail/healthy-diet — supports adequacy, balance, moderation and diversity while noting that healthy dietary patterns vary by age, context and culture.
+5. WHO and FAO — What are healthy diets? Joint statement (published 2024-10-24; accessed 2026-07-20): https://www.who.int/publications/i/item/9789240101876 — supports evidence-based, context-sensitive food information rather than one-number or one-food claims.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, visible labels, textual feedback and non-drag alternatives.
+
 ## AI-01 — Fact, Opinion or Check?
 1. UNESCO — AI Competency Framework for Students: https://www.unesco.org/en/articles/ai-competency-framework-students
 2. OECD and European Commission — Empowering Learners for the Age of AI: https://www.oecd.org/en/publications/empowering-learners-for-the-age-of-ai_65cd27d4-en.html
@@ -151,12 +159,12 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
 ## CIT-04 — Disagreement, Dialogue and Peaceful Conflict Resolution
-1. UNESCO — Mainstreaming social and emotional learning in education systems: policy guide (published 2024-10-15; updated 2026-06-22; accessed 2026-07-20): https://www.unesco.org/en/articles/mainstreaming-social-and-emotional-learning-education-systems-policy-guide — supports integrating emotional awareness, relationship skills and peaceful, inclusive learning environments.
-2. UNICEF Parenting — How to communicate effectively with your young child (accessed 2026-07-20): https://www.unicef.org/parenting/child-care/9-tips-for-better-communication — supports attentive listening, empathy, naming feelings and clear, realistic communication.
-3. Council of Europe — Effective participation in a culture of democracy in a diverse school context (accessed 2026-07-20): https://www.coe.int/en/web/learning-resources/-/effective-participation-in-a-culture-of-democracy-in-a-diverse-school-context — supports classroom conflict-resolution skills, reflection on conflict behaviour, dialogue and democratic values.
-4. Council of Europe — Competences for Democratic Culture (accessed 2026-07-20): https://www.coe.int/en/web/education/competences-for-democratic-culture — supports listening, empathy, cooperation, respect and critical understanding for primary and secondary education.
-5. Council of Europe Charter on Education for Democratic Citizenship and Human Rights Education (accessed 2026-07-20): https://www.coe.int/en/web/compass/council-of-europe-charter-on-education-for-democratic-citizenship-and-human-rights-education — supports dialogue, mutual respect and non-violent resolution of disputes.
-6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, textual feedback and non-drag alternatives.
+1. UNESCO — Mainstreaming social and emotional learning in education systems: policy guide (published 2024-10-15; updated 2026-06-22; accessed 2026-07-20): https://www.unesco.org/en/articles/mainstreaming-social-and-emotional-learning-education-systems-policy-guide
+2. UNICEF Parenting — How to communicate effectively with your young child (accessed 2026-07-20): https://www.unicef.org/parenting/child-care/9-tips-for-better-communication
+3. Council of Europe — Effective participation in a culture of democracy in a diverse school context (accessed 2026-07-20): https://www.coe.int/en/web/learning-resources/-/effective-participation-in-a-culture-of-democracy-in-a-diverse-school-context
+4. Council of Europe — Competences for Democratic Culture (accessed 2026-07-20): https://www.coe.int/en/web/education/competences-for-democratic-culture
+5. Council of Europe Charter on Education for Democratic Citizenship and Human Rights Education (accessed 2026-07-20): https://www.coe.int/en/web/compass/council-of-europe-charter-on-education-for-democratic-citizenship-and-human-rights-education
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
 ## Source-use rules
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
@@ -167,6 +175,7 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Environmental simulations do not certify current air, water, soil, slope, landslide or waste-system safety; real sites require adult and qualified local assessment.
 - Waste activities use clean fictional cards or prepared clean materials only; children do not search, open, photograph, weigh or touch real waste, sharps, broken glass, leaking batteries, chemicals, medicines, hygiene waste, animal remains or unknown materials.
 - Breathing and circulation lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing, pulse challenges, diagnostic interpretation or exertion tests.
+- Digestion and food-information activities do not collect diet, weight, body, symptom, allergy or treatment data and do not prescribe calories, restriction, food-group elimination, diagnosis or body comparison.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
 - Maker structure activities use paper, tape and lightweight test objects only; they do not certify real structures and prohibit climbing, overhead tests, people/animals on models and child use of cutting, drilling or hot-glue tools.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.
