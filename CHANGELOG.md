@@ -5,6 +5,12 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
+- Complete interactive lesson **AI-05 การตัดสินใจของ AI ความมั่นใจ และการส่งต่อให้มนุษย์ / AI Decisions, Confidence and Human Escalation**.
+- Keyboard-native confidence-and-abstention simulator using fictional low, medium and high confidence values with corrective bilingual feedback.
+- Fictional low-, medium- and high-stakes cases that require accountable human review for decisions affecting children’s rights, health, safety or opportunities.
+- Guarded local-only completion under `arshavin.ai.confidence.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, child-rights safeguards and a four-level rubric.
+- Focused dependency-free `tests/ai05-static-checks.mjs` plus expanded complete regression coverage through twenty-three lessons.
 - Complete interactive lesson **HB-06 ระบบย่อยอาหาร สารอาหาร และข้อมูลอาหารที่รับผิดชอบ / Digestion, Nutrients and Responsible Food Information**.
 - Keyboard-native five-step digestion-path sequence covering mouth, esophagus, stomach, small intestine and large intestine with corrective bilingual feedback.
 - Fictional food-label activity using serving context, multiple information points, evidence limits and responsible health/body claims.
@@ -26,19 +32,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists twenty-two lessons and clears all twenty-two known local progress keys.
-- Shared learning shell places HB-06 after HB-05 and reports progress across twenty-two lessons.
-- Service-worker cache advanced to `arshavin-grade4-v23` and precaches all HB-06 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to twenty-two lessons, forty-four A4 sheets and twenty-one guides.
-- GitHub Actions runs complete and focused suites through HB-06 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 22/52 lessons, 44/104 A4 sheets and 21 teacher guides.
-- Next executable increment advanced to **AI-05 AI Decisions, Confidence and Human Escalation**.
+- Homepage now lists twenty-three lessons and clears all twenty-three known local progress keys.
+- Shared learning shell places AI-05 after AI-04 and reports progress across twenty-three lessons.
+- Service-worker cache advanced to `arshavin-grade4-v24` and precaches all AI-05 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to twenty-three lessons, forty-six A4 sheets and twenty-two guides.
+- GitHub Actions runs complete and focused suites through AI-05 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 23/52 lessons, 46/104 A4 sheets and 22 teacher guides.
+- Next executable increment advanced to **ENV-05 Household Energy, Efficiency and Responsible Choices**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- HB-06 uses native buttons, radio controls, forms, fieldsets and legends with focusable polite live feedback and no drag-only dependency or timer.
-- HB-06 does not request weight, body, diet history, symptoms, allergy, diagnosis, treatment or family health information.
-- Calorie targets, food restriction, food-group elimination, body comparison, diagnosis and changing treatment from lesson content are prohibited.
+- AI-05 uses native select, radio and button controls with focusable polite live feedback and no drag-only dependency or timer.
+- AI-05 separates confidence from correctness, supports abstention, requires human accountability for high-impact decisions and prohibits automated decisions about children.
+- AI-05 does not collect names, images, voices, health data, grades, behaviour, location or family information.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19
