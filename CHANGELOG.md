@@ -5,6 +5,13 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-21
 
 ### Added
+- Complete interactive lesson **CIT-07 งบประมาณชุมชน ทรัพยากรสาธารณะ และการตัดสินใจอย่างโปร่งใส / Community Budgets, Public Resources and Transparent Choices**.
+- Keyboard-native fictional fixed-budget allocator using a 100-unit limit, exact total checking and corrective bilingual feedback.
+- OPEN framework for outlining goals and limits, publishing criteria, examining evidence/equity and noting the decision plus review date.
+- Needs-versus-wants, trade-off and minority-impact review activities with no collection of real family income, addresses, health data or political preferences.
+- Guarded local-only completion under `arshavin.citizenship.budget.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, accessibility alternatives, privacy/safeguarding boundaries and a four-level rubric.
+- Focused dependency-free `tests/cit07-static-checks.mjs` plus expanded complete regression coverage through thirty-six lessons.
 - Complete interactive lesson **MAKER-07 แม่เหล็ก แรง และการออกแบบระบบคัดแยกอย่างปลอดภัย / Magnets, Forces and Safe Sorting-System Design**.
 - Keyboard-native fictional material comparison using steel, aluminium, wood and plastic with textual attraction/non-attraction evidence.
 - Fair-test workflow holding magnet, starting distance and method constant while changing only the material.
@@ -41,19 +48,22 @@ All notable interactive-web changes are recorded here.
 - Focused dependency-free `tests/cit06-static-checks.mjs` plus expanded complete regression coverage through thirty-one lessons.
 
 ### Changed
-- Homepage now lists thirty-five lessons and clears all thirty-five known local progress keys.
-- Shared learning shell places MAKER-07 after MAKER-06 and reports progress across thirty-five lessons.
-- Service-worker cache advanced to `arshavin-grade4-v36` and precaches all MAKER-07 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to thirty-five lessons, seventy A4 sheets and thirty-four guides.
-- GitHub Actions runs complete and focused suites through MAKER-07 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 35/52 lessons, 70/104 A4 sheets and 34 teacher guides.
-- Next executable increment advanced to **CIT-07 Community Budgets, Public Resources and Transparent Choices**.
+- Homepage now lists thirty-six lessons and clears all thirty-six known local progress keys.
+- Shared learning shell places CIT-07 after CIT-06 and reports progress across thirty-six lessons.
+- Service-worker cache advanced to `arshavin-grade4-v37` and precaches all CIT-07 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to thirty-six lessons, seventy-two A4 sheets and thirty-five guides.
+- GitHub Actions runs complete and focused suites through CIT-07 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 36/52 lessons, 72/104 A4 sheets and 35 teacher guides.
+- Next executable increment advanced to **HB-09 Immunity, Germs, Vaccines and Responsible Health Information**.
 
 ### Safety, accessibility and privacy
+- CIT-07 uses native radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
+- CIT-07 uses fictional budgets and public-resource choices only and does not collect family income, addresses, health information, political preferences, real petitions or learner rankings.
+- CIT-07 requires adult-supported participation for any real concern and separates majority preference from accessibility and minority-impact review.
+- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 - MAKER-07 uses native select, radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
 - MAKER-07 defaults to fictional data and screen/card activity; optional real materials are large, weak, clean and adult-checked.
 - MAKER-07 prohibits small/high-powered magnets, mouth/nose/ear proximity, damaged magnets, electronics proximity and unreviewed use near implanted medical devices.
-- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 - ENV-07 uses native select, radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
 - All ENV-07 examples are fictional; no precise wildlife or nest locations, personal addresses, learner tracking or remote data collection are used.
 - No fieldwork is required; optional real observation requires adult permission and supervision and prohibits night search, water entry, climbing, capture, feeding and specimen collection.
