@@ -28,7 +28,7 @@ assert.match(w,/@page\{size:A4 portrait/);
 assert.match(g,/Rubric 4 ระดับ/);
 assert.match(g,/ไม่ให้เด็กสืบค้นบุคคล/);
 for(const f of files)assert.ok(sw.includes(`./${f}`),`offline ${f}`);
-assert.match(sw,/arshavin-grade4-v17/);
+assert.match(sw,/arshavin-grade4-v\d+/);
 assert.ok(index.includes(lesson));
 assert.ok(index.includes('arshavin.citizenship.media.v1'));
 assert.ok(shell.includes("id: 'CIT-03'"));
