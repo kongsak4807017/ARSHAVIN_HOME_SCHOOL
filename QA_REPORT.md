@@ -21,7 +21,7 @@ MAKER-07 is present on `main` at commit `64d40aeffdf7243a9c6972ba42029bdc07700da
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait rule and explicit page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, accessible alternatives, privacy/safeguarding boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, thirty-six-lesson shell, reset key and service-worker v37 paths align |
-| Automated regression | PENDING exact PR-head run | `tests/static-checks.mjs` expanded to 36 lessons/72 A4 pages/35 guides/36 keys; focused `tests/cit07-static-checks.mjs` and workflow integration added |
+| Automated regression | PASS on implementation/documentation head | GitHub Actions `Static learning-site checks`, run #118, run ID `29783859580`, exact head `6daac4719449ee93c44034155579a6dd80010a70`, job `88490972189`, conclusion `success`; checkout, Node setup, complete regression, focused CIT-07 checks, evidence upload and enforcement all passed |
 
 ## Functional cases inspected
 1. Budget form rejects incomplete answers and only marks `allocatorComplete` for the transparent 100-unit plan, relevant evidence and an explained trade-off.
@@ -35,7 +35,7 @@ MAKER-07 is present on `main` at commit `64d40aeffdf7243a9c6972ba42029bdc07700da
 9. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result after this QA update.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -43,4 +43,4 @@ MAKER-07 is present on `main` at commit `64d40aeffdf7243a9c6972ba42029bdc07700da
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty-six lessons, seventy-two A4 sheets and thirty-five teacher guides are integrated at source level. Exact final-head CI remains required before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
+**ACCEPTED WITH CONDITIONS** — thirty-six lessons, seventy-two A4 sheets and thirty-five teacher guides are integrated at source level. The implementation/documentation head passed exact CI; the evidence-only head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
