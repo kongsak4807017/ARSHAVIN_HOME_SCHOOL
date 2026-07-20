@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const root=path.resolve(import.meta.dirname,'..');
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const exists=p=>fs.existsSync(path.join(root,p));
+const lesson='subjects/citizenship/disagreement-dialogue-peaceful-resolution.html';
+const script='assets/js/peaceful-dialogue-lesson.js';
+const worksheet='worksheets/student/disagreement-dialogue-peaceful-resolution-a4.html';
+const guide='worksheets/teacher-guides/disagreement-dialogue-peaceful-resolution-guide.html';
+function check(name,fn){try{fn();console.log(`PASS ${name}`)}catch(error){console.error(`FAIL ${name}: ${error.message}`);process.exitCode=1}}
+check('CIT-04 files exist',()=>[lesson,script,worksheet,guide].forEach(file=>assert.ok(exists(file),file)));
+check('CIT-04 JavaScript parses',()=>new vm.Script(read(script),{filename:script}));
+check('bilingual semantic lesson',()=>{const html=read(lesson);assert.match(html,/<html lang="th">/);assert.match(html,/การสื่อสารเมื่อเห็นต่าง/);assert.match(html,/Disagreement, Dialogue and Peaceful Conflict Resolution/);assert.match(html,/data-current-lesson="CIT-04"/);['fieldset','legend','role="status"','aria-live="polite"'].forEach(term=>assert.ok(html.includes(term),term));});
+check('CALM and fact-feeling-need-request concepts',()=>{const material=read(lesson)+read(worksheet)+read(guide);['Check safety','Attend and listen','Label facts','Make a workable request','fact','feeling','need','request'].forEach(term=>assert.match(material,new RegExp(term,'i')));});
+check('fictional and safeguarding boundaries',()=>{const material=read(lesson)+read(worksheet)+read(guide);assert.match(material,/สถานการณ์สมมติ|fictional/i);assert.match(material,/ไม่ขอให้เล่าความขัดแย้งจริง|not.*real conflict/i);assert.match(material,/ข่มขู่|threat/i);assert.match(material,/กลั่นแกล้ง|bully/i);assert.match(material,/ผู้ใหญ่ที่ไว้ใจได้|trusted adult/i);assert.match(material,/ไม่บังคับ.*ขอโทษ|not.*force.*apolog/i);});
+check('local-only completion',()=>{const js=read(script);assert.match(js,/arshavin\.citizenship\.dialogue\.v1/);['dialogueComplete','needsComplete','quizComplete'].forEach(key=>assert.match(js,new RegExp(key)));assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);});
+check('worksheets exactly two A4 pages',()=>{const html=read(worksheet);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(html,/@page\{size:A4/);});
+check('navigation and offline integration',()=>{const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');[lesson,script,worksheet,guide].forEach(file=>{assert.ok(index.includes(file)||file!==lesson,file);assert.ok(sw.includes(`./${file}`),file)});assert.match(index,/arshavin\.citizenship\.dialogue\.v1/);assert.match(shell,/CIT-04/);assert.match(shell,/arshavin\.citizenship\.dialogue\.v1/);assert.match(sw,/arshavin-grade4-v22/);});
+if(process.exitCode)process.exit(process.exitCode);
