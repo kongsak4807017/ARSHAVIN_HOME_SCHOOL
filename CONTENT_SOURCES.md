@@ -88,11 +88,11 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## MAKER-03 — Wheels, Axles and Designing Motion
-1. **OpenStax Physics — 9.3 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines — supports the wheel-and-axle model as a rotating lever and ideal mechanical advantage `IMA = wheel radius / axle radius`.
-2. **OpenStax Physics — Chapter 9 Key Equations** (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-key-equations — supports the general force–distance trade-off and ideal wheel/axle equation.
-3. **TeachEngineering — Engineering: Simple Machines** (Grade 4; accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_simple_lesson01 — supports age-appropriate simple-machine vocabulary and engineering design context.
-4. **TeachEngineering — Let’s Move It!** (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_simple_lesson03 — supports wheel-and-axle transportation examples and lightweight cart design with everyday materials.
-5. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, textual feedback and non-drag alternatives.
+1. OpenStax Physics — 9.3 Simple Machines (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines
+2. OpenStax Physics — Chapter 9 Key Equations (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-key-equations
+3. TeachEngineering — Engineering: Simple Machines (Grade 4; accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_simple_lesson01
+4. TeachEngineering — Let’s Move It! (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_simple_lesson03
+5. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
 ## CIT-01 — Rights, Responsibilities and Digital Kindness
 1. UNICEF — Convention on the Rights of the Child: https://www.unicef.org/child-rights-convention/convention-text
@@ -110,6 +110,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. สำนักงานเลขาธิการสภาผู้แทนราษฎร: https://www.parliament.go.th/
 6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
+## CIT-03 — Media, Public Information and Evidence Checking
+1. UNESCO — Media and Information Literacy (updated 2026-06-26; accessed 2026-07-20): https://www.unesco.org/en/ami — supports critical, ethical and responsible access, analysis, evaluation and use of information.
+2. UNESCO — Do you trust what you watch or read? (accessed 2026-07-20): https://www.unesco.org/en/articles/do-you-trust-what-you-watch-or-read — supports checking creator, purpose, audience, credibility, statistics and source before accepting a message.
+3. UNICEF Innocenti — Digital misinformation/disinformation and children (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/digital-misinformation-disinformation-and-children — supports age-appropriate critical reading, child vulnerability, adult support and children’s capacity to counter misinformation.
+4. Council of Europe — Media and Information Literacy (accessed 2026-07-20): https://www.coe.int/en/web/education/media-and-information-literacy — supports processing, analysing and making informed decisions across media and information channels.
+5. Council of Europe — Digital Citizenship Education Planner (published 2026-03-12; accessed 2026-07-20): https://www.coe.int/en/web/education/-/new-isbn-publication-dce-planner-3 — supports age-banded outcomes for media literacy, responsible participation, privacy and inclusion.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, visible labels, textual feedback and non-drag alternatives.
+
 ## Source-use rules
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
@@ -119,5 +127,5 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Environmental simulations do not certify current air, water, soil, slope or landslide safety; real sites require adult and qualified local assessment.
 - Breathing lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing or exertion challenges.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
-- Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information or report political preferences.
+- Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
