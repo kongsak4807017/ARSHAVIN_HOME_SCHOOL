@@ -15,7 +15,7 @@ assert.match(lesson,/fieldset/); assert.match(lesson,/legend/); assert.match(les
 assert.doesNotMatch(script,/fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon/);
 assert.match(script,/arshavin\.humanbody\.kidneys\.v1/);
 assert.match(script,/pathComplete/); assert.match(script,/balanceComplete/); assert.match(script,/quizComplete/);
-assert.equal((worksheet.match(/<section class="sheet">/g)||[]).length,2);
+assert.equal((worksheet.match(/class="worksheet(?:\s|")/g)||[]).length,2);
 assert.match(worksheet,/@page\{size:A4/);
 assert.match(guide,/Rubric 4 ระดับ/);
 assert.match(guide,/ปัสสาวะเป็นเลือด|urine/i);
