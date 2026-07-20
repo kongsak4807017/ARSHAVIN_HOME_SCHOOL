@@ -5,6 +5,13 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-21
 
 ### Added
+- Complete interactive lesson **ENV-07 ระบบนิเวศ ความหลากหลายทางชีวภาพ และการสังเกตอย่างรับผิดชอบ / Ecosystems, Biodiversity and Responsible Observation**.
+- Keyboard-native food-web activity using fictional Chiang Rai organisms with producer, consumer, decomposer and food-to-eater energy reasoning.
+- Habitat-change comparison that uses evidence-limited language, repeated observation and explicit model limitations.
+- CARE framework for permission and safety, avoidance of disturbance, responsible broad-area recording and limitation disclosure.
+- Guarded local-only completion under `arshavin.environment.biodiversity.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, accessibility alternatives, wildlife-location safeguards and a four-level rubric.
+- Focused dependency-free `tests/env07-static-checks.mjs` plus expanded complete regression coverage through thirty-four lessons.
 - Complete interactive lesson **AI-07 หุ่นยนต์ เซนเซอร์ และระบบหยุดอย่างปลอดภัย / Robots, Sensors and Fail-Safe Systems**.
 - Keyboard-native Input–Process–Output simulator using fictional moisture and rain signals without controlling a real pump or device.
 - SAFE framework for sensing carefully, assessing uncertainty, failing safely and escalating to a responsible human.
@@ -27,19 +34,22 @@ All notable interactive-web changes are recorded here.
 - Focused dependency-free `tests/cit06-static-checks.mjs` plus expanded complete regression coverage through thirty-one lessons.
 
 ### Changed
-- Homepage now lists thirty-three lessons and clears all thirty-three known local progress keys.
-- Shared learning shell places AI-07 after AI-06 and reports progress across thirty-three lessons.
-- Service-worker cache advanced to `arshavin-grade4-v34` and precaches all AI-07 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to thirty-three lessons, sixty-six A4 sheets and thirty-two guides.
-- GitHub Actions runs complete and focused suites through AI-07 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 33/52 lessons, 66/104 A4 sheets and 32 teacher guides.
-- Next executable increment advanced to **ENV-07 Ecosystems, Biodiversity and Responsible Observation**.
+- Homepage now lists thirty-four lessons and clears all thirty-four known local progress keys.
+- Shared learning shell places ENV-07 after ENV-06 and reports progress across thirty-four lessons.
+- Service-worker cache advanced to `arshavin-grade4-v35` and precaches all ENV-07 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to thirty-four lessons, sixty-eight A4 sheets and thirty-three guides.
+- GitHub Actions runs complete and focused suites through ENV-07 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 34/52 lessons, 68/104 A4 sheets and 33 teacher guides.
+- Next executable increment advanced to **MAKER-07 Magnets, Forces and Safe Sorting-System Design**.
 
 ### Safety, accessibility and privacy
+- ENV-07 uses native select, radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
+- All ENV-07 examples are fictional; no precise wildlife or nest locations, personal addresses, learner tracking or remote data collection are used.
+- No fieldwork is required; optional real observation requires adult permission and supervision and prohibits night search, water entry, climbing, capture, feeding and specimen collection.
+- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 - AI-07 uses native selects, radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
 - All AI-07 cases are fictional; the lesson does not connect to cameras, microphones, location services, pumps, mains electricity or learner profiles.
 - Missing or conflicting sensor readings produce a stop-and-alert-human result rather than guessing or continuing a risky action.
-- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 - HB-08 uses native select, radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency, timer or reaction-time ranking.
 - All HB-08 cases are fictional; the lesson does not collect symptoms, diagnoses, medicines, sensory scores, school scores or family-health information.
 - Sudden sensory change, severe headache, fainting, seizure, weakness, confusion or head injury routes to a trusted adult and health professional without public disclosure.
