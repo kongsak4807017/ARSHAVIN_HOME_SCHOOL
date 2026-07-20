@@ -113,6 +113,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. UNEP — Zero Waste 101 (accessed 2026-07-20): https://www.unep.org/interactives/zero-waste-101/
 6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
+## ENV-05 — Household Energy, Efficiency and Responsible Choices
+1. Electricity Generating Authority of Thailand (EGAT) — New Label No.5 energy-efficiency label (published 2026-01-30; accessed 2026-07-20): https://www.egat.co.th/home/20260130-art01/ — supports standardized efficiency information and product comparison.
+2. EGAT — Label No.5 project (accessed 2026-07-20): https://labelno5.egat.co.th/home/labelno5/ — supports the energy-efficiency criteria and consumer-information programme.
+3. EGAT — Electricity safety and energy saving for everyone (published 2023-02-20; accessed 2026-07-20): https://www.egat.co.th/home/save-energy-for-all-20230220/ — supports dry-hand use, equipment inspection, standards and safe operation.
+4. EGAT — 3 อ. energy-conservation strategy and matching appliance size/use duration (published 2022-06-22; accessed 2026-07-20): https://www.egat.co.th/home/20220622-mis01/ — supports suitable sizing, use-time awareness and behaviour/system choices.
+5. Ministry of Energy, Nan Provincial Energy Office — Saving energy at home (published 2023-01-23; accessed 2026-07-20): https://nan.energy.go.th/th/news/5446 — supports practical household energy-saving choices.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard operation, labelled controls, visible focus and non-drag alternatives.
+
 ## MAKER-01 — Levers Make Work Easier
 1. OpenStax Physics — 9.3 Simple Machines: https://openstax.org/books/physics/pages/9-3-simple-machines
 2. OpenStax College Physics — 9.5 Simple Machines: https://openstax.org/books/college-physics/pages/9-5-simple-machines
@@ -180,7 +188,8 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - AI confidence scores are estimates, not guarantees; high-impact decisions require accountable human review, limitation disclosure and a challenge/review route.
 - No child-specific identity data, passwords, addresses, precise location, images, health records, symptoms or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
-- Environmental simulations do not certify current air, water, soil, slope, landslide or waste-system safety; real sites require adult and qualified local assessment.
+- Environmental simulations do not certify current air, water, soil, slope, landslide, waste-system or electrical safety; real sites and equipment require adult and qualified local assessment.
+- Household-energy activities use fictional or aggregate data and do not collect addresses, utility account numbers, income, household schedules or bill images; children do not inspect, open, repair or handle electrical hazards.
 - Waste activities use clean fictional cards or prepared clean materials only; children do not search, open, photograph, weigh or touch real waste, sharps, broken glass, leaking batteries, chemicals, medicines, hygiene waste, animal remains or unknown materials.
 - Breathing and circulation lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing, pulse challenges, diagnostic interpretation or exertion tests.
 - Digestion and food-information activities do not collect diet, weight, body, symptom, allergy or treatment data and do not prescribe calories, restriction, food-group elimination, diagnosis or body comparison.
