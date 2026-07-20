@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const root=path.resolve(import.meta.dirname,'..');
+const read=relative=>fs.readFileSync(path.join(root,relative),'utf8');
+const exists=relative=>fs.existsSync(path.join(root,relative));
+const lesson='subjects/human-body/nervous-system-brain-senses-responsible-health-information.html';
+const script='assets/js/nervous-system-lesson.js';
+const worksheet='worksheets/student/nervous-system-brain-senses-responsible-health-information-a4.html';
+const guide='worksheets/teacher-guides/nervous-system-brain-senses-responsible-health-information-guide.html';
+function check(name,fn){try{fn();console.log(`PASS ${name}`)}catch(error){console.error(`FAIL ${name}: ${error.message}`);process.exitCode=1}}
+check('HB-08 files exist',()=>[lesson,script,worksheet,guide].forEach(file=>assert.ok(exists(file),file)));
+check('HB-08 JavaScript parses',()=>new vm.Script(read(script),{filename:script}));
+check('bilingual accessible structure',()=>{const html=read(lesson);assert.match(html,/<html lang="th">/);assert.match(html,/HB-08/);assert.match(html,/data-current-lesson="HB-08"/);assert.match(html,/fieldset/);assert.match(html,/legend/);assert.match(html,/aria-live="polite"/);assert.match(html,/tabindex="-1"/);assert.doesNotMatch(html,/draggable="true"/)});
+check('signal model and completion gates',()=>{const html=read(lesson),js=read(script);['stimulus','receptor','nerve','centre','response'].forEach(value=>assert.ok(html.includes(`data-signal="${value}"`),value));['signalComplete','safetyComplete','quizComplete','arshavin.humanbody.nervous.v1'].forEach(value=>assert.ok(js.includes(value),value))});
+check('health privacy and safety boundaries',()=>{const material=read(lesson)+read(worksheet)+read(guide);assert.match(material,/ไม่วินิจฉัย|not.*diagnos/i);assert.match(material,/ไม่.*จัดอันดับ|not.*rank/i);assert.match(material,/ไม่มีการจับเวลา|no.*timer|reaction-time competition/i);assert.match(material,/เสียงดัง|loud sound/i);assert.match(material,/แสงจ้า|bright light/i);assert.match(material,/ผู้ใหญ่|adult/i)});
+check('local-only script',()=>assert.doesNotMatch(read(script),/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/));
+check('exactly two A4 worksheets',()=>{const html=read(worksheet);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(html,/@page\{size:A4/)});
+check('navigation, reset and offline integration',()=>{const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');assert.ok(index.includes(lesson));assert.ok(index.includes('arshavin.humanbody.nervous.v1'));assert.ok(shell.includes('HB-08'));assert.ok(shell.includes('arshavin.humanbody.nervous.v1'));[lesson,script,worksheet,guide].forEach(file=>assert.ok(sw.includes(`./${file}`),file));assert.match(sw,/arshavin-grade4-v\d+/)});
+if(process.exitCode)process.exit(process.exitCode);
