@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **19 / 52**
-- A4 student worksheets: **38 / 104 minimum**
-- Teacher guides/rubrics: **18 complete guides**
+- Interactive bilingual lessons: **20 / 52**
+- A4 student worksheets: **40 / 104 minimum**
+- Teacher guides/rubrics: **19 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -101,8 +101,16 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options and four-level rubric
 - [x] Homepage, nineteen-lesson shell, reset key, service-worker v20, complete regression manifest and focused ENV-04 checks integrated
 
+### 2026-07-20 — MAKER-04 Structures, Shapes and Strength
+- [x] Complete bilingual lesson covering structures, members, loads, supports, braces and load paths
+- [x] Keyboard-native comparison of an unbraced square, triangle and diagonally braced square with textual load-path feedback
+- [x] Safe paper-structure design using lightweight materials, one-variable testing and explicit non-certification boundaries
+- [x] Guarded local-only completion under `arshavin.maker.structures.v1`
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options and four-level rubric
+- [x] Homepage, twenty-lesson shell, reset key, service-worker v21, complete regression manifest and focused MAKER-04 checks integrated
+
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — nineteen lessons, thirty-eight printable A4 sheets and eighteen teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — twenty lessons, forty printable A4 sheets and nineteen teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **MAKER-04 โครงสร้าง รูปทรง และความแข็งแรง / Structures, Shapes and Strength** with a keyboard-native load-path comparison, safe paper-structure design using lightweight materials only, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **CIT-04 การสื่อสารเมื่อเห็นต่างและการแก้ความขัดแย้งอย่างสันติ / Disagreement, Dialogue and Peaceful Conflict Resolution** with keyboard-native fictional dialogue choices, emotion-and-need identification, no-real-conflict disclosure safeguards, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.

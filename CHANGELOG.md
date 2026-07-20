@@ -5,6 +5,13 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
+- Complete interactive lesson **MAKER-04 โครงสร้าง รูปทรง และความแข็งแรง / Structures, Shapes and Strength**.
+- Keyboard-native load-path comparison covering an unbraced square, triangle and diagonally braced square with textual feedback.
+- Safe paper-structure design challenge using lightweight materials, one-variable testing, repeated evidence and explicit non-certification boundaries.
+- Guarded local-only completion under `arshavin.maker.structures.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, safety boundaries and four-level rubric.
+- Focused dependency-free `tests/maker04-static-checks.mjs` plus expanded complete regression coverage.
+- TeachEngineering, OpenStax and WCAG 2.2 source records.
 - Complete interactive lesson **ENV-04 ขยะ หลัก 5R และการออกแบบระบบลดของเสีย / Waste, the 5Rs and Designing a Lower-Waste System**.
 - Keyboard-native fictional waste-audit decisions covering Refuse, Reduce, Reuse, Repair and Recycle without real-waste contact.
 - Lower-waste system designer using source prevention, aggregate before–after evidence, hygiene review and improvement without naming or blaming people.
@@ -41,19 +48,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists nineteen lessons and clears all nineteen known local progress keys.
-- Shared learning shell places ENV-04 after ENV-03 and reports progress across nineteen lessons.
-- Service-worker cache advanced to `arshavin-grade4-v20` and precaches all ENV-04 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to nineteen lessons, thirty-eight A4 sheets and eighteen guides.
-- GitHub Actions runs complete and focused suites through ENV-04 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 19/52 lessons, 38/104 A4 sheets and 18 teacher guides.
-- Next executable increment advanced to **MAKER-04 Structures, Shapes and Strength**.
+- Homepage now lists twenty lessons and clears all twenty known local progress keys.
+- Shared learning shell places MAKER-04 after MAKER-03 and reports progress across twenty lessons.
+- Service-worker cache advanced to `arshavin-grade4-v21` and precaches all MAKER-04 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to twenty lessons, forty A4 sheets and nineteen guides.
+- GitHub Actions runs complete and focused suites through MAKER-04 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 20/52 lessons, 40/104 A4 sheets and 19 teacher guides.
+- Next executable increment advanced to **CIT-04 Disagreement, Dialogue and Peaceful Conflict Resolution**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- ENV-04 uses native radio, button, form, fieldset and legend controls with polite live feedback and no drag-only dependency or timer.
-- ENV-04 uses fictional cards or prepared clean materials only; children do not search, open, photograph, weigh or touch real waste.
-- Sharps, broken glass, leaking batteries, chemicals, medicines, hygiene waste, animal remains and unknown materials are reserved for adult-managed systems.
+- MAKER-04 uses native select, radio, button, form, fieldset and legend controls with polite live feedback and no drag-only dependency or timer.
+- MAKER-04 uses paper, tape and one lightweight test object on a flat table; adults handle cutting or drilling.
+- Heavy loads, glass, powered tools, hot glue, climbing, overhead tests, people/animals on models and certification of real structures are prohibited.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19
