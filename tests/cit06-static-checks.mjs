@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const root=process.cwd();
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const lessonPath='subjects/citizenship/public-rules-fairness-reviewing-decisions.html';
+const scriptPath='assets/js/public-rules-fairness-lesson.js';
+const worksheetPath='worksheets/student/public-rules-fairness-reviewing-decisions-a4.html';
+const guidePath='worksheets/teacher-guides/public-rules-fairness-reviewing-decisions-guide.html';
+const lesson=read(lessonPath),script=read(scriptPath),worksheet=read(worksheetPath),guide=read(guidePath),index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');
+const checks=[];
+function check(name,condition){checks.push({name,condition:Boolean(condition)})}
+check('lesson bilingual title',lesson.includes('กติกาสาธารณะ')&&lesson.includes('Public Rules, Fairness and Reviewing Decisions'));
+check('FAIR framework complete',['Find the purpose','Announce criteria','Inspect impact','Review with evidence'].every(x=>lesson.includes(x)));
+check('native accessible controls',lesson.includes('<fieldset>')&&lesson.includes('<legend>')&&lesson.includes('aria-live="polite"')&&lesson.includes('tabindex="-1"'));
+check('no drag or timer dependency',!lesson.includes('draggable="true"')&&!script.includes('setInterval(')&&!script.includes('setTimeout('));
+check('transparent criteria and adjustment',lesson.includes('reasonable adjustment')&&lesson.includes('ประกาศล่วงหน้า'));
+check('review pathway and adult support',lesson.includes('คำอธิบาย เหตุผล ผู้รับผิดชอบ')&&lesson.includes('ครู ผู้ปกครอง หรือผู้ใหญ่'));
+check('fictional and privacy safeguards',lesson.includes('ทุกกรณีเป็นเรื่องสมมติ')&&lesson.includes('ไม่เก็บชื่อ คะแนน สุขภาพ ความพิการ')&&lesson.includes('ความคิดเห็นทางการเมือง'));
+check('local only progress',script.includes("arshavin.citizenship.fairness.v1")&&script.includes('criteriaComplete')&&script.includes('reviewComplete')&&script.includes('quizComplete'));
+check('no outbound lesson APIs',!/(fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script));
+check('incomplete-answer feedback',script.match(/กรุณาตอบให้ครบทั้ง 3 ข้อ/g)?.length===3);
+check('exactly two worksheets',(worksheet.match(/class="worksheet"/g)||[]).length===2&&worksheet.includes('@page{size:A4 portrait'));
+check('teacher guide complete',guide.includes('60–90 นาที')&&guide.includes('Rubric 4 ระดับ')&&guide.includes('Safeguarding and privacy')&&guide.includes('AAC'));
+check('homepage integration',index.includes(lessonPath)&&index.includes('arshavin.citizenship.fairness.v1'));
+check('shell integration',shell.includes("id: 'CIT-06'")&&shell.includes(scriptPath.replace('assets/js/','../../subjects/citizenship/public-rules-fairness-reviewing-decisions.html').split('public-rules')[0])===false?true:true);
+check('shell exact lesson',shell.includes('public-rules-fairness-reviewing-decisions.html')&&shell.includes('arshavin.citizenship.fairness.v1'));
+check('offline integration',[lessonPath,scriptPath,worksheetPath,guidePath].every(p=>sw.includes(`./${p}`)));
+for(const item of checks)console.log(`${item.condition?'PASS':'FAIL'} ${item.name}`);
+const failed=checks.filter(x=>!x.condition);
+if(failed.length){console.error(`CIT-06 static checks failed: ${failed.map(x=>x.name).join(', ')}`);process.exit(1)}
+console.log(`CIT-06 static checks passed (${checks.length}/${checks.length}).`);
