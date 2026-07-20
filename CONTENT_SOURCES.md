@@ -30,6 +30,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. กรมอนามัย — PM2.5 และสุขภาพเด็ก: https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
 6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
+## HB-05 — Circulation, the Heart and Safer Care
+1. NIH/NHLBI — How the Heart Works: The Heart (accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart — supports the heart as a pump, the circulatory system, blood vessels and oxygen/nutrient transport.
+2. NIH/NHLBI — How Blood Flows through the Heart (updated 2025-06-25; accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/blood-flow — supports veins returning blood, arteries carrying blood away, valves controlling direction and the body–right heart–lungs–left heart–body loop.
+3. NIH/NHLBI — What the Heart Looks Like (accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/anatomy — supports four chambers and age-appropriate atrium/ventricle distinctions.
+4. NIH/NHLBI — How the Heart Beats (updated 2025-06-25; accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/heart-beats — supports heartbeat as coordinated contraction while the lesson avoids pulse challenges or diagnostic interpretation.
+5. WHO — Physical activity (published 2024-06-26; accessed 2026-07-20): https://www.who.int/news-room/fact-sheets/detail/physical-activity — supports general child-health context without prescribing individual exercise or diagnosing health.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, visible labels, textual feedback and non-drag alternatives.
+
 ## AI-01 — Fact, Opinion or Check?
 1. UNESCO — AI Competency Framework for Students: https://www.unesco.org/en/articles/ai-competency-framework-students
 2. OECD and European Commission — Empowering Learners for the Age of AI: https://www.oecd.org/en/publications/empowering-learners-for-the-age-of-ai_65cd27d4-en.html
@@ -125,7 +133,7 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - No child-specific identity data, passwords, addresses, precise location, images, health records, symptoms or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
 - Environmental simulations do not certify current air, water, soil, slope or landslide safety; real sites require adult and qualified local assessment.
-- Breathing lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing or exertion challenges.
+- Breathing and circulation lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing, pulse challenges, diagnostic interpretation or exertion tests.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.

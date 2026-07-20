@@ -1,39 +1,40 @@
 # QA REPORT
 
-## Build status through CIT-03
+## Build status through HB-05
 Date: 2026-07-20
 
-MAKER-03 is present on `main` at commit `2197a1adf032871a01cd3b41da087dd8a9ec5456`. No open pull request existed at the start of this CIT-03 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
+CIT-03 is present on `main` at commit `4301c17f8339a3d456ee0fd3030654f419fa2929`. No open pull request existed at the start of this HB-05 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
 
-## CIT-03 — Media, Public Information and Evidence Checking
+## HB-05 — Circulation, the Heart and Safer Care
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | UNESCO MIL, UNICEF Innocenti misinformation-and-children analysis, Council of Europe MIL/DCE and WCAG 2.2 recorded in `CONTENT_SOURCES.md` |
-| Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interaction labels, assessment, worksheets and teacher guidance |
-| Media-literacy concepts | PASS (source inspection) | Source, claim, evidence, context, purpose and corroboration are separated with age-appropriate definitions |
-| Source comparison | PASS (source inspection) | Fictional Source A/B activity requires origin, date, context, evidence and independent verification rather than popularity or formatting |
-| Public-information decisions | PASS (source inspection) | Fictional Chiang Rai notices cover unsupported closures, stale flood images and privacy-protective responses |
-| Keyboard/accessibility | PASS (source inspection) | Native radio, button, form, fieldset and legend controls; polite live feedback; no drag-only interaction |
-| Corrective feedback | PASS (source inspection) | Missing-choice handling plus bilingual correction for popularity, urgency, stale context and unsupported claims |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.citizenship.media.v1`; no outbound lesson APIs |
-| Child safeguarding | PASS | No real names, addresses, images, private messages, political preferences, real conflict disclosure or child-led investigation of people |
+| Authoritative grounding | PASS | NIH/NHLBI heart anatomy, blood-flow and heartbeat pages, WHO physical-activity context and WCAG 2.2 recorded in `CONTENT_SOURCES.md` |
+| Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interactions, assessment, worksheets and teacher guidance |
+| Circulation concepts | PASS (source inspection) | Heart, arteries, veins, capillaries, valves and simplified body–right heart–lungs–left heart–body flow are separated accurately for Grade 4 |
+| Blood-flow sequence | PASS (source inspection) | Five keyboard-native buttons enforce the simplified order and provide bilingual corrective feedback |
+| Health-information decisions | PASS (source inspection) | Fictional claims cover overgeneralisation, unexplained app numbers and danger signs without diagnosis or measurement |
+| Keyboard/accessibility | PASS (source inspection) | Native radio, button, form, fieldset and legend controls; polite live feedback; no drag-only interaction or colour-only instruction |
+| Corrective feedback | PASS (source inspection) | Incomplete-choice handling plus bilingual explanations for vessel direction, oxygen addition and safer escalation |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.humanbody.circulation.v1`; no outbound lesson APIs |
+| Child health safeguarding | PASS | No pulse challenge, timed heart-rate race, forced exercise, diagnosis, personal symptoms, medication or health-history collection |
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 print rule |
-| Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, safeguarding and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, sixteen-lesson shell, reset key and service-worker v17 paths align |
-| Automated regression | PASS on pre-evidence head | GitHub Actions workflow `Static learning-site checks`, run #48, run ID `29711049865`, head `49c83779b31084d9c75aa6c168d9946ac899a749`, conclusion `success`; the documentation-only evidence commit must also pass before merge |
+| Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, health boundaries and four-level rubric |
+| Navigation/offline | PASS (source inspection) | Homepage, seventeen-lesson shell, reset key and service-worker v18 paths align |
+| Automated regression | PASS on pre-evidence head | GitHub Actions workflow `Static learning-site checks`, run #52, run ID `29712664344`, head `582f627db90acc14f7b6f497eed937cbd9ab20b8`, conclusion `success`; the documentation-only evidence commit must also pass before merge |
 
 ## Functional cases inspected
-1. Source comparison refuses incomplete answers and saves only after all three evidence choices are correct.
-2. Comparison feedback distinguishes “more detailed” from “verified” and creates a known/unknown/next-check summary.
-3. Notice activity requires pausing unsupported closure claims, checking image context and protecting a real person’s privacy.
-4. Quiz requires all three answers and saves only at 3/3.
-5. Lesson completion requires `sourceComplete`, `noticeComplete` and `quizComplete`.
-6. Storage reads/writes are caught; storage failure does not block learning.
-7. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-8. Complete regression manifest contains sixteen lessons, thirty-two worksheet pages, fifteen guides and sixteen progress keys.
-9. Service-worker cache advanced to `arshavin-grade4-v17` and includes all CIT-03 runtime assets.
-10. Focused assertions reject outbound APIs, drag-only interaction, missing fictional-scenario labels, unsafe child investigation and incomplete offline integration.
+1. Blood-flow activity rejects out-of-order choices and saves only after all five steps are completed.
+2. Simplified flow states body → right heart → lungs → left heart → body and labels it as a reduced model.
+3. Health-information activity refuses incomplete answers and never interprets a pulse, app number or symptom as a diagnosis.
+4. Danger-sign scenario directs the learner to stop, tell an adult and seek appropriate help rather than waiting for the website.
+5. Quiz requires all three answers and saves only at 3/3.
+6. Lesson completion requires `flowComplete`, `careComplete` and `quizComplete`.
+7. Storage reads/writes are caught; storage failure does not block learning.
+8. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
+9. Complete regression manifest contains seventeen lessons, thirty-four worksheet pages, sixteen guides and seventeen progress keys.
+10. Focused assertions reject outbound APIs, drag-only interaction, missing fictional-scenario labels, pulse measurement, diagnostic language and incomplete offline integration.
+11. A prior CIT-03 focused suite regression caused by a cache-version literal was corrected to verify a versioned cache while retaining exact asset-path checks.
 
 ## Verification still required
 - Exact final-head GitHub Actions result after this evidence-only commit.
@@ -44,4 +45,4 @@ MAKER-03 is present on `main` at commit `2197a1adf032871a01cd3b41da087dd8a9ec545
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — sixteen lessons, thirty-two A4 sheets and fifteen teacher guides are integrated at source level. Merge requires exact final-head CI. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — seventeen lessons, thirty-four A4 sheets and sixteen teacher guides are integrated at source level. Merge requires exact final-head CI. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
