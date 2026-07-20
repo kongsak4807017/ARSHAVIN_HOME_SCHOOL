@@ -9,7 +9,7 @@ MAKER-04 is present on `main` at commit `188bacfe582eab1e79512b328fd701fba43b30a
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | UNESCO social and emotional learning guidance, UNICEF child communication guidance, Council of Europe democratic-culture/conflict-resolution resources and WCAG 2.2 are cited in the lesson and source record |
+| Authoritative grounding | PASS | UNESCO social and emotional learning guidance, UNICEF child communication guidance, Council of Europe democratic-culture/conflict-resolution resources and WCAG 2.2 recorded in `CONTENT_SOURCES.md` |
 | Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interaction feedback, assessment, worksheets and teacher guidance |
 | Core concepts | PASS (source inspection) | Disagreement, fact, feeling, need, request and the CALM frame are defined and applied |
 | Dialogue activity | PASS (source inspection) | Native radio/button controls distinguish observation from blame, feeling/need from accusation and request from command |
@@ -20,7 +20,7 @@ MAKER-04 is present on `main` at commit `188bacfe582eab1e79512b328fd701fba43b30a
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit `@page` A4 portrait print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, safeguarding response and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, twenty-one-lesson shell, reset key and service-worker v22 paths align |
-| Automated regression | PENDING exact PR-head CI | `tests/static-checks.mjs` expanded to 21 lessons/42 A4 sheets/20 guides/21 keys; focused `tests/cit04-static-checks.mjs` added to GitHub Actions |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #66, run ID `29722803664`, head `11b35bed29b4ea254f7e4b316a57b8f1fb1ed3a3`, job `88289193712`, conclusion `success`; all steps including evidence upload and enforcement passed. This evidence-only commit must also pass before merge. |
 
 ## Functional cases inspected
 1. Dialogue form refuses incomplete answers and accepts only observable fact, feeling/need and answerable request choices.
@@ -30,10 +30,11 @@ MAKER-04 is present on `main` at commit `188bacfe582eab1e79512b328fd701fba43b30a
 5. Storage reads/writes are caught; storage failure does not block learning.
 6. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
 7. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-8. Focused assertions check CALM, fact–feeling–need–request, fictional scenarios, trusted-adult escalation, no forced apology and exact two-page A4 structure.
+8. Complete regression manifest contains twenty-one lessons, forty-two worksheet pages, twenty guides and twenty-one progress keys.
+9. Focused assertions check CALM, fact–feeling–need–request, fictional scenarios, trusted-adult escalation, no forced apology and exact two-page A4 structure.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
