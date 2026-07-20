@@ -21,7 +21,7 @@ AI-06 is present on `main` at commit `1500ec2405022b312925df7e8a2cd8c1a25fd348`.
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 portrait print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safeguarding boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, twenty-nine-lesson shell, reset key and service-worker v30 paths align |
-| Automated regression | PENDING exact PR-head run | Complete 29-lesson regression and focused `tests/env06-static-checks.mjs` are wired into GitHub Actions; exact run evidence must pass before merge |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #94, run ID `29755786773`, job ID `88397626867`, head `a3b9e27d3683f0894f6be22a03f60a58bf6c1dcb`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
 
 ## Functional cases inspected
 1. Forecast comparison rejects incomplete responses and saves only when source, timescale and privacy choices are correct.
@@ -33,9 +33,10 @@ AI-06 is present on `main` at commit `1500ec2405022b312925df7e8a2cd8c1a25fd348`.
 7. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
 8. Complete regression manifest contains twenty-nine lessons, fifty-eight worksheet pages, twenty-eight guides and twenty-nine progress keys.
 9. Focused assertions check weather–climate timescale, READY, accessible controls, privacy, hazard-observation prohibitions and exact two-page A4 structure.
+10. A previous AI-06 focused test hard-coded cache `v29`; the root cause was fixed by accepting a versioned cache pattern while retaining exact AI-06 asset assertions, and the full suite then passed on run #94.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final documentation-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -43,4 +44,4 @@ AI-06 is present on `main` at commit `1500ec2405022b312925df7e8a2cd8c1a25fd348`.
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — twenty-nine lessons, fifty-eight A4 sheets and twenty-eight teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — twenty-nine lessons, fifty-eight A4 sheets and twenty-eight teacher guides are integrated at source level. Exact final documentation-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
