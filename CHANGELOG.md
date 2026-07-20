@@ -5,12 +5,14 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
+- Complete interactive lesson **HB-07 ระบบขับถ่าย ไต และสมดุลน้ำ / Excretion, Kidneys and Water Balance**.
+- Keyboard-native urinary-path sequence covering kidneys, ureters, bladder and urethra with corrective bilingual feedback.
+- Model-limit teaching that distinguishes filtration plus reabsorption from a simple sieve and avoids diagnostic claims.
+- Fictional hydration, bathroom-access and health-information scenarios with no symptom collection, urine tracking, diagnosis or water-drinking competition.
+- Guarded local-only completion under `arshavin.humanbody.kidneys.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, health/privacy boundaries and a four-level rubric.
+- Focused dependency-free `tests/hb07-static-checks.mjs` plus expanded complete regression coverage through twenty-seven lessons.
 - Complete interactive lesson **CIT-05 ชุมชน หน่วยงานสาธารณะ และการมีส่วนร่วมอย่างรับผิดชอบ / Community Institutions and Responsible Participation**.
-- Keyboard-native fictional public-service pathway using the PATH frame: Pinpoint the need, Ask who is responsible, Take relevant evidence and Hear back/review.
-- Role-and-evidence matching for accessibility, official routing, accountable ownership and review without collecting real complaints or identifying data.
-- Guarded local-only completion under `arshavin.citizenship.participation.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, political-neutrality/privacy boundaries and a four-level rubric.
-- Focused dependency-free `tests/cit05-static-checks.mjs` plus expanded complete regression coverage through twenty-six lessons.
 - Complete interactive lesson **MAKER-05 วัสดุ สมบัติ และการเลือกใช้อย่างรับผิดชอบ / Materials, Properties and Responsible Selection**.
 - Complete interactive lesson **ENV-05 พลังงานในบ้าน ประสิทธิภาพ และการตัดสินใจอย่างรับผิดชอบ / Household Energy, Efficiency and Responsible Choices**.
 - Complete interactive lesson **AI-05 การตัดสินใจของ AI ความมั่นใจ และการส่งต่อให้มนุษย์ / AI Decisions, Confidence and Human Escalation**.
@@ -29,19 +31,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists twenty-six lessons and clears all twenty-six known local progress keys.
-- Shared learning shell places CIT-05 after CIT-04 and reports progress across twenty-six lessons.
-- Service-worker cache advanced to `arshavin-grade4-v27` and precaches all CIT-05 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to twenty-six lessons, fifty-two A4 sheets and twenty-five guides.
-- GitHub Actions runs complete and focused suites through CIT-05 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 26/52 lessons, 52/104 A4 sheets and 25 teacher guides.
-- Next executable increment advanced to **HB-07 Excretion, Kidneys and Water Balance**.
+- Homepage now lists twenty-seven lessons and clears all twenty-seven known local progress keys.
+- Shared learning shell places HB-07 after HB-06 and reports progress across twenty-seven lessons.
+- Service-worker cache advanced to `arshavin-grade4-v28` and precaches all HB-07 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to twenty-seven lessons, fifty-four A4 sheets and twenty-six guides.
+- GitHub Actions runs complete and focused suites through HB-07 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 27/52 lessons, 54/104 A4 sheets and 26 teacher guides.
+- Next executable increment advanced to **AI-06 Recommendation, Ranking and Fair Choice**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- CIT-05 uses native radio and button controls with focusable polite live feedback and no drag-only dependency or timer.
-- CIT-05 uses fictional scenarios only and does not accept real complaints, names, addresses, phone numbers, personal images, family information or political preferences.
-- Children do not contact strangers or agencies alone, publish accusations or manage real complaints without an accountable adult.
+- HB-07 uses native buttons and radio controls with focusable polite live feedback and no drag-only dependency or timer.
+- HB-07 does not collect symptoms, urine colour/frequency, diagnoses, medication, weight or family health information.
+- The activity prohibits water-drinking competitions and directs real health concerns to a trusted adult and qualified health personnel.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19
