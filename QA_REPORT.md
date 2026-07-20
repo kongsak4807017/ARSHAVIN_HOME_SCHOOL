@@ -1,40 +1,39 @@
 # QA REPORT
 
-## Build status through ENV-07
+## Build status through MAKER-07
 Date: 2026-07-21
 
-AI-07 is present on `main` at commit `18ea916d41c7159dc02837a9d3456ea5c54f1509`. No open pull request existed at the start of this ENV-07 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
+ENV-07 is present on `main` at commit `658e1d56f6297d93ceaa9b0947ceb2fc391f2c47`. No open pull request existed at the start of this MAKER-07 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
 
-## ENV-07 — Ecosystems, Biodiversity and Responsible Observation
+## MAKER-07 — Magnets, Forces and Safe Sorting-System Design
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | UNEP TEEB for ecosystem and biodiversity value; Convention on Biological Diversity definitions and conservation principles; W3C WCAG 2.2 for keyboard, focus and non-drag operation |
+| Authoritative grounding | PASS | OpenStax for ferromagnetic materials; U.S. CPSC for small high-powered magnet ingestion hazards; U.S. FDA for implanted-medical-device interference precautions; W3C WCAG 2.2 for keyboard, focus and non-drag operation |
 | Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interaction feedback, assessment, worksheets and teacher guidance |
-| Food-web reasoning | PASS (source inspection) | Fictional Chiang Rai context includes producer, consumer and decomposer roles with food-to-eater energy arrows |
-| Habitat-change reasoning | PASS (source inspection) | Learners distinguish possible effects from certainty, request repeated evidence and disclose model limits |
-| Responsible observation | PASS (source inspection) | CARE framework covers permission, safety, avoidance of disturbance, broad-area recording and limitation disclosure |
-| Wildlife-location protection | PASS | Lesson, worksheet and guide prohibit precise nest or sensitive-species coordinates and public location sharing |
-| Fieldwork safety | PASS | No fieldwork is required; guide prohibits night search, water entry, climbing, close wildlife approach, capture, feeding and specimen collection |
+| Magnet science | PASS (source inspection) | Lesson distinguishes strong ferromagnetic response from the false claim that every metal is attracted; aluminium is included as a counterexample |
+| Fair-test reasoning | PASS (source inspection) | Learners hold magnet, starting distance and method constant while changing only the fictional material |
+| Sorting-system design | PASS (source inspection) | Three outcomes are required: responds, does not respond and uncertain/review; learners must record limitations |
+| Ingestion and strong-magnet safety | PASS | Lesson, worksheets and guide prohibit small/high-powered magnets, mouth/nose/ear proximity and use of damaged or loose magnets |
+| Electronics and medical-device safety | PASS | Materials require distance from electronics, magnetic-stripe cards and implanted medical devices; digital/card-only activity is the default where uncertain |
 | Keyboard/accessibility | PASS (source inspection) | Native select, radio controls and buttons; fieldsets, legends, explicit labels and focusable polite live feedback; no drag-only interaction or timer |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.environment.biodiversity.v1`; no outbound lesson APIs |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.maker.magnets.v1`; no outbound lesson APIs |
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait print rule and explicit page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, accessibility alternatives, safety boundaries and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, thirty-four-lesson shell, reset key and service-worker v35 paths align |
-| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #110, run ID `29776152538`, job ID `88465867801`, exact implementation head `04f73ee7e73b452513cdc8a35097c902589736d6`, conclusion `success`; checkout, Node setup, complete regression, focused ENV-07 checks, evidence upload and enforcement all passed. This evidence-only documentation head must also pass before merge. |
+| Navigation/offline | PASS (source inspection) | Homepage, thirty-five-lesson shell, reset key and service-worker v36 paths align |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #114, run ID `29780195067`, exact implementation head `944e084242b25588468fcbfbee19a1d056e5cf0d`, conclusion `success`; complete regression, focused MAKER-07 checks, evidence upload and enforcement passed. This evidence-only documentation head must also pass before merge. |
 
 ## Functional cases inspected
-1. Food-web form rejects incomplete input and displays bilingual text feedback.
-2. Correct food-web answers require plant producer, plausible food-to-eater pathway and decomposer nutrient return.
-3. Habitat activity requires a scenario, evidence-limited conclusion and safe observation method.
-4. Habitat feedback avoids certainty and displays scenario-specific model limitations.
-5. Quiz requires all three answers and saves completion only at 3/3.
-6. Lesson completion requires `foodwebComplete`, `habitatComplete` and `quizComplete`.
-7. Storage reads/writes are guarded; storage failure does not block learning.
-8. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
-9. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-10. Complete regression manifest contains thirty-four lessons, sixty-eight worksheet pages, thirty-three guides and thirty-four progress keys.
-11. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
+1. Material selector renders bilingual textual results for steel, aluminium, wood and plastic.
+2. Comparison activity rejects incomplete input and only marks completion for evidence-limited reasoning.
+3. Design activity requires controlled variables, a safe three-category sorting system and adult-supervised boundaries.
+4. Quiz requires all three answers and only saves completion at 3/3.
+5. Lesson completion requires `comparisonComplete`, `designComplete` and `quizComplete`.
+6. Storage reads/writes are guarded; storage failure does not block learning.
+7. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
+8. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
+9. Complete regression manifest contains thirty-five lessons, seventy worksheet pages, thirty-four guides and thirty-five progress keys.
+10. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
 - Exact final documentation-head GitHub Actions result.
@@ -45,4 +44,4 @@ AI-07 is present on `main` at commit `18ea916d41c7159dc02837a9d3456ea5c54f1509`.
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty-four lessons, sixty-eight A4 sheets and thirty-three teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — thirty-five lessons, seventy A4 sheets and thirty-four teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.

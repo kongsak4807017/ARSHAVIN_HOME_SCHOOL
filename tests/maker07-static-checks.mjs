@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const root=path.resolve(import.meta.dirname,'..');
+const read=file=>fs.readFileSync(path.join(root,file),'utf8');
+const lesson='subjects/maker-engineering/magnets-forces-safe-sorting.html';
+const script='assets/js/magnets-sorting-lesson.js';
+const sheet='worksheets/student/magnets-forces-safe-sorting-a4.html';
+const guide='worksheets/teacher-guides/magnets-forces-safe-sorting-guide.html';
+const files=[lesson,script,sheet,guide];
+function check(name,fn){try{fn();console.log(`PASS ${name}`)}catch(error){console.error(`FAIL ${name}: ${error.message}`);process.exitCode=1}}
+check('MAKER-07 files exist',()=>files.forEach(file=>assert.ok(fs.existsSync(path.join(root,file)),file)));
+check('MAKER-07 JavaScript parses',()=>new vm.Script(read(script),{filename:script}));
+check('bilingual semantic and keyboard-native interaction',()=>{const html=read(lesson);assert.match(html,/<html lang="th">/);assert.match(html,/<h1>[\s\S]*<br>[\s\S]*<span>/);assert.match(html,/<select id="material-choice">/);assert.match(html,/<fieldset>/);assert.match(html,/aria-live="polite"/);assert.doesNotMatch(html,/draggable="true"/)});
+check('science and model limits',()=>{const material=read(lesson)+read(guide)+read(sheet);assert.match(material,/ferromagnetic|เฟอร์โรแมกเนติก/i);assert.match(material,/โลหะทุกชนิดไม่ได้ถูกดูด|ไม่ควรเหมารวมว่าโลหะทุกชนิด|not all metals/i);assert.match(material,/fair test|การทดสอบอย่างยุติธรรม/i);assert.match(material,/ไม่รับรอง|not certify|model/i)});
+check('magnet safety boundaries',()=>{const material=read(lesson)+read(guide)+read(sheet);assert.match(material,/แม่เหล็กเม็ดเล็ก|small high-powered magnets/i);assert.match(material,/ปาก|mouth/i);assert.match(material,/อุปกรณ์อิเล็กทรอนิกส์|electronics/i);assert.match(material,/อุปกรณ์การแพทย์|medical device/i);assert.match(material,/ผู้ใหญ่|adult/i)});
+check('completion and local-only behavior',()=>{const js=read(script);['comparisonComplete','designComplete','quizComplete','arshavin.maker.magnets.v1'].forEach(token=>assert.ok(js.includes(token),token));assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/)});
+check('exactly two A4 worksheets',()=>{const html=read(sheet);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(html,/@page\s*\{[\s\S]*size:\s*A4/)});
+check('navigation and offline integration',()=>{const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');[lesson,script,sheet,guide].forEach(file=>assert.ok(sw.includes(`./${file}`),file));assert.ok(index.includes(lesson));assert.ok(index.includes('arshavin.maker.magnets.v1'));assert.ok(shell.includes('MAKER-07'));assert.ok(shell.includes('arshavin.maker.magnets.v1'));assert.match(sw,/arshavin-grade4-v\d+/)});
+if(process.exitCode)process.exit(process.exitCode);

@@ -5,6 +5,13 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-21
 
 ### Added
+- Complete interactive lesson **MAKER-07 แม่เหล็ก แรง และการออกแบบระบบคัดแยกอย่างปลอดภัย / Magnets, Forces and Safe Sorting-System Design**.
+- Keyboard-native fictional material comparison using steel, aluminium, wood and plastic with textual attraction/non-attraction evidence.
+- Fair-test workflow holding magnet, starting distance and method constant while changing only the material.
+- Safe three-category sorting design: responds, does not respond and uncertain/review, with explicit model limitations.
+- Guarded local-only completion under `arshavin.maker.magnets.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, accessibility alternatives, magnet-ingestion/electronics/medical-device safeguards and a four-level rubric.
+- Focused dependency-free `tests/maker07-static-checks.mjs` plus expanded complete regression coverage through thirty-five lessons.
 - Complete interactive lesson **ENV-07 ระบบนิเวศ ความหลากหลายทางชีวภาพ และการสังเกตอย่างรับผิดชอบ / Ecosystems, Biodiversity and Responsible Observation**.
 - Keyboard-native food-web activity using fictional Chiang Rai organisms with producer, consumer, decomposer and food-to-eater energy reasoning.
 - Habitat-change comparison that uses evidence-limited language, repeated observation and explicit model limitations.
@@ -34,19 +41,22 @@ All notable interactive-web changes are recorded here.
 - Focused dependency-free `tests/cit06-static-checks.mjs` plus expanded complete regression coverage through thirty-one lessons.
 
 ### Changed
-- Homepage now lists thirty-four lessons and clears all thirty-four known local progress keys.
-- Shared learning shell places ENV-07 after ENV-06 and reports progress across thirty-four lessons.
-- Service-worker cache advanced to `arshavin-grade4-v35` and precaches all ENV-07 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to thirty-four lessons, sixty-eight A4 sheets and thirty-three guides.
-- GitHub Actions runs complete and focused suites through ENV-07 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 34/52 lessons, 68/104 A4 sheets and 33 teacher guides.
-- Next executable increment advanced to **MAKER-07 Magnets, Forces and Safe Sorting-System Design**.
+- Homepage now lists thirty-five lessons and clears all thirty-five known local progress keys.
+- Shared learning shell places MAKER-07 after MAKER-06 and reports progress across thirty-five lessons.
+- Service-worker cache advanced to `arshavin-grade4-v36` and precaches all MAKER-07 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to thirty-five lessons, seventy A4 sheets and thirty-four guides.
+- GitHub Actions runs complete and focused suites through MAKER-07 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 35/52 lessons, 70/104 A4 sheets and 34 teacher guides.
+- Next executable increment advanced to **CIT-07 Community Budgets, Public Resources and Transparent Choices**.
 
 ### Safety, accessibility and privacy
+- MAKER-07 uses native select, radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
+- MAKER-07 defaults to fictional data and screen/card activity; optional real materials are large, weak, clean and adult-checked.
+- MAKER-07 prohibits small/high-powered magnets, mouth/nose/ear proximity, damaged magnets, electronics proximity and unreviewed use near implanted medical devices.
+- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 - ENV-07 uses native select, radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
 - All ENV-07 examples are fictional; no precise wildlife or nest locations, personal addresses, learner tracking or remote data collection are used.
 - No fieldwork is required; optional real observation requires adult permission and supervision and prohibits night search, water entry, climbing, capture, feeding and specimen collection.
-- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 - AI-07 uses native selects, radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
 - All AI-07 cases are fictional; the lesson does not connect to cameras, microphones, location services, pumps, mains electricity or learner profiles.
 - Missing or conflicting sensor readings produce a stop-and-alert-human result rather than guessing or continuing a risky action.
