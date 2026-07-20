@@ -5,12 +5,13 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
+- Complete interactive lesson **CIT-05 ชุมชน หน่วยงานสาธารณะ และการมีส่วนร่วมอย่างรับผิดชอบ / Community Institutions and Responsible Participation**.
+- Keyboard-native fictional public-service pathway using the PATH frame: Pinpoint the need, Ask who is responsible, Take relevant evidence and Hear back/review.
+- Role-and-evidence matching for accessibility, official routing, accountable ownership and review without collecting real complaints or identifying data.
+- Guarded local-only completion under `arshavin.citizenship.participation.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, political-neutrality/privacy boundaries and a four-level rubric.
+- Focused dependency-free `tests/cit05-static-checks.mjs` plus expanded complete regression coverage through twenty-six lessons.
 - Complete interactive lesson **MAKER-05 วัสดุ สมบัติ และการเลือกใช้อย่างรับผิดชอบ / Materials, Properties and Responsible Selection**.
-- Keyboard-native fictional material matrix comparing reused paperboard, clean woven cloth and reused plastic sheet across strength, flexibility, water resistance, lightness, durability and life-cycle notes.
-- Fair-test and responsible-selection activity requiring controlled variables, reuse/repair/disassembly reasoning, non-certification limits and adult-managed safety.
-- Guarded local-only completion under `arshavin.maker.materials.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconception correction, accessibility alternatives, safety boundaries and a four-level rubric.
-- Focused dependency-free `tests/maker05-static-checks.mjs` plus expanded complete regression coverage through twenty-five lessons.
 - Complete interactive lesson **ENV-05 พลังงานในบ้าน ประสิทธิภาพ และการตัดสินใจอย่างรับผิดชอบ / Household Energy, Efficiency and Responsible Choices**.
 - Complete interactive lesson **AI-05 การตัดสินใจของ AI ความมั่นใจ และการส่งต่อให้มนุษย์ / AI Decisions, Confidence and Human Escalation**.
 - Complete interactive lesson **HB-06 ระบบย่อยอาหาร สารอาหาร และข้อมูลอาหารที่รับผิดชอบ / Digestion, Nutrients and Responsible Food Information**.
@@ -28,19 +29,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists twenty-five lessons and clears all twenty-five known local progress keys.
-- Shared learning shell places MAKER-05 after MAKER-04 and reports progress across twenty-five lessons.
-- Service-worker cache advanced to `arshavin-grade4-v26` and precaches all MAKER-05 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to twenty-five lessons, fifty A4 sheets and twenty-four guides.
-- GitHub Actions runs complete and focused suites through MAKER-05 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 25/52 lessons, 50/104 A4 sheets and 24 teacher guides.
-- Next executable increment advanced to **CIT-05 Community Institutions and Responsible Participation**.
+- Homepage now lists twenty-six lessons and clears all twenty-six known local progress keys.
+- Shared learning shell places CIT-05 after CIT-04 and reports progress across twenty-six lessons.
+- Service-worker cache advanced to `arshavin-grade4-v27` and precaches all CIT-05 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to twenty-six lessons, fifty-two A4 sheets and twenty-five guides.
+- GitHub Actions runs complete and focused suites through CIT-05 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 26/52 lessons, 52/104 A4 sheets and 25 teacher guides.
+- Next executable increment advanced to **HB-07 Excretion, Kidneys and Water Balance**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- MAKER-05 uses native select, radio and button controls with focusable polite live feedback and no drag-only dependency or timer.
-- MAKER-05 uses fictional scores, data cards or clean lightweight adult-prepared samples only and does not certify real materials or products.
-- Children do not use flames, chemicals, solvents, batteries, sharp/powered tools, heavy loads or destructive tests; adults handle cutting and unknown materials.
+- CIT-05 uses native radio and button controls with focusable polite live feedback and no drag-only dependency or timer.
+- CIT-05 uses fictional scenarios only and does not accept real complaints, names, addresses, phone numbers, personal images, family information or political preferences.
+- Children do not contact strangers or agencies alone, publish accusations or manage real complaints without an accountable adult.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19
