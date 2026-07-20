@@ -21,7 +21,7 @@ MAKER-05 is present on `main` at commit `849399544418058c464dcc3ac61cbc861608e41
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 portrait print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, neutrality/privacy boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, twenty-six-lesson shell, reset key and service-worker v27 paths align |
-| Automated regression | PENDING exact final head | Complete and focused CIT-05 suites are wired into GitHub Actions; exact final-head result must pass before merge |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #83, run ID `29738824889`, head `2324ff001ba5aff740f00c3badfb1614768f2e53`, job `88340509253`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
 
 ## Functional cases inspected
 1. Pathway activity rejects incomplete responses and saves only after the neutral statement, adult routing and aggregate-evidence answers are correct.
@@ -36,7 +36,7 @@ MAKER-05 is present on `main` at commit `849399544418058c464dcc3ac61cbc861608e41
 10. Focused assertions check PATH, public-service roles, evidence proportionality, political neutrality, adult support and exact two-page A4 structure.
 
 ## Verification still required
-- Exact final-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
