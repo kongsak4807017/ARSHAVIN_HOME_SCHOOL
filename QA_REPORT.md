@@ -20,7 +20,7 @@ HB-06 is present on `main` at commit `2b24e07f31b1095780abba2b0532751bde954a65`.
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit `@page` A4 portrait print rule |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, accessible alternatives, safeguarding response and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, twenty-three-lesson shell, reset key and service-worker v24 paths align |
-| Automated regression | PENDING exact PR-head evidence | Complete manifest and focused AI-05 suite are integrated into GitHub Actions; final result must be recorded before merge |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #73, run ID `29728139325`, head `df0c6b7691b281557ab98c5fe9092538facc87c8`, job `88305930895`, conclusion `success`; complete and focused suites, evidence upload and enforcement passed. This evidence-only documentation commit must also pass before merge. |
 
 ## Functional cases inspected
 1. Confidence activity refuses incomplete input and evaluates both confidence level and chosen action.
@@ -37,7 +37,7 @@ HB-06 is present on `main` at commit `2b24e07f31b1095780abba2b0532751bde954a65`.
 12. Focused assertions check confidence-versus-correctness, abstention, human escalation, rights/health safeguards, local completion and exact two-page A4 structure.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
