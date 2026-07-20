@@ -21,7 +21,7 @@ ENV-06 is present on `main` at commit `368c909ee78592eb60aa822974ca95f290832403`
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 print rule and page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safety boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, thirty-lesson shell, reset key and service-worker v31 paths align |
-| Automated regression | PENDING exact PR-head evidence | Complete regression and focused `tests/maker06-static-checks.mjs` are wired into GitHub Actions; exact final-head run must pass before merge |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #97, run ID `29759668189`, job ID `88410835935`, head `58404bb4c8021e3e832d7b316a105eb166d93225`, conclusion `success`; complete regression, focused MAKER-06 checks, evidence upload and enforcement all passed. This evidence-only documentation head must also pass before merge. |
 
 ## Functional cases inspected
 1. Surface selector provides text for surface name, relative friction and fictional motion result without relying on colour.
@@ -36,7 +36,7 @@ ENV-06 is present on `main` at commit `368c909ee78592eb60aa822974ca95f290832403`
 10. Focused assertions check friction/fair-test content, native accessible controls, no-speed/high-ramp safeguards and exact two-page A4 structure.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final documentation-head GitHub Actions result.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -44,4 +44,4 @@ ENV-06 is present on `main` at commit `368c909ee78592eb60aa822974ca95f290832403`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty lessons, sixty A4 sheets and twenty-nine teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — thirty lessons, sixty A4 sheets and twenty-nine teacher guides are integrated at source level. Exact final documentation-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
