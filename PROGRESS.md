@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **20 / 52**
-- A4 student worksheets: **40 / 104 minimum**
-- Teacher guides/rubrics: **19 complete guides**
+- Interactive bilingual lessons: **21 / 52**
+- A4 student worksheets: **42 / 104 minimum**
+- Teacher guides/rubrics: **20 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -57,7 +57,6 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Chiang Rai slope/headwater decision activity using the COVER framework and unstable-ground safeguards
 - [x] Guarded local-only completion under `arshavin.environment.soil.v1`
 - [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with safe optional tray investigation and four-level rubric
-- [x] Homepage, fourteen-lesson shell, reset key, service-worker v15, complete regression manifest and focused ENV-03 checks integrated
 
 ### 2026-07-20 — MAKER-03 Wheels, Axles and Designing Motion
 - [x] Complete bilingual lesson covering wheel, axle, radius, rotation and force–distance trade-offs
@@ -65,52 +64,53 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Lightweight paper-cart design activity using matched wheels, one-variable testing and evidence-based improvement
 - [x] Guarded local-only completion under `arshavin.maker.wheelsaxles.v1`
 - [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with four-level rubric
-- [x] Homepage, fifteen-lesson shell, reset key, service-worker v16, complete regression manifest and focused MAKER-03 checks integrated
 
 ### 2026-07-20 — CIT-03 Media, Public Information and Evidence Checking
 - [x] Complete bilingual lesson separating source, claim, evidence, context and corroboration
 - [x] Keyboard-native fictional source-comparison activity using the TRACE framework
 - [x] Fictional Chiang Rai community-notice scenarios covering stale images, unsupported closures and privacy-protective responses
 - [x] Guarded local-only completion under `arshavin.citizenship.media.v1`
-- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, safeguarding and four-level rubric
-- [x] Homepage, sixteen-lesson shell, reset key, service-worker v17, complete regression manifest and focused CIT-03 checks integrated
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide
 
 ### 2026-07-20 — HB-05 Circulation, the Heart and Safer Care
 - [x] Complete bilingual lesson covering heart, arteries, veins, capillaries and a simplified body–heart–lungs circulation loop
 - [x] Keyboard-native five-step blood-flow sequence without pulse measurement, exertion or body-performance comparison
-- [x] Fictional health-information decisions that separate general facts from diagnosis and require adult help for danger signs
+- [x] Fictional health-information decisions with adult escalation for danger signs
 - [x] Guarded local-only completion under `arshavin.humanbody.circulation.v1`
-- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, safeguarding and four-level rubric
-- [x] Homepage, seventeen-lesson shell, reset key, service-worker v18, complete regression manifest and focused HB-05 checks integrated
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide
 
 ### 2026-07-20 — AI-04 Patterns, Features and Edge Cases
 - [x] Complete bilingual lesson explaining patterns, observable features, labels, training examples, separate test examples and edge cases
-- [x] Keyboard-native household-object rule builder using fictional non-personal examples and corrective bilingual feedback
-- [x] Explicit training/test separation, honest error recording and fresh-test-set guidance to avoid memorising test answers
-- [x] Child-data, no-ranking, no-person-classification and non-certification safeguards
+- [x] Keyboard-native household-object rule builder using fictional non-personal examples
+- [x] Explicit training/test separation, honest error recording and fresh-test-set guidance
 - [x] Guarded local-only completion under `arshavin.ai.patterns.v1`
-- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options and four-level rubric
-- [x] Homepage, eighteen-lesson shell, reset key, service-worker v19, complete regression manifest and focused AI-04 checks integrated
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide
 
 ### 2026-07-20 — ENV-04 Waste, the 5Rs and Designing a Lower-Waste System
-- [x] Complete bilingual lesson explaining source reduction and the ordered Refuse–Reduce–Reuse–Repair–Recycle framework
-- [x] Keyboard-native fictional waste-audit decisions using clean scenarios only, with no real waste handling
-- [x] Lower-waste system designer using aggregate before–after evidence, hygiene checks and review without blame
-- [x] Hazardous-item boundaries covering sharps, broken glass, leaking batteries, chemicals, medicines and unknown materials
+- [x] Complete bilingual lesson explaining source reduction and Refuse–Reduce–Reuse–Repair–Recycle
+- [x] Keyboard-native fictional waste-audit decisions with no real waste handling
+- [x] Lower-waste system designer using aggregate before–after evidence
 - [x] Guarded local-only completion under `arshavin.environment.waste.v1`
-- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options and four-level rubric
-- [x] Homepage, nineteen-lesson shell, reset key, service-worker v20, complete regression manifest and focused ENV-04 checks integrated
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide
 
 ### 2026-07-20 — MAKER-04 Structures, Shapes and Strength
 - [x] Complete bilingual lesson covering structures, members, loads, supports, braces and load paths
-- [x] Keyboard-native comparison of an unbraced square, triangle and diagonally braced square with textual load-path feedback
-- [x] Safe paper-structure design using lightweight materials, one-variable testing and explicit non-certification boundaries
+- [x] Keyboard-native comparison of an unbraced square, triangle and diagonally braced square
+- [x] Safe paper-structure design using lightweight materials and one-variable testing
 - [x] Guarded local-only completion under `arshavin.maker.structures.v1`
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide
+
+### 2026-07-20 — CIT-04 Disagreement, Dialogue and Peaceful Conflict Resolution
+- [x] Complete bilingual lesson separating observable facts, feelings, needs and answerable requests
+- [x] Keyboard-native fictional dialogue choices using the CALM framework
+- [x] Explicit trusted-adult escalation for threats, bullying, blocking, harm or unsafe feelings
+- [x] No real-conflict disclosure, forced apology, forced reconciliation or real-conflict role-play
+- [x] Guarded local-only completion under `arshavin.citizenship.dialogue.v1`
 - [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options and four-level rubric
-- [x] Homepage, twenty-lesson shell, reset key, service-worker v21, complete regression manifest and focused MAKER-04 checks integrated
+- [x] Homepage, twenty-one-lesson shell, reset key, service-worker v22, complete regression manifest and focused CIT-04 checks integrated
 
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — twenty lessons, forty printable A4 sheets and nineteen teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — twenty-one lessons, forty-two printable A4 sheets and twenty teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **CIT-04 การสื่อสารเมื่อเห็นต่างและการแก้ความขัดแย้งอย่างสันติ / Disagreement, Dialogue and Peaceful Conflict Resolution** with keyboard-native fictional dialogue choices, emotion-and-need identification, no-real-conflict disclosure safeguards, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **HB-06 ระบบย่อยอาหาร สารอาหาร และข้อมูลอาหารที่รับผิดชอบ / Digestion, Nutrients and Responsible Food Information** with a keyboard-native digestion-path sequence, fictional label-reading decisions without calorie restriction or body comparison, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.

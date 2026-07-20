@@ -31,12 +31,12 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## HB-05 — Circulation, the Heart and Safer Care
-1. NIH/NHLBI — How the Heart Works: The Heart (accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart — supports the heart as a pump, the circulatory system, blood vessels and oxygen/nutrient transport.
-2. NIH/NHLBI — How Blood Flows through the Heart (updated 2025-06-25; accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/blood-flow — supports veins returning blood, arteries carrying blood away, valves controlling direction and the body–right heart–lungs–left heart–body loop.
-3. NIH/NHLBI — What the Heart Looks Like (accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/anatomy — supports four chambers and age-appropriate atrium/ventricle distinctions.
-4. NIH/NHLBI — How the Heart Beats (updated 2025-06-25; accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/heart-beats — supports heartbeat as coordinated contraction while the lesson avoids pulse challenges or diagnostic interpretation.
-5. WHO — Physical activity (published 2024-06-26; accessed 2026-07-20): https://www.who.int/news-room/fact-sheets/detail/physical-activity — supports general child-health context without prescribing individual exercise or diagnosing health.
-6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, visible labels, textual feedback and non-drag alternatives.
+1. NIH/NHLBI — How the Heart Works: The Heart (accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart
+2. NIH/NHLBI — How Blood Flows through the Heart (updated 2025-06-25; accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/blood-flow
+3. NIH/NHLBI — What the Heart Looks Like (accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/anatomy
+4. NIH/NHLBI — How the Heart Beats (updated 2025-06-25; accessed 2026-07-20): https://www.nhlbi.nih.gov/health/heart/heart-beats
+5. WHO — Physical activity (published 2024-06-26; accessed 2026-07-20): https://www.who.int/news-room/fact-sheets/detail/physical-activity
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
 ## AI-01 — Fact, Opinion or Check?
 1. UNESCO — AI Competency Framework for Students: https://www.unesco.org/en/articles/ai-competency-framework-students
@@ -60,12 +60,12 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## AI-04 — Patterns, Features and Edge Cases
-1. UNESCO — AI Competency Framework for Students (updated 2026-01-16; accessed 2026-07-20): https://www.unesco.org/en/articles/ai-competency-framework-students — supports age-appropriate AI techniques, critical judgement, human-centred design and responsible co-creation.
-2. UNICEF Innocenti — Guidance on AI and children, version 3.0 (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/policy-guidance-ai-children — supports child safety, privacy, fairness, transparency, explainability and accountability.
-3. Google for Developers — Machine Learning Crash Course: Training Sets and Test Sets (accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/DPE/tp-il-training-and-test-sets — supports keeping training examples distinct from examples used to evaluate predictions.
-4. Google for Developers — Datasets: Dividing the Original Dataset (updated 2025; accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets — supports testing on unseen, representative examples and avoiding duplicates between training and test sets.
-5. Google for Developers — Datasets, Generalization and Overfitting (accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/overfitting — supports feature, label, dataset reliability, generalisation and error-analysis concepts.
-6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, textual feedback, visible labels and non-drag alternatives.
+1. UNESCO — AI Competency Framework for Students (updated 2026-01-16; accessed 2026-07-20): https://www.unesco.org/en/articles/ai-competency-framework-students
+2. UNICEF Innocenti — Guidance on AI and children, version 3.0 (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/policy-guidance-ai-children
+3. Google for Developers — Machine Learning Crash Course: Training Sets and Test Sets (accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/DPE/tp-il-training-and-test-sets
+4. Google for Developers — Datasets: Dividing the Original Dataset (updated 2025; accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets
+5. Google for Developers — Datasets, Generalization and Overfitting (accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/overfitting
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
 ## ENV-01 — Read the Air, Choose a Safer Action
 1. กรมอนามัย — ฝุ่น PM2.5 กับสุขภาพเด็กไทย: https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
@@ -91,12 +91,12 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## ENV-04 — Waste, the 5Rs and Designing a Lower-Waste System
-1. US EPA — Sustainable Materials Management: Non-Hazardous Materials and Waste Management Hierarchy (accessed 2026-07-20): https://www.epa.gov/smm/sustainable-materials-management-non-hazardous-materials-and-waste-management-hierarchy — supports source reduction and reuse as preferred strategies before recycling, treatment and disposal.
-2. US EPA — What You Can Do About Climate Change: Waste (accessed 2026-07-20): https://www.epa.gov/climate-change/what-you-can-do-about-climate-change-waste — explicitly defines Refuse, Reduce, Reuse, Repair and Recycle and prioritises not creating waste in the first place.
-3. US EPA — Reducing and Reusing Basics (updated 2026-06-22; accessed 2026-07-20): https://www.epa.gov/recycle/reducing-and-reusing-basics — supports buying only what is needed, reuse, repair, borrowing and checking local recycling rules.
-4. UNEP — Waste Pollution 101 (accessed 2026-07-20): https://www.unep.org/interactives/beat-waste-pollution/ — supports preventing and minimising waste, lifecycle thinking, reuse and repair before end-of-life management.
-5. UNEP — Zero Waste 101 (accessed 2026-07-20): https://www.unep.org/interactives/zero-waste-101/ — supports prevention, reduction, reuse, repair and locally appropriate system design.
-6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, visible labels, textual feedback and non-drag alternatives.
+1. US EPA — Sustainable Materials Management hierarchy (accessed 2026-07-20): https://www.epa.gov/smm/sustainable-materials-management-non-hazardous-materials-and-waste-management-hierarchy
+2. US EPA — What You Can Do About Climate Change: Waste (accessed 2026-07-20): https://www.epa.gov/climate-change/what-you-can-do-about-climate-change-waste
+3. US EPA — Reducing and Reusing Basics (updated 2026-06-22; accessed 2026-07-20): https://www.epa.gov/recycle/reducing-and-reusing-basics
+4. UNEP — Waste Pollution 101 (accessed 2026-07-20): https://www.unep.org/interactives/beat-waste-pollution/
+5. UNEP — Zero Waste 101 (accessed 2026-07-20): https://www.unep.org/interactives/zero-waste-101/
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
 ## MAKER-01 — Levers Make Work Easier
 1. OpenStax Physics — 9.3 Simple Machines: https://openstax.org/books/physics/pages/9-3-simple-machines
@@ -119,12 +119,12 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
 ## MAKER-04 — Structures, Shapes and Strength
-1. TeachEngineering — Race to the Top! Modeling Skyscrapers (Grade 4; accessed 2026-07-20): https://www.teachengineering.org/activities/view/ucd_kapablocks_activity1 — supports Grade 4 criteria, constraints, iterative testing and redesign of lightweight load-bearing models.
-2. TeachEngineering — Triangles & Trusses (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_trusses_lesson01 — supports triangle stability, diagonal bracing and comparing deformation of unbraced polygons.
-3. TeachEngineering — Polygons, Angles and Trusses, Oh My! (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_polygons_angles_trusses_lesson01 — supports structural members, compression/tension context and triangles as stable elemental shapes.
-4. TeachEngineering — History and Testing Shapes of Strength for Buildings (accessed 2026-07-20): https://www.teachengineering.org/activities/view/cub_intro_lesson01_activity1 — supports testing paper shapes and using engineering evidence while this lesson applies stricter lightweight-only safety limits.
-5. OpenStax Physics — 9.3 Simple Machines (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines — supports force–distance trade-offs, conservation of energy and explicit ideal-model limitations.
-6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, textual feedback and non-drag alternatives.
+1. TeachEngineering — Race to the Top! Modeling Skyscrapers (Grade 4; accessed 2026-07-20): https://www.teachengineering.org/activities/view/ucd_kapablocks_activity1
+2. TeachEngineering — Triangles & Trusses (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_trusses_lesson01
+3. TeachEngineering — Polygons, Angles and Trusses, Oh My! (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_polygons_angles_trusses_lesson01
+4. TeachEngineering — History and Testing Shapes of Strength for Buildings (accessed 2026-07-20): https://www.teachengineering.org/activities/view/cub_intro_lesson01_activity1
+5. OpenStax Physics — 9.3 Simple Machines (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
 
 ## CIT-01 — Rights, Responsibilities and Digital Kindness
 1. UNICEF — Convention on the Rights of the Child: https://www.unicef.org/child-rights-convention/convention-text
@@ -143,12 +143,20 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## CIT-03 — Media, Public Information and Evidence Checking
-1. UNESCO — Media and Information Literacy (updated 2026-06-26; accessed 2026-07-20): https://www.unesco.org/en/ami — supports critical, ethical and responsible access, analysis, evaluation and use of information.
-2. UNESCO — Do you trust what you watch or read? (accessed 2026-07-20): https://www.unesco.org/en/articles/do-you-trust-what-you-watch-or-read — supports checking creator, purpose, audience, credibility, statistics and source before accepting a message.
-3. UNICEF Innocenti — Digital misinformation/disinformation and children (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/digital-misinformation-disinformation-and-children — supports age-appropriate critical reading, child vulnerability, adult support and children’s capacity to counter misinformation.
-4. Council of Europe — Media and Information Literacy (accessed 2026-07-20): https://www.coe.int/en/web/education/media-and-information-literacy — supports processing, analysing and making informed decisions across media and information channels.
-5. Council of Europe — Digital Citizenship Education Planner (published 2026-03-12; accessed 2026-07-20): https://www.coe.int/en/web/education/-/new-isbn-publication-dce-planner-3 — supports age-banded outcomes for media literacy, responsible participation, privacy and inclusion.
-6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, visible labels, textual feedback and non-drag alternatives.
+1. UNESCO — Media and Information Literacy (updated 2026-06-26; accessed 2026-07-20): https://www.unesco.org/en/ami
+2. UNESCO — Do you trust what you watch or read? (accessed 2026-07-20): https://www.unesco.org/en/articles/do-you-trust-what-you-watch-or-read
+3. UNICEF Innocenti — Digital misinformation/disinformation and children (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/digital-misinformation-disinformation-and-children
+4. Council of Europe — Media and Information Literacy (accessed 2026-07-20): https://www.coe.int/en/web/education/media-and-information-literacy
+5. Council of Europe — Digital Citizenship Education Planner (published 2026-03-12; accessed 2026-07-20): https://www.coe.int/en/web/education/-/new-isbn-publication-dce-planner-3
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/
+
+## CIT-04 — Disagreement, Dialogue and Peaceful Conflict Resolution
+1. UNESCO — Mainstreaming social and emotional learning in education systems: policy guide (published 2024-10-15; updated 2026-06-22; accessed 2026-07-20): https://www.unesco.org/en/articles/mainstreaming-social-and-emotional-learning-education-systems-policy-guide — supports integrating emotional awareness, relationship skills and peaceful, inclusive learning environments.
+2. UNICEF Parenting — How to communicate effectively with your young child (accessed 2026-07-20): https://www.unicef.org/parenting/child-care/9-tips-for-better-communication — supports attentive listening, empathy, naming feelings and clear, realistic communication.
+3. Council of Europe — Effective participation in a culture of democracy in a diverse school context (accessed 2026-07-20): https://www.coe.int/en/web/learning-resources/-/effective-participation-in-a-culture-of-democracy-in-a-diverse-school-context — supports classroom conflict-resolution skills, reflection on conflict behaviour, dialogue and democratic values.
+4. Council of Europe — Competences for Democratic Culture (accessed 2026-07-20): https://www.coe.int/en/web/education/competences-for-democratic-culture — supports listening, empathy, cooperation, respect and critical understanding for primary and secondary education.
+5. Council of Europe Charter on Education for Democratic Citizenship and Human Rights Education (accessed 2026-07-20): https://www.coe.int/en/web/compass/council-of-europe-charter-on-education-for-democratic-citizenship-and-human-rights-education — supports dialogue, mutual respect and non-violent resolution of disputes.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, textual feedback and non-drag alternatives.
 
 ## Source-use rules
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
@@ -162,4 +170,5 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
 - Maker structure activities use paper, tape and lightweight test objects only; they do not certify real structures and prohibit climbing, overhead tests, people/animals on models and child use of cutting, drilling or hot-glue tools.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.
+- Conflict-resolution activities use fictional scenarios, prohibit forced apology/reconciliation and require trusted-adult escalation for threats, bullying, harm, blocking or unsafe situations.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
