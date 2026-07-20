@@ -21,7 +21,7 @@ CIT-07 is present on `main` at commit `a6d9673d1eb015a665c6a3e494daa6d68b52ebf1`
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait rule and explicit page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, accessible alternatives, health/privacy boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, thirty-seven-lesson shell, reset key and service-worker v38 paths align |
-| Automated regression | PENDING exact PR-head result | Complete manifest and focused `tests/hb09-static-checks.mjs` are configured in GitHub Actions; exact run evidence must be recorded before merge |
+| Automated regression | PASS on exact implementation head | GitHub Actions `Static learning-site checks`, run #122, run ID `29787177398`, exact head `93801d5f0c90e377dd5e7bdb1868184694cc3c1b`, job `88501142562`, conclusion `success`; checkout, Node setup, complete regression, focused HB-09 checks, evidence upload and enforcement all passed |
 
 ## Functional cases inspected
 1. Path activity rejects out-of-order steps and only marks `pathComplete` after all four steps.
@@ -32,10 +32,11 @@ CIT-07 is present on `main` at commit `a6d9673d1eb015a665c6a3e494daa6d68b52ebf1`
 6. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
 7. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
 8. Complete regression manifest contains thirty-seven lessons, seventy-four worksheet pages, thirty-six guides and thirty-seven progress keys.
-9. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
+9. Focused CIT-07 cache assertion was generalized from fixed `v37` to versioned-cache matching while preserving exact CIT-07 asset checks.
+10. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result after this QA update.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -43,4 +44,4 @@ CIT-07 is present on `main` at commit `a6d9673d1eb015a665c6a3e494daa6d68b52ebf1`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty-seven lessons, seventy-four A4 sheets and thirty-six teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
+**ACCEPTED WITH CONDITIONS** — thirty-seven lessons, seventy-four A4 sheets and thirty-six teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
