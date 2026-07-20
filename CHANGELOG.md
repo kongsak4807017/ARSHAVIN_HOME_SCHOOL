@@ -5,6 +5,13 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-21
 
 ### Added
+- Complete interactive lesson **AI-07 หุ่นยนต์ เซนเซอร์ และระบบหยุดอย่างปลอดภัย / Robots, Sensors and Fail-Safe Systems**.
+- Keyboard-native Input–Process–Output simulator using fictional moisture and rain signals without controlling a real pump or device.
+- SAFE framework for sensing carefully, assessing uncertainty, failing safely and escalating to a responsible human.
+- Stop-and-alert-human decision activity that rejects guessing, risky continuation and collection of child data when sensors fail.
+- Guarded local-only completion under `arshavin.ai.robots.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, accessibility alternatives, electrical/water safety boundaries and a four-level rubric.
+- Focused dependency-free `tests/ai07-static-checks.mjs` plus expanded complete regression coverage through thirty-three lessons.
 - Complete interactive lesson **HB-08 ระบบประสาท สมอง ประสาทสัมผัส และข้อมูลสุขภาพที่รับผิดชอบ / Nervous System, Brain, Senses and Responsible Health Information**.
 - Keyboard-native signal-path model for fictional vision, hearing and touch examples using stimulus → receptor → nerve → brain/spinal cord → response.
 - Sensory-safety decision activity that rejects loudness challenges, reaction-time competition, neurological self-diagnosis and child ranking.
@@ -20,19 +27,22 @@ All notable interactive-web changes are recorded here.
 - Focused dependency-free `tests/cit06-static-checks.mjs` plus expanded complete regression coverage through thirty-one lessons.
 
 ### Changed
-- Homepage now lists thirty-two lessons and clears all thirty-two known local progress keys.
-- Shared learning shell places HB-08 after HB-07 and reports progress across thirty-two lessons.
-- Service-worker cache advanced to `arshavin-grade4-v33` and precaches all HB-08 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to thirty-two lessons, sixty-four A4 sheets and thirty-one guides.
-- GitHub Actions runs complete and focused suites through HB-08 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 32/52 lessons, 64/104 A4 sheets and 31 teacher guides.
-- Next executable increment advanced to **AI-07 Robots, Sensors and Fail-Safe Systems**.
+- Homepage now lists thirty-three lessons and clears all thirty-three known local progress keys.
+- Shared learning shell places AI-07 after AI-06 and reports progress across thirty-three lessons.
+- Service-worker cache advanced to `arshavin-grade4-v34` and precaches all AI-07 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to thirty-three lessons, sixty-six A4 sheets and thirty-two guides.
+- GitHub Actions runs complete and focused suites through AI-07 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 33/52 lessons, 66/104 A4 sheets and 32 teacher guides.
+- Next executable increment advanced to **ENV-07 Ecosystems, Biodiversity and Responsible Observation**.
 
 ### Safety, accessibility and privacy
+- AI-07 uses native selects, radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
+- All AI-07 cases are fictional; the lesson does not connect to cameras, microphones, location services, pumps, mains electricity or learner profiles.
+- Missing or conflicting sensor readings produce a stop-and-alert-human result rather than guessing or continuing a risky action.
+- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 - HB-08 uses native select, radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency, timer or reaction-time ranking.
 - All HB-08 cases are fictional; the lesson does not collect symptoms, diagnoses, medicines, sensory scores, school scores or family-health information.
 - Sudden sensory change, severe headache, fainting, seizure, weakness, confusion or head injury routes to a trusted adult and health professional without public disclosure.
-- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 - CIT-06 uses native radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
 - CIT-06 cases are fictional and do not collect real disputes, names, scores, health, disability, family information or political opinions.
 
