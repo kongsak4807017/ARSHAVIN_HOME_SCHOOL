@@ -5,26 +5,16 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
-- Complete interactive lesson **CIT-04 การสื่อสารเมื่อเห็นต่างและการแก้ความขัดแย้งอย่างสันติ / Disagreement, Dialogue and Peaceful Conflict Resolution**.
-- Keyboard-native fictional dialogue lab using CALM: Check safety, Attend and listen, Label facts/feelings/needs, Make a workable request.
-- Fact–feeling–need analysis with trusted-adult escalation for threats, bullying, blocking, harm or unsafe feelings.
-- Guarded local-only completion under `arshavin.citizenship.dialogue.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, safeguarding and four-level rubric.
-- Focused dependency-free `tests/cit04-static-checks.mjs` plus expanded complete regression coverage.
-- UNESCO, UNICEF, Council of Europe and WCAG 2.2 source records.
-- Complete interactive lesson **MAKER-04 โครงสร้าง รูปทรง และความแข็งแรง / Structures, Shapes and Strength**.
-- Keyboard-native load-path comparison covering an unbraced square, triangle and diagonally braced square with textual feedback.
-- Safe paper-structure design challenge using lightweight materials, one-variable testing, repeated evidence and explicit non-certification boundaries.
-- Guarded local-only completion under `arshavin.maker.structures.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, safety boundaries and four-level rubric.
-- Focused dependency-free `tests/maker04-static-checks.mjs` plus expanded complete regression coverage.
-- TeachEngineering, OpenStax and WCAG 2.2 source records.
-- Complete interactive lesson **ENV-04 ขยะ หลัก 5R และการออกแบบระบบลดของเสีย / Waste, the 5Rs and Designing a Lower-Waste System**.
-- Keyboard-native fictional waste-audit decisions covering Refuse, Reduce, Reuse, Repair and Recycle without real-waste contact.
-- Lower-waste system designer using source prevention, aggregate before–after evidence, hygiene review and improvement without naming or blaming people.
-- Guarded local-only completion under `arshavin.environment.waste.v1` and a three-question corrective assessment.
-- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, hygiene boundaries and four-level rubric.
-- Focused dependency-free `tests/env04-static-checks.mjs` plus expanded complete regression coverage.
+- Complete interactive lesson **HB-06 ระบบย่อยอาหาร สารอาหาร และข้อมูลอาหารที่รับผิดชอบ / Digestion, Nutrients and Responsible Food Information**.
+- Keyboard-native five-step digestion-path sequence covering mouth, esophagus, stomach, small intestine and large intestine with corrective bilingual feedback.
+- Fictional food-label activity using serving context, multiple information points, evidence limits and responsible health/body claims.
+- Guarded local-only completion under `arshavin.humanbody.digestion.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, nutrition safeguarding and four-level rubric.
+- Focused dependency-free `tests/hb06-static-checks.mjs` plus expanded complete regression coverage.
+- NIDDK/NIH, U.S. FDA, WHO and WCAG 2.2 source records.
+- Complete interactive lesson **CIT-04 การสื่อสารเมื่อเห็นต่างและการแก้ความขัดแย้งอย่างสันติ / Disagreement, Dialogue and Peaceful Conflict Resolution** and its full deliverable set.
+- Complete interactive lesson **MAKER-04 โครงสร้าง รูปทรง และความแข็งแรง / Structures, Shapes and Strength** and its full deliverable set.
+- Complete interactive lesson **ENV-04 ขยะ หลัก 5R และการออกแบบระบบลดของเสีย / Waste, the 5Rs and Designing a Lower-Waste System** and its full deliverable set.
 - Complete interactive lesson **AI-04 รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้ / Patterns, Features and Edge Cases** and its full deliverable set.
 - Complete interactive lesson **HB-05 ระบบไหลเวียนเลือด หัวใจ และการดูแลอย่างปลอดภัย / Circulation, the Heart and Safer Care** and its full deliverable set.
 - Complete interactive lesson **CIT-03 สื่อ ข่าวสาร และการตรวจสอบหลักฐาน / Media, Public Information and Evidence Checking** and its full deliverable set.
@@ -36,19 +26,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists twenty-one lessons and clears all twenty-one known local progress keys.
-- Shared learning shell places CIT-04 after CIT-03 and reports progress across twenty-one lessons.
-- Service-worker cache advanced to `arshavin-grade4-v22` and precaches all CIT-04 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to twenty-one lessons, forty-two A4 sheets and twenty guides.
-- GitHub Actions runs complete and focused suites through CIT-04 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 21/52 lessons, 42/104 A4 sheets and 20 teacher guides.
-- Next executable increment advanced to **HB-06 Digestion, Nutrients and Responsible Food Information**.
+- Homepage now lists twenty-two lessons and clears all twenty-two known local progress keys.
+- Shared learning shell places HB-06 after HB-05 and reports progress across twenty-two lessons.
+- Service-worker cache advanced to `arshavin-grade4-v23` and precaches all HB-06 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to twenty-two lessons, forty-four A4 sheets and twenty-one guides.
+- GitHub Actions runs complete and focused suites through HB-06 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 22/52 lessons, 44/104 A4 sheets and 21 teacher guides.
+- Next executable increment advanced to **AI-05 AI Decisions, Confidence and Human Escalation**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- CIT-04 uses native radio, button, form, fieldset and legend controls with focusable polite live feedback and no drag-only dependency or timer.
-- CIT-04 uses fictional scenarios only and does not request real-conflict disclosure, names, family details, political views or distressing experiences.
-- Forced apology, forced reconciliation, pairing real opponents for role-play, voting on blame/punishment/popularity and sending a child back to manage unsafe conflict alone are prohibited.
+- HB-06 uses native buttons, radio controls, forms, fieldsets and legends with focusable polite live feedback and no drag-only dependency or timer.
+- HB-06 does not request weight, body, diet history, symptoms, allergy, diagnosis, treatment or family health information.
+- Calorie targets, food restriction, food-group elimination, body comparison, diagnosis and changing treatment from lesson content are prohibited.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19
