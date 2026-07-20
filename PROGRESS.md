@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **14 / 52**
-- A4 student worksheets: **28 / 104 minimum**
-- Teacher guides/rubrics: **13 complete guides**
+- Interactive bilingual lessons: **15 / 52**
+- A4 student worksheets: **30 / 104 minimum**
+- Teacher guides/rubrics: **14 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -59,8 +59,16 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with safe optional tray investigation and four-level rubric
 - [x] Homepage, fourteen-lesson shell, reset key, service-worker v15, complete regression manifest and focused ENV-03 checks integrated
 
+### 2026-07-20 — MAKER-03 Wheels, Axles and Designing Motion
+- [x] Complete bilingual lesson covering wheel, axle, radius, rotation and force–distance trade-offs
+- [x] Keyboard-native ideal wheel/axle ratio comparison with explicit friction and certification limits
+- [x] Lightweight paper-cart design activity using matched wheels, one-variable testing and evidence-based improvement
+- [x] Guarded local-only completion under `arshavin.maker.wheelsaxles.v1`
+- [x] Exactly two A4 worksheet pages and a 60–90-minute teacher guide with four-level rubric
+- [x] Homepage, fifteen-lesson shell, reset key, service-worker v16, complete regression manifest and focused MAKER-03 checks integrated
+
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — fourteen lessons, twenty-eight printable A4 sheets and thirteen teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — fifteen lessons, thirty printable A4 sheets and fourteen teacher guides are integrated at source level. Exact CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **MAKER-03 ล้อ เพลา และการออกแบบการเคลื่อนที่ / Wheels, Axles and Designing Motion** with an accessible force-distance comparison, safe paper-wheel design activity using light materials, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **CIT-03 สื่อ ข่าวสาร และการตรวจสอบหลักฐาน / Media, Public Information and Evidence Checking** with a keyboard-native source-comparison activity, fictional Chiang Rai community notice scenarios, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.

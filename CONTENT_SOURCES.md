@@ -23,12 +23,12 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. WHO Europe — Physical activity recommendations: https://www.who.int/europe/news-room/fact-sheets/item/physical-activity
 
 ## HB-04 — Breathing, Gas Exchange and Safer Air
-1. **NIH/NHLBI — How the Lungs Work** (accessed 2026-07-20): https://www.nhlbi.nih.gov/health/lungs — supports the airway sequence, alveoli and oxygen/carbon-dioxide exchange explained at an age-appropriate level.
-2. **WHO — Ambient (outdoor) air pollution** (updated 2024-10-24; accessed 2026-07-20): https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health — supports air pollution as a child-health risk and exposure-reduction framing.
-3. **WHO — Children’s environmental health** (accessed 2026-07-20): https://www.who.int/health-topics/children-environmental-health — supports children’s increased vulnerability and adult/community responsibility for safer environments.
-4. **WHO — Health effects of air pollution: evidence and implications** (published 2026-06-21; accessed 2026-07-20): https://www.who.int/publications/i/item/B09563 — current evidence summary for respiratory and wider health effects; no numeric claims are required in the child activity.
-5. **กรมอนามัย กระทรวงสาธารณสุข — PM2.5 และสุขภาพเด็ก** (accessed 2026-07-20): https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/ — Thai safer-air context and adult-guided exposure reduction.
-6. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — keyboard-native buttons/radios, visible labels, polite live feedback and non-drag alternatives.
+1. NIH/NHLBI — How the Lungs Work: https://www.nhlbi.nih.gov/health/lungs
+2. WHO — Ambient outdoor air pollution: https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health
+3. WHO — Children’s environmental health: https://www.who.int/health-topics/children-environmental-health
+4. WHO — Health effects of air pollution: https://www.who.int/publications/i/item/B09563
+5. กรมอนามัย — PM2.5 และสุขภาพเด็ก: https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
+6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## AI-01 — Fact, Opinion or Check?
 1. UNESCO — AI Competency Framework for Students: https://www.unesco.org/en/articles/ai-competency-framework-students
@@ -41,15 +41,15 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 1. UNICEF Parenting — Online privacy checklist for parents: https://www.unicef.org/parenting/child-care/online-privacy
 2. UNICEF Child Rights and Business — Children and online privacy: https://www.unicef.org/childrightsandbusiness/reports/children-and-online-privacy
 3. UNICEF — Policy on Personal Data Protection: https://www.unicef.org/learningpassport/unicef-policy-personal-data-protection-annex
-4. UNICEF Innocenti — Children's rights-by-design standard for data use by tech companies: https://www.unicef.org/innocenti/reports/childrens-rights-design-standard-data-use-tech-companies
+4. UNICEF Innocenti — Children’s rights-by-design standard: https://www.unicef.org/innocenti/reports/childrens-rights-design-standard-data-use-tech-companies
 5. UNESCO — Guidance for generative AI in education and research: https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research
 
 ## AI-03 — Learning from Data and Bias
-1. **UNESCO — AI Competency Framework for Students** (published 2024-08-08; updated 2026-01-16; accessed 2026-07-20): https://www.unesco.org/en/articles/ai-competency-framework-students — supports age-appropriate understanding of AI techniques, ethics, critical judgement, human-centred design and inclusive AI across understand/apply/create progression.
-2. **UNICEF Innocenti — Guidance on AI and children, version 3.0** (2025; accessed 2026-07-20): https://www.unicef.org/innocenti/reports/policy-guidance-ai-children — supports non-discrimination, fairness, transparency, explainability, accountability, inclusion, child rights and adult/system responsibility.
-3. **UNICEF Digital Impact — Child-Centric AI** (published 2026; accessed 2026-07-20): https://www.unicef.org/digitalimpact/stories/child-centric-ai — supports fairness and inclusion by design, representative testing across linguistic/cultural contexts, age-appropriate explanations and meaningful child agency.
-4. **UNICEF Innocenti — Generative AI: Risks and opportunities for children** (accessed 2026-07-20): https://www.unicef.org/innocenti/generative-ai-risks-and-opportunities-children — supports explaining algorithmic bias, limits and transparency without treating model output as fact.
-5. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, non-colour-only communication, polite live feedback and alternatives to dragging.
+1. UNESCO — AI Competency Framework for Students: https://www.unesco.org/en/articles/ai-competency-framework-students
+2. UNICEF Innocenti — Guidance on AI and children, version 3.0: https://www.unicef.org/innocenti/reports/policy-guidance-ai-children
+3. UNICEF Digital Impact — Child-Centric AI: https://www.unicef.org/digitalimpact/stories/child-centric-ai
+4. UNICEF Innocenti — Generative AI: Risks and opportunities for children: https://www.unicef.org/innocenti/generative-ai-risks-and-opportunities-children
+5. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## ENV-01 — Read the Air, Choose a Safer Action
 1. กรมอนามัย — ฝุ่น PM2.5 กับสุขภาพเด็กไทย: https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
@@ -67,12 +67,12 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. กรมทรัพยากรน้ำ: https://www.dwr.go.th/
 
 ## ENV-03 — Soil, Erosion and Soil Conservation
-1. **กรมพัฒนาที่ดิน — สถานภาพการชะล้างพังทลายของดินในประเทศไทย** (accessed 2026-07-20): https://e-library.ldd.go.th/library/flip/bib10329f/files/basic-html/page21.html — supports detachment, transportation and deposition, with water erosion identified as a major erosion agent in Thailand.
-2. **กรมพัฒนาที่ดิน — ชุดข้อมูลการชะล้างพังทลายของดิน** (released 2024-07-05; updated 2025-10-07; accessed 2026-07-20): https://lddcatalog.ldd.go.th/dataset/lpd06 — supports the multi-factor nature of erosion assessment: rainfall, slope/DEM, soil, geology, land use and conservation practice.
-3. **กรมพัฒนาที่ดิน — มาตรการอนุรักษ์ดินและน้ำ** (published 2024-10-10; accessed 2026-07-20): https://lddnews.ldd.go.th/page_pr_dt?ID=22 — supports cover, organic matter, contour/terrace, runoff-slowing, vetiver and infiltration-oriented measures under adult/expert planning.
-4. **กรมพัฒนาที่ดิน — ระบบอนุรักษ์ดินและน้ำพื้นที่เสี่ยง จังหวัดเชียงราย** (published 2025-10-04; accessed 2026-07-20): https://lddnews.ldd.go.th/page_executive_dt?ID=1809 — supports the Chiang Rai slope/headwater context and use of sediment traps, contour structures, farm ponds, vetiver and mixed planting; lesson scenarios remain fictional and do not certify site risk.
-5. **USGS — Soils** (published 2022; accessed 2026-07-20): https://www.usgs.gov/publications/soils — supports soil cover, vegetation, infiltration and reduced runoff/erosion relationships.
-6. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, text feedback, visible labels and non-drag interaction.
+1. กรมพัฒนาที่ดิน — สถานภาพการชะล้างพังทลายของดินในประเทศไทย: https://e-library.ldd.go.th/library/flip/bib10329f/files/basic-html/page21.html
+2. กรมพัฒนาที่ดิน — ชุดข้อมูลการชะล้างพังทลายของดิน: https://lddcatalog.ldd.go.th/dataset/lpd06
+3. กรมพัฒนาที่ดิน — มาตรการอนุรักษ์ดินและน้ำ: https://lddnews.ldd.go.th/page_pr_dt?ID=22
+4. กรมพัฒนาที่ดิน — ระบบอนุรักษ์ดินและน้ำพื้นที่เสี่ยง จังหวัดเชียงราย: https://lddnews.ldd.go.th/page_executive_dt?ID=1809
+5. USGS — Soils: https://www.usgs.gov/publications/soils
+6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
 ## MAKER-01 — Levers Make Work Easier
 1. OpenStax Physics — 9.3 Simple Machines: https://openstax.org/books/physics/pages/9-3-simple-machines
@@ -86,6 +86,13 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 3. TeachEngineering — Pulleys and Gears educational resources: https://www.teachengineering.org/
 4. Exploratorium Science Snacks — Gears: https://www.exploratorium.edu/snacks/gears
 5. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
+
+## MAKER-03 — Wheels, Axles and Designing Motion
+1. **OpenStax Physics — 9.3 Simple Machines** (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-3-simple-machines — supports the wheel-and-axle model as a rotating lever and ideal mechanical advantage `IMA = wheel radius / axle radius`.
+2. **OpenStax Physics — Chapter 9 Key Equations** (accessed 2026-07-20): https://openstax.org/books/physics/pages/9-key-equations — supports the general force–distance trade-off and ideal wheel/axle equation.
+3. **TeachEngineering — Engineering: Simple Machines** (Grade 4; accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_simple_lesson01 — supports age-appropriate simple-machine vocabulary and engineering design context.
+4. **TeachEngineering — Let’s Move It!** (accessed 2026-07-20): https://www.teachengineering.org/lessons/view/cub_simple_lesson03 — supports wheel-and-axle transportation examples and lightweight cart design with everyday materials.
+5. **W3C — WCAG 2.2** (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, visible labels, textual feedback and non-drag alternatives.
 
 ## CIT-01 — Rights, Responsibilities and Digital Kindness
 1. UNICEF — Convention on the Rights of the Child: https://www.unicef.org/child-rights-convention/convention-text
