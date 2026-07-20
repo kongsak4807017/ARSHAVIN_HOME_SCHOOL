@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **17 / 52**
-- A4 student worksheets: **34 / 104 minimum**
-- Teacher guides/rubrics: **16 complete guides**
+- Interactive bilingual lessons: **18 / 52**
+- A4 student worksheets: **36 / 104 minimum**
+- Teacher guides/rubrics: **17 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -83,8 +83,17 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, safeguarding and four-level rubric
 - [x] Homepage, seventeen-lesson shell, reset key, service-worker v18, complete regression manifest and focused HB-05 checks integrated
 
+### 2026-07-20 — AI-04 Patterns, Features and Edge Cases
+- [x] Complete bilingual lesson explaining patterns, observable features, labels, training examples, separate test examples and edge cases
+- [x] Keyboard-native household-object rule builder using fictional non-personal examples and corrective bilingual feedback
+- [x] Explicit training/test separation, honest error recording and fresh-test-set guidance to avoid memorising test answers
+- [x] Child-data, no-ranking, no-person-classification and non-certification safeguards
+- [x] Guarded local-only completion under `arshavin.ai.patterns.v1`
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options and four-level rubric
+- [x] Homepage, eighteen-lesson shell, reset key, service-worker v19, complete regression manifest and focused AI-04 checks integrated
+
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — seventeen lessons, thirty-four printable A4 sheets and sixteen teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — eighteen lessons, thirty-six printable A4 sheets and seventeen teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **AI-04 รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้ / Patterns, Features and Edge Cases** with a keyboard-native household-object classifier, explicit training-versus-test separation, fictional non-personal examples, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **ENV-04 ขยะ หลัก 5R และการออกแบบระบบลดของเสีย / Waste, the 5Rs and Designing a Lower-Waste System** with a keyboard-native fictional waste-audit sorter, refusal/reduction/reuse/repair/recycle decisions, no-contact hygiene safeguards, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.

@@ -59,6 +59,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 4. UNICEF Innocenti — Generative AI: Risks and opportunities for children: https://www.unicef.org/innocenti/generative-ai-risks-and-opportunities-children
 5. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
+## AI-04 — Patterns, Features and Edge Cases
+1. UNESCO — AI Competency Framework for Students (updated 2026-01-16; accessed 2026-07-20): https://www.unesco.org/en/articles/ai-competency-framework-students — supports age-appropriate AI techniques, critical judgement, human-centred design and responsible co-creation.
+2. UNICEF Innocenti — Guidance on AI and children, version 3.0 (accessed 2026-07-20): https://www.unicef.org/innocenti/reports/policy-guidance-ai-children — supports child safety, privacy, fairness, transparency, explainability and accountability.
+3. Google for Developers — Machine Learning Crash Course: Training Sets and Test Sets (accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/DPE/tp-il-training-and-test-sets — supports keeping training examples distinct from examples used to evaluate predictions.
+4. Google for Developers — Datasets: Dividing the Original Dataset (updated 2025; accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets — supports testing on unseen, representative examples and avoiding duplicates between training and test sets.
+5. Google for Developers — Datasets, Generalization and Overfitting (accessed 2026-07-20): https://developers.google.com/machine-learning/crash-course/overfitting — supports feature, label, dataset reliability, generalisation and error-analysis concepts.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports native keyboard controls, textual feedback, visible labels and non-drag alternatives.
+
 ## ENV-01 — Read the Air, Choose a Safer Action
 1. กรมอนามัย — ฝุ่น PM2.5 กับสุขภาพเด็กไทย: https://multimedia.anamai.moph.go.th/help-knowledgs/heath_me_38_pm2-5_1/
 2. กรมอนามัย — คำแนะนำผู้ปกครองและเด็กเมื่อค่าฝุ่นสูง: https://anamai.moph.go.th/th/news-anamai/44705
