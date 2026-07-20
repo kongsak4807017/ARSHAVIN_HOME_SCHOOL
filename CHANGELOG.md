@@ -2,6 +2,32 @@
 
 All notable interactive-web changes are recorded here.
 
+## 2026-07-21
+
+### Added
+- Complete interactive lesson **CIT-06 กติกาสาธารณะ ความเป็นธรรม และการทบทวนการตัดสินใจ / Public Rules, Fairness and Reviewing Decisions**.
+- FAIR framework for finding purpose, announcing criteria, inspecting impact and reviewing with evidence.
+- Keyboard-native fictional rule inspection distinguishing transparent criteria from favouritism and identical treatment from reasonable adjustment.
+- Evidence-based fictional review pathway with reasons, correction routes and adult support rather than public accusation or child-only escalation.
+- Guarded local-only completion under `arshavin.citizenship.fairness.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, accessibility alternatives, safeguarding boundaries and a four-level rubric.
+- Focused dependency-free `tests/cit06-static-checks.mjs` plus expanded complete regression coverage through thirty-one lessons.
+
+### Changed
+- Homepage now lists thirty-one lessons and clears all thirty-one known local progress keys.
+- Shared learning shell places CIT-06 after CIT-05 and reports progress across thirty-one lessons.
+- Service-worker cache advanced to `arshavin-grade4-v32` and precaches all CIT-06 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to thirty-one lessons, sixty-two A4 sheets and thirty guides.
+- GitHub Actions runs complete and focused suites through CIT-06 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 31/52 lessons, 62/104 A4 sheets and 30 teacher guides.
+- Next executable increment advanced to **HB-08 Nervous System, Brain, Senses and Responsible Health Information**.
+
+### Safety, accessibility and privacy
+- CIT-06 uses native radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
+- All cases are fictional; the lesson does not collect real disputes, names, scores, health, disability, family information or political opinions.
+- Children do not confront, appeal or contact unfamiliar people alone; real concerns require an accountable adult and established safeguarding route.
+- Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
+
 ## 2026-07-20
 
 ### Added

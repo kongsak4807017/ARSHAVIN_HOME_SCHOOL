@@ -1,39 +1,39 @@
 # QA REPORT
 
-## Build status through MAKER-06
-Date: 2026-07-20
+## Build status through CIT-06
+Date: 2026-07-21
 
-ENV-06 is present on `main` at commit `368c909ee78592eb60aa822974ca95f290832403`. No open pull request existed at the start of this MAKER-06 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
+MAKER-06 is present on `main` at commit `3fda26f8436b1a03501ad2b74105c45b17e914d2`. No open pull request existed at the start of this CIT-06 increment. `DECISIONS.md` was requested during inspection but does not exist in the repository; no replacement governance file was invented.
 
-## MAKER-06 — Friction, Surfaces and Safer Motion Design
+## CIT-06 — Public Rules, Fairness and Reviewing Decisions
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | OpenStax friction definition and general characteristics; W3C WCAG 2.2 keyboard, focus and non-drag requirements |
+| Authoritative grounding | PASS | Council of Europe RFCDC for human rights, democratic participation, rule of law, values and critical understanding; UNESCO GCED for age-appropriate cognitive, socio-emotional and behavioural learning; W3C WCAG 2.2 for keyboard, focus and non-drag interaction |
 | Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, interaction feedback, assessment, worksheets and teacher guidance |
-| Core concept accuracy | PASS (source inspection) | Friction is described as opposing relative motion between surfaces in contact and as potentially useful or limiting depending on purpose |
-| Surface comparison | PASS (source inspection) | Native select plus textual output compares three fictional surfaces under an explicitly controlled object, start point and initial push |
-| Fair-test reasoning | PASS (source inspection) | Learners must hold object, start point and initial push constant while changing only surface and are prompted to repeat and limit conclusions |
-| Safer motion design | PASS (source inspection) | Design goal is short controlled movement that stops before an edge; speed competition and absolute “fastest is best” reasoning are rejected |
-| Keyboard/accessibility | PASS (source inspection) | Native select, radio controls, buttons, fieldsets, legends and focusable polite live feedback; no drag-only interaction or timer |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.maker.friction.v1`; no outbound lesson APIs |
-| Safety boundary | PASS | Clean lightweight materials on a low flat surface only; no high ramps, stairs, roads, heavy objects, sharp/breakable materials, people or animals in the motion path |
-| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 print rule and page breaks |
-| Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safety boundaries and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, thirty-lesson shell, reset key and service-worker v31 paths align |
-| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #97, run ID `29759668189`, job ID `88410835935`, head `58404bb4c8021e3e832d7b316a105eb166d93225`, conclusion `success`; complete regression, focused MAKER-06 checks, evidence upload and enforcement all passed. This evidence-only documentation head must also pass before merge. |
+| FAIR framework | PASS (source inspection) | Find purpose, Announce criteria, Inspect impact and Review with evidence are explained and applied |
+| Transparent criteria | PASS (source inspection) | Fictional resource-allocation case requires published, checkable criteria rather than favouritism |
+| Access-aware fairness | PASS (source inspection) | Lesson distinguishes identical treatment from reasonable adjustment that reduces barriers while preserving the learning goal |
+| Review pathway | PASS (source inspection) | Learners inspect evidence, request reasons, identify correction routes and use adult-supported review rather than public attack |
+| Keyboard/accessibility | PASS (source inspection) | Native radio controls and buttons, fieldsets, legends, explicit labels and focusable polite live feedback; no drag-only interaction or timer |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.citizenship.fairness.v1`; no outbound lesson APIs |
+| Privacy and neutrality | PASS | Fictional cases only; no real disputes, names, scores, health, disability, family information or political opinions collected |
+| A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with explicit A4 portrait print rule and page breaks |
+| Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safeguarding boundaries and four-level rubric |
+| Navigation/offline | PASS (source inspection) | Homepage, thirty-one-lesson shell, reset key and service-worker v32 paths align |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #100, run ID `29763847096`, job ID `88424926082`, implementation head `7a2d964b7ad62ca8dcd16a675fe6b23a6164d013`, conclusion `success`; complete regression, focused CIT-06 checks, evidence upload and enforcement all passed. This evidence-only documentation head must also pass before merge. |
 
 ## Functional cases inspected
-1. Surface selector provides text for surface name, relative friction and fictional motion result without relying on colour.
-2. Comparison activity rejects incomplete responses and saves only the evidence-limited conclusion.
-3. Design activity requires correct fair-test, controlled-motion and lightweight-safety choices.
-4. Quiz requires all three answers and saves completion only at 3/3.
-5. Lesson completion requires `comparisonComplete`, `designComplete` and `quizComplete`.
-6. Storage reads/writes are guarded; storage failure does not block learning.
-7. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
-8. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-9. Complete regression manifest contains thirty lessons, sixty worksheet pages, twenty-nine guides and thirty progress keys.
-10. Focused assertions check friction/fair-test content, native accessible controls, no-speed/high-ramp safeguards and exact two-page A4 structure.
+1. Criteria activity rejects incomplete responses and saves completion only when transparent criteria, reasonable adjustment and proportionate process evidence are all selected.
+2. Review activity rejects incomplete responses and distinguishes evidence/reasons/adult support from attack, secrecy or child-only escalation.
+3. Quiz requires all three answers and saves completion only at 3/3.
+4. Lesson completion requires `criteriaComplete`, `reviewComplete` and `quizComplete`.
+5. Storage reads/writes are guarded; storage failure does not block learning.
+6. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
+7. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
+8. Complete regression manifest contains thirty-one lessons, sixty-two worksheet pages, thirty guides and thirty-one progress keys.
+9. Focused assertions check FAIR content, transparent criteria, access adjustment, review route, privacy/political-neutrality safeguards and exact two-page A4 structure.
+10. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
 - Exact final documentation-head GitHub Actions result.
@@ -44,4 +44,4 @@ ENV-06 is present on `main` at commit `368c909ee78592eb60aa822974ca95f290832403`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty lessons, sixty A4 sheets and twenty-nine teacher guides are integrated at source level. Exact final documentation-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
+**ACCEPTED WITH CONDITIONS** — thirty-one lessons, sixty-two A4 sheets and thirty teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without exact evidence.
