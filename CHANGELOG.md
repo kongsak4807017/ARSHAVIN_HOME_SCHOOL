@@ -5,6 +5,13 @@ All notable interactive-web changes are recorded here.
 ## 2026-07-20
 
 ### Added
+- Complete interactive lesson **ENV-04 ขยะ หลัก 5R และการออกแบบระบบลดของเสีย / Waste, the 5Rs and Designing a Lower-Waste System**.
+- Keyboard-native fictional waste-audit decisions covering Refuse, Reduce, Reuse, Repair and Recycle without real-waste contact.
+- Lower-waste system designer using source prevention, aggregate before–after evidence, hygiene review and improvement without naming or blaming people.
+- Guarded local-only completion under `arshavin.environment.waste.v1` and a three-question corrective assessment.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options, hygiene boundaries and four-level rubric.
+- Focused dependency-free `tests/env04-static-checks.mjs` plus expanded complete regression coverage.
+- US EPA, UNEP and WCAG 2.2 source records.
 - Complete interactive lesson **AI-04 รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้ / Patterns, Features and Edge Cases**.
 - Keyboard-native fictional household-object rule builder covering pattern, feature, label and classification rules.
 - Explicit separation of training examples from unseen test examples, plus transparent edge-case recording and fresh-test-set revision.
@@ -34,19 +41,19 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **MAKER-02 รอก เฟือง และการส่งผ่านแรง / Pulleys, Gears and Transferring Force** and its full deliverable set.
 
 ### Changed
-- Homepage now lists eighteen lessons and clears all eighteen known local progress keys.
-- Shared learning shell places AI-04 after AI-03 and reports progress across eighteen lessons.
-- Service-worker cache advanced to `arshavin-grade4-v19` and precaches all AI-04 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to eighteen lessons, thirty-six A4 sheets and seventeen guides.
-- GitHub Actions runs complete and focused suites through AI-04 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 18/52 lessons, 36/104 A4 sheets and 17 teacher guides.
-- Next executable increment advanced to **ENV-04 Waste, the 5Rs and Designing a Lower-Waste System**.
+- Homepage now lists nineteen lessons and clears all nineteen known local progress keys.
+- Shared learning shell places ENV-04 after ENV-03 and reports progress across nineteen lessons.
+- Service-worker cache advanced to `arshavin-grade4-v20` and precaches all ENV-04 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to nineteen lessons, thirty-eight A4 sheets and eighteen guides.
+- GitHub Actions runs complete and focused suites through ENV-04 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 19/52 lessons, 38/104 A4 sheets and 18 teacher guides.
+- Next executable increment advanced to **MAKER-04 Structures, Shapes and Strength**.
 
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, public chat, third-party runtime script or remote child-data collection.
-- AI-04 uses native radio, button, form, fieldset and legend controls with polite live feedback and no drag-only dependency or timer.
-- AI-04 uses fictional non-personal household objects and prohibits classifying, ranking, predicting or judging people.
-- Training/test separation and edge-case reporting are taught as evidence practices; the classroom classifier does not certify product safety, quality or suitability.
+- ENV-04 uses native radio, button, form, fieldset and legend controls with polite live feedback and no drag-only dependency or timer.
+- ENV-04 uses fictional cards or prepared clean materials only; children do not search, open, photograph, weigh or touch real waste.
+- Sharps, broken glass, leaking batteries, chemicals, medicines, hygiene waste, animal remains and unknown materials are reserved for adult-managed systems.
 - Browser, assistive-technology, device, GitHub Pages, offline-runtime and physical-print verification remain pending until exact evidence is available.
 
 ## 2026-07-19

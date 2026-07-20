@@ -90,6 +90,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. USGS — Soils: https://www.usgs.gov/publications/soils
 6. W3C — WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
+## ENV-04 — Waste, the 5Rs and Designing a Lower-Waste System
+1. US EPA — Sustainable Materials Management: Non-Hazardous Materials and Waste Management Hierarchy (accessed 2026-07-20): https://www.epa.gov/smm/sustainable-materials-management-non-hazardous-materials-and-waste-management-hierarchy — supports source reduction and reuse as preferred strategies before recycling, treatment and disposal.
+2. US EPA — What You Can Do About Climate Change: Waste (accessed 2026-07-20): https://www.epa.gov/climate-change/what-you-can-do-about-climate-change-waste — explicitly defines Refuse, Reduce, Reuse, Repair and Recycle and prioritises not creating waste in the first place.
+3. US EPA — Reducing and Reusing Basics (updated 2026-06-22; accessed 2026-07-20): https://www.epa.gov/recycle/reducing-and-reusing-basics — supports buying only what is needed, reuse, repair, borrowing and checking local recycling rules.
+4. UNEP — Waste Pollution 101 (accessed 2026-07-20): https://www.unep.org/interactives/beat-waste-pollution/ — supports preventing and minimising waste, lifecycle thinking, reuse and repair before end-of-life management.
+5. UNEP — Zero Waste 101 (accessed 2026-07-20): https://www.unep.org/interactives/zero-waste-101/ — supports prevention, reduction, reuse, repair and locally appropriate system design.
+6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard-native controls, visible labels, textual feedback and non-drag alternatives.
+
 ## MAKER-01 — Levers Make Work Easier
 1. OpenStax Physics — 9.3 Simple Machines: https://openstax.org/books/physics/pages/9-3-simple-machines
 2. OpenStax College Physics — 9.5 Simple Machines: https://openstax.org/books/college-physics/pages/9-5-simple-machines
@@ -140,7 +148,8 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - AI activities use fictional examples and must not classify, rank or predict children, sensitive traits, health, disability, ethnicity, religion, gender, behaviour, worth or access to opportunities.
 - No child-specific identity data, passwords, addresses, precise location, images, health records, symptoms or private communications are transmitted or stored remotely.
 - Fictional scenarios and simulated measurements are labelled clearly.
-- Environmental simulations do not certify current air, water, soil, slope or landslide safety; real sites require adult and qualified local assessment.
+- Environmental simulations do not certify current air, water, soil, slope, landslide or waste-system safety; real sites require adult and qualified local assessment.
+- Waste activities use clean fictional cards or prepared clean materials only; children do not search, open, photograph, weigh or touch real waste, sharps, broken glass, leaking batteries, chemicals, medicines, hygiene waste, animal remains or unknown materials.
 - Breathing and circulation lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing, pulse challenges, diagnostic interpretation or exertion tests.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.

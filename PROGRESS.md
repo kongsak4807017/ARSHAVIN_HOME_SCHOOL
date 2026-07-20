@@ -4,9 +4,9 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **18 / 52**
-- A4 student worksheets: **36 / 104 minimum**
-- Teacher guides/rubrics: **17 complete guides**
+- Interactive bilingual lessons: **19 / 52**
+- A4 student worksheets: **38 / 104 minimum**
+- Teacher guides/rubrics: **18 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
@@ -92,8 +92,17 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 - [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options and four-level rubric
 - [x] Homepage, eighteen-lesson shell, reset key, service-worker v19, complete regression manifest and focused AI-04 checks integrated
 
+### 2026-07-20 — ENV-04 Waste, the 5Rs and Designing a Lower-Waste System
+- [x] Complete bilingual lesson explaining source reduction and the ordered Refuse–Reduce–Reuse–Repair–Recycle framework
+- [x] Keyboard-native fictional waste-audit decisions using clean scenarios only, with no real waste handling
+- [x] Lower-waste system designer using aggregate before–after evidence, hygiene checks and review without blame
+- [x] Hazardous-item boundaries covering sharps, broken glass, leaking batteries, chemicals, medicines and unknown materials
+- [x] Guarded local-only completion under `arshavin.environment.waste.v1`
+- [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility options and four-level rubric
+- [x] Homepage, nineteen-lesson shell, reset key, service-worker v20, complete regression manifest and focused ENV-04 checks integrated
+
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — eighteen lessons, thirty-six printable A4 sheets and seventeen teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — nineteen lessons, thirty-eight printable A4 sheets and eighteen teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **ENV-04 ขยะ หลัก 5R และการออกแบบระบบลดของเสีย / Waste, the 5Rs and Designing a Lower-Waste System** with a keyboard-native fictional waste-audit sorter, refusal/reduction/reuse/repair/recycle decisions, no-contact hygiene safeguards, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **MAKER-04 โครงสร้าง รูปทรง และความแข็งแรง / Structures, Shapes and Strength** with a keyboard-native load-path comparison, safe paper-structure design using lightweight materials only, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
