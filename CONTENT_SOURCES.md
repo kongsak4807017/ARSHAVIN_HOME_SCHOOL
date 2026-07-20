@@ -197,6 +197,14 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. UNESCO — Global citizenship education: what you need to know (accessed 2026-07-20): https://www.unesco.org/en/global-citizenship-peace-education/need-know — supports active contribution to local and global communities for the collective good.
 6. W3C — WCAG 2.2 (accessed 2026-07-20): https://www.w3.org/TR/WCAG22/ — supports keyboard operation, explicit labels, focus and status feedback.
 
+## CIT-06 — Public Rules, Fairness and Reviewing Decisions
+1. Council of Europe — Reference Framework of Competences for Democratic Culture (accessed 2026-07-21): https://www.coe.int/en/web/reference-framework-of-competences-for-democratic-culture/ — supports active citizenship, human rights, democracy, rule of law and a systematic education approach.
+2. Council of Europe — Model of Competences (accessed 2026-07-21): https://www.coe.int/en/web/reference-framework-of-competences-for-democratic-culture/model — supports values, attitudes, skills, knowledge and critical understanding for democratic decisions.
+3. Council of Europe — Guidance for implementation (accessed 2026-07-21): https://www.coe.int/en/web/reference-framework-of-competences-for-democratic-culture/guidance-for-implementation — supports curriculum, pedagogy, assessment, governance and participation applications.
+4. UNESCO — Global Citizenship Education: Topics and Learning Objectives (accessed 2026-07-21): https://www.unesco.org/en/articles/global-citizenship-education-topics-and-learning-objectives — supports age-specific cognitive, socio-emotional and behavioural learning objectives.
+5. UNESCO Institute for Lifelong Learning — Citizenship education (accessed 2026-07-21): https://www.uil.unesco.org/en/adult-education/global-citizenship-education — supports active roles in building more just, peaceful, tolerant, inclusive and sustainable communities.
+6. W3C — WCAG 2.2 (accessed 2026-07-21): https://www.w3.org/TR/WCAG22/ — supports keyboard operation, target size, focus and non-drag alternatives.
+
 ## Source-use rules
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
@@ -215,4 +223,5 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Civic activities do not ask children to expose real conflicts, vote on classmates, disclose family information, report political preferences, investigate real people or redistribute unverified claims.
 - Conflict-resolution activities use fictional scenarios, prohibit forced apology/reconciliation and require trusted-adult escalation for threats, bullying, harm, blocking or unsafe situations.
 - Public-service participation activities use fictional scenarios only; they do not collect real complaints, political preferences, names, addresses, phone numbers, personal images or family information, and children do not contact strangers or public agencies alone.
+- Public-rule and review activities use fictional cases only; they do not collect real disputes, scores, health, disability, family information or political opinions, and children use accountable adult-supported review routes for real concerns.
 - Future updates must record access date, source owner, claim supported and any changed recommendation.
