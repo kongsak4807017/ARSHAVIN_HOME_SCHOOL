@@ -21,7 +21,7 @@ AI-08 is present on `main` at commit `8cc215e62767598a83b7795dcf66e29d907f2e87`.
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait rule and explicit page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, privacy/safeguarding boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, thirty-nine-lesson shell, reset key and service-worker v40 paths align |
-| Automated regression | PENDING exact PR-head run | Complete regression and focused `tests/env08-static-checks.mjs` are wired into GitHub Actions with downloadable log evidence |
+| Automated regression | PASS on exact implementation head | GitHub Actions `Static learning-site checks`, run #128, run ID `29793166498`, exact head `2ab03e435bf4aece9f3b3dc1e9e38079097b1c20`, job `88519039481`, conclusion `success`; checkout, Node setup, complete regression, focused ENV-08 checks, evidence upload and enforcement all passed |
 
 ## Functional cases inspected
 1. Risk form rejects incomplete answers and only marks `riskComplete` for official-source evidence plus a safe response.
@@ -36,7 +36,7 @@ AI-08 is present on `main` at commit `8cc215e62767598a83b7795dcf66e29d907f2e87`.
 10. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result after this QA update.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -44,4 +44,4 @@ AI-08 is present on `main` at commit `8cc215e62767598a83b7795dcf66e29d907f2e87`.
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — thirty-nine lessons, seventy-eight A4 sheets and thirty-eight teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
+**ACCEPTED WITH CONDITIONS** — thirty-nine lessons, seventy-eight A4 sheets and thirty-eight teacher guides are integrated at source level. The implementation head passed exact CI; the evidence-only head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
