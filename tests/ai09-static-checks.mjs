@@ -1,0 +1,11 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const read=file=>fs.readFileSync(file,'utf8');
+const lesson='subjects/ai-science/image-recognition-errors-privacy.html';
+const script='assets/js/image-recognition-privacy-lesson.js';
+const worksheet='worksheets/student/image-recognition-errors-privacy-a4.html';
+const guide='worksheets/teacher-guides/image-recognition-errors-privacy-guide.html';
+for(const file of [lesson,script,worksheet,guide])assert.ok(fs.existsSync(file),file);
+new vm.Script(read(script),{filename:script});
+const html=read(lesson),js=read(script),sheets=read(worksheet),teacher=read(guide),material=html+sheets+teacher;
+assert.match(html,/<html lang="th">/);assert.match(html,/AI-09/);assert.match(material,/LENS/);assert.match(material,/feature|คุณลักษณะ/i);assert.match(material,/false positive/i);assert.match(material,/false negative/i);assert.match(material,/unknown|ไม่แน่ใจ/i);assert.match(material,/ไม่เปิดกล้อง|no camera|ห้ามเปิดกล้อง/i);assert.match(material,/ไม่.*อัปโหลด.*ภาพ|do not upload.*image/is);assert.match(material,/face recognition|รู้จำใบหน้า/i);assert.match(material,/biometric identification|ชีวมิติ/i);assert.match(material,/ไม่จัดอันดับเด็ก|no.*rank.*child/is);assert.match(material,/มนุษย์.*ทบทวน|human.*review/is);assert.match(html,/aria-live="polite"/);assert.doesNotMatch(material,/draggable="true"/);assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);['matchingComplete','errorComplete','quizComplete','arshavin.ai.vision.v1'].forEach(value=>assert.match(js,new RegExp(value.replaceAll('.','\\.'))));assert.equal((sheets.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(sheets,/@page\s*\{[^}]*size:\s*A4/is);
+const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');for(const value of [lesson,script,worksheet,guide])assert.ok(sw.includes(`./${value}`),value);assert.ok(index.includes(lesson));assert.ok(index.includes('arshavin.ai.vision.v1'));assert.ok(shell.includes("id: 'AI-09'"));assert.ok(shell.includes('arshavin.ai.vision.v1'));assert.match(sw,/arshavin-grade4-v\d+/);console.log('PASS AI-09 static checks');
