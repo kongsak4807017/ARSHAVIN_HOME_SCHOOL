@@ -4,31 +4,31 @@
 Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
-- Interactive bilingual lessons: **38 / 52**
-- A4 student worksheets: **76 / 104 minimum**
-- Teacher guides/rubrics: **37 complete guides**
+- Interactive bilingual lessons: **39 / 52**
+- A4 student worksheets: **78 / 104 minimum**
+- Teacher guides/rubrics: **38 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Shared runtime capabilities: **lesson navigation, local progress overview, offline cache, static regression checks, GitHub Actions static QA with downloadable evidence**
 
 ## Completed lesson inventory
 - Human Body: HB-01 Sleep; HB-02 Bones and Joints; HB-03 Muscles and Rest; HB-04 Breathing and Safer Air; HB-05 Circulation and Safer Care; HB-06 Digestion and Responsible Food Information; HB-07 Excretion, Kidneys and Water Balance; HB-08 Nervous System, Brain, Senses and Responsible Health Information; HB-09 Immunity, Germs, Vaccines and Responsible Health Information.
-- AI Science: AI-01 Fact/Opinion/Check; AI-02 Personal Data and Consent; AI-03 Data and Bias; AI-04 Patterns, Features and Edge Cases; AI-05 Decisions, Confidence and Human Escalation; AI-06 Recommendation, Ranking and Fair Choice; AI-07 Robots, Sensors and Fail-Safe Systems; **AI-08 Generative AI, Provenance and Verification Before Use**.
-- Environmental Science: ENV-01 PM2.5; ENV-02 Water Cycle; ENV-03 Soil and Erosion; ENV-04 Waste and the 5Rs; ENV-05 Household Energy, Efficiency and Responsible Choices; ENV-06 Climate, Weather and Responsible Preparedness; ENV-07 Ecosystems, Biodiversity and Responsible Observation.
+- AI Science: AI-01 Fact/Opinion/Check; AI-02 Personal Data and Consent; AI-03 Data and Bias; AI-04 Patterns, Features and Edge Cases; AI-05 Decisions, Confidence and Human Escalation; AI-06 Recommendation, Ranking and Fair Choice; AI-07 Robots, Sensors and Fail-Safe Systems; AI-08 Generative AI, Provenance and Verification Before Use.
+- Environmental Science: ENV-01 PM2.5; ENV-02 Water Cycle; ENV-03 Soil and Erosion; ENV-04 Waste and the 5Rs; ENV-05 Household Energy, Efficiency and Responsible Choices; ENV-06 Climate, Weather and Responsible Preparedness; ENV-07 Ecosystems, Biodiversity and Responsible Observation; **ENV-08 Floods, Droughts and Community Resilience**.
 - Maker Engineering: MAKER-01 Levers; MAKER-02 Pulleys and Gears; MAKER-03 Wheels and Axles; MAKER-04 Structures and Strength; MAKER-05 Materials, Properties and Responsible Selection; MAKER-06 Friction, Surfaces and Safer Motion Design; MAKER-07 Magnets, Forces and Safe Sorting-System Design.
 - Citizenship: CIT-01 Rights and Digital Kindness; CIT-02 Community Decisions; CIT-03 Media Evidence; CIT-04 Peaceful Conflict Resolution; CIT-05 Community Institutions and Responsible Participation; CIT-06 Public Rules, Fairness and Reviewing Decisions; CIT-07 Community Budgets, Public Resources and Transparent Choices.
 
-## 2026-07-21 — AI-08 Generative AI, Provenance and Verification Before Use
-- [x] Complete bilingual lesson defining generative AI, prompt, output, provenance and evidence.
-- [x] Keyboard-native local-only prompt/output comparison with three fictional use cases and corrective bilingual feedback.
-- [x] PROVE workflow: Pause, Read the claim, Observe provenance, Verify with evidence, Explain and escalate.
-- [x] Explicit boundary that provenance records source/history but does not independently guarantee truth.
-- [x] No child image/voice upload, real-person impersonation, deepfake creation, learner profiling or outbound lesson API.
-- [x] Guarded local-only completion under `arshavin.ai.generative.v1` using `comparisonComplete`, `verificationComplete` and `quizComplete`.
+## 2026-07-21 — ENV-08 Floods, Droughts and Community Resilience
+- [x] Complete bilingual lesson defining flood, drought, hazard, exposure, capacity and resilience.
+- [x] Keyboard-native fictional risk-and-response model with corrective bilingual feedback.
+- [x] RIVER workflow for official information, hazard/impact, safe options, access/privacy and updates.
+- [x] Explicit model limitation: not a forecast, real evacuation plan or replacement for current official warnings.
+- [x] No household address, precise location, health, income, medicine, evacuation-route or vulnerability-list collection.
+- [x] Guarded local-only completion under `arshavin.environment.resilience.v1` using `riskComplete`, `planComplete` and `quizComplete`.
 - [x] Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, accessibility alternatives, safeguards and a four-level rubric.
-- [x] Homepage, thirty-eight-lesson shell, reset key, service-worker v39, focused AI-08 checks and complete regression integration implemented on the feature branch.
+- [x] Homepage, thirty-nine-lesson shell, reset key, service-worker v40, focused ENV-08 checks and complete regression integration implemented on the feature branch.
 
 ## Acceptance status
-**ACCEPTED WITH CONDITIONS** — thirty-eight lessons, seventy-six printable A4 sheets and thirty-seven teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
+**ACCEPTED WITH CONDITIONS** — thirty-nine lessons, seventy-eight printable A4 sheets and thirty-eight teacher guides are integrated at source level. Exact final-head CI is required before merge. Browser/device, assistive-technology, physical A4 print, GitHub Pages and offline-reload verification remain required.
 
 ## Next action
-Build **ENV-08 น้ำท่วม ภัยแล้ง และชุมชนยืดหยุ่น / Floods, Droughts and Community Resilience** with a fictional keyboard-native risk-and-response model, Chiang Rai-appropriate preparedness decisions, no household vulnerability or precise-location collection, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
+Build **MAKER-08 วงจรไฟฟ้าอย่างง่าย พลังงาน และความปลอดภัย / Simple Circuits, Energy and Electrical Safety** with a fictional battery-switch-load model, no mains electricity or exposed-cell experimentation, two A4 worksheets, teacher guide/rubric, offline integration and focused static regression coverage.
