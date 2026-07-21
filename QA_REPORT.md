@@ -22,7 +22,7 @@ HB-11 was present on `main` at commit `b26a6531a0796f57a18fe74a642fe96e38e06aa5`
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait rule and explicit page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safety/privacy boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, forty-eight-lesson shell, reset key and service-worker v49 paths align |
-| Automated regression | PENDING | Exact pull-request head GitHub Actions result required before merge |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #155, run ID `29822457487`, exact implementation head `2f1931d9c9b82b98623f0d8412ebd4a296a8f5c5`, job ID `88608013318`, conclusion `success`; checkout, Node setup, complete regression, focused AI-10 checks, evidence upload and enforcement all passed |
 
 ## Functional cases inspected
 1. A low-impact fictional book-card or plant-card project can complete the canvas when it uses only fictional data and visible criteria.
@@ -38,7 +38,7 @@ HB-11 was present on `main` at commit `b26a6531a0796f57a18fe74a642fe96e38e06aa5`
 11. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
-- Exact final-head GitHub Actions result.
+- Exact final documentation-head GitHub Actions result after this evidence update.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -46,4 +46,4 @@ HB-11 was present on `main` at commit `b26a6531a0796f57a18fe74a642fe96e38e06aa5`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — forty-eight lessons, ninety-six A4 sheets and forty-seven teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
+**ACCEPTED WITH CONDITIONS** — forty-eight lessons, ninety-six A4 sheets and forty-seven teacher guides are integrated at source level. The implementation head passed exact CI; the final documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
