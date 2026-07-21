@@ -46,15 +46,21 @@ All notable interactive-web changes are recorded here.
 - Guarded local-only completion under `arshavin.citizenship.fairness.v1` and a three-question corrective assessment.
 - Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, misconceptions, accessibility alternatives, safeguarding boundaries and a four-level rubric.
 - Focused dependency-free `tests/cit06-static-checks.mjs` plus expanded complete regression coverage through thirty-one lessons.
+- Complete interactive lesson **HB-12 โครงงานสุขภาพและร่างกายแบบบูรณาการ / Human Body and Health Capstone**.
+- Keyboard-native WHOLE systems canvas and responsible health-plan workflow with corrective bilingual feedback.
+- Explicit no-diagnosis, no-personal-health-record, no-body-comparison and no-forced-disclosure safeguards.
+- Exactly two print-ready A4 worksheet pages and a 60–90-minute teacher guide with answer guidance, accessibility alternatives, safeguarding gate and four-level rubric.
+- Focused `tests/hb12-static-checks.mjs` and final complete regression coverage.
 
 ### Changed
-- Homepage now lists thirty-six lessons and clears all thirty-six known local progress keys.
-- Shared learning shell places CIT-07 after CIT-06 and reports progress across thirty-six lessons.
-- Service-worker cache advanced to `arshavin-grade4-v37` and precaches all CIT-07 lesson, script, worksheet and guide assets.
-- Complete static regression manifest advanced to thirty-six lessons, seventy-two A4 sheets and thirty-five guides.
-- GitHub Actions runs complete and focused suites through CIT-07 and uploads exact log evidence before enforcement.
-- Completion counters advanced to 36/52 lessons, 72/104 A4 sheets and 35 teacher guides.
-- Next executable increment advanced to **HB-09 Immunity, Germs, Vaccines and Responsible Health Information**.
+- Homepage now lists all fifty-two lessons and clears all fifty-two known local progress keys.
+- Shared learning shell reports progress across all fifty-two lessons.
+- Service-worker cache advanced to `arshavin-grade4-v53` and precaches all HB-12 lesson, script, worksheet and guide assets.
+- Complete static regression manifest advanced to fifty-two lessons, one hundred four A4 sheets and fifty-one complete guides.
+- GitHub Actions runs complete and focused suites through HB-12 and uploads exact log evidence before enforcement.
+- Completion counters advanced to 52/52 lessons, 104/104 A4 sheets and 51 complete teacher guides.
+- All five Grade 4 subject sequences are complete at source level.
+- Next executable increment advanced to end-to-end deployment-readiness QA.
 
 ### Safety, accessibility and privacy
 - CIT-07 uses native radio controls and buttons with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
@@ -75,6 +81,8 @@ All notable interactive-web changes are recorded here.
 - Sudden sensory change, severe headache, fainting, seizure, weakness, confusion or head injury routes to a trusted adult and health professional without public disclosure.
 - CIT-06 uses native radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency or timer.
 - CIT-06 cases are fictional and do not collect real disputes, names, scores, health, disability, family information or political opinions.
+- HB-12 uses native select, checkbox, radio and button controls with fieldsets, legends and focusable polite live feedback; no drag-only dependency, timer or body-ranking activity.
+- HB-12 uses fictional scenarios and aggregate educational evidence only; it does not diagnose, collect personal health records, compare bodies or force disclosure.
 
 ## 2026-07-20
 
@@ -99,7 +107,7 @@ All notable interactive-web changes are recorded here.
 - Complete interactive lesson **AI-04 รูปแบบ คุณลักษณะ และกรณีที่กฎใช้ไม่ได้ / Patterns, Features and Edge Cases** and its full deliverable set.
 - Complete interactive lesson **HB-05 ระบบไหลเวียนเลือด หัวใจ และการดูแลอย่างปลอดภัย / Circulation, the Heart and Safer Care** and its full deliverable set.
 - Complete interactive lesson **CIT-03 สื่อ ข่าวสาร และการตรวจสอบหลักฐาน / Media, Public Information and Evidence Checking** and its full deliverable set.
-- Complete interactive lesson **MAKER-03 ล้อ เพลา และการออกแบบการเคลื่อนที่ / Wheels, Axles and Designing Motion** and its full deliverable set.
+- Complete interactive lesson **MAKER-03 ล้อ เพลา และการออกแบบการเคลื่อนไหว / Wheels, Axles and Designing Motion** and its full deliverable set.
 - Complete interactive lesson **ENV-03 ดิน การชะล้าง และการอนุรักษ์ดิน / Soil, Erosion and Conservation** and its full deliverable set.
 - Complete interactive lesson **AI-03 แบบจำลองเรียนรู้จากข้อมูลและอคติ / Learning from Data and Bias** and its full deliverable set.
 - Complete interactive lesson **HB-04 การหายใจ การแลกเปลี่ยนก๊าซ และอากาศที่ปลอดภัยกว่า / Breathing, Gas Exchange and Safer Air** and its full deliverable set.
