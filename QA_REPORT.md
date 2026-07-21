@@ -1,40 +1,39 @@
 # QA REPORT
 
-## Build status through AI-10
+## Build status through ENV-10
 Date: 2026-07-21
 
-HB-11 was present on `main` at commit `b26a6531a0796f57a18fe74a642fe96e38e06aa5`. No open pull request existed at the start of this AI-10 increment. `README.md`, `planning/INTERACTIVE_WEB_ROADMAP_GRADE4.md`, `PROGRESS.md`, `CONTENT_SOURCES.md`, `QA_REPORT.md`, `CHANGELOG.md` and the most recent AI/runtime files were inspected. `DECISIONS.md` does not exist; no replacement governance file was invented.
+AI-10 was present on `main` at commit `eb96ba3230f10a001c979720b8b71e7c35222f0c`. No open pull request existed at the start of this ENV-10 increment. `README.md`, `planning/INTERACTIVE_WEB_ROADMAP_GRADE4.md`, `PROGRESS.md`, `CONTENT_SOURCES.md`, `QA_REPORT.md`, `CHANGELOG.md` and the most recent environmental/runtime files were inspected. `DECISIONS.md` does not exist; no replacement governance file was invented.
 
-## AI-10 — Responsible AI Capstone: Question, Design, Verify and Explain
+## ENV-10 — Chiang Rai Environmental Action Capstone
 
 | Area | Result | Exact evidence |
 |---|---|---|
-| Authoritative grounding | PASS | UNESCO AI Competency Framework for Students; UNICEF Guidance on AI and Children v3.0; NIST AI Risk Management Framework; W3C WCAG 2.2 |
-| Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, GUIDE framework, activities, corrective feedback, assessment, worksheets and teacher guidance |
-| Question and design | PASS | Project canvas limits work to fictional low-impact classification/flagging tasks and rejects child ranking or opportunity decisions |
-| Data minimisation | PASS | Only fictional non-identifying cards and visible criteria are accepted; names, images, scores, health and family data are rejected |
-| Uncertainty | PASS | Incomplete evidence requires an `unknown` result, explanation and accountable human review rather than forced guessing |
-| Fairness review | PASS | Learners test ordinary, incomplete and alternate language/format cases and document who or what may be missed |
-| Human oversight | PASS | Responsible adult, correction route, stop control and high-impact prohibition are explicit |
-| Child-rights boundary | PASS | No profiling, biometric identification, diagnosis, punishment, scoring or automated decisions affecting rights, services or opportunities |
-| Keyboard/accessibility | PASS (source inspection) | Native radios, checkboxes and buttons; fieldsets, legends, labels and focusable polite live feedback; no drag-only dependency or timer |
-| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.ai.capstone.v1`; no outbound lesson APIs |
+| Authoritative grounding | PASS | UNEP integrated environmental action and ecosystem restoration; WMO climate services and risk-informed action; WHO air-quality communication; Convention on Biological Diversity; W3C WCAG 2.2 |
+| Bilingual structure | PASS (source inspection) | Thai document language; bilingual title, goals, vocabulary, ROOTS framework, activities, corrective feedback, assessment, worksheets and teacher guidance |
+| Integrated reasoning | PASS | Evidence canvas explicitly connects air, water, climate, biodiversity, energy and community resilience |
+| Evidence quality | PASS | Multiple sources, time periods, provenance and limitations are required; a single observation cannot prove every cause |
+| Responsible action | PASS | Only low-impact, measurable, adult-led actions are accepted; hazardous child-led fieldwork is rejected |
+| Equity and access | PASS | Plans review language, visual/mobility access and groups that may be overlooked rather than relying only on majority preference |
+| Privacy | PASS | Precise home location, health, income, evacuation routes and household-vulnerability lists are prohibited |
+| Keyboard/accessibility | PASS (source inspection) | Native selects, radios and buttons; fieldsets, legends, labels and focusable polite live feedback; no drag-only dependency or timer |
+| Local-only progress | PASS (source inspection) | Guarded storage under `arshavin.environment.capstone.v1`; no outbound lesson APIs |
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait rule and explicit page breaks |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safety/privacy boundaries and four-level rubric |
-| Navigation/offline | PASS (source inspection) | Homepage, forty-eight-lesson shell, reset key and service-worker v49 paths align |
-| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #155, run ID `29822457487`, exact implementation head `2f1931d9c9b82b98623f0d8412ebd4a296a8f5c5`, job ID `88608013318`, conclusion `success`; checkout, Node setup, complete regression, focused AI-10 checks, evidence upload and enforcement all passed |
+| Navigation/offline | PASS (source inspection) | Homepage, forty-nine-lesson shell, reset key and service-worker v50 paths align |
+| Automated regression | PASS on implementation/documentation head | GitHub Actions `Static learning-site checks`, run #158, run ID `29826056952`, exact head `548f815f2fc90dc90b80d6f389fc05028603a7f7`, job ID `88619550537`, conclusion `success`; checkout, Node setup, complete regression, focused ENV-10 checks, evidence upload and enforcement all passed |
 
 ## Functional cases inspected
-1. A low-impact fictional book-card or plant-card project can complete the canvas when it uses only fictional data and visible criteria.
-2. A project that ranks children or uses names, images, scores, health or family information is rejected.
-3. Missing evidence produces `unknown`, an explanation and human review rather than a guessed answer.
-4. Responsibility review requires oversight, fairness testing, limitation disclosure and a stop rule for high-impact use.
+1. A fictional shade, drainage or smoke-period challenge can complete the evidence canvas only with multiple non-identifying evidence streams and a careful interpretation.
+2. Precise home coordinates, names, health information, income and vulnerability lists are rejected as evidence.
+3. A low-impact, adult-led action with inclusive review and a scheduled recheck can complete the action plan.
+4. Climbing, wading, smoke exposure and other hazardous child-led fieldwork are rejected.
 5. Quiz requires all three answers and only saves `quizComplete` at 3/3.
-6. Lesson completion requires `canvasComplete`, `reviewComplete` and `quizComplete`.
+6. Lesson completion requires `canvasComplete`, `actionComplete` and `quizComplete`.
 7. Storage reads/writes are guarded; storage failure does not block learning.
 8. Lesson script contains no `fetch`, `XMLHttpRequest`, `WebSocket` or `sendBeacon`.
 9. Lesson, script, worksheet, guide, homepage, shell, reset and service-worker paths match.
-10. Complete regression manifest contains forty-eight lessons, ninety-six worksheet pages, forty-seven guides and forty-eight progress keys.
+10. Complete regression manifest contains forty-nine lessons, ninety-eight worksheet pages, forty-eight guides and forty-nine progress keys.
 11. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
@@ -46,4 +45,4 @@ HB-11 was present on `main` at commit `b26a6531a0796f57a18fe74a642fe96e38e06aa5`
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — forty-eight lessons, ninety-six A4 sheets and forty-seven teacher guides are integrated at source level. The implementation head passed exact CI; the final documentation head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
+**ACCEPTED WITH CONDITIONS** — forty-nine lessons, ninety-eight A4 sheets and forty-eight teacher guides are integrated at source level. The implementation/documentation head passed exact CI; the final evidence head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
