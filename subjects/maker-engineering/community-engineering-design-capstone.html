@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="บทเรียน ป.4 สองภาษา โครงงานวิศวกรรมเพื่อชุมชนแบบบูรณาการ">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <title>โครงงานวิศวกรรมเพื่อชุมชนแบบบูรณาการ · Community Engineering Design Capstone</title>
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปเนื้อหา / Skip to content</a>
+<header class="site-header"><div><strong>เครื่องมือช่างและการประดิษฐ์ · Maker Engineering</strong><a class="button secondary" href="../../index.html">หน้าหลัก / Home</a></div></header>
+<main id="main" class="container">
+  <section class="hero">
+    <p class="eyebrow">MAKER-10 · บทเรียน 10 / Lesson 10</p>
+    <h1>โครงงานวิศวกรรมเพื่อชุมชนแบบบูรณาการ<br><span>Community Engineering Design Capstone</span></h1>
+    <p><strong>คำถามนำ / Big question:</strong> เราจะออกแบบต้นแบบที่ช่วยชุมชนได้อย่างปลอดภัย โดยใช้เกณฑ์ ข้อจำกัด หลักฐาน และการทบทวนอย่างรับผิดชอบได้อย่างไร?</p>
+  </section>
+  <div data-learning-shell data-current-lesson="MAKER-10"></div>
+  <nav class="panel no-print" aria-label="ทางลัดบทเรียน / Lesson shortcuts"><strong>ไปที่ / Jump to:</strong> <a href="#learn">เรียนรู้</a> · <a href="#brief">โจทย์ออกแบบ</a> · <a href="#review">ตรวจแบบ</a> · <a href="#quiz">แบบประเมิน</a> · <a href="#adult">สำหรับผู้ใหญ่</a></nav>
+
+  <section class="panel" id="learn">
+    <h2>เป้าหมาย / Learning goals</h2>
+    <ul>
+      <li>เชื่อมโครงสร้าง วัสดุ แรงเสียดทาน แม่เหล็ก วงจร และการถ่ายโอนความร้อนเข้ากับโจทย์ออกแบบ</li>
+      <li>กำหนดเกณฑ์ความสำเร็จและข้อจำกัดด้านความปลอดภัย เวลา วัสดุ และการเข้าถึง</li>
+      <li>ใช้หลักฐานจากการทดสอบสมมติ เปลี่ยนทีละหนึ่งตัวแปร และอธิบายข้อจำกัด</li>
+      <li>ออกแบบต้นแบบที่ใช้วัสดุสะอาด น้ำหนักเบา อุณหภูมิห้อง และมีผู้ใหญ่กำกับ</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>คำศัพท์ / Vocabulary</h2>
+    <dl>
+      <dt><strong>criterion — เกณฑ์</strong></dt><dd>สิ่งที่แบบต้องทำให้สำเร็จ เช่น รับน้ำหนักจำลองได้ มองเห็นชัด หรือหยุดก่อนขอบโต๊ะ</dd>
+      <dt><strong>constraint — ข้อจำกัด</strong></dt><dd>ขอบเขตด้านความปลอดภัย เวลา พื้นที่ วัสดุ และงบประมาณสมมติ</dd>
+      <dt><strong>prototype — ต้นแบบ</strong></dt><dd>แบบทดลองขนาดเล็กที่ใช้เรียนรู้ ไม่ใช่ผลิตภัณฑ์รับรองสำหรับใช้งานจริง</dd>
+      <dt><strong>trade-off — สิ่งที่ต้องแลกเปลี่ยน</strong></dt><dd>การเพิ่มความแข็งแรงอาจเพิ่มน้ำหนัก หรือเพิ่มฉนวนอาจทำให้ประกอบยากขึ้น</dd>
+      <dt><strong>iteration — การปรับแบบเป็นรอบ</strong></dt><dd>ทดสอบ อ่านหลักฐาน ปรับหนึ่งอย่าง แล้วทดสอบใหม่</dd>
+    </dl>
+  </section>
+
+  <section class="panel">
+    <h2>ออกแบบด้วย BUILD / Design with BUILD</h2>
+    <ol>
+      <li><strong>B — Brief the need:</strong> ระบุผู้ใช้ หน้าที่ เกณฑ์ และข้อจำกัด</li>
+      <li><strong>U — Use safe evidence:</strong> ใช้ข้อมูลสมมติ บัตรวัสดุ และการทดสอบอุณหภูมิห้อง</li>
+      <li><strong>I — Integrate systems:</strong> เชื่อมรูปทรง วัสดุ แรง การเคลื่อนที่ พลังงาน หรือฉนวนเท่าที่จำเป็น</li>
+      <li><strong>L — Learn by testing:</strong> เปลี่ยนทีละหนึ่งตัวแปร ทดสอบซ้ำ และบันทึกสิ่งที่ยังไม่รู้</li>
+      <li><strong>D — Document and decide:</strong> อธิบายเหตุผล ข้อจำกัด stop rule และสิ่งที่ผู้ใหญ่ต้องตรวจ</li>
+    </ol>
+    <p><strong>ข้อจำกัด / Model limit:</strong> ต้นแบบในบทเรียนไม่รับรองสะพาน ชั้นวาง อุปกรณ์ไฟฟ้า ภาชนะร้อน ของเล่น หรือผลิตภัณฑ์จริง</p>
+  </section>
+
+  <section class="panel no-print" id="brief" aria-labelledby="brief-title">
+    <h2 id="brief-title">กิจกรรม 1: ผืนผ้าใบโจทย์ออกแบบ / Design-brief canvas</h2>
+    <form id="brief-form">
+      <label for="challenge">โจทย์สมมติ / Fictional challenge</label>
+      <select id="challenge" name="challenge">
+        <option value="">— เลือก / Select —</option>
+        <option value="display">แท่นแสดงบัตรชุมชนที่มั่นคงและเข้าถึงได้ / Stable, accessible community-card display</option>
+        <option value="sorter">ทางคัดแยกชิ้นส่วนสมมติที่หยุดก่อนขอบโต๊ะ / Fictional sorter that stops before the table edge</option>
+        <option value="container">กล่องจำลองปกป้องสิ่งของเบาจากแรงและความร้อนรอบข้าง / Model box protecting a light object from force and ambient heat</option>
+      </select>
+      <fieldset><legend>เกณฑ์และข้อจำกัด / Criteria and constraints</legend>
+        <label class="choice"><input type="radio" name="criteria" value="clear">ระบุหน้าที่ ความมั่นคง การเข้าถึง วัสดุ เวลา และ stop rule อย่างชัดเจน</label>
+        <label class="choice"><input type="radio" name="criteria" value="vague">บอกเพียงว่า “ทำให้ดีที่สุดและเร็วที่สุด” โดยไม่กำหนดความปลอดภัย</label>
+      </fieldset>
+      <fieldset><legend>หลักฐาน / Evidence</legend>
+        <label class="choice"><input type="radio" name="evidence" value="safe">ใช้บัตรข้อมูลและการทดสอบวัสดุสะอาด น้ำหนักเบา อุณหภูมิห้อง เปลี่ยนทีละหนึ่งตัวแปร</label>
+        <label class="choice"><input type="radio" name="evidence" value="hazardous">ใช้เปลวไฟ ไฟบ้าน แม่เหล็กแรงสูง ของหนัก หรือการแข่งขันความเร็ว</label>
+      </fieldset>
+      <button type="submit">ตรวจโจทย์ / Check brief</button>
+    </form>
+    <p id="brief-feedback" class="feedback" role="status" aria-live="polite" tabindex="-1"></p>
+  </section>
+
+  <section class="panel no-print" id="review" aria-labelledby="review-title">
+    <h2 id="review-title">กิจกรรม 2: ตรวจแบบและปรับรอบ / Review and iterate</h2>
+    <form id="review-form">
+      <fieldset><legend>การบูรณาการ / Integration</legend>
+        <label class="choice"><input type="radio" name="integration" value="purposeful">เลือกเฉพาะระบบที่ช่วยหน้าที่ เช่น สามเหลี่ยมเพิ่มความมั่นคง พื้นผิวเพิ่มการหยุด หรือฉนวนชะลอการถ่ายโอนความร้อน</label>
+        <label class="choice"><input type="radio" name="integration" value="decorative">เพิ่มวงจร แม่เหล็ก และความร้อนทุกอย่างแม้ไม่จำเป็น</label>
+      </fieldset>
+      <fieldset><legend>การทดสอบ / Testing</legend>
+        <label class="choice"><input type="radio" name="testing" value="fair">ทดสอบซ้ำ เปลี่ยนหนึ่งตัวแปร บันทึกผลและข้อจำกัด</label>
+        <label class="choice"><input type="radio" name="testing" value="claim">ดูครั้งเดียวแล้วประกาศว่าปลอดภัยสำหรับใช้งานจริง</label>
+      </fieldset>
+      <fieldset><legend>ความปลอดภัยและการเข้าถึง / Safety and access</legend>
+        <label class="choice"><input type="radio" name="safety" value="adult">ผู้ใหญ่ตรวจการตัด เจาะ แบตเตอรี่ แม่เหล็ก และความมั่นคง พร้อมมีทางเลือกสัมผัสน้อยและ AAC</label>
+        <label class="choice"><input type="radio" name="safety" value="child">ให้เด็กซ่อมวงจร ใช้ของร้อน หรือทดสอบใกล้คนและสัตว์เอง</label>
+      </fieldset>
+      <button type="submit">ตรวจแบบ / Check design</button>
+    </form>
+    <p id="review-feedback" class="feedback" role="status" aria-live="polite" tabindex="-1"></p>
+  </section>
+
+  <section class="panel no-print" id="quiz">
+    <h2>แบบประเมิน / Check your understanding</h2>
+    <form id="quiz-form">
+      <fieldset><legend>1. การออกแบบที่ดีเริ่มจากอะไร?</legend><label class="choice"><input type="radio" name="q1" value="a">เกณฑ์และข้อจำกัดที่ตรวจสอบได้</label><label class="choice"><input type="radio" name="q1" value="b">เลือกวัสดุแพงที่สุดก่อน</label></fieldset>
+      <fieldset><legend>2. การทดสอบที่เป็นธรรมควรทำอย่างไร?</legend><label class="choice"><input type="radio" name="q2" value="a">เปลี่ยนทีละหนึ่งตัวแปรและทดสอบซ้ำ</label><label class="choice"><input type="radio" name="q2" value="b">เปลี่ยนทุกอย่างพร้อมกัน</label></fieldset>
+      <fieldset><legend>3. ต้นแบบผ่านการทดสอบในชั้นเรียนหมายความว่าอย่างไร?</legend><label class="choice"><input type="radio" name="q3" value="a">ให้หลักฐานสำหรับการปรับรอบ แต่ยังไม่รับรองการใช้งานจริง</label><label class="choice"><input type="radio" name="q3" value="b">ปลอดภัยสำหรับทุกคนและทุกสถานการณ์แล้ว</label></fieldset>
+      <button type="submit">ตรวจคำตอบ / Check answers</button>
+    </form>
+    <p id="quiz-feedback" class="feedback" role="status" aria-live="polite" tabindex="-1"></p>
+  </section>
+
+  <section class="panel" id="adult">
+    <h2>สำหรับผู้ใหญ่ / For adults</h2>
+    <p>ใช้บัตรข้อมูลหรือวัสดุสะอาด น้ำหนักเบา ขอบไม่คม และอุณหภูมิห้องเป็นค่าเริ่มต้น ผู้ใหญ่เป็นผู้ตัด เจาะ จัดการแบตเตอรี่ ตรวจแม่เหล็ก และหยุดกิจกรรมเมื่อมีความร้อน กลิ่นไหม้ รอยแตก ชิ้นส่วนหลุด หรือความไม่มั่นคง</p>
+    <p><strong>ห้าม / Never:</strong> ไฟบ้าน แบตเตอรี่เปิดเปลือย การลัดวงจร เปลวไฟ น้ำเดือด แม่เหล็กเม็ดเล็กหรือแรงสูง ของหนัก เครื่องมือไฟฟ้า การปีน หรือการแข่งขันความเร็ว</p>
+    <p><a href="../../worksheets/student/community-engineering-design-capstone-a4.html">ใบงาน A4 / A4 worksheets</a> · <a href="../../worksheets/teacher-guides/community-engineering-design-capstone-guide.html">คู่มือผู้สอน / Teacher guide</a></p>
+  </section>
+
+  <section class="panel references">
+    <h2>แหล่งอ้างอิง / References</h2>
+    <ul>
+      <li><a href="https://www.nextgenscience.org/topic-arrangement/3-5engineering-design">Next Generation Science Standards: 3–5 Engineering Design</a> — define problems with criteria and constraints; compare solutions and test fairly.</li>
+      <li><a href="https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Magnets">U.S. CPSC: Magnets</a> — small high-powered magnets can seriously harm children if swallowed.</li>
+      <li><a href="https://www.w3.org/TR/WCAG22/">W3C WCAG 2.2</a> — keyboard operation, visible focus, labels and alternatives to dragging.</li>
+    </ul>
+  </section>
+</main>
+<script src="../../assets/js/learning-shell.js"></script>
+<script src="../../assets/js/community-engineering-capstone-lesson.js"></script>
+</body>
+</html>
