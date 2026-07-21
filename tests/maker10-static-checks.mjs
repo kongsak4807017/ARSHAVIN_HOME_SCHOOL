@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+const root=process.cwd();
+const files={lesson:'subjects/maker-engineering/community-engineering-design-capstone.html',script:'assets/js/community-engineering-capstone-lesson.js',sheet:'worksheets/student/community-engineering-design-capstone-a4.html',guide:'worksheets/teacher-guides/community-engineering-design-capstone-guide.html'};
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+Object.values(files).forEach(p=>assert.ok(fs.existsSync(path.join(root,p)),`missing ${p}`));
+const lesson=read(files.lesson),script=read(files.script),sheet=read(files.sheet),guide=read(files.guide),index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');
+new vm.Script(script);
+assert.match(lesson,/MAKER-10/);assert.match(lesson,/BUILD/);assert.match(lesson,/criterion — เกณฑ์/);assert.match(lesson,/constraint — ข้อจำกัด/);assert.match(lesson,/prototype — ต้นแบบ/);assert.match(lesson,/trade-off/);
+assert.match(lesson,/data-current-lesson="MAKER-10"/);assert.match(lesson,/fieldset/);assert.match(lesson,/aria-live="polite"/);assert.match(lesson,/tabindex="-1"/);assert.doesNotMatch(lesson,/draggable|ondrag|timer/i);
+assert.match(script,/arshavin\.maker\.capstone\.v1/);assert.match(script,/briefComplete/);assert.match(script,/reviewComplete/);assert.match(script,/quizComplete/);assert.match(script,/localStorage/);assert.doesNotMatch(script,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
+assert.equal((sheet.match(/class="worksheet"/g)||[]).length,2);assert.match(sheet,/@page\{size:A4 portrait/);assert.match(sheet,/page-break-after/);
+assert.match(guide,/60–90/);assert.match(guide,/Rubric 4 ระดับ/);assert.match(guide,/AAC/);assert.match(lesson+guide,/ห้ามไฟบ้าน|ไฟบ้าน/);assert.match(lesson+guide,/ลัดวงจร/);assert.match(lesson+guide,/เปลวไฟ/);assert.match(lesson+guide,/น้ำเดือด/);assert.match(lesson+guide,/แม่เหล็กเม็ดเล็ก|แม่เหล็กชิ้นเล็ก/);assert.match(lesson+guide,/ผู้ใหญ่/);
+assert.match(index,/community-engineering-design-capstone\.html/);assert.match(index,/arshavin\.maker\.capstone\.v1/);assert.match(shell,/id: 'MAKER-10'/);assert.match(shell,/data\.briefComplete && data\.reviewComplete && data\.quizComplete/);assert.match(sw,/arshavin-grade4-v\d+/);Object.values(files).forEach(p=>assert.match(sw,new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'))));
+console.log('MAKER-10 focused static checks passed.');
