@@ -1,0 +1,36 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+
+const root=path.resolve(import.meta.dirname,'..');
+const read=file=>fs.readFileSync(path.join(root,file),'utf8');
+const lesson='subjects/human-body/human-body-health-capstone.html';
+const script='assets/js/human-body-health-capstone-lesson.js';
+const worksheet='worksheets/student/human-body-health-capstone-a4.html';
+const guide='worksheets/teacher-guides/human-body-health-capstone-guide.html';
+
+[lesson,script,worksheet,guide].forEach(file=>assert.ok(fs.existsSync(path.join(root,file)),file));
+new vm.Script(read(script),{filename:script});
+const material=read(lesson)+read(worksheet)+read(guide);
+assert.match(read(lesson),/<html lang="th">/);
+assert.match(read(lesson),/data-learning-shell data-current-lesson="HB-12"/);
+assert.match(material,/WHOLE/);
+assert.match(material,/body systems|ระบบร่างกาย/i);
+assert.match(material,/evidence|หลักฐาน/i);
+assert.match(material,/healthy routine|กิจวัตรสุขภาพ/i);
+assert.match(material,/privacy|ความเป็นส่วนตัว/i);
+assert.match(material,/trusted (?:adult|help)|ผู้ใหญ่ที่ไว้ใจ|การขอความช่วยเหลือ/i);
+assert.match(material,/no diagnosis|ไม่วินิจฉัย/i);
+assert.match(material,/personal health record|เวชระเบียน|ประวัติสุขภาพ/i);
+assert.match(material,/body comparison|เปรียบเทียบรูปร่าง/i);
+assert.match(material,/forced disclosure|บังคับเปิดเผย|ไม่บังคับเล่า/i);
+assert.equal((read(worksheet).match(/class="worksheet(?:\s|")/g)||[]).length,2);
+assert.match(read(worksheet),/@page\s*\{[^}]*size:A4 portrait/);
+['systemsComplete','planComplete','quizComplete','arshavin.humanbody.capstone.v1'].forEach(token=>assert.match(read(script),new RegExp(token)));
+assert.doesNotMatch(read(script),/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
+assert.doesNotMatch(material,/draggable="true"|<input[^>]+type="file"/);
+const sw=read('service-worker.js');
+[lesson,script,worksheet,guide].forEach(file=>assert.ok(sw.includes(`./${file}`),file));
+assert.match(sw,/arshavin-grade4-v\d+/);
+console.log('PASS HB-12 focused static checks');
