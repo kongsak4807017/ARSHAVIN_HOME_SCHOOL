@@ -22,7 +22,8 @@ CIT-10 was present on `main` at commit `f307889798ba8137483c1272191aec0d7937e750
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, access alternatives, safeguarding gate and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, fifty-two-lesson shell, reset key and service-worker v53 paths align |
 | Automated regression | PASS on implementation/documentation head | GitHub Actions `Static learning-site checks`, run #176, run ID `29839772657`, exact head `cdce0d091b86cb0f7d5278132838427febe7338d`, job ID `88665359250`, conclusion `success`; checkout, Node setup, complete regression, focused HB-12 checks, evidence upload and enforcement all passed |
-| Main governance reconciliation | PASS (source state) | HB-12 merge commit `cc2f4887b338c27df8565edd6770da1992153f80`; read-only workflow restoration `073c9b0ae0152a314c43b63abb563af81d61bfc8`; temporary workflow removal `16c93c35f9a2763391185fcd30612b1e68735150`; QA record `972eb623fc3a3aa3e101b1ab15593b839812643a`; CHANGELOG record `b739ba46045640278f66e3031c7e43294b8d0962` |
+| Main governance reconciliation | PASS | HB-12 merge commit `cc2f4887b338c27df8565edd6770da1992153f80`; read-only workflow restoration `073c9b0ae0152a314c43b63abb563af81d61bfc8`; temporary workflow removal `16c93c35f9a2763391185fcd30612b1e68735150`; QA record `972eb623fc3a3aa3e101b1ab15593b839812643a`; CHANGELOG record `b739ba46045640278f66e3031c7e43294b8d0962` |
+| Exact final governance-head CI | PASS | GitHub Actions run #188, run ID `29841168056`, exact head `e711a3a13de943e0f37cd6093831f16ca38137f7`, job ID `88670148667`, conclusion `success`; checkout, Node.js setup, complete 52-lesson regression, focused HB-12 suite, artifact upload and result enforcement all passed |
 
 ## Functional cases inspected
 1. Movement scenario completes only with nervous, musculoskeletal, breathing and circulation connections plus an evidence-limited conclusion.
@@ -41,7 +42,6 @@ CIT-10 was present on `main` at commit `f307889798ba8137483c1272191aec0d7937e750
 14. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
-- Exact final governance-head GitHub Actions result for the current `main` state.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -49,4 +49,4 @@ CIT-10 was present on `main` at commit `f307889798ba8137483c1272191aec0d7937e750
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — all fifty-two lessons, one hundred four A4 sheets and fifty-one complete teacher guides are integrated at source level. The implementation/documentation head passed exact CI and governance cleanup is committed on `main`; the final governance-head PR must pass before the evidence record is closed. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
+**ACCEPTED WITH CONDITIONS** — all fifty-two lessons, one hundred four A4 sheets and fifty-one complete teacher guides are integrated at source level. Exact implementation and final governance-head CI both passed. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
