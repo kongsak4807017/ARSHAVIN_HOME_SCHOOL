@@ -1,0 +1,11 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const read=file=>fs.readFileSync(file,'utf8');
+const lesson='subjects/ai-science/generative-ai-provenance-verification.html';
+const script='assets/js/generative-ai-provenance-lesson.js';
+const worksheet='worksheets/student/generative-ai-provenance-verification-a4.html';
+const guide='worksheets/teacher-guides/generative-ai-provenance-verification-guide.html';
+for(const file of [lesson,script,worksheet,guide])assert.ok(fs.existsSync(file),file);
+new vm.Script(read(script),{filename:script});
+const html=read(lesson),js=read(script),sheets=read(worksheet),teacher=read(guide),material=html+sheets+teacher;
+assert.match(html,/<html lang="th">/);assert.match(html,/AI-08/);assert.match(html,/PROVE/);assert.match(material,/provenance|แหล่งที่มา/i);assert.match(material,/ไม่รับรองความจริง|not.*guarantee.*truth/is);assert.match(material,/ไม่อัปโหลด.*ภาพ.*เสียง|do not upload.*image.*voice/is);assert.match(material,/เลียนแบบ.*บุคคลจริง|impersonat/i);assert.match(material,/human check|มนุษย์|ผู้ใหญ่/i);assert.match(html,/aria-live="polite"/);assert.doesNotMatch(material,/draggable="true"/);assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);['comparisonComplete','verificationComplete','quizComplete','arshavin.ai.generative.v1'].forEach(value=>assert.match(js,new RegExp(value.replaceAll('.','\\.'))));assert.equal((sheets.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(sheets,/@page\s*\{[^}]*size:\s*A4/is);
+const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');for(const value of [lesson,script,worksheet,guide])assert.ok(sw.includes(`./${value}`),value);assert.ok(index.includes(lesson));assert.ok(index.includes('arshavin.ai.generative.v1'));assert.ok(shell.includes("id: 'AI-08'"));assert.ok(shell.includes('arshavin.ai.generative.v1'));assert.match(sw,/arshavin-grade4-v\d+/);console.log('PASS AI-08 static checks');
