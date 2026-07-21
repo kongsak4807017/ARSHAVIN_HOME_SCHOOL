@@ -57,6 +57,7 @@ jobs:
           node tests/env08-static-checks.mjs > env08-static.log 2>&1 || status=1
           node tests/maker08-static-checks.mjs > maker08-static.log 2>&1 || status=1
           node tests/cit08-static-checks.mjs > cit08-static.log 2>&1 || status=1
+          node tests/hb10-static-checks.mjs > hb10-static.log 2>&1 || status=1
           echo "STATIC_STATUS=$status" >> "$GITHUB_ENV"
       - name: Upload static-check evidence
         if: always()
@@ -70,5 +71,5 @@ jobs:
         if: always()
         shell: bash
         run: |
-          cat complete-static.log env02-static.log maker02-static.log cit02-static.log hb04-static.log ai03-static.log env03-static.log maker03-static.log cit03-static.log hb05-static.log ai04-static.log env04-static.log maker04-static.log cit04-static.log hb06-static.log ai05-static.log env05-static.log maker05-static.log cit05-static.log hb07-static.log ai06-static.log env06-static.log maker06-static.log cit06-static.log hb08-static.log ai07-static.log env07-static.log maker07-static.log cit07-static.log hb09-static.log ai08-static.log env08-static.log maker08-static.log cit08-static.log
+          cat complete-static.log env02-static.log maker02-static.log cit02-static.log hb04-static.log ai03-static.log env03-static.log maker03-static.log cit03-static.log hb05-static.log ai04-static.log env04-static.log maker04-static.log cit04-static.log hb06-static.log ai05-static.log env05-static.log maker05-static.log cit05-static.log hb07-static.log ai06-static.log env06-static.log maker06-static.log cit06-static.log hb08-static.log ai07-static.log env07-static.log maker07-static.log cit07-static.log hb09-static.log ai08-static.log env08-static.log maker08-static.log cit08-static.log hb10-static.log
           test "${STATIC_STATUS:-1}" -eq 0
