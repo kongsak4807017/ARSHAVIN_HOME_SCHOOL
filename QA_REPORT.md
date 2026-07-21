@@ -21,7 +21,7 @@ CIT-09 was present on `main` at commit `399c5de156f6bd7b5b5dc725f521cba262155d2f
 | A4 worksheets | PASS (source inspection) | Exactly two `.worksheet` sections with A4 portrait rule, explicit page breaks and non-identifying trusted-adult role prompts |
 | Teacher support | PASS | 60–90-minute sequence, answer guidance, misconceptions, AAC alternatives, safeguarding boundaries and four-level rubric |
 | Navigation/offline | PASS (source inspection) | Homepage, forty-seven-lesson shell, reset key and service-worker v48 paths align |
-| Automated regression | PENDING exact PR-head CI | `tests/hb11-static-checks.mjs`, complete regression manifest and GitHub Actions workflow are integrated; exact run evidence must be added after PR-head CI completes |
+| Automated regression | PASS on implementation head | GitHub Actions `Static learning-site checks`, run #152, run ID `29818530904`, exact implementation head `d3750d4e02a76e357789b185a236f2be8480cdc3`, job ID `88595446714`, conclusion `success`; checkout, Node setup, complete regression, focused HB-11 checks, evidence upload and enforcement all passed |
 
 ## Functional cases inspected
 1. A refusal to lend a personal item is respected without repeated pressure.
@@ -37,7 +37,7 @@ CIT-09 was present on `main` at commit `399c5de156f6bd7b5b5dc725f521cba262155d2f
 11. No browser, device, assistive-technology, physical-print, GitHub Pages or offline-reload result is claimed without direct evidence.
 
 ## Verification still required
-- Exact final PR-head GitHub Actions result.
+- Exact final evidence-head GitHub Actions result after this QA-only update.
 - Browser smoke test in current Chrome, Safari, Firefox and Edge.
 - Android/iPad, 200% zoom, keyboard-only path and visible-focus inspection.
 - NVDA/VoiceOver reading order and live-feedback announcement test.
@@ -45,4 +45,4 @@ CIT-09 was present on `main` at commit `399c5de156f6bd7b5b5dc725f521cba262155d2f
 - GitHub Pages HTTPS and offline reload after first visit.
 
 ## Current QA decision
-**ACCEPTED WITH CONDITIONS** — forty-seven lessons, ninety-four A4 sheets and forty-six teacher guides are integrated at source level. Exact final-head CI must pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
+**ACCEPTED WITH CONDITIONS** — forty-seven lessons, ninety-four A4 sheets and forty-six teacher guides are integrated at source level. The implementation head passed exact CI; the final evidence head must also pass before merge. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
