@@ -205,6 +205,15 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 5. UNESCO Institute for Lifelong Learning — Citizenship education (accessed 2026-07-21): https://www.uil.unesco.org/en/adult-education/global-citizenship-education — supports active roles in building more just, peaceful, tolerant, inclusive and sustainable communities.
 6. W3C — WCAG 2.2 (accessed 2026-07-21): https://www.w3.org/TR/WCAG22/ — supports keyboard operation, target size, focus and non-drag alternatives.
 
+## HB-12 — Human Body and Health Capstone
+1. WHO — Making every school a health-promoting school: implementation guidance for school health services (published 2026-04-17; accessed 2026-07-21): https://www.who.int/publications/i/item/9789240115736 — supports whole-school, equitable, safe and coordinated health services.
+2. WHO — Improving the health and wellbeing of children and adolescents: guidance on scheduled child and adolescent well-care visits (published 2024; accessed 2026-07-21): https://www.who.int/publications/i/item/9789240085336 — supports integrated attention to nutrition, safety, learning, connectedness, autonomy and family/community support.
+3. WHO — Physical activity fact sheet (accessed 2026-07-21): https://www.who.int/news-room/fact-sheets/detail/physical-activity — supports age-appropriate movement as one part of health and well-being.
+4. WHO — Self-care for health and well-being (updated 2026-06-03; accessed 2026-07-21): https://www.who.int/news-room/fact-sheets/detail/self-care-health-interventions — supports balanced routines, healthy diet, physical activity, sleep and supportive relationships while retaining professional care when needed.
+5. UNESCO — Education for health and well-being (accessed 2026-07-21): https://www.unesco.org/en/health-education — supports age-appropriate, rights-based health learning, dignity and respectful help-seeking.
+6. UNICEF — Convention on the Rights of the Child and personal-data protection (accessed 2026-07-21): https://www.unicef.org/child-rights-convention/convention-text and https://www.unicef.org/legal/data-protection — supports privacy, dignity, safeguarding and minimum necessary information.
+7. W3C — WCAG 2.2 (accessed 2026-07-21): https://www.w3.org/TR/WCAG22/ — supports keyboard operation, semantic controls, visible focus and non-drag alternatives.
+
 ## Source-use rules
 - Health, water, civic and engineering statements are educational and do not diagnose, certify local safety, provide legal advice or replace professional judgment.
 - Child-facing privacy content is general safety education, not jurisdiction-specific legal advice.
@@ -217,6 +226,7 @@ All sources below were accessed on 2026-07-19 unless another date is stated.
 - Waste activities use clean fictional cards or prepared clean materials only; children do not search, open, photograph, weigh or touch real waste, sharps, broken glass, leaking batteries, chemicals, medicines, hygiene waste, animal remains or unknown materials.
 - Breathing and circulation lessons do not use breath-holding, hyperventilation, timed breathing races, improvised lung testing, pulse challenges, diagnostic interpretation or exertion tests.
 - Digestion and food-information activities do not collect diet, weight, body, symptom, allergy or treatment data and do not prescribe calories, restriction, food-group elimination, diagnosis or body comparison.
+- Human-body capstone activities use fictional scenarios and aggregate educational evidence only; they prohibit diagnosis, personal health records, body comparison, restrictive eating, excessive exercise, learner profiling and forced disclosure.
 - Children do not handle heavy loads, powered machinery, sharp components or unknown materials; adult supervision is required where applicable.
 - Maker structure activities use paper, tape and lightweight test objects only; they do not certify real structures and prohibit climbing, overhead tests, people/animals on models and child use of cutting, drilling or hot-glue tools.
 - Maker material activities use fictional data cards or clean lightweight adult-prepared samples only; they do not certify real products and prohibit flames, chemicals, solvents, batteries, sharp/powered tools, heavy loads and destructive testing.
