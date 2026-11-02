@@ -3,13 +3,27 @@ name: Generate explicit A4 worksheets
 on:
   push:
     branches: [feat/explicit-a4-page-composer]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'worksheets/student/**'
+      - 'assets/css/worksheet-print.css'
+      - 'tools/**'
+      - 'tests/explicit-a4-*.mjs'
+      - 'tests/hb11-explicit-a4-regression.mjs'
+      - 'package.json'
+      - '.github/workflows/explicit-a4-compose.yml'
+
+concurrency:
+  group: explicit-a4-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
 
 jobs:
   compose:
-    if: ${{ !contains(github.event.head_commit.message, '[a4-generated]') }}
+    if: ${{ github.event_name == 'pull_request' || !contains(github.event.head_commit.message, '[a4-generated]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -56,6 +70,7 @@ jobs:
           if-no-files-found: error
           retention-days: 14
       - name: Commit composed sources and validated PDFs
+        if: github.event_name == 'push'
         shell: bash
         run: |
           git config user.name github-actions[bot]
