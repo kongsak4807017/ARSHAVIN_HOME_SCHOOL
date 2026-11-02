@@ -1,0 +1,28 @@
+name: Explicit A4 page checks
+
+on:
+  pull_request:
+    paths:
+      - 'worksheets/student/**'
+      - 'assets/css/worksheet-print.css'
+      - 'tools/**'
+      - 'tests/explicit-a4-*.mjs'
+      - 'tests/hb11-explicit-a4-regression.mjs'
+      - '.github/workflows/explicit-a4-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Explicit source contract
+        run: node tests/explicit-a4-source-static-checks.mjs
+      - name: HB-11 regression contract
+        run: node tests/hb11-explicit-a4-regression.mjs
