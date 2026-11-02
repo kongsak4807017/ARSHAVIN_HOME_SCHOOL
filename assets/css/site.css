@@ -9,3 +9,9 @@
   .learning-shell__resources{display:grid;grid-template-columns:1fr}
   .learning-shell__resources .button{width:100%}
 }
+
+.subject-download-hub{margin:1rem 0 0;padding:1rem;border:3px solid #17324d;background:#fffdf2;box-shadow:4px 4px 0 #17324d}
+.subject-download-hub h3{margin-top:0}
+.subject-download-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.65rem}
+.subject-download-grid .button{width:100%;text-align:center}
+@media(max-width:600px){.subject-download-grid{grid-template-columns:1fr}}
