@@ -5,6 +5,10 @@ on:
     branches:
       - feat/direct-lessons-large-print
 
+concurrency:
+  group: large-print-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
