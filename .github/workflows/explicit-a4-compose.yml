@@ -29,13 +29,11 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('tools/compose-explicit-a4-pages.mjs')
-          s=p.read_text()
-          s=s.replace("$root.find('*').each((_, element) => {\n    const $el = $root(element);", "$root('*').each((_, element) => {\n    const $el = $root(element);")
-          old="""  const metrics = blockMetrics(html);
-          if (metrics.score > 18) {
-            const split ="""
-          new="""  const metrics = blockMetrics(html);
+          p = Path('tools/compose-explicit-a4-pages.mjs')
+          s = p.read_text()
+          s = s.replace("$root.find('*').each((_, element) => {", "$root('*').each((_, element) => {")
+          old = "  const metrics = blockMetrics(html);\n  if (metrics.score > 18) {\n    const split ="
+          new = """  const metrics = blockMetrics(html);
           const protectedHb11 = record.id === 'HB-11' && [
             'hb11-stop-framework',
             'hb11-fictional-scenarios',
@@ -49,7 +47,7 @@ jobs:
             const split ="""
           if old not in s:
             raise SystemExit('composer metrics patch point missing')
-          s=s.replace(old,new)
+          s = s.replace(old, new)
           p.write_text(s)
           PY
       - name: Compose explicit source pages
