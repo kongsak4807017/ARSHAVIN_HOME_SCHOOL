@@ -38,8 +38,10 @@ jobs:
         run: npm install
       - name: Install Chromium and Linux dependencies
         run: npx playwright install --with-deps chromium
-      - name: Apply hybrid table pagination rules
-        run: python tools/refine-composer-source.py
+      - name: Apply explicit A4 packing refinements
+        run: |
+          python tools/refine-composer-source.py
+          python tools/refine-a4-css.py
       - name: Compose explicit source pages
         run: npm run a4:compose
       - name: Verify explicit source and HB-11 contracts
@@ -47,7 +49,23 @@ jobs:
           node tests/explicit-a4-source-static-checks.mjs
           node tests/hb11-explicit-a4-regression.mjs
       - name: Run DOM geometry preflight
+        id: preflight
+        continue-on-error: true
         run: npm run a4:preflight
+      - name: Upload preflight diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: explicit-a4-preflight-diagnostics
+          path: |
+            qa/a4-layout-report.json
+            worksheets/student/*.html
+            tools/compose-explicit-a4-pages.mjs
+          if-no-files-found: error
+          retention-days: 5
+      - name: Enforce DOM preflight
+        if: steps.preflight.outcome != 'success'
+        run: exit 1
       - name: Generate and validate all PDFs
         run: |
           npm run print:generate

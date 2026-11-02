@@ -46,9 +46,10 @@ hybrid_table = r'''function splitTable(html, baseId) {
     });
     const textLength = values.reduce((sum, value) => sum + value.text.length, 0);
     const writingCount = values.filter(value => value.writing).length;
-    const weight = textLength / 130 + values.length * 1.15 + writingCount * 4;
-    const oversized = weight > 16 || values.some(value => value.text.length > 360) || (values.length >= 4 && writingCount > 0);
-    return { row, rowIndex, values, weight, oversized };
+    const columnCount = Math.max(1, values.length);
+    const weight = textLength / 125 + columnCount * 0.9 + writingCount * 2.2;
+    const oversized = weight > 36 || values.some(value => value.text.length > 900);
+    return { row, rowIndex, values, textLength, writingCount, columnCount, weight, oversized };
   }
 
   const models = rows.map(rowModel);
@@ -58,7 +59,7 @@ hybrid_table = r'''function splitTable(html, baseId) {
 
   function flushTableChunk() {
     if (!tableChunk.length) return;
-    descriptors.push({ type: 'table', rows: tableChunk });
+    descriptors.push({ type: 'table', rows: tableChunk, weight: chunkWeight });
     tableChunk = [];
     chunkWeight = 0;
   }
@@ -69,15 +70,16 @@ hybrid_table = r'''function splitTable(html, baseId) {
       let cursor = 0;
       while (cursor < model.values.length) {
         const first = model.values[cursor];
-        const take = first.writing || first.text.length > 260 ? 1 : Math.min(2, model.values.length - cursor);
+        const take = first.text.length > 650 || first.tall ? 1 : Math.min(2, model.values.length - cursor);
         descriptors.push({ type: 'fields', row: model, fields: model.values.slice(cursor, cursor + take) });
         cursor += take;
       }
       continue;
     }
 
-    const maxRows = model.values.length >= 4 ? 2 : 3;
-    if (tableChunk.length && (tableChunk.length >= maxRows || chunkWeight + model.weight > 15)) flushTableChunk();
+    const maxRows = model.columnCount >= 5 ? 1 : model.columnCount === 4 ? 2 : model.columnCount === 3 ? 3 : 4;
+    const maxWeight = model.columnCount >= 4 ? 22 : 28;
+    if (tableChunk.length && (tableChunk.length >= maxRows || chunkWeight + model.weight > maxWeight)) flushTableChunk();
     tableChunk.push(model);
     chunkWeight += model.weight;
   }
@@ -91,8 +93,10 @@ hybrid_table = r'''function splitTable(html, baseId) {
       body = `<table>${headerHtml}<tbody>${descriptor.rows.map(model => $.html(model.row)).join('')}</tbody></table>`;
       idSuffix = `rows-${descriptor.rows[0].rowIndex + 1}-${descriptor.rows.at(-1).rowIndex + 1}`;
     } else {
-      body = `<div class="table-card">${descriptor.fields.map(field => {
-        const zone = field.writing
+      const twoColumns = descriptor.fields.length === 2 ? ' table-card--two' : '';
+      body = `<div class="table-card${twoColumns}">${descriptor.fields.map(field => {
+        const hasExistingWriting = /\b(?:lines?|write-line|tall|writing-zone|drawing-zone|drawing-box)\b/.test(field.html);
+        const zone = field.writing && !hasExistingWriting
           ? `<div class="${field.tall ? 'drawing-zone' : 'writing-zone writing-zone--compact'}" aria-label="พื้นที่เขียน / Writing space"></div>`
           : '';
         return `<section class="table-card__field"><h3>${field.label}</h3>${field.html}${zone}</section>`;
@@ -113,17 +117,19 @@ hybrid_table = r'''function splitTable(html, baseId) {
 pattern = r"function splitTable\(html, baseId\) \{[\s\S]*?\n\}\n\nfunction splitList"
 source, count = re.subn(pattern, lambda _: hybrid_table + 'function splitList', source, count=1)
 if count != 1:
-    raise SystemExit('current composer splitTable function not found')
+    raise SystemExit('composer splitTable function not found')
 
-source = source.replace(
-    "if (hasWritingRegion(html)) return { ...page, intentionalSpace: true };",
-    "if (hasWritingRegion(html)) return { ...page, intentionalSpace: false };"
-)
-
-source = source.replace(
-    "if (pageMetrics.score < 12) {",
-    "if (pageMetrics.score < 10) {"
-)
+source = source.replace('for (let index = 0; index < items.length; index += 3)', 'for (let index = 0; index < items.length; index += 4)')
+source = source.replace('Math.ceil(items.length / 3)', 'Math.ceil(items.length / 4)')
+source = source.replace('items.slice(index, index + 3)', 'items.slice(index, index + 4)')
+source = source.replace('score + childScore > 11', 'score + childScore > 9')
+source = source.replace('if (text.length < 720)', 'if (text.length < 520)')
+source = source.replace('length + word.length + 1 > 330', 'length + word.length + 1 > 270')
+source = source.replace('if (data.score > 17)', 'if (data.score > 13)')
+source = source.replace('data.score > 15 || data.textLength > 760', 'data.score > 18 || data.textLength > 900')
+source = source.replace('pageMetrics.score < 12', 'pageMetrics.score < 20')
+source = source.replace("pageMetrics.score < 6 ? 'writing-zone--fill' : 'writing-zone--compact'", "pageMetrics.score < 10 ? 'writing-zone--fill' : 'writing-zone--compact'")
+source = source.replace('metrics(current.html).score + metrics(next.html).score <= 13', 'metrics(current.html).score + metrics(next.html).score <= 24')
 
 path.write_text(source, encoding='utf-8')
-print('hybrid table pagination refinements applied')
+print('hybrid A4 packing refinements applied')
