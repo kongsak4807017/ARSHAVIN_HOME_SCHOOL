@@ -56,11 +56,12 @@ The canonical worksheet HTML uses this structure:
 - `.print-page`: exactly 210 × 297 mm, `box-sizing:border-box`;
 - safe padding: 10 mm top, 12 mm left/right, 10 mm bottom;
 - visible page frame inside the safe area;
-- header zone: maximum 20 mm;
+- header zone: maximum 26 mm so long bilingual titles can wrap without invading the activity zone;
 - footer zone: approximately 8 mm;
 - remaining content zone is the only place activities may occupy;
 - page number is static content, not a browser footer;
-- no date, time, URL, build SHA or generated timestamp appears on student pages.
+- no date, time, URL, build SHA or generated timestamp appears on student pages;
+- CSS must not hide overflow with `overflow:hidden`; overflow is a build failure, not something to mask.
 
 The page frame must remain readable in black and white. Pixel-art decoration is excluded from worksheets unless it conveys instructional meaning.
 
@@ -75,7 +76,7 @@ Each page follows one of these patterns:
 Rules:
 
 - a major activity cannot share a page with another major activity;
-- a page may contain no more than two `.activity-block` elements unless they form a single explicitly grouped micro-sequence;
+- a page may contain no more than two `.activity-block` elements unless the page carries `data-micro-sequence="true"` and the blocks are a single short, ordered sequence;
 - headings, instructions, answer space and safety notes for one activity stay on the same page;
 - tables never continue accidentally across pages; a long table is intentionally split with repeated column headings and `Part A / Part B` labels;
 - long lists are intentionally divided into numbered parts;
@@ -124,10 +125,11 @@ Add `data-*` attributes that make layout intent testable:
 - `data-block-id` on every `.activity-block`;
 - `activity-block--major` or `activity-block--minor`;
 - `data-intentional-space="true"` only for justified writing/drawing pages;
+- `data-micro-sequence="true"` only for a page with more than two very short, ordered blocks;
 - `data-split-from="<block-id>"` for intentional Part B continuations;
 - `data-repeat-heading="true"` for intentionally split tables/lists.
 
-Block IDs are unique inside a lesson pack.
+Block IDs are unique inside a lesson pack. Every metadata exception must be validated; attributes cannot be used merely to silence failures.
 
 ## 8. PDF generation
 
@@ -152,7 +154,7 @@ For every source page, Chromium measures:
 - every activity block rectangle is inside the content rectangle;
 - header and footer rectangles stay inside their zones;
 - no block intersects the footer;
-- every page has 1–2 activity blocks unless an explicit micro-sequence exemption is documented;
+- every page has 1–2 activity blocks unless a valid `data-micro-sequence="true"` exception is present;
 - major activity count per page is at most 1;
 - page numbers are consecutive and equal `data-page-count`;
 - block IDs are unique;
@@ -217,6 +219,7 @@ Add focused tests that assert:
 - every page has header/content/footer;
 - every activity block has a stable ID and major/minor classification;
 - no page contains more than one major or more than two ordinary activity blocks;
+- `data-micro-sequence` exceptions satisfy the short-block rules;
 - intentional split blocks include `Part A / Part B` and repeated headings where required;
 - all 52 PDFs match source page counts;
 - no low-occupancy accidental pages;
