@@ -1,5 +1,4 @@
 from pathlib import Path
-import re
 
 path = Path('tools/compose-explicit-a4-pages.mjs')
 source = path.read_text(encoding='utf-8')
@@ -72,20 +71,20 @@ replace_once(
 
 replace_once(
     """    if (current.length && currentScore + score > 13) {""",
-    """    if (current.length && currentScore + score > 8) {""",
-    "currentScore + score > 8"
+    """    if (current.length && currentScore + score > 6) {""",
+    "currentScore + score > 6"
 )
 
 replace_once(
     """  if (text.length < 900) return null;""",
-    """  if (text.length < 520) return null;""",
-    "text.length < 520"
+    """  if (text.length < 420) return null;""",
+    "text.length < 420"
 )
 
 replace_once(
     """    if (current && (current + ' ' + sentence).length > 520) {""",
-    """    if (current && (current + ' ' + sentence).length > 300) {""",
-    "sentence).length > 300"
+    """    if (current && (current + ' ' + sentence).length > 260) {""",
+    "sentence).length > 260"
 )
 
 replace_once(
@@ -102,9 +101,20 @@ replace_once(
     'hb11-help-not-happened',
     'hb11-privacy-filter'
   ].includes(uniqueId);
-  if (!protectedHb11 && metrics.score > 14) {
+  if (!protectedHb11 && metrics.score > 10) {
     const split =""",
     "const protectedHb11 = record.id === 'HB-11'"
+)
+
+replace_once(
+    """      return split;""",
+    """      return split.flatMap(part => {
+        const partMetrics = blockMetrics(part.html);
+        if (partMetrics.score <= 10) return [part];
+        const nested = splitTableBlock(part.html, part.id) || splitListBlock(part.html, part.id) || splitChildBlock(part.html, part.id) || splitParagraphBlock(part.html, part.id);
+        return nested || [part];
+      });""",
+    "return split.flatMap(part =>"
 )
 
 replace_once(
@@ -118,8 +128,8 @@ replace_once(
     metrics.rows > 2 ||
     metrics.writingZones > 1 ||
     metrics.listItems > 5 ||
-    metrics.score > 16 ||
-    metrics.textLength > 800;""",
+    metrics.score > 18 ||
+    metrics.textLength > 900;""",
     "metrics.writingZones > 1"
 )
 
@@ -128,14 +138,15 @@ replace_once(
     """function finalizePage(page) {
   const combinedHtml = page.blocks.map(block => block.html).join('');
   const metrics = blockMetrics(combinedHtml);
-  const hasWritingRegion = /writing-zone|writing-lines|worksheet-lines|class=\"[^\"]*\\blines\\b|class=\"[^\"]*\\bline\\b|drawing-zone|drawing-box|class=\"[^\"]*\\btall\\b/i.test(combinedHtml);
+  const $page = load(`<div id=\"page-root\">${combinedHtml}</div>`, { decodeEntities: false });
+  const hasWritingRegion = $page('#page-root').find('.writing-zone,.drawing-zone,.drawing-box,.writing-lines,.worksheet-lines,.lines,.line,.write-line,.tall').length > 0;
 
-  if (hasWritingRegion && metrics.score < 22) {
+  if (hasWritingRegion) {
     return { ...page, intentionalSpace: true };
   }
 
-  if (!hasWritingRegion && metrics.score < 20) {
-    const heightClass = metrics.score < 9 ? 'writing-zone--fill' : '';
+  if (metrics.score < 24 || (page.blocks.length === 1 && !page.blocks[0].major)) {
+    const heightClass = metrics.score < 10 ? 'writing-zone--fill' : 'writing-zone--compact';
     const lastIndex = page.blocks.length - 1;
     const blocks = page.blocks.map((block, index) => index === lastIndex ? {
       ...block,
