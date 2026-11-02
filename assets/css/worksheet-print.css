@@ -1,0 +1,36 @@
+/* ARSHAVIN canonical worksheet print contract
+   Designed for Grade 4 curriculum with Grade-5-sized handwriting space. */
+@page{size:A4 portrait;margin:12mm 12mm 14mm}
+.worksheet-print-note{display:none}
+@media print{
+  html,body{background:#fff!important;color:#111!important}
+  body{font-family:Arial,"Noto Sans Thai",Tahoma,sans-serif!important;font-size:22pt!important;line-height:1.4!important;margin:0!important}
+  .container{max-width:none!important;width:auto!important;margin:0!important;padding:0!important}
+  .worksheet{display:block!important;width:auto!important;min-height:0!important;height:auto!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:#fff!important;overflow:visible!important;break-after:page;page-break-after:always}
+  .worksheet:last-child{break-after:auto;page-break-after:auto}
+  .worksheet h1{font-size:34pt!important;line-height:1.2!important;margin:0 0 6mm!important}
+  .worksheet h2{font-size:28pt!important;line-height:1.25!important;margin:6mm 0 3mm!important}
+  .worksheet h3{font-size:24pt!important;line-height:1.3!important}
+  .worksheet p,.worksheet li,.worksheet td,.worksheet th,.worksheet label,.worksheet dd,.worksheet dt{font-size:22pt!important;line-height:1.4!important;overflow-wrap:anywhere;word-break:normal}
+  .worksheet small,.worksheet .small,.worksheet .hint{font-size:16pt!important;line-height:1.35!important}
+  .worksheet table{width:100%!important;border-collapse:collapse!important;table-layout:auto!important;font-size:22pt!important;break-inside:auto}
+  .worksheet tr{break-inside:avoid;page-break-inside:avoid}
+  .worksheet th,.worksheet td{border:1.5pt solid #111!important;padding:3mm!important;min-height:12mm!important;height:auto!important;vertical-align:top!important}
+  .worksheet-lines{min-height:48mm!important;background:repeating-linear-gradient(to bottom,#fff 0,#fff 10.5mm,#777 10.5mm,#777 10.8mm)!important}
+  .write-line{display:block!important;min-height:11mm!important;border-bottom:1.5pt solid #555!important;margin:2mm 0!important}
+  .answer-box,.box{min-height:24mm!important;height:auto!important;padding:4mm!important;border:1.5pt solid #111!important;margin:3mm 0 6mm!important}
+  .drawing-box{min-height:70mm!important}
+  .check,.print-check{display:inline-block!important;width:8mm!important;height:8mm!important;border:1.5pt solid #111!important;margin-right:2mm!important;vertical-align:middle!important}
+  input[type="checkbox"],input[type="radio"]{width:8mm!important;height:8mm!important}
+  .question,.activity-block,.panel,fieldset{break-inside:avoid;page-break-inside:avoid}
+  .allow-break{break-inside:auto!important;page-break-inside:auto!important}
+  .page-break-before{break-before:page;page-break-before:always}
+  .page-break-after{break-after:page;page-break-after:always}
+  .no-print,.site-header,footer,nav,button,.button,[data-learning-shell],[data-progress-overview]{display:none!important}
+  a{color:#111!important;text-decoration:none!important}
+  *{max-width:100%!important}
+}
+@media screen{
+  .worksheet .write-line{display:block;min-height:2.8rem;border-bottom:2px solid #9aa7b3;margin:.5rem 0}
+  .worksheet .answer-box{min-height:5rem;border:2px solid #8a7557;padding:1rem;margin:.75rem 0}
+}

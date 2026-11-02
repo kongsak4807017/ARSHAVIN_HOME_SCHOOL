@@ -140,3 +140,20 @@ All notable interactive-web changes are recorded here.
 ### Safety, accessibility and privacy
 - No account, analytics, advertising, upload, chat, third-party runtime script or remote child-data collection.
 - Storage is guarded; browser/device, assistive-technology, GitHub Pages, offline-runtime and physical-print verification remain pending.
+
+
+## 2026-11-02
+
+### Changed
+- Replaced the lesson-page 52-item global catalogue with compact Home/Previous/Next navigation so learners reach lesson content immediately on mobile and desktop.
+- Added per-lesson Large-print worksheet PDF and Teacher Guide links to the shared lesson shell.
+- Added a shared A4 worksheet print contract with 22pt student body text and Grade-5-sized handwriting space for the Grade 4 curriculum.
+- Normalized all 52 worksheet sources to script-free printable HTML and removed browser-print controls from printable source content.
+- Completed teacher guides to 52/52, including a new HB-01 Sleep teacher guide and explicit support for developing writers/accessibility across legacy guides.
+- Added 52 canonical lesson PDF packs (232 A4 pages total) and 5 subject-level worksheet bundle PDFs.
+- Added five subject “Download all worksheets” links to the Pixel Adventure homepage.
+- Advanced offline cache to v55; PDFs are cached after first request rather than forced into initial install precache.
+
+### Print reliability
+- Canonical printing uses pre-rendered PDF with browser header/footer disabled during generation; student pages do not intentionally include date/time, URL, build SHA, or web UI chrome.
+- Browser HTML print remains a fallback, not the canonical print path.

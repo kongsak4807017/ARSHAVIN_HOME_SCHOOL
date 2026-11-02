@@ -50,3 +50,24 @@ CIT-10 was present on `main` at commit `f307889798ba8137483c1272191aec0d7937e750
 
 ## Current QA decision
 **ACCEPTED WITH CONDITIONS** — all fifty-two lessons, one hundred four A4 sheets and fifty-one complete teacher guides are integrated at source level. Exact implementation and final governance-head CI both passed. Browser, assistive-technology, physical-print, GitHub Pages and offline-runtime results are not claimed without evidence.
+
+
+## 2026-11-02 — Large-print / direct-lesson QA evidence
+### Verified by GitHub Actions print generator
+- Workflow run **41475040645**: SUCCESS.
+- Teacher-guide remediation executed; audit result: **PASS 52/52**.
+- Individual worksheet generation: **52 PDFs**.
+- PDF validation: **52 files, 232 A4 pages**, A4 geometry validated and visible URL/generated-footer patterns rejected by automated text checks.
+- Subject bundles: Human Body **54 pages**; AI Science **43**; Environment **45**; Maker Engineering **45**; Citizenship **45**.
+- Repository inventory after generation: 52 individual PDF files, 5 bundle PDFs, 52 teacher-guide HTML files.
+
+### Verified source-side checks before final gate
+- Direct lesson shell focused check: PASS.
+- Large-print worksheet source contract: PASS for 52/52 worksheet HTML files.
+- Worksheet source files contain no script tags or inline print handlers after normalization.
+
+### Still not claimed without direct evidence
+- Physical printer margin/feeding behavior on a specific printer model.
+- Android/iPad native print-dialog behavior.
+- NVDA/VoiceOver end-to-end reading order.
+- Visual inspection of every one of the 232 PDF pages; automated geometry validation does not replace page-by-page human review.

@@ -1,0 +1,428 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "HB-01",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/sleep-ready-brain.html",
+      "worksheetHtml": "worksheets/student/sleep-ready-brain-a4.html",
+      "worksheetPdf": "worksheets/print/sleep-ready-brain.pdf",
+      "teacherGuide": "worksheets/teacher-guides/sleep-ready-brain-guide.html"
+    },
+    {
+      "id": "HB-02",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/bones-joints-safer-posture.html",
+      "worksheetHtml": "worksheets/student/bones-joints-safer-posture-a4.html",
+      "worksheetPdf": "worksheets/print/bones-joints-safer-posture.pdf",
+      "teacherGuide": "worksheets/teacher-guides/bones-joints-safer-posture-guide.html"
+    },
+    {
+      "id": "HB-03",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/muscles-rest-movement.html",
+      "worksheetHtml": "worksheets/student/muscles-rest-movement-a4.html",
+      "worksheetPdf": "worksheets/print/muscles-rest-movement.pdf",
+      "teacherGuide": "worksheets/teacher-guides/muscles-rest-movement-guide.html"
+    },
+    {
+      "id": "HB-04",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/breathing-gas-exchange-safer-air.html",
+      "worksheetHtml": "worksheets/student/breathing-gas-exchange-safer-air-a4.html",
+      "worksheetPdf": "worksheets/print/breathing-gas-exchange-safer-air.pdf",
+      "teacherGuide": "worksheets/teacher-guides/breathing-gas-exchange-safer-air-guide.html"
+    },
+    {
+      "id": "HB-05",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/circulation-heart-safer-care.html",
+      "worksheetHtml": "worksheets/student/circulation-heart-safer-care-a4.html",
+      "worksheetPdf": "worksheets/print/circulation-heart-safer-care.pdf",
+      "teacherGuide": "worksheets/teacher-guides/circulation-heart-safer-care-guide.html"
+    },
+    {
+      "id": "HB-06",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/digestion-nutrients-responsible-food-information.html",
+      "worksheetHtml": "worksheets/student/digestion-nutrients-responsible-food-information-a4.html",
+      "worksheetPdf": "worksheets/print/digestion-nutrients-responsible-food-information.pdf",
+      "teacherGuide": "worksheets/teacher-guides/digestion-nutrients-responsible-food-information-guide.html"
+    },
+    {
+      "id": "HB-07",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/excretion-kidneys-water-balance.html",
+      "worksheetHtml": "worksheets/student/excretion-kidneys-water-balance-a4.html",
+      "worksheetPdf": "worksheets/print/excretion-kidneys-water-balance.pdf",
+      "teacherGuide": "worksheets/teacher-guides/excretion-kidneys-water-balance-guide.html"
+    },
+    {
+      "id": "HB-08",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/nervous-system-brain-senses-responsible-health-information.html",
+      "worksheetHtml": "worksheets/student/nervous-system-brain-senses-a4.html",
+      "worksheetPdf": "worksheets/print/nervous-system-brain-senses.pdf",
+      "teacherGuide": "worksheets/teacher-guides/nervous-system-brain-senses-guide.html"
+    },
+    {
+      "id": "HB-09",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/immunity-germs-vaccines-responsible-health-information.html",
+      "worksheetHtml": "worksheets/student/immunity-germs-vaccines-a4.html",
+      "worksheetPdf": "worksheets/print/immunity-germs-vaccines.pdf",
+      "teacherGuide": "worksheets/teacher-guides/immunity-germs-vaccines-guide.html"
+    },
+    {
+      "id": "HB-10",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/hormones-growth-respectful-health-information.html",
+      "worksheetHtml": "worksheets/student/hormones-growth-respectful-health-information-a4.html",
+      "worksheetPdf": "worksheets/print/hormones-growth-respectful-health-information.pdf",
+      "teacherGuide": "worksheets/teacher-guides/hormones-growth-respectful-health-information-guide.html"
+    },
+    {
+      "id": "HB-11",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/body-privacy-boundaries-consent-trusted-help.html",
+      "worksheetHtml": "worksheets/student/body-privacy-boundaries-consent-trusted-help-a4.html",
+      "worksheetPdf": "worksheets/print/body-privacy-boundaries-consent-trusted-help.pdf",
+      "teacherGuide": "worksheets/teacher-guides/body-privacy-boundaries-consent-trusted-help-guide.html"
+    },
+    {
+      "id": "HB-12",
+      "subject": "human-body",
+      "lessonPath": "subjects/human-body/human-body-health-capstone.html",
+      "worksheetHtml": "worksheets/student/human-body-health-capstone-a4.html",
+      "worksheetPdf": "worksheets/print/human-body-health-capstone.pdf",
+      "teacherGuide": "worksheets/teacher-guides/human-body-health-capstone-guide.html"
+    },
+    {
+      "id": "AI-01",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/fact-opinion-ai-claims.html",
+      "worksheetHtml": "worksheets/student/fact-opinion-ai-claims-a4.html",
+      "worksheetPdf": "worksheets/print/fact-opinion-ai-claims.pdf",
+      "teacherGuide": "worksheets/teacher-guides/fact-opinion-ai-claims-guide.html"
+    },
+    {
+      "id": "AI-02",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/personal-data-digital-footprints-consent.html",
+      "worksheetHtml": "worksheets/student/personal-data-digital-footprints-consent-a4.html",
+      "worksheetPdf": "worksheets/print/personal-data-digital-footprints-consent.pdf",
+      "teacherGuide": "worksheets/teacher-guides/personal-data-digital-footprints-consent-guide.html"
+    },
+    {
+      "id": "AI-03",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/learning-from-data-and-bias.html",
+      "worksheetHtml": "worksheets/student/learning-from-data-and-bias-a4.html",
+      "worksheetPdf": "worksheets/print/learning-from-data-and-bias.pdf",
+      "teacherGuide": "worksheets/teacher-guides/learning-from-data-and-bias-guide.html"
+    },
+    {
+      "id": "AI-04",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/patterns-features-edge-cases.html",
+      "worksheetHtml": "worksheets/student/patterns-features-edge-cases-a4.html",
+      "worksheetPdf": "worksheets/print/patterns-features-edge-cases.pdf",
+      "teacherGuide": "worksheets/teacher-guides/patterns-features-edge-cases-guide.html"
+    },
+    {
+      "id": "AI-05",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/ai-decisions-confidence-human-escalation.html",
+      "worksheetHtml": "worksheets/student/ai-decisions-confidence-human-escalation-a4.html",
+      "worksheetPdf": "worksheets/print/ai-decisions-confidence-human-escalation.pdf",
+      "teacherGuide": "worksheets/teacher-guides/ai-decisions-confidence-human-escalation-guide.html"
+    },
+    {
+      "id": "AI-06",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/recommendation-ranking-fair-choice.html",
+      "worksheetHtml": "worksheets/student/recommendation-ranking-fair-choice-a4.html",
+      "worksheetPdf": "worksheets/print/recommendation-ranking-fair-choice.pdf",
+      "teacherGuide": "worksheets/teacher-guides/recommendation-ranking-fair-choice-guide.html"
+    },
+    {
+      "id": "AI-07",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/robots-sensors-fail-safe-systems.html",
+      "worksheetHtml": "worksheets/student/robots-sensors-fail-safe-systems-a4.html",
+      "worksheetPdf": "worksheets/print/robots-sensors-fail-safe-systems.pdf",
+      "teacherGuide": "worksheets/teacher-guides/robots-sensors-fail-safe-systems-guide.html"
+    },
+    {
+      "id": "AI-08",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/generative-ai-provenance-verification.html",
+      "worksheetHtml": "worksheets/student/generative-ai-provenance-verification-a4.html",
+      "worksheetPdf": "worksheets/print/generative-ai-provenance-verification.pdf",
+      "teacherGuide": "worksheets/teacher-guides/generative-ai-provenance-verification-guide.html"
+    },
+    {
+      "id": "AI-09",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/image-recognition-errors-privacy.html",
+      "worksheetHtml": "worksheets/student/image-recognition-errors-privacy-a4.html",
+      "worksheetPdf": "worksheets/print/image-recognition-errors-privacy.pdf",
+      "teacherGuide": "worksheets/teacher-guides/image-recognition-errors-privacy-guide.html"
+    },
+    {
+      "id": "AI-10",
+      "subject": "ai-science",
+      "lessonPath": "subjects/ai-science/responsible-ai-capstone-question-design-verify-explain.html",
+      "worksheetHtml": "worksheets/student/responsible-ai-capstone-a4.html",
+      "worksheetPdf": "worksheets/print/responsible-ai-capstone.pdf",
+      "teacherGuide": "worksheets/teacher-guides/responsible-ai-capstone-guide.html"
+    },
+    {
+      "id": "ENV-01",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/pm25-safer-action.html",
+      "worksheetHtml": "worksheets/student/pm25-safer-action-a4.html",
+      "worksheetPdf": "worksheets/print/pm25-safer-action.pdf",
+      "teacherGuide": "worksheets/teacher-guides/pm25-safer-action-guide.html"
+    },
+    {
+      "id": "ENV-02",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/water-cycle-responsible-use.html",
+      "worksheetHtml": "worksheets/student/water-cycle-responsible-use-a4.html",
+      "worksheetPdf": "worksheets/print/water-cycle-responsible-use.pdf",
+      "teacherGuide": "worksheets/teacher-guides/water-cycle-responsible-use-guide.html"
+    },
+    {
+      "id": "ENV-03",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/soil-erosion-conservation.html",
+      "worksheetHtml": "worksheets/student/soil-erosion-conservation-a4.html",
+      "worksheetPdf": "worksheets/print/soil-erosion-conservation.pdf",
+      "teacherGuide": "worksheets/teacher-guides/soil-erosion-conservation-guide.html"
+    },
+    {
+      "id": "ENV-04",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/waste-5r-lower-waste-system.html",
+      "worksheetHtml": "worksheets/student/waste-5r-lower-waste-system-a4.html",
+      "worksheetPdf": "worksheets/print/waste-5r-lower-waste-system.pdf",
+      "teacherGuide": "worksheets/teacher-guides/waste-5r-lower-waste-system-guide.html"
+    },
+    {
+      "id": "ENV-05",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/household-energy-efficiency-responsible-choices.html",
+      "worksheetHtml": "worksheets/student/household-energy-efficiency-responsible-choices-a4.html",
+      "worksheetPdf": "worksheets/print/household-energy-efficiency-responsible-choices.pdf",
+      "teacherGuide": "worksheets/teacher-guides/household-energy-efficiency-responsible-choices-guide.html"
+    },
+    {
+      "id": "ENV-06",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/climate-weather-responsible-preparedness.html",
+      "worksheetHtml": "worksheets/student/climate-weather-responsible-preparedness-a4.html",
+      "worksheetPdf": "worksheets/print/climate-weather-responsible-preparedness.pdf",
+      "teacherGuide": "worksheets/teacher-guides/climate-weather-responsible-preparedness-guide.html"
+    },
+    {
+      "id": "ENV-07",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/ecosystems-biodiversity-responsible-observation.html",
+      "worksheetHtml": "worksheets/student/ecosystems-biodiversity-responsible-observation-a4.html",
+      "worksheetPdf": "worksheets/print/ecosystems-biodiversity-responsible-observation.pdf",
+      "teacherGuide": "worksheets/teacher-guides/ecosystems-biodiversity-responsible-observation-guide.html"
+    },
+    {
+      "id": "ENV-08",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/floods-droughts-community-resilience.html",
+      "worksheetHtml": "worksheets/student/floods-droughts-community-resilience-a4.html",
+      "worksheetPdf": "worksheets/print/floods-droughts-community-resilience.pdf",
+      "teacherGuide": "worksheets/teacher-guides/floods-droughts-community-resilience-guide.html"
+    },
+    {
+      "id": "ENV-09",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/noise-light-pollution-safer-environmental-design.html",
+      "worksheetHtml": "worksheets/student/noise-light-pollution-safer-design-a4.html",
+      "worksheetPdf": "worksheets/print/noise-light-pollution-safer-design.pdf",
+      "teacherGuide": "worksheets/teacher-guides/noise-light-pollution-safer-design-guide.html"
+    },
+    {
+      "id": "ENV-10",
+      "subject": "environment",
+      "lessonPath": "subjects/environment/chiang-rai-environmental-action-capstone.html",
+      "worksheetHtml": "worksheets/student/chiang-rai-environmental-action-capstone-a4.html",
+      "worksheetPdf": "worksheets/print/chiang-rai-environmental-action-capstone.pdf",
+      "teacherGuide": "worksheets/teacher-guides/chiang-rai-environmental-action-capstone-guide.html"
+    },
+    {
+      "id": "MAKER-01",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/levers-make-work-easier.html",
+      "worksheetHtml": "worksheets/student/levers-make-work-easier-a4.html",
+      "worksheetPdf": "worksheets/print/levers-make-work-easier.pdf",
+      "teacherGuide": "worksheets/teacher-guides/levers-make-work-easier-guide.html"
+    },
+    {
+      "id": "MAKER-02",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/pulleys-gears-transfer-force.html",
+      "worksheetHtml": "worksheets/student/pulleys-gears-transfer-force-a4.html",
+      "worksheetPdf": "worksheets/print/pulleys-gears-transfer-force.pdf",
+      "teacherGuide": "worksheets/teacher-guides/pulleys-gears-transfer-force-guide.html"
+    },
+    {
+      "id": "MAKER-03",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/wheels-axles-designing-motion.html",
+      "worksheetHtml": "worksheets/student/wheels-axles-designing-motion-a4.html",
+      "worksheetPdf": "worksheets/print/wheels-axles-designing-motion.pdf",
+      "teacherGuide": "worksheets/teacher-guides/wheels-axles-designing-motion-guide.html"
+    },
+    {
+      "id": "MAKER-04",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/structures-shapes-strength.html",
+      "worksheetHtml": "worksheets/student/structures-shapes-strength-a4.html",
+      "worksheetPdf": "worksheets/print/structures-shapes-strength.pdf",
+      "teacherGuide": "worksheets/teacher-guides/structures-shapes-strength-guide.html"
+    },
+    {
+      "id": "MAKER-05",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/materials-properties-responsible-selection.html",
+      "worksheetHtml": "worksheets/student/materials-properties-responsible-selection-a4.html",
+      "worksheetPdf": "worksheets/print/materials-properties-responsible-selection.pdf",
+      "teacherGuide": "worksheets/teacher-guides/materials-properties-responsible-selection-guide.html"
+    },
+    {
+      "id": "MAKER-06",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/friction-surfaces-safer-motion.html",
+      "worksheetHtml": "worksheets/student/friction-surfaces-safer-motion-a4.html",
+      "worksheetPdf": "worksheets/print/friction-surfaces-safer-motion.pdf",
+      "teacherGuide": "worksheets/teacher-guides/friction-surfaces-safer-motion-guide.html"
+    },
+    {
+      "id": "MAKER-07",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/magnets-forces-safe-sorting.html",
+      "worksheetHtml": "worksheets/student/magnets-forces-safe-sorting-a4.html",
+      "worksheetPdf": "worksheets/print/magnets-forces-safe-sorting.pdf",
+      "teacherGuide": "worksheets/teacher-guides/magnets-forces-safe-sorting-guide.html"
+    },
+    {
+      "id": "MAKER-08",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/simple-circuits-energy-electrical-safety.html",
+      "worksheetHtml": "worksheets/student/simple-circuits-energy-electrical-safety-a4.html",
+      "worksheetPdf": "worksheets/print/simple-circuits-energy-electrical-safety.pdf",
+      "teacherGuide": "worksheets/teacher-guides/simple-circuits-energy-electrical-safety-guide.html"
+    },
+    {
+      "id": "MAKER-09",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/heat-insulation-safe-container-design.html",
+      "worksheetHtml": "worksheets/student/heat-insulation-safe-container-design-a4.html",
+      "worksheetPdf": "worksheets/print/heat-insulation-safe-container-design.pdf",
+      "teacherGuide": "worksheets/teacher-guides/heat-insulation-safe-container-design-guide.html"
+    },
+    {
+      "id": "MAKER-10",
+      "subject": "maker-engineering",
+      "lessonPath": "subjects/maker-engineering/community-engineering-design-capstone.html",
+      "worksheetHtml": "worksheets/student/community-engineering-design-capstone-a4.html",
+      "worksheetPdf": "worksheets/print/community-engineering-design-capstone.pdf",
+      "teacherGuide": "worksheets/teacher-guides/community-engineering-design-capstone-guide.html"
+    },
+    {
+      "id": "CIT-01",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/rights-responsibilities-digital-kindness.html",
+      "worksheetHtml": "worksheets/student/rights-responsibilities-digital-kindness-a4.html",
+      "worksheetPdf": "worksheets/print/rights-responsibilities-digital-kindness.pdf",
+      "teacherGuide": "worksheets/teacher-guides/rights-responsibilities-digital-kindness-guide.html"
+    },
+    {
+      "id": "CIT-02",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/community-rules-shared-decisions.html",
+      "worksheetHtml": "worksheets/student/community-rules-shared-decisions-a4.html",
+      "worksheetPdf": "worksheets/print/community-rules-shared-decisions.pdf",
+      "teacherGuide": "worksheets/teacher-guides/community-rules-shared-decisions-guide.html"
+    },
+    {
+      "id": "CIT-03",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/media-public-information-evidence-checking.html",
+      "worksheetHtml": "worksheets/student/media-public-information-evidence-checking-a4.html",
+      "worksheetPdf": "worksheets/print/media-public-information-evidence-checking.pdf",
+      "teacherGuide": "worksheets/teacher-guides/media-public-information-evidence-checking-guide.html"
+    },
+    {
+      "id": "CIT-04",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/disagreement-dialogue-peaceful-resolution.html",
+      "worksheetHtml": "worksheets/student/disagreement-dialogue-peaceful-resolution-a4.html",
+      "worksheetPdf": "worksheets/print/disagreement-dialogue-peaceful-resolution.pdf",
+      "teacherGuide": "worksheets/teacher-guides/disagreement-dialogue-peaceful-resolution-guide.html"
+    },
+    {
+      "id": "CIT-05",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/community-institutions-responsible-participation.html",
+      "worksheetHtml": "worksheets/student/community-institutions-responsible-participation-a4.html",
+      "worksheetPdf": "worksheets/print/community-institutions-responsible-participation.pdf",
+      "teacherGuide": "worksheets/teacher-guides/community-institutions-responsible-participation-guide.html"
+    },
+    {
+      "id": "CIT-06",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/public-rules-fairness-reviewing-decisions.html",
+      "worksheetHtml": "worksheets/student/public-rules-fairness-reviewing-decisions-a4.html",
+      "worksheetPdf": "worksheets/print/public-rules-fairness-reviewing-decisions.pdf",
+      "teacherGuide": "worksheets/teacher-guides/public-rules-fairness-reviewing-decisions-guide.html"
+    },
+    {
+      "id": "CIT-07",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/community-budgets-public-resources-transparent-choices.html",
+      "worksheetHtml": "worksheets/student/community-budgets-public-resources-transparent-choices-a4.html",
+      "worksheetPdf": "worksheets/print/community-budgets-public-resources-transparent-choices.pdf",
+      "teacherGuide": "worksheets/teacher-guides/community-budgets-public-resources-transparent-choices-guide.html"
+    },
+    {
+      "id": "CIT-08",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/community-data-surveys-responsible-reporting.html",
+      "worksheetHtml": "worksheets/student/community-data-surveys-responsible-reporting-a4.html",
+      "worksheetPdf": "worksheets/print/community-data-surveys-responsible-reporting.pdf",
+      "teacherGuide": "worksheets/teacher-guides/community-data-surveys-responsible-reporting-guide.html"
+    },
+    {
+      "id": "CIT-09",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/emergency-rumours-risk-communication-responsible-help.html",
+      "worksheetHtml": "worksheets/student/emergency-rumours-risk-communication-responsible-help-a4.html",
+      "worksheetPdf": "worksheets/print/emergency-rumours-risk-communication-responsible-help.pdf",
+      "teacherGuide": "worksheets/teacher-guides/emergency-rumours-risk-communication-responsible-help-guide.html"
+    },
+    {
+      "id": "CIT-10",
+      "subject": "citizenship",
+      "lessonPath": "subjects/citizenship/community-citizenship-action-capstone.html",
+      "worksheetHtml": "worksheets/student/community-citizenship-action-capstone-a4.html",
+      "worksheetPdf": "worksheets/print/community-citizenship-action-capstone.pdf",
+      "teacherGuide": "worksheets/teacher-guides/community-citizenship-action-capstone-guide.html"
+    }
+  ],
+  "bundles": {
+    "human-body": "worksheets/print-bundles/human-body-all-worksheets.pdf",
+    "ai-science": "worksheets/print-bundles/ai-science-all-worksheets.pdf",
+    "environment": "worksheets/print-bundles/environment-all-worksheets.pdf",
+    "maker-engineering": "worksheets/print-bundles/maker-engineering-all-worksheets.pdf",
+    "citizenship": "worksheets/print-bundles/citizenship-all-worksheets.pdf"
+  }
+}

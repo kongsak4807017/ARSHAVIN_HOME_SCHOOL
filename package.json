@@ -1,0 +1,15 @@
+{
+  "name": "arshavin-home-school-print-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "print:generate": "node tools/generate-worksheet-pdfs.mjs",
+    "print:validate": "node tools/validate-worksheet-pdfs.mjs",
+    "print:bundles": "node tools/build-subject-worksheet-bundles.mjs"
+  },
+  "devDependencies": {
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "6.5.438",
+    "playwright": "1.64.1"
+  }
+}

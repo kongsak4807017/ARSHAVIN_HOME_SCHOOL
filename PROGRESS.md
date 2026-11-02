@@ -36,3 +36,14 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Next action
 Run **end-to-end deployment-readiness QA** against the published GitHub Pages build: current Chrome/Safari/Firefox/Edge smoke tests, Android/iPad and 200% zoom, keyboard-only and visible-focus inspection, NVDA/VoiceOver reading order and live feedback, physical A4/PDF two-page validation, HTTPS routing, first-visit caching and offline reload evidence.
+
+
+## 2026-11-02 — Direct lessons + large-print worksheet release
+- [x] Lesson pages no longer render the full 52-lesson catalogue above lesson content; shared navigation is compact Home/Previous/Next plus current lesson resources.
+- [x] Large-print worksheet source contract applied to all 52 worksheet HTML files: 22pt print body target, A4 portrait, approximately 10–12 mm handwriting-line rhythm, enlarged answer boxes/check marks, and script-free printable sources.
+- [x] Teacher guides: **52 / 52 complete**. HB-01 guide added; legacy guides remediated with explicit preparation/developing-writer/accessibility guidance while preserving lesson-specific answer guidance.
+- [x] Canonical print artifacts generated and validated: **52 individual PDFs, 232 A4 pages**.
+- [x] Subject worksheet bundles generated: Human Body 54 pages; AI Science 43; Environment 45; Maker Engineering 45; Citizenship 45.
+- [x] Homepage exposes five “Download all worksheets” subject PDF bundles.
+- [x] Service worker advanced to v55; PDF files use same-origin cache-on-first-request rather than install-time precache.
+- [ ] Final exact-head static CI and published GitHub Pages smoke test required before release merge.
