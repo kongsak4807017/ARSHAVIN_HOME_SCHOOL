@@ -11,6 +11,9 @@ const groups=[
 for(const x of manifest.lessons){
  assert.ok(exists(x.teacherGuide),x.teacherGuide);
  const html=read(x.teacherGuide);
+ assert.ok(html.trimStart().toLowerCase().startsWith('<!doctype html>'),x.id+' malformed doctype');
+ assert.equal((html.match(/<!doctype html>/gi)||[]).length,1,x.id+' duplicate doctype');
+ assert.match(html,/<body\b/i,x.id+' missing body');
  for(const [name,re] of groups)assert.match(html,re,x.id+' missing '+name);
 }
 console.log('PASS teacher guide inventory: 52/52 with teaching-flow markers');
