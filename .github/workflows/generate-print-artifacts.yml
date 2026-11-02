@@ -1,0 +1,48 @@
+name: Generate large-print worksheet PDFs
+
+on:
+  push:
+    branches:
+      - feat/direct-lessons-large-print
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install print tooling
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-core fonts-noto-extra
+      - name: Generate and validate PDFs
+        run: |
+          npm run print:generate
+          npm run print:validate
+          npm run print:bundles
+          node tests/pdf-artifact-static-checks.mjs
+          node tests/subject-download-bundles-static-checks.mjs
+      - name: Commit generated print artifacts to feature branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json worksheets/print worksheets/print-bundles
+          if git diff --cached --quiet; then
+            echo "No generated changes"
+            exit 0
+          fi
+          git commit -m "build: generate large-print worksheet PDFs"
+          git push origin HEAD:feat/direct-lessons-large-print
