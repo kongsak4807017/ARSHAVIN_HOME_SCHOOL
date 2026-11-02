@@ -1,0 +1,10 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';
+const root=path.resolve(import.meta.dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const shell=read('assets/js/learning-shell.js'),css=read('assets/css/site.css'),lesson=read('subjects/human-body/sleep-ready-brain.html');
+assert.doesNotMatch(shell,/learning-shell__list/);
+assert.doesNotMatch(shell,/LESSONS\.map\([\s\S]*?<li/);
+['Previous','Home','Next','Large-print worksheet (PDF)','Teacher Guide'].forEach(x=>assert.ok(shell.includes(x),x));
+assert.ok(shell.includes('learning-shell--compact'));
+assert.ok(css.includes('.learning-shell__resources'));
+assert.ok(lesson.indexOf('<section class="hero"')<lesson.indexOf('data-learning-shell'));
+console.log('PASS direct lesson shell');
