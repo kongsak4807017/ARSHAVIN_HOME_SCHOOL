@@ -20,7 +20,7 @@ for(const id of required){
 const pages=[...html.matchAll(/<section\b([^>]*class="[^"]*\bprint-page\b[^"]*"[^>]*)>/gi)];
 assert.ok(pages.length>=4&&pages.length<=8,'HB-11 should use 4–8 authored pages');
 assert.equal((html.match(/class="[^"]*\bprint-page__footer\b[^"]*"/g)||[]).length,pages.length,'each page has a footer');
-assert.match(html,new RegExp(`HB-11[^<]*หน้า ${pages.length}/${pages.length}`),'final page number must be visible');
+assert.match(html,new RegExp(`หน้า ${pages.length}/${pages.length} · Page ${pages.length}/${pages.length}`),'final page number must be visible');
 assert.doesNotMatch(html,/data-block-id="hb11-fictional-scenarios"[^>]*data-split-from/i,'fictional scenarios must stay whole');
 assert.doesNotMatch(html,/data-block-id="hb11-trusted-adult-map"[^>]*data-split-from/i,'trusted-adult map must stay whole');
 console.log('PASS HB-11 explicit A4 regression:',pages.length,'pages');
