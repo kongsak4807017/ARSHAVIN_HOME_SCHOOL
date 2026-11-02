@@ -26,6 +26,11 @@ jobs:
           npx playwright install --with-deps chromium
           sudo apt-get update
           sudo apt-get install -y fonts-noto-core fonts-noto-extra
+      - name: Normalize printable sources and teaching guides
+        run: |
+          node tools/normalize-worksheet-sources.mjs
+          node tools/remediate-teacher-guides.mjs
+          node tools/audit-teacher-guides.mjs
       - name: Generate and validate PDFs
         run: |
           npm run print:generate
@@ -38,7 +43,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package-lock.json worksheets/print worksheets/print-bundles
+          git add package-lock.json worksheets/student worksheets/teacher-guides worksheets/print worksheets/print-bundles
           if git diff --cached --quiet; then
             echo "No generated changes"
             exit 0
