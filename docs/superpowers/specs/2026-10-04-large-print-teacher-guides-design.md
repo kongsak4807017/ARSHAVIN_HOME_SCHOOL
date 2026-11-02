@@ -1,12 +1,12 @@
 # Large-Print A4 Worksheets + Teacher Guide 52/52 Design
 
-**Date:** 2026-10-04
-**Status:** Proposed written specification after user approval of the in-chat design
-**Scope:** Grade 4 worksheets, print artifacts, teacher-guide completeness, lesson resource navigation, offline/static QA
+**Date:** 2026-11-02
+**Status:** Selected design — Approach A: Direct Lesson + Subject Download Hub
+**Scope:** Direct lesson UX, Grade 4 worksheet remediation with Grade-5-sized handwriting space, canonical print artifacts, subject download bundles, teacher-guide completeness, offline/static QA
 
 ## 1. Goal
 
-Make every Grade 4 worksheet genuinely easy for a Primary 4 learner to print, read and write on, while completing a clear teaching guide for every one of the 52 lessons.
+Make every Grade 4 lesson open directly into learning content, make every worksheet genuinely easy to print, read and write on with handwriting space sized for a Grade 5 learner, and complete a clear teaching guide for every one of the 52 lessons.
 
 The canonical print experience must:
 - use true A4 pages;
@@ -19,6 +19,49 @@ The canonical print experience must:
 - remain bilingual where the worksheet itself is bilingual.
 
 The canonical teaching-guide experience must provide **52/52** complete guides and make the guide for each lesson easy to find from that lesson.
+
+
+## 1A. Selected approach and UX correction
+
+The user selected **Approach A — Direct Lesson + Subject Download Hub** after reviewing the current mobile lesson page.
+
+Approaches considered:
+
+1. **Approach A — Direct Lesson + Subject Download Hub (selected):** remove the full 52-lesson navigator from lesson pages, open directly into lesson content, keep only compact Home/Previous/Next navigation, and provide per-lesson plus per-subject worksheet downloads.
+2. **Approach B — Collapsible lesson navigator:** keep the 52-lesson list hidden behind an expander. Rejected because the user explicitly does not need lesson switching from inside a lesson.
+3. **Approach C — Subject dashboard before lesson:** add another subject-level navigation step. Rejected because it adds an unnecessary click for the home-school use case.
+
+### Direct lesson behavior
+
+On every lesson page:
+
+- the learner sees the lesson heading, hook/question and lesson content immediately after the site header;
+- the shared learning shell must **not** render an ordered list of all 52 lessons;
+- progress summary must not occupy a large block above content;
+- a compact navigation bar may show **Home**, **Previous lesson**, **Next lesson**, and a small local progress count;
+- the primary subject/lesson switching surface remains the Pixel Adventure homepage;
+- lesson content order and interactive activities remain unchanged unless required for accessibility or resource links;
+- on mobile, the first substantive learning section should appear without scrolling past a global lesson catalogue.
+
+### Subject worksheet download hub
+
+Provide five subject-level canonical PDF bundles:
+
+- Human Body — all 12 lesson worksheet packs;
+- AI Science — all 10 lesson worksheet packs;
+- Environmental Science — all 10 lesson worksheet packs;
+- Maker Engineering — all 10 lesson worksheet packs;
+- Citizenship — all 10 lesson worksheet packs.
+
+Each subject bundle must:
+
+- contain the same canonical large-print worksheet pages as the individual lesson PDFs;
+- contain no browser-generated date/time/URL headers or footers;
+- contain no JavaScript or HTML controls;
+- start each lesson pack on a fresh A4 page;
+- use bookmarks or a simple first-page contents list if the PDF toolchain supports it reliably;
+- be downloadable from the corresponding subject area on the homepage;
+- not force the learner to download all five subjects at once.
 
 ## 2. Important print constraint
 
@@ -81,9 +124,9 @@ PDF generation requirements:
 
 The repository may record generation evidence in QA documentation, but not inside the student PDF.
 
-## 4. Primary 4 writing-space standard
+## 4. Grade-5-sized handwriting-space standard
 
-Large text alone is not enough. Worksheet remediation must also increase physical writing space.
+Large text alone is not enough. Although the curriculum is Grade 4, worksheet remediation must provide physical writing space comfortable for a Grade 5 learner writing Thai or English by hand.
 
 Minimum targets:
 - short-answer line height: approximately **10–12 mm** per handwriting line;
@@ -102,11 +145,13 @@ Where 22pt text makes an existing page too dense, the remediation order is:
 
 ## 5. Lesson resource navigation
 
+The current 52-item lesson catalogue rendered by `learning-shell.js` is removed from lesson pages. The shared shell becomes compact navigation only and must never push lesson content below a global catalogue.
+
 Every lesson must expose two consistent resources:
 - **พิมพ์แบบฝึกหัด A4 / Print large worksheet (PDF)**
 - **คู่มือผู้สอน / Teacher Guide**
 
-The shared learning-shell registry should carry worksheet-PDF and teacher-guide paths so all 52 lessons use one consistent resource block.
+The shared learning-shell registry should carry worksheet-PDF and teacher-guide paths so all 52 lessons use one consistent resource block. It should also expose compact Home/Previous/Next controls without rendering the full lesson registry.
 
 Progressive enhancement requirements:
 - the core lesson remains readable without JavaScript;
@@ -145,6 +190,7 @@ The guide must align with the existing HB-01 lesson and worksheet, avoid medical
 Advance the service-worker cache version and integrate:
 - `assets/css/worksheet-print.css`;
 - all 52 canonical PDF worksheet packs;
+- five subject-level PDF bundles;
 - the HB-01 teacher guide;
 - shared resource-navigation code changed by this project.
 
@@ -176,7 +222,10 @@ Add a focused suite that verifies:
 - at least 104 worksheet sections/activities across the inventory;
 - 52 teacher guide files;
 - 52 canonical PDF paths declared;
+- five subject bundle PDF paths declared;
 - every lesson has one worksheet PDF mapping and one guide mapping;
+- lesson shell source contains no full 52-item lesson-list rendering;
+- compact Home/Previous/Next navigation remains available;
 - all mapped files exist;
 - all worksheet source HTML files contain zero `<script>` tags;
 - all worksheet source HTML links `worksheet-print.css`;
@@ -191,7 +240,8 @@ For every generated PDF:
 - page media box is A4 within a small tolerance;
 - every page has positive dimensions and no zero-sized page;
 - text extraction does not reveal `http://`, `https://`, “Generated”, “Printed”, build SHA, or date/time footer patterns introduced by the site;
-- PDF count is 52;
+- individual lesson PDF count is 52;
+- subject bundle PDF count is 5;
 - sample rendering to image confirms no obvious clipping at top/bottom/left/right.
 
 Automated geometry checks cannot prove handwriting comfort. Representative visual QA must cover at least one worksheet from each subject, one table-heavy worksheet, one drawing-heavy worksheet and one capstone.
@@ -208,9 +258,10 @@ Run the existing complete static suite and every focused lesson suite. Do not cl
 
 After merge and Pages deployment:
 - verify HTTPS homepage;
-- open a representative lesson;
+- open a representative lesson and confirm substantive lesson content appears immediately without the 52-lesson catalogue;
 - open its PDF worksheet link;
 - verify the PDF URL is same-origin GitHub Pages;
+- verify one subject-level bundle download from the homepage;
 - verify the teacher guide link;
 - verify the worksheet HTML fallback;
 - verify no web navigation controls appear inside the PDF content;
@@ -231,9 +282,12 @@ Update only material status:
 ## 13. Definition of Done
 
 This increment is complete only when:
+- all 52 lesson pages open directly into lesson content without the full 52-item navigator;
+- compact Home/Previous/Next navigation remains usable;
 - all 52 lessons map to a canonical worksheet PDF;
+- all five subjects expose a complete downloadable worksheet bundle;
 - all 52 PDF packs are A4 and generated with headers/footers disabled;
-- student print body target is 22pt and writing areas are enlarged;
+- student print body target is 22pt and writing areas are enlarged to the Grade-5-sized handwriting standard;
 - worksheet source HTML is script-free;
 - no student PDF contains site-generated date/time/URL/build metadata;
 - 52/52 teacher guides exist;
