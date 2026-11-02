@@ -29,6 +29,10 @@ html,body{margin:0;padding:0;background:#eceff1;color:var(--a4-ink);font-family:
 .activity-block li{margin:0 0 1mm}
 .supporting-english,.helper-text,.hint,.small,.activity-block small,.activity-block em{font-size:15pt!important;line-height:1.22!important}
 .continuation-label{display:inline-block;margin:0 0 1.5mm;padding:.7mm 1.5mm;border:1pt solid #555;font-size:15pt!important;font-weight:700;background:var(--a4-soft)}
+.table-card{display:grid;gap:2.5mm;margin-top:2mm}
+.table-card__field{min-height:22mm;padding:2.5mm;border:1.2pt solid #111;background:#fff}
+.table-card__field h3{margin:0 0 1.5mm;padding-bottom:1mm;border-bottom:1pt solid #777;font-size:18pt;line-height:1.15}
+.table-card__field p:last-child{margin-bottom:0}
 table{width:100%;border-collapse:collapse;table-layout:fixed;margin:1mm 0 1.8mm}
 th,td{display:table-cell;border:1.2pt solid #111;padding:1.8mm;vertical-align:top;height:auto;min-height:12mm;font-size:20pt!important;line-height:1.2!important}
 th{font-weight:800;background:#f2f2f2}
