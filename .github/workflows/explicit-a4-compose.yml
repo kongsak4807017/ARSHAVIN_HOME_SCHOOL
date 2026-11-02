@@ -38,8 +38,6 @@ jobs:
         run: npm install
       - name: Install Chromium and Linux dependencies
         run: npx playwright install --with-deps chromium
-      - name: Apply approved composer refinements
-        run: python tools/refine-composer-source.py
       - name: Compose explicit source pages
         run: npm run a4:compose
       - name: Verify explicit source and HB-11 contracts
