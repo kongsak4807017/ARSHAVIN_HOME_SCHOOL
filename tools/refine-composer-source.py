@@ -4,7 +4,7 @@ import re
 path = Path('tools/compose-explicit-a4-pages.mjs')
 source = path.read_text(encoding='utf-8')
 
-# Treat a direct .meta block as learner metadata, never as its own activity page.
+# Direct .meta blocks belong in the page header area, not on their own activity page.
 source = source.replace(
     "function worksheetMeta($, worksheet) {\n  const header = worksheet.children('header').first();",
     "function worksheetMeta($, worksheet) {\n  const directMeta = worksheet.children('.meta').first();\n  if (directMeta.length) return directMeta.html() || '';\n  const header = worksheet.children('header').first();"
@@ -13,6 +13,26 @@ source = source.replace(
     "if (tag === 'header' || tag === 'h1') continue;\n    if (!skippedMeta",
     "if (tag === 'header' || tag === 'h1') continue;\n    if (/\\bmeta\\b/.test(classes)) { skippedMeta = true; continue; }\n    if (!skippedMeta"
 )
+
+# Keep the page header compact: worksheet number is primary, the original title is supporting text.
+worksheet_title = r'''function worksheetTitle($, worksheet, record, worksheetIndex) {
+  const headerTitle = worksheet.children('header').first().find('h1').first();
+  const directTitle = worksheet.children('h1').first();
+  const original = headerTitle.length ? headerTitle.text() : directTitle.length ? directTitle.text() : '';
+  const cleaned = original.replace(/\s+/g, ' ').trim().replace(/^ใบงาน\s*\d*\s*[:·-]?\s*/i, '').slice(0, 120);
+  const number = worksheetIndex + 1;
+  return `ใบงาน ${number} / Worksheet ${number}${cleaned ? `<small class="supporting-english">${cleaned}</small>` : ''}`;
+}
+
+'''
+source, count = re.subn(
+    r"function worksheetTitle\(\$, worksheet, record, worksheetIndex\) \{[\s\S]*?\n\}\n\nfunction worksheetMeta",
+    lambda _: worksheet_title + 'function worksheetMeta',
+    source,
+    count=1
+)
+if count != 1:
+    raise SystemExit('worksheetTitle patch point missing')
 
 hybrid_table = r'''function splitTable(html, baseId) {
   const $ = load(`<div id="table-root">${html}</div>`, { decodeEntities: false });
@@ -38,58 +58,57 @@ hybrid_table = r'''function splitTable(html, baseId) {
     intro.push($.html(child));
   });
 
-  function rowModel(row, rowIndex) {
+  function modelRow(row, rowIndex) {
     const cells = $(row).children('th,td').toArray();
     const values = cells.map((cell, cellIndex) => {
       const node = $(cell);
       const text = node.text().replace(/\s+/g, ' ').trim();
       const classes = node.attr('class') || '';
-      const writing = !text || /\b(?:lines?|write-line|tall|writing-zone|drawing-zone|drawing-box)\b/.test(classes);
       return {
         label: labels[cellIndex] || `ช่อง ${cellIndex + 1} / Field ${cellIndex + 1}`,
         html: node.html()?.trim() || '',
         text,
-        writing,
+        writing: !text || /\b(?:lines?|write-line|tall|writing-zone|drawing-zone|drawing-box)\b/.test(classes),
         tall: /\btall\b|drawing/.test(classes)
       };
     });
     const textLength = values.reduce((sum, value) => sum + value.text.length, 0);
     const writingCount = values.filter(value => value.writing).length;
     const columnCount = Math.max(1, values.length);
-    const weight = textLength / 115 + columnCount + writingCount * 2.5;
-    const oversized = weight > 46 || values.some(value => value.text.length > 1200);
-    return { row, rowIndex, values, textLength, writingCount, columnCount, weight, oversized };
+    const weight = textLength / 140 + columnCount + writingCount * 1.8;
+    const oversized = weight > 30 || values.some(value => value.text.length > 700);
+    return { row, rowIndex, values, columnCount, weight, oversized };
   }
 
   const descriptors = [];
-  let tableChunk = [];
-  let chunkWeight = 0;
-  const flush = () => {
-    if (!tableChunk.length) return;
-    descriptors.push({ type: 'table', rows: tableChunk });
-    tableChunk = [];
-    chunkWeight = 0;
+  let tableRows = [];
+  let tableWeight = 0;
+  const flushRows = () => {
+    if (!tableRows.length) return;
+    descriptors.push({ type: 'table', rows: tableRows });
+    tableRows = [];
+    tableWeight = 0;
   };
 
-  for (const model of rows.map(rowModel)) {
+  for (const model of rows.map(modelRow)) {
     if (model.oversized) {
-      flush();
+      flushRows();
       for (let cursor = 0; cursor < model.values.length;) {
         const first = model.values[cursor];
-        const take = first.text.length > 700 || first.tall ? 1 : Math.min(2, model.values.length - cursor);
+        const take = first.tall || first.text.length > 420 ? 1 : Math.min(2, model.values.length - cursor);
         descriptors.push({ type: 'fields', row: model, fields: model.values.slice(cursor, cursor + take) });
         cursor += take;
       }
       continue;
     }
 
-    const maxRows = model.columnCount >= 3 ? 1 : 2;
-    const maxWeight = 14;
-    if (tableChunk.length && (tableChunk.length >= maxRows || chunkWeight + model.weight > maxWeight)) flush();
-    tableChunk.push(model);
-    chunkWeight += model.weight;
+    const maxRows = model.columnCount >= 4 ? 1 : model.columnCount === 3 ? 2 : 3;
+    const maxWeight = model.columnCount >= 4 ? 14 : 19;
+    if (tableRows.length && (tableRows.length >= maxRows || tableWeight + model.weight > maxWeight)) flushRows();
+    tableRows.push(model);
+    tableWeight += model.weight;
   }
-  flush();
+  flushRows();
 
   return descriptors.map((descriptor, index) => {
     const part = index + 1;
@@ -120,23 +139,25 @@ hybrid_table = r'''function splitTable(html, baseId) {
 }
 
 '''
-pattern = r"function splitTable\(html, baseId\) \{[\s\S]*?\n\}\n\nfunction splitList"
-source, count = re.subn(pattern, lambda _: hybrid_table + 'function splitList', source, count=1)
+source, count = re.subn(
+    r"function splitTable\(html, baseId\) \{[\s\S]*?\n\}\n\nfunction splitList",
+    lambda _: hybrid_table + 'function splitList',
+    source,
+    count=1
+)
 if count != 1:
-    raise SystemExit('composer splitTable function not found')
+    raise SystemExit('splitTable patch point missing')
 
-source = source.replace('if (items.length <= 4) return null;', 'if (items.length <= 2) return null;')
-source = source.replace('index += 3', 'index += 2')
-source = source.replace('Math.ceil(items.length / 3)', 'Math.ceil(items.length / 2)')
-source = source.replace('items.slice(index, index + 3)', 'items.slice(index, index + 2)')
-source = source.replace('score + childScore > 11', 'score + childScore > 7')
-source = source.replace('if (text.length < 720)', 'if (text.length < 360)')
-source = source.replace('length + word.length + 1 > 330', 'length + word.length + 1 > 220')
-source = source.replace('if (data.score > 17)', 'if (data.score > 7)')
-source = source.replace('data.score > 15 || data.textLength > 760', 'data.score > 20 || data.textLength > 1000')
-source = source.replace('pageMetrics.score < 12', 'pageMetrics.score < 20')
-source = source.replace("pageMetrics.score < 6 ? 'writing-zone--fill' : 'writing-zone--compact'", "pageMetrics.score < 10 ? 'writing-zone--fill' : 'writing-zone--compact'")
-source = source.replace('metrics(current.html).score + metrics(next.html).score <= 13', 'metrics(current.html).score + metrics(next.html).score <= 22')
+source = source.replace('if (items.length <= 4) return null;', 'if (items.length <= 3) return null;')
+source = source.replace('index += 3', 'index += 3')
+source = source.replace('score + childScore > 11', 'score + childScore > 8')
+source = source.replace('if (text.length < 720)', 'if (text.length < 500)')
+source = source.replace('length + word.length + 1 > 330', 'length + word.length + 1 > 260')
+source = source.replace('if (data.score > 17)', 'if (data.score > 11)')
+source = source.replace('data.score > 15 || data.textLength > 760', 'data.score > 18 || data.textLength > 900')
+source = source.replace('pageMetrics.score < 12', 'pageMetrics.score < 14')
+source = source.replace("pageMetrics.score < 6 ? 'writing-zone--fill' : 'writing-zone--compact'", "pageMetrics.score < 8 ? 'writing-zone--fill' : 'writing-zone--compact'")
+source = source.replace('metrics(current.html).score + metrics(next.html).score <= 13', 'metrics(current.html).score + metrics(next.html).score <= 20')
 
 path.write_text(source, encoding='utf-8')
-print('A4 packing v3 refinements applied')
+print('A4 balanced packing refinements applied')

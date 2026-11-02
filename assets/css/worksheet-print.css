@@ -1,64 +1,58 @@
 /* ARSHAVIN explicit A4 worksheet page contract.
-   Every .print-page is one authored sheet; Chromium must not paginate inside it. */
+   Every .print-page is one authored sheet; Chromium never paginates inside it. */
 @page{size:A4 portrait;margin:0}
-:root{--a4-page-width:210mm;--a4-page-height:297mm;--a4-safe-x:12mm;--a4-safe-y:9mm;--a4-header:18mm;--a4-footer:7mm;--a4-ink:#111;--a4-soft:#f6f6f6}
+:root{--a4-page-width:210mm;--a4-page-height:297mm;--a4-safe-x:11mm;--a4-safe-y:8mm;--a4-header:29mm;--a4-footer:7mm;--a4-ink:#111;--a4-soft:#f6f6f6}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#eceff1;color:var(--a4-ink);font-family:Arial,"Noto Sans Thai",Tahoma,sans-serif}
 .worksheet-print-note{display:none}
 .print-pack{margin:0;padding:12px 0}
 .print-page{position:relative;width:var(--a4-page-width);height:var(--a4-page-height);margin:0 auto 16px;padding:var(--a4-safe-y) var(--a4-safe-x);display:grid;grid-template-rows:var(--a4-header) minmax(0,1fr) var(--a4-footer);background:#fff;color:#111;box-shadow:0 2px 12px #0002;break-after:page;page-break-after:always;overflow:visible}
 .print-page:last-child{break-after:auto;page-break-after:auto}
-.print-page::before{content:"";position:absolute;inset:6mm;border:1.2pt solid #111;pointer-events:none}
-.print-page__header{position:relative;z-index:1;display:grid;align-content:start;gap:.5mm;padding:0 2mm 1mm;border-bottom:1.2pt solid #111;min-height:0}
-.print-page__kicker{margin:0;font-size:13pt;line-height:1.05;font-weight:700;letter-spacing:.02em}
-.print-page__title{margin:0;font-size:26pt;line-height:1.05;font-weight:800}
-.print-page__title .supporting-english,.print-page__title small,.print-page__title span{font-size:15pt;line-height:1.1;font-weight:600}
-.print-page__content{position:relative;z-index:1;min-height:0;padding:2mm 2mm 1.5mm;overflow:visible;font-size:22pt;line-height:1.3}
-.print-page__footer{position:relative;z-index:1;display:flex;align-items:end;justify-content:space-between;gap:4mm;padding:.5mm 2mm 0;border-top:1pt solid #555;font-size:11pt;line-height:1.05}
-.learner-meta{display:flex;flex-wrap:wrap;gap:2mm 7mm;margin:0 0 2mm;padding:1.5mm 2.5mm;border:1pt solid #777;font-size:15pt;line-height:1.15}
-.activity-block{position:relative;margin:0 0 2mm;padding:2.4mm;border:1.2pt solid #222;background:#fff;break-inside:avoid;page-break-inside:avoid;overflow:visible}
+.print-page::before{content:"";position:absolute;inset:5mm;border:1.2pt solid #111;pointer-events:none}
+.print-page__header{position:relative;z-index:1;display:grid;align-content:start;gap:.7mm;padding:0 2mm 1.5mm;border-bottom:1.2pt solid #111;min-height:0;overflow:visible}
+.print-page__kicker{margin:0;font-size:11pt;line-height:1.05;font-weight:700;letter-spacing:.02em}
+.print-page__title{display:grid;gap:.8mm;margin:0;font-size:21pt;line-height:1.08;font-weight:800}
+.print-page__title .supporting-english,.print-page__title small,.print-page__title span{display:block;font-size:13pt;line-height:1.12;font-weight:600}
+.print-page__content{position:relative;z-index:1;min-height:0;padding:2mm 2mm 1.5mm;overflow:visible;font-size:22pt;line-height:1.28}
+.print-page__footer{position:relative;z-index:1;display:flex;align-items:end;justify-content:space-between;gap:4mm;padding:.5mm 2mm 0;border-top:1pt solid #555;font-size:10.5pt;line-height:1.05}
+.learner-meta{display:flex;flex-wrap:wrap;gap:2mm 6mm;margin:0 0 2mm;padding:1.2mm 2mm;border:1pt solid #777;font-size:14pt;line-height:1.15}
+.activity-block{position:relative;margin:0 0 2mm;padding:2.2mm;border:1.2pt solid #222;background:#fff;break-inside:avoid;page-break-inside:avoid;overflow:visible}
 .activity-block:last-child{margin-bottom:0}
-.activity-block--minor{padding:2mm}
+.activity-block--minor{padding:1.8mm}
 .activity-block h1,.activity-block h2,.activity-block h3{break-after:avoid;page-break-after:avoid}
-.activity-block h1{font-size:25pt;line-height:1.08;margin:0 0 2mm}
-.activity-block h2{font-size:22pt;line-height:1.12;margin:0 0 2mm}
-.activity-block h3{font-size:20pt;line-height:1.15;margin:0 0 1.5mm}
-.activity-block p,.activity-block li,.activity-block td,.activity-block th,.activity-block label,.activity-block dd,.activity-block dt{font-size:22pt;line-height:1.3;overflow-wrap:anywhere;word-break:normal}
-.activity-block p{margin:0 0 1.8mm}
-.activity-block ul,.activity-block ol{margin:.5mm 0 1.5mm;padding-left:8mm}
-.activity-block li{margin:0 0 1mm}
-.supporting-english,.helper-text,.hint,.small,.activity-block small,.activity-block em{font-size:15pt!important;line-height:1.22!important}
-.continuation-label{display:inline-block;margin:0 0 1.5mm;padding:.7mm 1.5mm;border:1pt solid #555;font-size:15pt!important;font-weight:700;background:var(--a4-soft)}
-.table-card{display:grid;gap:2.5mm;margin-top:2mm}
-.table-card__field{min-height:22mm;padding:2.5mm;border:1.2pt solid #111;background:#fff}
-.table-card__field h3{margin:0 0 1.5mm;padding-bottom:1mm;border-bottom:1pt solid #777;font-size:18pt;line-height:1.15}
+.activity-block h1{font-size:24pt;line-height:1.08;margin:0 0 2mm}
+.activity-block h2{font-size:21pt;line-height:1.12;margin:0 0 1.8mm}
+.activity-block h3{font-size:19pt;line-height:1.15;margin:0 0 1.3mm}
+.activity-block p,.activity-block li,.activity-block td,.activity-block th,.activity-block label,.activity-block dd,.activity-block dt{font-size:22pt;line-height:1.28;overflow-wrap:anywhere;word-break:normal}
+.activity-block p{margin:0 0 1.6mm}
+.activity-block ul,.activity-block ol{margin:.5mm 0 1.4mm;padding-left:8mm}
+.activity-block li{margin:0 0 .8mm}
+.supporting-english,.helper-text,.hint,.small,.activity-block small,.activity-block em{font-size:14pt!important;line-height:1.2!important}
+.continuation-label{display:inline-block;margin:0 0 1.2mm;padding:.6mm 1.4mm;border:1pt solid #555;font-size:14pt!important;font-weight:700;background:var(--a4-soft)}
+.table-card{display:grid;gap:2mm;margin-top:1.5mm}
+.table-card--two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.table-card__field{min-height:20mm;padding:2mm;border:1.2pt solid #111;background:#fff}
+.table-card__field h3{margin:0 0 1.2mm;padding-bottom:.8mm;border-bottom:1pt solid #777;font-size:17pt;line-height:1.15}
 .table-card__field p:last-child{margin-bottom:0}
-table{width:100%;border-collapse:collapse;table-layout:fixed;margin:1mm 0 1.8mm}
-th,td{display:table-cell;border:1.2pt solid #111;padding:1.8mm;vertical-align:top;height:auto;min-height:12mm;font-size:20pt!important;line-height:1.2!important}
+table{width:100%;border-collapse:collapse;table-layout:fixed;margin:.8mm 0 1.5mm}
+th,td{display:table-cell;border:1.2pt solid #111;padding:1.5mm;vertical-align:top;height:auto;min-height:12mm;font-size:19pt!important;line-height:1.18!important}
 th{font-weight:800;background:#f2f2f2}
-td.lines,th.lines,td.line,th.line,td.write-line,th.write-line{display:table-cell!important;min-height:0!important;height:30mm!important;background:none!important;border:1.2pt solid #111!important;margin:0!important}
-td.tall,th.tall{display:table-cell!important;min-height:0!important;height:44mm!important}
-.write-line,.line{display:block;min-height:11mm;border-bottom:1.3pt solid #555;margin:1.2mm 0}
-.writing-lines,.worksheet-lines,.lines{display:block;min-height:34mm;background:repeating-linear-gradient(to bottom,#fff 0,#fff 10.2mm,#777 10.2mm,#777 10.5mm)}
-.writing-lines.large,.worksheet-lines.large,.lines.large{min-height:58mm}
-.writing-zone{display:block;min-height:55mm;margin-top:1.5mm;background:repeating-linear-gradient(to bottom,#fff 0,#fff 10.2mm,#777 10.2mm,#777 10.5mm)}
-.writing-zone--compact{min-height:35mm}
-.writing-zone--fill{min-height:100mm}
-.answer-box,.box,.evidence-box,.vocabulary-box{height:auto;min-height:20mm;margin:1.5mm 0 2mm;padding:2.5mm;border:1.2pt solid #111;background:#fff}
-.tall,.drawing-box,.drawing-zone{min-height:65mm}
+td.lines,th.lines,td.line,th.line,td.write-line,th.write-line{display:table-cell!important;min-height:0!important;height:27mm!important;background:none!important;border:1.2pt solid #111!important;margin:0!important}
+td.tall,th.tall{display:table-cell!important;min-height:0!important;height:40mm!important}
+.write-line,.line{display:block;min-height:11mm;border-bottom:1.3pt solid #555;margin:1mm 0}
+.writing-lines,.worksheet-lines,.lines{display:block;min-height:32mm;background:repeating-linear-gradient(to bottom,#fff 0,#fff 10.2mm,#777 10.2mm,#777 10.5mm)}
+.writing-lines.large,.worksheet-lines.large,.lines.large{min-height:56mm}
+.writing-zone{display:block;min-height:50mm;margin-top:1.2mm;background:repeating-linear-gradient(to bottom,#fff 0,#fff 10.2mm,#777 10.2mm,#777 10.5mm)}
+.writing-zone--compact{min-height:32mm}
+.writing-zone--medium{min-height:62mm}
+.writing-zone--fill{min-height:90mm}
+.answer-box,.box,.evidence-box,.vocabulary-box{height:auto;min-height:19mm;margin:1.2mm 0 1.8mm;padding:2.2mm;border:1.2pt solid #111;background:#fff}
+.tall,.drawing-box,.drawing-zone{min-height:60mm}
 .check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}
 input[type="checkbox"],input[type="radio"]{width:8mm;height:8mm}
 .intentional-space-note{font-size:14pt;line-height:1.2}
 .no-print,.site-header,nav,button,.button,[data-learning-shell],[data-progress-overview]{display:none!important}
 a{color:#111;text-decoration:none}
 img,svg,canvas{max-width:100%;height:auto}
-
-@media print{
-  html,body{width:210mm;background:#fff!important}
-  .print-pack{padding:0}
-  .print-page{margin:0;box-shadow:none}
-}
-
-@media screen{
-  .print-pack{overflow-x:auto}
-}
+@media print{html,body{width:210mm;background:#fff!important}.print-pack{padding:0}.print-page{margin:0;box-shadow:none}}
+@media screen{.print-pack{overflow-x:auto}}
