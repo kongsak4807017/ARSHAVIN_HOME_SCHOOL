@@ -92,7 +92,6 @@ new_table_function = r'''function splitTableBlock(html, baseId) {
         const writingClass = /\btall\b|drawing/.test(cellClass) ? 'drawing-zone' : 'writing-zone writing-zone--compact';
         return `<section class="table-card__field"><h3>${label}</h3>${cellHtml}${needsWriting ? `<div class="${writingClass}" aria-label="พื้นที่เขียน / Writing space"></div>` : ''}</section>`;
       }).join('');
-      const partNumber = pieces.length + 1;
       const firstPiece = rowIndex === 0 && groupIndex === 0;
       pieces.push({
         html: `<h2>${headingText}</h2><p class="continuation-label">แถว ${rowIndex + 1} · ส่วน ${groupIndex + 1}/${groups.length} / Row ${rowIndex + 1} · Part ${groupIndex + 1}/${groups.length}</p>${firstPiece ? intro.join('') : ''}<div class="table-card">${fields}</div>`,
@@ -110,7 +109,7 @@ new_table_function = r'''function splitTableBlock(html, baseId) {
 '''
 pattern = r"function splitTableBlock\(html, baseId\) \{[\s\S]*?\n\}\n\nfunction splitListBlock"
 if 'class="table-card__field"' not in source:
-    source, count = re.subn(pattern, new_table_function + 'function splitListBlock', source, count=1)
+    source, count = re.subn(pattern, lambda _: new_table_function + 'function splitListBlock', source, count=1)
     if count != 1:
         raise SystemExit('composer table splitter patch point missing')
 
