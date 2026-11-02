@@ -37,7 +37,7 @@ export async function measurePack(page, record) {
         const occupancy = contentRect && blocks.length ? (usedBottom - usedTop) / contentRect.height : 0;
         const intentionalSpace = element.dataset.intentionalSpace === 'true';
         const microSequence = element.dataset.microSequence === 'true';
-        const hasWritingRegion = Boolean(content?.querySelector('.writing-zone,.drawing-zone,.drawing-box,.writing-lines,.worksheet-lines,.lines,.tall'));
+        const hasWritingRegion = Boolean(content?.querySelector('.writing-zone,.drawing-zone,.drawing-box,.writing-lines,.worksheet-lines,.lines,.line,.write-line,.tall'));
         const errors = [];
         const pageNumber = Number(element.dataset.page);
         const declaredPageCount = Number(element.dataset.pageCount);
@@ -47,6 +47,8 @@ export async function measurePack(page, record) {
         if (pageNumber !== index + 1) errors.push(`data-page ${pageNumber} expected ${index + 1}`);
         if (declaredPageCount !== pages.length) errors.push(`data-page-count ${declaredPageCount} expected ${pages.length}`);
         if (!contentRect || !headerRect || !footerRect) errors.push('missing header/content/footer geometry');
+        if (header && header.scrollHeight > header.clientHeight + 2) errors.push(`header overflow ${header.scrollHeight - header.clientHeight}px`);
+        if (footer && footer.scrollHeight > footer.clientHeight + 2) errors.push(`footer overflow ${footer.scrollHeight - footer.clientHeight}px`);
 
         if (contentRect) {
           const overflow = Math.max(0, content.scrollHeight - content.clientHeight);
@@ -56,9 +58,7 @@ export async function measurePack(page, record) {
                 block.left < contentRect.left - 1 || block.right > contentRect.right + 1) {
               errors.push(`block ${block.id || '(missing id)'} outside content rectangle`);
             }
-            if (footerRect && block.bottom > footerRect.top - 1) {
-              errors.push(`block ${block.id || '(missing id)'} intersects footer`);
-            }
+            if (footerRect && block.bottom > footerRect.top - 1) errors.push(`block ${block.id || '(missing id)'} intersects footer`);
           }
         }
 
@@ -81,6 +81,7 @@ export async function measurePack(page, record) {
           microSequence,
           majorCount,
           minorCount,
+          hasWritingRegion,
           blocks,
           errors
         };

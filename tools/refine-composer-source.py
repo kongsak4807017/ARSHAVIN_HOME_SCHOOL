@@ -4,6 +4,16 @@ import re
 path = Path('tools/compose-explicit-a4-pages.mjs')
 source = path.read_text(encoding='utf-8')
 
+# Treat a direct .meta block as learner metadata, never as its own activity page.
+source = source.replace(
+    "function worksheetMeta($, worksheet) {\n  const header = worksheet.children('header').first();",
+    "function worksheetMeta($, worksheet) {\n  const directMeta = worksheet.children('.meta').first();\n  if (directMeta.length) return directMeta.html() || '';\n  const header = worksheet.children('header').first();"
+)
+source = source.replace(
+    "if (tag === 'header' || tag === 'h1') continue;\n    if (!skippedMeta",
+    "if (tag === 'header' || tag === 'h1') continue;\n    if (/\\bmeta\\b/.test(classes)) { skippedMeta = true; continue; }\n    if (!skippedMeta"
+)
+
 hybrid_table = r'''function splitTable(html, baseId) {
   const $ = load(`<div id="table-root">${html}</div>`, { decodeEntities: false });
   const rootNode = $('#table-root');
@@ -35,76 +45,72 @@ hybrid_table = r'''function splitTable(html, baseId) {
       const text = node.text().replace(/\s+/g, ' ').trim();
       const classes = node.attr('class') || '';
       const writing = !text || /\b(?:lines?|write-line|tall|writing-zone|drawing-zone|drawing-box)\b/.test(classes);
-      const tall = /\btall\b|drawing/.test(classes);
       return {
         label: labels[cellIndex] || `ช่อง ${cellIndex + 1} / Field ${cellIndex + 1}`,
         html: node.html()?.trim() || '',
         text,
         writing,
-        tall
+        tall: /\btall\b|drawing/.test(classes)
       };
     });
     const textLength = values.reduce((sum, value) => sum + value.text.length, 0);
     const writingCount = values.filter(value => value.writing).length;
     const columnCount = Math.max(1, values.length);
-    const weight = textLength / 125 + columnCount * 0.9 + writingCount * 2.2;
-    const oversized = weight > 36 || values.some(value => value.text.length > 900);
+    const weight = textLength / 115 + columnCount + writingCount * 2.5;
+    const oversized = weight > 46 || values.some(value => value.text.length > 1200);
     return { row, rowIndex, values, textLength, writingCount, columnCount, weight, oversized };
   }
 
-  const models = rows.map(rowModel);
   const descriptors = [];
   let tableChunk = [];
   let chunkWeight = 0;
-
-  function flushTableChunk() {
+  const flush = () => {
     if (!tableChunk.length) return;
-    descriptors.push({ type: 'table', rows: tableChunk, weight: chunkWeight });
+    descriptors.push({ type: 'table', rows: tableChunk });
     tableChunk = [];
     chunkWeight = 0;
-  }
+  };
 
-  for (const model of models) {
+  for (const model of rows.map(rowModel)) {
     if (model.oversized) {
-      flushTableChunk();
-      let cursor = 0;
-      while (cursor < model.values.length) {
+      flush();
+      for (let cursor = 0; cursor < model.values.length;) {
         const first = model.values[cursor];
-        const take = first.text.length > 650 || first.tall ? 1 : Math.min(2, model.values.length - cursor);
+        const take = first.text.length > 700 || first.tall ? 1 : Math.min(2, model.values.length - cursor);
         descriptors.push({ type: 'fields', row: model, fields: model.values.slice(cursor, cursor + take) });
         cursor += take;
       }
       continue;
     }
 
-    const maxRows = model.columnCount >= 5 ? 1 : model.columnCount === 4 ? 2 : model.columnCount === 3 ? 3 : 4;
-    const maxWeight = model.columnCount >= 4 ? 22 : 28;
-    if (tableChunk.length && (tableChunk.length >= maxRows || chunkWeight + model.weight > maxWeight)) flushTableChunk();
+    const maxRows = model.columnCount >= 3 ? 1 : 2;
+    const maxWeight = 14;
+    if (tableChunk.length && (tableChunk.length >= maxRows || chunkWeight + model.weight > maxWeight)) flush();
     tableChunk.push(model);
     chunkWeight += model.weight;
   }
-  flushTableChunk();
+  flush();
 
   return descriptors.map((descriptor, index) => {
     const part = index + 1;
     let body;
-    let idSuffix;
+    let suffix;
     if (descriptor.type === 'table') {
       body = `<table>${headerHtml}<tbody>${descriptor.rows.map(model => $.html(model.row)).join('')}</tbody></table>`;
-      idSuffix = `rows-${descriptor.rows[0].rowIndex + 1}-${descriptor.rows.at(-1).rowIndex + 1}`;
+      suffix = `rows-${descriptor.rows[0].rowIndex + 1}-${descriptor.rows.at(-1).rowIndex + 1}`;
     } else {
-      const twoColumns = descriptor.fields.length === 2 ? ' table-card--two' : '';
-      body = `<div class="table-card${twoColumns}">${descriptor.fields.map(field => {
-        const hasExistingWriting = /\b(?:lines?|write-line|tall|writing-zone|drawing-zone|drawing-box)\b/.test(field.html);
-        const zone = field.writing && !hasExistingWriting
+      const two = descriptor.fields.length === 2 ? ' table-card--two' : '';
+      body = `<div class="table-card${two}">${descriptor.fields.map(field => {
+        const existingWriting = /\b(?:lines?|write-line|tall|writing-zone|drawing-zone|drawing-box)\b/.test(field.html);
+        const zone = field.writing && !existingWriting
           ? `<div class="${field.tall ? 'drawing-zone' : 'writing-zone writing-zone--compact'}" aria-label="พื้นที่เขียน / Writing space"></div>`
           : '';
         return `<section class="table-card__field"><h3>${field.label}</h3>${field.html}${zone}</section>`;
       }).join('')}</div>`;
-      idSuffix = `row-${descriptor.row.rowIndex + 1}-fields-${descriptor.row.values.indexOf(descriptor.fields[0]) + 1}`;
+      suffix = `row-${descriptor.row.rowIndex + 1}-fields-${descriptor.row.values.indexOf(descriptor.fields[0]) + 1}`;
     }
     return {
-      id: `${baseId}-${idSuffix}`,
+      id: `${baseId}-${suffix}`,
       html: `${info.element}<p class="continuation-label">Part ${part}/${descriptors.length} · ส่วน ${part}/${descriptors.length}</p>${part === 1 ? intro.join('') : ''}${body}`,
       major: true,
       splitFrom: baseId,
@@ -119,17 +125,18 @@ source, count = re.subn(pattern, lambda _: hybrid_table + 'function splitList', 
 if count != 1:
     raise SystemExit('composer splitTable function not found')
 
-source = source.replace('for (let index = 0; index < items.length; index += 3)', 'for (let index = 0; index < items.length; index += 4)')
-source = source.replace('Math.ceil(items.length / 3)', 'Math.ceil(items.length / 4)')
-source = source.replace('items.slice(index, index + 3)', 'items.slice(index, index + 4)')
-source = source.replace('score + childScore > 11', 'score + childScore > 9')
-source = source.replace('if (text.length < 720)', 'if (text.length < 520)')
-source = source.replace('length + word.length + 1 > 330', 'length + word.length + 1 > 270')
-source = source.replace('if (data.score > 17)', 'if (data.score > 13)')
-source = source.replace('data.score > 15 || data.textLength > 760', 'data.score > 18 || data.textLength > 900')
+source = source.replace('if (items.length <= 4) return null;', 'if (items.length <= 2) return null;')
+source = source.replace('index += 3', 'index += 2')
+source = source.replace('Math.ceil(items.length / 3)', 'Math.ceil(items.length / 2)')
+source = source.replace('items.slice(index, index + 3)', 'items.slice(index, index + 2)')
+source = source.replace('score + childScore > 11', 'score + childScore > 7')
+source = source.replace('if (text.length < 720)', 'if (text.length < 360)')
+source = source.replace('length + word.length + 1 > 330', 'length + word.length + 1 > 220')
+source = source.replace('if (data.score > 17)', 'if (data.score > 7)')
+source = source.replace('data.score > 15 || data.textLength > 760', 'data.score > 20 || data.textLength > 1000')
 source = source.replace('pageMetrics.score < 12', 'pageMetrics.score < 20')
 source = source.replace("pageMetrics.score < 6 ? 'writing-zone--fill' : 'writing-zone--compact'", "pageMetrics.score < 10 ? 'writing-zone--fill' : 'writing-zone--compact'")
-source = source.replace('metrics(current.html).score + metrics(next.html).score <= 13', 'metrics(current.html).score + metrics(next.html).score <= 24')
+source = source.replace('metrics(current.html).score + metrics(next.html).score <= 13', 'metrics(current.html).score + metrics(next.html).score <= 22')
 
 path.write_text(source, encoding='utf-8')
-print('hybrid A4 packing refinements applied')
+print('A4 packing v3 refinements applied')
