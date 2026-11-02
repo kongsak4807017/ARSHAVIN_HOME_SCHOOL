@@ -1,0 +1,95 @@
+name: Generate explicit A4 worksheets
+
+on:
+  push:
+    branches: [feat/explicit-a4-page-composer]
+
+permissions:
+  contents: write
+
+jobs:
+  compose:
+    if: ${{ !contains(github.event.head_commit.message, '[a4-generated]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/explicit-a4-page-composer
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked print tooling
+        run: npm install
+      - name: Install Chromium and Linux dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Apply approved composer corrections
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tools/compose-explicit-a4-pages.mjs')
+          s=p.read_text()
+          s=s.replace("$root.find('*').each((_, element) => {\n    const $el = $root(element);", "$root('*').each((_, element) => {\n    const $el = $root(element);")
+          old="""  const metrics = blockMetrics(html);
+          if (metrics.score > 18) {
+            const split ="""
+          new="""  const metrics = blockMetrics(html);
+          const protectedHb11 = record.id === 'HB-11' && [
+            'hb11-stop-framework',
+            'hb11-fictional-scenarios',
+            'hb11-consent-checklist',
+            'hb11-trusted-adult-map',
+            'hb11-help-seeking-script',
+            'hb11-help-not-happened',
+            'hb11-privacy-filter'
+          ].includes(uniqueId);
+          if (!protectedHb11 && metrics.score > 18) {
+            const split ="""
+          if old not in s:
+            raise SystemExit('composer metrics patch point missing')
+          s=s.replace(old,new)
+          p.write_text(s)
+          PY
+      - name: Compose explicit source pages
+        run: npm run a4:compose
+      - name: Verify explicit source and HB-11 contracts
+        run: |
+          node tests/explicit-a4-source-static-checks.mjs
+          node tests/hb11-explicit-a4-regression.mjs
+      - name: Run DOM geometry preflight
+        run: npm run a4:preflight
+      - name: Generate and validate all PDFs
+        run: |
+          npm run print:generate
+          npm run print:validate
+          npm run print:bundles
+      - name: Render every PDF page and contact sheets
+        run: |
+          npm run print:previews
+          npm run print:contact-sheets
+      - name: Upload all-page visual QA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: explicit-a4-visual-qa
+          path: |
+            qa/a4-layout-report.json
+            qa/a4-preview-index.json
+            qa/a4-previews/**/*.png
+            qa/a4-contact-sheets/**/*.png
+            qa/a4-contact-sheets/index.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Commit composed sources and validated PDFs
+        shell: bash
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add package-lock.json tools/compose-explicit-a4-pages.mjs assets/css/worksheet-print.css worksheets/student worksheets/print worksheets/print-bundles qa/a4-layout-report.json qa/a4-preview-index.json qa/a4-contact-sheets/index.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes'
+          else
+            git commit -m 'feat: compose and validate explicit A4 pages [a4-generated]'
+            git push origin HEAD:feat/explicit-a4-page-composer
+          fi
