@@ -25,7 +25,7 @@ jobs:
   compose:
     if: ${{ github.event_name == 'pull_request' || !contains(github.event.head_commit.message, '[a4-generated]') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,34 +38,36 @@ jobs:
         run: npm install
       - name: Install Chromium and Linux dependencies
         run: npx playwright install --with-deps chromium
-      - name: Apply explicit A4 packing refinements
+      - name: Apply explicit A4 source and CSS refinements
         run: |
           python tools/refine-composer-source.py
           python tools/refine-a4-css.py
       - name: Compose explicit source pages
         run: npm run a4:compose
-      - name: Verify explicit source and HB-11 contracts
+      - name: Verify source schema and HB-11 regression
         run: |
           node tests/explicit-a4-source-static-checks.mjs
           node tests/hb11-explicit-a4-regression.mjs
-      - name: Run DOM geometry preflight
-        id: preflight
+      - name: Measure layout pass 1
+        id: preflight1
         continue-on-error: true
         run: npm run a4:preflight
-      - name: Upload preflight diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: explicit-a4-preflight-diagnostics
-          path: |
-            qa/a4-layout-report.json
-            worksheets/student/*.html
-            tools/compose-explicit-a4-pages.mjs
-          if-no-files-found: error
-          retention-days: 5
-      - name: Enforce DOM preflight
-        if: steps.preflight.outcome != 'success'
-        run: exit 1
+      - name: Repair measured layout pass 1
+        if: steps.preflight1.outcome != 'success'
+        run: npm run a4:repair
+      - name: Measure layout pass 2
+        id: preflight2
+        continue-on-error: true
+        run: npm run a4:preflight
+      - name: Repair measured layout pass 2
+        if: steps.preflight2.outcome != 'success'
+        run: npm run a4:repair
+      - name: Enforce final DOM geometry preflight
+        run: npm run a4:preflight
+      - name: Re-verify explicit source after repairs
+        run: |
+          node tests/explicit-a4-source-static-checks.mjs
+          node tests/hb11-explicit-a4-regression.mjs
       - name: Generate and validate all PDFs
         run: |
           npm run print:generate
@@ -75,7 +77,8 @@ jobs:
         run: |
           npm run print:previews
           npm run print:contact-sheets
-      - name: Upload all-page visual QA artifact
+      - name: Upload layout diagnostics and all-page visual QA
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: explicit-a4-visual-qa
@@ -85,10 +88,11 @@ jobs:
             qa/a4-previews/**/*.png
             qa/a4-contact-sheets/**/*.png
             qa/a4-contact-sheets/index.json
-          if-no-files-found: error
+            worksheets/student/*.html
+          if-no-files-found: warn
           retention-days: 14
       - name: Commit composed sources and validated PDFs
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && success()
         shell: bash
         run: |
           git config user.name github-actions[bot]
