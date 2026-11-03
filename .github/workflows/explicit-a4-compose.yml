@@ -62,6 +62,8 @@ jobs:
             echo "Final A4 geometry enforcement"
             npm run a4:preflight
           fi
+      - name: Verify useful intentional writing space
+        run: node tests/a4-intentional-space-regression.mjs
       - name: Re-verify explicit source after repairs
         run: |
           node tests/a4-table-split-regression.mjs
