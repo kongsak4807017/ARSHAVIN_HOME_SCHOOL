@@ -28,6 +28,8 @@ jobs:
         run: npm install
       - name: Install Chromium and Linux dependencies
         run: npx playwright install --with-deps chromium
+      - name: Install Poppler PDF renderer
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - name: Apply explicit A4 source and CSS refinements
         run: |
           python tools/refine-composer-source.py
@@ -41,6 +43,7 @@ jobs:
         run: |
           node tests/a4-table-split-regression.mjs
           node tests/a4-inline-answer-line-regression.mjs
+          node tests/pdf-preview-path2d-regression.mjs
           node tests/explicit-a4-source-static-checks.mjs
           node tests/hb11-explicit-a4-regression.mjs
       - name: Converge DOM geometry
@@ -63,6 +66,7 @@ jobs:
         run: |
           node tests/a4-table-split-regression.mjs
           node tests/a4-inline-answer-line-regression.mjs
+          node tests/pdf-preview-path2d-regression.mjs
           node tests/explicit-a4-source-static-checks.mjs
           node tests/hb11-explicit-a4-regression.mjs
           if grep -R -n -E '_{8,}' worksheets/student/*.html; then
