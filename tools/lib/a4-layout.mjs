@@ -81,7 +81,7 @@ export async function measurePack(page, record) {
           for (const region of writingRegions) {
             if (region.left < contentRect.left - 1 || region.right > contentRect.right + 1 ||
                 region.top < contentRect.top - 1 || region.bottom > contentRect.bottom + 1) {
-              errors.push(`writing region outside content rectangle`);
+              errors.push('writing region outside content rectangle');
             }
           }
         }
@@ -90,10 +90,14 @@ export async function measurePack(page, record) {
         if (majorCount > 1) errors.push(`${majorCount} major activities`);
         if (!microSequence && blocks.length > 2) errors.push(`${blocks.length} activity blocks`);
         if (microSequence && majorCount > 0) errors.push('micro sequence contains major activity');
-        if (occupancy < 0.35 && !intentionalSpace) errors.push(`low occupancy ${(occupancy * 100).toFixed(1)}%`);
-        if (intentionalSpace && !hasWritingRegion) errors.push('intentional-space page lacks writing/drawing region');
-        if (intentionalSpace && occupancy < 0.35 && largestWritingRegionRatio < minWritingRatio) {
-          errors.push(`intentional writing region uses ${(largestWritingRegionRatio * 100).toFixed(1)}%, expected at least ${(minWritingRatio * 100).toFixed(0)}% of content height`);
+        if (occupancy < 0.35) {
+          if (!intentionalSpace) {
+            errors.push(`low occupancy ${(occupancy * 100).toFixed(1)}%`);
+          } else if (!hasWritingRegion) {
+            errors.push('sparse intentional-space page lacks writing/drawing region');
+          } else if (largestWritingRegionRatio < minWritingRatio) {
+            errors.push(`intentional writing region uses ${(largestWritingRegionRatio * 100).toFixed(1)}%, expected at least ${(minWritingRatio * 100).toFixed(0)}% of content height`);
+          }
         }
 
         return {
