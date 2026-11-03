@@ -16,7 +16,7 @@ permissions:
 jobs:
   source-contract:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,6 +24,8 @@ jobs:
           node-version: '22'
       - name: Install locked tooling
         run: npm install
+      - name: Install Poppler renderer
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - name: Nested table split regression
         run: node tests/a4-table-split-regression.mjs
       - name: Inline answer line regression
