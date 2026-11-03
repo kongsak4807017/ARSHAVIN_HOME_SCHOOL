@@ -45,6 +45,7 @@ jobs:
         run: |
           node tests/a4-table-split-regression.mjs
           node tests/a4-compact-table-regression.mjs
+          node tests/a4-row-table-compaction-regression.mjs
           node tests/a4-inline-answer-line-regression.mjs
           node tests/pdf-preview-path2d-regression.mjs
           node tests/explicit-a4-source-static-checks.mjs
@@ -71,6 +72,7 @@ jobs:
         run: |
           node tests/a4-table-split-regression.mjs
           node tests/a4-compact-table-regression.mjs
+          node tests/a4-row-table-compaction-regression.mjs
           node tests/a4-inline-answer-line-regression.mjs
           node tests/pdf-preview-path2d-regression.mjs
           node tests/explicit-a4-source-static-checks.mjs
