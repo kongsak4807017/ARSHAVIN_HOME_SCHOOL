@@ -52,6 +52,27 @@ td.tall,th.tall{display:table-cell!important;min-height:0!important;height:40mm!
 span.check,i.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}
 input[type="checkbox"],input[type="radio"]{width:8mm;height:8mm}
 .intentional-space-note{font-size:14pt;line-height:1.2}
+
+/* Intentional writing pages must use the paper, not merely carry a small
+   answer line at the top. The final activity and its final writing region
+   expand through the remaining A4 content zone. */
+.print-page[data-intentional-space="true"] .print-page__content{display:flex;flex-direction:column}
+.print-page[data-intentional-space="true"] .learner-meta{flex:0 0 auto}
+.print-page[data-intentional-space="true"] .activity-block:last-child{display:flex;flex:1 1 auto;min-height:0;flex-direction:column}
+.print-page[data-intentional-space="true"] .activity-block:last-child .table-card:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .table-card__field:last-child{display:flex;flex:1 1 auto;min-height:0;flex-direction:column}
+.print-page[data-intentional-space="true"] .activity-block:last-child .writing-zone:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .drawing-zone:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .drawing-box:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .writing-lines:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .worksheet-lines:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .lines:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .line:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .write-line:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .answer-box:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .evidence-box:last-child,
+.print-page[data-intentional-space="true"] .activity-block:last-child .box:empty:last-child{flex:1 1 auto;min-height:35%;height:auto}
+
 .no-print,.site-header,nav,button,.button,[data-learning-shell],[data-progress-overview]{display:none!important}
 a{color:#111;text-decoration:none}
 img,svg,canvas{max-width:100%;height:auto}
