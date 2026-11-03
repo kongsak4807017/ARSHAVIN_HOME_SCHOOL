@@ -49,7 +49,7 @@ td.tall,th.tall{display:table-cell!important;min-height:0!important;height:40mm!
 .writing-zone--fill{min-height:90mm}
 .answer-box,.box,.evidence-box,.vocabulary-box{height:auto;min-height:19mm;margin:1.2mm 0 1.8mm;padding:2.2mm;border:1.2pt solid #111;background:#fff}
 .tall,.drawing-box,.drawing-zone{min-height:60mm}
-.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}
+span.check,i.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}
 input[type="checkbox"],input[type="radio"]{width:8mm;height:8mm}
 .intentional-space-note{font-size:14pt;line-height:1.2}
 .no-print,.site-header,nav,button,.button,[data-learning-shell],[data-progress-overview]{display:none!important}
@@ -57,3 +57,4 @@ a{color:#111;text-decoration:none}
 img,svg,canvas{max-width:100%;height:auto}
 @media print{html,body{width:210mm;background:#fff!important}.print-pack{padding:0}.print-page{margin:0;box-shadow:none}}
 @media screen{.print-pack{overflow-x:auto}}
+.activity-block .checklist-text{display:block;width:auto;height:auto;margin:0 0 2mm;border:0;font-size:22pt;line-height:1.3}

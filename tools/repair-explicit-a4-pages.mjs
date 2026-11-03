@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'cheerio';
+import { analyzeTableGroup } from './lib/table-split-model.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'data/grade4-print-resources.json'), 'utf8'));
@@ -75,51 +76,44 @@ function wrapSplitBlock($, $block, id, innerHtml, part, total, splitFrom) {
 }
 
 function splitTable($, $page, $block) {
-  const $table = $block.find('table').first();
-  if (!$table.length) return false;
-  let rows = $table.find('tbody > tr').toArray();
-  const $headerRow = $table.find('thead tr').first();
-  if (!rows.length) {
-    const all = $table.find('tr').toArray();
-    rows = all.filter(row => row !== $headerRow[0]);
-  }
-  if (!rows.length) return false;
+  const model = analyzeTableGroup($block.prop('outerHTML') || '');
+  if (!model || !model.rows.length) return false;
 
   const originalId = blockId($block, 'activity');
   const splitFrom = $block.attr('data-split-from') || originalId;
-  const $heading = $block.children('h1,h2,h3').first().clone();
-  const intro = $block.children().filter((_, element) => {
-    const tag = String(element.tagName || '').toLowerCase();
-    return element !== $table[0] && element !== $heading[0] && !$(element).hasClass('continuation-label');
-  }).toArray().map(element => $.html(element));
-  const headerHtml = $table.find('thead').first().prop('outerHTML') || '';
-  const labels = $headerRow.children('th,td').map((index, cell) => $(cell).text().replace(/\s+/g, ' ').trim() || `ช่อง ${index + 1}`).get();
+  const headingHtml = $block.children('h1,h2,h3').first().prop('outerHTML') || '<h2>กิจกรรม / Activity</h2>';
   const pieces = [];
-
-  if (rows.length > 1) {
-    rows.forEach((row, index) => {
-      const inner = `${$heading.prop('outerHTML') || ''}${index === 0 ? intro.join('') : ''}<table>${headerHtml}<tbody>${$.html(row)}</tbody></table>`;
-      pieces.push({ id: `${originalId}-repair-row-${index + 1}`, inner });
-    });
-  } else {
-    const cells = $(rows[0]).children('th,td').toArray();
-    const groups = [];
-    for (let index = 0; index < cells.length; index += 2) groups.push(cells.slice(index, index + 2));
-    groups.forEach((group, groupIndex) => {
-      const fields = group.map(cell => {
-        const index = cells.indexOf(cell);
-        const $cell = $(cell);
-        const classes = $cell.attr('class') || '';
-        const text = $cell.text().replace(/\s+/g, ' ').trim();
-        const needsWriting = !text || /\b(?:lines?|write-line|tall|drawing|writing-zone)\b/.test(classes);
-        const zone = needsWriting && !$cell.find(WRITING_SELECTOR).length
-          ? '<div class="writing-zone writing-zone--medium" aria-label="พื้นที่เขียน / Writing space"></div>' : '';
-        return `<section class="table-card__field"><h3>${labels[index] || `ช่อง ${index + 1}`}</h3>${$cell.html() || ''}${zone}</section>`;
-      }).join('');
-      const inner = `${$heading.prop('outerHTML') || ''}${groupIndex === 0 ? intro.join('') : ''}<div class="table-card${group.length === 2 ? ' table-card--two' : ''}">${fields}</div>`;
-      pieces.push({ id: `${originalId}-repair-fields-${groupIndex + 1}`, inner });
-    });
+  if (model.introIsMajor) {
+    pieces.push({ id: `${originalId}-repair-intro`, inner: `${headingHtml}${model.introHtml}` });
   }
+
+  model.rows.forEach((row, rowIndex) => {
+    const $row = load(`<table><tbody>${row.html}</tbody></table>`, { decodeEntities: false });
+    const cells = $row('tr').first().children('th,td').toArray();
+    const textLength = cells.reduce((sum, cell) => sum + $row(cell).text().replace(/\s+/g, ' ').trim().length, 0);
+    const splitFields = textLength > 420 || cells.some(cell => /\b(?:tall|drawing-zone|drawing-box)\b/.test($row(cell).attr('class') || ''));
+
+    if (!splitFields) {
+      pieces.push({
+        id: `${originalId}-repair-row-${rowIndex + 1}`,
+        inner: `${headingHtml}${!model.introIsMajor && rowIndex === 0 ? model.introHtml : ''}<table>${model.headerHtml}<tbody>${row.html}</tbody></table>`
+      });
+      return;
+    }
+
+    cells.forEach((cell, cellIndex) => {
+      const node = $row(cell);
+      const text = node.text().replace(/\s+/g, ' ').trim();
+      const classes = node.attr('class') || '';
+      const needsWriting = !text || /\b(?:lines?|write-line|tall|drawing|writing-zone)\b/.test(classes);
+      const zone = needsWriting && !node.find(WRITING_SELECTOR).length
+        ? '<div class="writing-zone writing-zone--medium" aria-label="พื้นที่เขียน / Writing space"></div>' : '';
+      pieces.push({
+        id: `${originalId}-repair-row-${rowIndex + 1}-field-${cellIndex + 1}`,
+        inner: `${headingHtml}${!model.introIsMajor && rowIndex === 0 && cellIndex === 0 ? model.introHtml : ''}<section class="table-card__field"><h3>${model.labels[cellIndex] || `ช่อง ${cellIndex + 1} / Field ${cellIndex + 1}`}</h3>${node.html() || ''}${zone}</section>`
+      });
+    });
+  });
 
   const metaHtml = $page.find('.learner-meta').first().prop('outerHTML') || '';
   pieces.forEach((piece, index) => {

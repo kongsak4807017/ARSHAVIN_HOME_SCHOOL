@@ -1,4 +1,292 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI-07 Worksheets</title><style>@page{size:A4 portrait;margin:12mm}*{box-sizing:border-box}body{font-family:system-ui,sans-serif;margin:0;color:#111}.worksheet{min-height:270mm;page-break-after:always;border:2px solid #222;padding:10mm}.worksheet:last-child{page-break-after:auto}h1{font-size:22px}h2{font-size:17px}.box{border:1px solid #333;min-height:34mm;padding:6px;margin:6px 0}table{width:100%;border-collapse:collapse}th,td{border:1px solid #333;padding:6px;text-align:left}.line{border-bottom:1px solid #555;height:24px}.note{font-size:12px}</style><link rel="stylesheet" href="../../assets/css/worksheet-print.css">
-</head><body>
-<section class="worksheet"><h1>AI-07 ใบงาน 1: Input–Process–Output Detective</h1><p><strong>สถานการณ์สมมติ:</strong> ระบบช่วยเตือนการรดน้ำต้นไม้ ไม่ควบคุมอุปกรณ์จริง</p><h2>1. เติมเส้นทางระบบ</h2><table><tr><th>Input / ข้อมูลเข้า</th><th>Process / กฎ</th><th>Output / ผลลัพธ์</th></tr><tr><td class="box"></td><td class="box"></td><td class="box"></td></tr></table><h2>2. ข้อจำกัดของเซนเซอร์</h2><p>เซนเซอร์อาจอ่านผิดเมื่อ...</p><div class="line"></div><div class="line"></div><p>หลักฐานที่ควรตรวจซ้ำคือ...</p><div class="line"></div><h2>3. กรณีข้อมูลขัดแย้ง</h2><p>เขียนลำดับ SAFE: Sense → Assess → Fail safely → Escalate</p><div class="box"></div><h2>4. ข้อจำกัดของแบบจำลอง</h2><p>สิ่งที่ใบงานนี้อธิบายได้:</p><div class="line"></div><p>สิ่งที่ใบงานนี้รับรองไม่ได้:</p><div class="line"></div><p class="note">ห้ามต่อปั๊ม วงจรไฟบ้าน หรือใช้น้ำใกล้อุปกรณ์ไฟฟ้าในกิจกรรมนี้</p></section>
-<section class="worksheet"><h1>AI-07 ใบงาน 2: Fail-Safe System Design Lab</h1><h2>1. เป้าหมายและขอบเขต</h2><p>งานสมมติของระบบ:</p><div class="line"></div><p>ข้อมูลที่ระบบต้องใช้:</p><div class="line"></div><p>ข้อมูลที่ห้ามใช้ เช่น ชื่อ ภาพ เสียง ตำแหน่ง หรือข้อมูลเด็ก:</p><div class="line"></div><h2>2. ตารางความเสี่ยง</h2><table><tr><th>เหตุการณ์</th><th>ความเสี่ยง</th><th>Stop rule</th><th>ผู้ใหญ่ที่รับผิดชอบ</th></tr><tr><td>ข้อมูลหาย</td><td></td><td></td><td></td></tr><tr><td>ข้อมูลขัดแย้ง</td><td></td><td></td><td></td></tr><tr><td>อุปกรณ์ผิดปกติ</td><td></td><td></td><td></td></tr></table><h2>3. อธิบายผลลัพธ์</h2><p>ข้อความที่ระบบควรแสดงเมื่อหยุด:</p><div class="box"></div><h2>4. ตรวจความรับผิดชอบ</h2><p>☐ ผู้ใช้เห็นข้อมูลและกฎที่ใช้ ☐ ระบบหยุดได้ ☐ มีมนุษย์ตรวจสอบ ☐ ไม่ติดตามเด็ก ☐ ไม่มีอุปกรณ์จริง</p><h2>5. การปรับปรุง</h2><div class="box"></div><p class="note">แบบจำลองนี้ไม่ใช่แบบก่อสร้าง ระบบไฟฟ้า หรือคำรับรองความปลอดภัยของอุปกรณ์จริง</p></section></body></html>
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-07 Worksheets</title>
+<link rel="stylesheet" href="../../assets/css/worksheet-print.css">
+</head>
+<body class="worksheet-document">
+<main class="print-pack" data-lesson-id="AI-07">
+<section class="print-page" data-page="1" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-กิจกรรม-activity"><p><strong>สถานการณ์สมมติ:</strong> ระบบช่วยเตือนการรดน้ำต้นไม้ ไม่ควบคุมอุปกรณ์จริง</p><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 1/25 · Page 1/25</span></footer>
+</section>
+<section class="print-page" data-page="2" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-1-เติมเส้นทางระบบ-row-1-fields-1" data-split-from="ai-07-1-เติมเส้นทางระบบ" data-repeat-heading="true"><h2>1. เติมเส้นทางระบบ</h2><p class="continuation-label">Part 1/3 · ส่วน 1/3</p><div class="table-card"><section class="table-card__field"><h3>Input / ข้อมูลเข้า</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 2/25 · Page 2/25</span></footer>
+</section>
+<section class="print-page" data-page="3" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-1-เติมเส้นทางระบบ-row-1-fields-2" data-split-from="ai-07-1-เติมเส้นทางระบบ" data-repeat-heading="true"><h2>1. เติมเส้นทางระบบ</h2><p class="continuation-label">Part 2/3 · ส่วน 2/3</p><div class="table-card"><section class="table-card__field"><h3>Process / กฎ</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 3/25 · Page 3/25</span></footer>
+</section>
+<section class="print-page" data-page="4" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-1-เติมเส้นทางระบบ-row-1-fields-3" data-split-from="ai-07-1-เติมเส้นทางระบบ" data-repeat-heading="true"><h2>1. เติมเส้นทางระบบ</h2><p class="continuation-label">Part 3/3 · ส่วน 3/3</p><div class="table-card"><section class="table-card__field"><h3>Output / ผลลัพธ์</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 4/25 · Page 4/25</span></footer>
+</section>
+<section class="print-page" data-page="5" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ข้อจํากัดของเซนเซอร์-part-1" data-split-from="ai-07-2-ข้อจํากัดของเซนเซอร์" data-repeat-heading="true"><h2>2. ข้อจำกัดของเซนเซอร์</h2><p class="continuation-label">Part 1/3</p><p>เซนเซอร์อาจอ่านผิดเมื่อ...</p><div class="line"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 5/25 · Page 5/25</span></footer>
+</section>
+<section class="print-page" data-page="6" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ข้อจํากัดของเซนเซอร์-part-2" data-split-from="ai-07-2-ข้อจํากัดของเซนเซอร์" data-repeat-heading="true"><h2>2. ข้อจำกัดของเซนเซอร์</h2><p class="continuation-label">Part 2/3</p><div class="line"></div><p>หลักฐานที่ควรตรวจซ้ำคือ...</p></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 6/25 · Page 6/25</span></footer>
+</section>
+<section class="print-page" data-page="7" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ข้อจํากัดของเซนเซอร์-part-3" data-split-from="ai-07-2-ข้อจํากัดของเซนเซอร์" data-repeat-heading="true"><h2>2. ข้อจำกัดของเซนเซอร์</h2><p class="continuation-label">Part 3/3</p><div class="line"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 7/25 · Page 7/25</span></footer>
+</section>
+<section class="print-page" data-page="8" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-3-กรณีข้อมูลขัดแย้ง"><h2>3. กรณีข้อมูลขัดแย้ง</h2><p>เขียนลำดับ SAFE: Sense → Assess → Fail safely → Escalate</p></section>
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-กิจกรรม-activity-2"><div class="box"></div><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 8/25 · Page 8/25</span></footer>
+</section>
+<section class="print-page" data-page="9" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-4-ข้อจํากัดของแบบจําลอง-part-1" data-split-from="ai-07-4-ข้อจํากัดของแบบจําลอง" data-repeat-heading="true"><h2>4. ข้อจำกัดของแบบจำลอง</h2><p class="continuation-label">Part 1/2</p><p>สิ่งที่ใบงานนี้อธิบายได้:</p><div class="line"></div><p>สิ่งที่ใบงานนี้รับรองไม่ได้:</p></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 9/25 · Page 9/25</span></footer>
+</section>
+<section class="print-page" data-page="10" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">AI-07 ใบงาน 1: Input–Process–Output Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-4-ข้อจํากัดของแบบจําลอง-part-2" data-split-from="ai-07-4-ข้อจํากัดของแบบจําลอง" data-repeat-heading="true"><h2>4. ข้อจำกัดของแบบจำลอง</h2><p class="continuation-label">Part 2/2</p><div class="line"></div><p class="note">ห้ามต่อปั๊ม วงจรไฟบ้าน หรือใช้น้ำใกล้อุปกรณ์ไฟฟ้าในกิจกรรมนี้</p></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 10/25 · Page 10/25</span></footer>
+</section>
+<section class="print-page" data-page="11" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-1-เป้าหมายและขอบเขต-part-1" data-split-from="ai-07-1-เป้าหมายและขอบเขต" data-repeat-heading="true"><h2>1. เป้าหมายและขอบเขต</h2><p class="continuation-label">Part 1/3</p><p>งานสมมติของระบบ:</p><div class="line"></div><p>ข้อมูลที่ระบบต้องใช้:</p></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 11/25 · Page 11/25</span></footer>
+</section>
+<section class="print-page" data-page="12" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-1-เป้าหมายและขอบเขต-part-2" data-split-from="ai-07-1-เป้าหมายและขอบเขต" data-repeat-heading="true"><h2>1. เป้าหมายและขอบเขต</h2><p class="continuation-label">Part 2/3</p><div class="line"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 12/25 · Page 12/25</span></footer>
+</section>
+<section class="print-page" data-page="13" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-1-เป้าหมายและขอบเขต-part-3" data-split-from="ai-07-1-เป้าหมายและขอบเขต" data-repeat-heading="true"><h2>1. เป้าหมายและขอบเขต</h2><p class="continuation-label">Part 3/3</p><div class="line"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 13/25 · Page 13/25</span></footer>
+</section>
+<section class="print-page" data-page="14" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-1-fields-1" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 1/9 · ส่วน 1/9</p><div class="table-card table-card--two"><section class="table-card__field"><h3>เหตุการณ์</h3>ข้อมูลหาย</section><section class="table-card__field"><h3>ความเสี่ยง</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 14/25 · Page 14/25</span></footer>
+</section>
+<section class="print-page" data-page="15" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-1-fields-3" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 2/9 · ส่วน 2/9</p><div class="table-card"><section class="table-card__field"><h3>Stop rule</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 15/25 · Page 15/25</span></footer>
+</section>
+<section class="print-page" data-page="16" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-1-fields-4" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 3/9 · ส่วน 3/9</p><div class="table-card"><section class="table-card__field"><h3>ผู้ใหญ่ที่รับผิดชอบ</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 16/25 · Page 16/25</span></footer>
+</section>
+<section class="print-page" data-page="17" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-2-fields-1" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 4/9 · ส่วน 4/9</p><div class="table-card table-card--two"><section class="table-card__field"><h3>เหตุการณ์</h3>ข้อมูลขัดแย้ง</section><section class="table-card__field"><h3>ความเสี่ยง</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 17/25 · Page 17/25</span></footer>
+</section>
+<section class="print-page" data-page="18" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-2-fields-3" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 5/9 · ส่วน 5/9</p><div class="table-card"><section class="table-card__field"><h3>Stop rule</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 18/25 · Page 18/25</span></footer>
+</section>
+<section class="print-page" data-page="19" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-2-fields-4" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 6/9 · ส่วน 6/9</p><div class="table-card"><section class="table-card__field"><h3>ผู้ใหญ่ที่รับผิดชอบ</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 19/25 · Page 19/25</span></footer>
+</section>
+<section class="print-page" data-page="20" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-3-fields-1" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 7/9 · ส่วน 7/9</p><div class="table-card table-card--two"><section class="table-card__field"><h3>เหตุการณ์</h3>อุปกรณ์ผิดปกติ</section><section class="table-card__field"><h3>ความเสี่ยง</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 20/25 · Page 20/25</span></footer>
+</section>
+<section class="print-page" data-page="21" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-3-fields-3" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 8/9 · ส่วน 8/9</p><div class="table-card"><section class="table-card__field"><h3>Stop rule</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 21/25 · Page 21/25</span></footer>
+</section>
+<section class="print-page" data-page="22" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--major" data-block-id="ai-07-2-ตารางความเสี่ยง-row-3-fields-4" data-split-from="ai-07-2-ตารางความเสี่ยง" data-repeat-heading="true"><h2>2. ตารางความเสี่ยง</h2><p class="continuation-label">Part 9/9 · ส่วน 9/9</p><div class="table-card"><section class="table-card__field"><h3>ผู้ใหญ่ที่รับผิดชอบ</h3><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></section></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 22/25 · Page 22/25</span></footer>
+</section>
+<section class="print-page" data-page="23" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-3-อธิบายผลลัพธ์"><h2>3. อธิบายผลลัพธ์</h2><p>ข้อความที่ระบบควรแสดงเมื่อหยุด:</p></section>
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-กิจกรรม-activity-3"><div class="box"></div><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 23/25 · Page 23/25</span></footer>
+</section>
+<section class="print-page" data-page="24" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-4-ตรวจความรับผิดชอบ"><h2>4. ตรวจความรับผิดชอบ</h2><p>☐ ผู้ใช้เห็นข้อมูลและกฎที่ใช้ ☐ ระบบหยุดได้ ☐ มีมนุษย์ตรวจสอบ ☐ ไม่ติดตามเด็ก ☐ ไม่มีอุปกรณ์จริง</p></section>
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-5-การปรับปรุง"><h2>5. การปรับปรุง</h2><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 24/25 · Page 24/25</span></footer>
+</section>
+<section class="print-page" data-page="25" data-page-count="25" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · AI-07</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">AI-07 ใบงาน 2: Fail-Safe System Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+    
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-กิจกรรม-activity-4"><div class="box"></div></section>
+    <section class="activity-block activity-block--minor" data-block-id="ai-07-กิจกรรม-activity-5"><p class="note">แบบจำลองนี้ไม่ใช่แบบก่อสร้าง ระบบไฟฟ้า หรือคำรับรองความปลอดภัยของอุปกรณ์จริง</p><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · AI-07</span><span>หน้า 25/25 · Page 25/25</span></footer>
+</section>
+</main>
+</body>
+</html>
