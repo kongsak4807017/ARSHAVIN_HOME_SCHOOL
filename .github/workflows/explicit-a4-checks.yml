@@ -25,6 +25,8 @@ jobs:
         run: npm install
       - name: Nested table split regression
         run: node tests/a4-table-split-regression.mjs
+      - name: Inline answer line regression
+        run: node tests/a4-inline-answer-line-regression.mjs
       - name: Explicit source contract
         run: node tests/explicit-a4-source-static-checks.mjs
       - name: HB-11 regression contract
