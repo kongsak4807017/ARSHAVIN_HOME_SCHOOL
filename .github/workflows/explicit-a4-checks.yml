@@ -23,9 +23,9 @@ jobs:
           node-version: '22'
       - name: Install locked tooling
         run: npm install
+      - name: Nested table split regression
+        run: node tests/a4-table-split-regression.mjs
       - name: Explicit source contract
         run: node tests/explicit-a4-source-static-checks.mjs
       - name: HB-11 regression contract
         run: node tests/hb11-explicit-a4-regression.mjs
-      - name: Nested table split regression
-        run: node tests/a4-table-split-regression.mjs
