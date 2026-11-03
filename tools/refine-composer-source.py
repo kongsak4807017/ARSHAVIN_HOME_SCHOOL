@@ -159,5 +159,21 @@ source = source.replace('pageMetrics.score < 12', 'pageMetrics.score < 14')
 source = source.replace("pageMetrics.score < 6 ? 'writing-zone--fill' : 'writing-zone--compact'", "pageMetrics.score < 8 ? 'writing-zone--fill' : 'writing-zone--compact'")
 source = source.replace('metrics(current.html).score + metrics(next.html).score <= 13', 'metrics(current.html).score + metrics(next.html).score <= 20')
 
+# Long underscore placeholders become CSS-drawn answer lines so PDF text runs
+# cannot cross the A4 safety margin. Keep this patch here so historical CI
+# reruns that execute only refine-composer-source.py still receive the fix.
+import_marker = "import { load } from 'cheerio';"
+inline_import = "import { replaceLongUnderscores } from './lib/inline-answer-lines.mjs';"
+if inline_import not in source:
+    if import_marker not in source:
+        raise SystemExit('inline answer import marker missing')
+    source = source.replace(import_marker, import_marker + "\n" + inline_import, 1)
+output_old = "  fs.writeFileSync(file, output, 'utf8');\n  return { changed: output !== original, pages: pageCount };"
+output_new = "  const finalOutput = replaceLongUnderscores(output);\n  fs.writeFileSync(file, finalOutput, 'utf8');\n  return { changed: finalOutput !== original, pages: pageCount };"
+if output_old in source:
+    source = source.replace(output_old, output_new, 1)
+elif 'const finalOutput = replaceLongUnderscores(output);' not in source:
+    raise SystemExit('inline answer output patch point missing')
+
 path.write_text(source, encoding='utf-8')
-print('A4 balanced packing refinements applied')
+print('A4 balanced packing and inline-answer refinements applied')
