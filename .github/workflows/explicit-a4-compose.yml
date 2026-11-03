@@ -1,0 +1,121 @@
+name: Generate explicit A4 worksheets
+
+on:
+  push:
+    branches: [feat/explicit-a4-page-composer]
+
+concurrency:
+  group: explicit-a4-push-v2-${{ github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  compose:
+    if: ${{ !contains(github.event.head_commit.message, '[a4-generated]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/explicit-a4-page-composer
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked print tooling
+        run: npm install
+      - name: Install Chromium and Linux dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Install Poppler PDF renderer
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Apply explicit A4 source and CSS refinements
+        run: |
+          python tools/refine-composer-source.py
+          python tools/refine-table-splitting.py
+          python tools/refine-large-table-intros.py
+          python tools/refine-inline-answer-lines.py
+          python tools/refine-a4-css.py
+      - name: Compose explicit source pages
+        run: npm run a4:compose
+      - name: Compact fragmented writable tables
+        run: npm run a4:compact
+      - name: Verify source schema and focused regressions
+        run: |
+          node tests/a4-table-split-regression.mjs
+          node tests/a4-compact-table-regression.mjs
+          node tests/a4-row-table-compaction-regression.mjs
+          node tests/a4-wide-field-table-compaction-regression.mjs
+          node tests/a4-inline-answer-line-regression.mjs
+          node tests/pdf-preview-path2d-regression.mjs
+          node tests/explicit-a4-source-static-checks.mjs
+          node tests/hb11-explicit-a4-regression.mjs
+      - name: Converge DOM geometry
+        shell: bash
+        run: |
+          converged=0
+          for pass in 1 2 3 4 5 6; do
+            echo "A4 geometry pass ${pass}"
+            if npm run a4:preflight; then
+              converged=1
+              break
+            fi
+            npm run a4:repair
+          done
+          if [ "$converged" -ne 1 ]; then
+            echo "Final A4 geometry enforcement"
+            npm run a4:preflight
+          fi
+      - name: Verify useful intentional writing space
+        run: node tests/a4-intentional-space-regression.mjs
+      - name: Re-verify explicit source after repairs
+        run: |
+          node tests/a4-table-split-regression.mjs
+          node tests/a4-compact-table-regression.mjs
+          node tests/a4-row-table-compaction-regression.mjs
+          node tests/a4-wide-field-table-compaction-regression.mjs
+          node tests/a4-inline-answer-line-regression.mjs
+          node tests/pdf-preview-path2d-regression.mjs
+          node tests/explicit-a4-source-static-checks.mjs
+          node tests/hb11-explicit-a4-regression.mjs
+          if grep -R -n -E '_{8,}' worksheets/student/*.html; then
+            echo 'Long underscore answer lines remain in printable sources'
+            exit 1
+          fi
+      - name: Generate and validate all PDFs
+        run: |
+          npm run print:generate
+          npm run print:validate
+          npm run print:bundles
+      - name: Render every PDF page and contact sheets
+        run: |
+          npm run print:previews
+          npm run print:contact-sheets
+      - name: Upload layout diagnostics and all-page visual QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: explicit-a4-visual-qa
+          path: |
+            qa/a4-layout-report.json
+            qa/a4-preview-index.json
+            qa/a4-previews/**/*.png
+            qa/a4-contact-sheets/**/*.png
+            qa/a4-contact-sheets/index.json
+            worksheets/student/*.html
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Commit composed sources and validated PDFs
+        if: success()
+        shell: bash
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add package-lock.json tools/compose-explicit-a4-pages.mjs tools/compact-explicit-a4-pages.mjs tools/lib/compact-explicit-tables.mjs tools/repair-explicit-a4-pages.mjs assets/css/worksheet-print.css worksheets/student worksheets/print worksheets/print-bundles qa/a4-layout-report.json qa/a4-preview-index.json qa/a4-contact-sheets/index.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes'
+          else
+            git commit -m 'feat: compose and validate explicit A4 pages [a4-generated]'
+            git push origin HEAD:feat/explicit-a4-page-composer
+          fi
