@@ -160,7 +160,7 @@ function compatibleFieldGroup(fragments) {
     rows.set(fragment.rowIndex, row);
   }
 
-  if (columnCount < 2 || columnCount > 5 || rows.size < 1) return null;
+  if (columnCount < 2 || columnCount > 8 || rows.size < 1) return null;
   const orderedRows = [...rows.entries()].sort((a, b) => a[0] - b[0]);
   for (const [, row] of orderedRows) {
     if (row.size !== columnCount) return null;
@@ -206,14 +206,23 @@ function maxRowsPerPage(columnCount, rows) {
   return 4;
 }
 
-function fieldTableHtml(model, rowChunk) {
-  const head = Array.from({ length: model.columnCount }, (_, index) => {
-    const position = index + 1;
-    return `<th scope="col">${escapeHtml(model.labels.get(position) || `ช่อง ${position} / Field ${position}`)}</th>`;
-  }).join('');
+function fieldColumnGroups(columnCount) {
+  const positions = Array.from({ length: columnCount }, (_, index) => index + 1);
+  if (columnCount <= 4) return [positions];
+  const groups = [];
+  for (let start = 2; start <= columnCount; start += 2) {
+    groups.push([1, ...positions.slice(start - 1, start + 1)]);
+  }
+  return groups;
+}
+
+function fieldTableHtml(model, rowChunk, positions) {
+  const head = positions.map(position =>
+    `<th scope="col">${escapeHtml(model.labels.get(position) || `ช่อง ${position} / Field ${position}`)}</th>`
+  ).join('');
   const body = rowChunk.map(([, row]) => {
-    const cells = Array.from({ length: model.columnCount }, (_, index) => {
-      const field = row.get(index + 1);
+    const cells = positions.map(position => {
+      const field = row.get(position);
       const className = field.writing ? ' class="handwriting-cell"' : '';
       return `<td${className}>${field.body}</td>`;
     }).join('');
@@ -257,7 +266,39 @@ function renumber($) {
   });
 }
 
-function compactGroup($, fragments, model) {
+function compactFieldGroup($, fragments, model) {
+  const columnGroups = fieldColumnGroups(model.columnCount);
+  const widestGroup = Math.max(...columnGroups.map(group => group.length));
+  const rowsPerPage = maxRowsPerPage(widestGroup, model.rows);
+  const rowChunks = [];
+  for (let rowIndex = 0; rowIndex < model.rows.length; rowIndex += rowsPerPage) {
+    rowChunks.push(model.rows.slice(rowIndex, rowIndex + rowsPerPage));
+  }
+
+  const first = fragments[0];
+  const introHtml = fragments.map(fragment => fragment.introHtml).find(Boolean) || '';
+  const metaHtml = fragments.map(fragment => fragment.metaHtml).find(Boolean) || '';
+  const pageSpecs = [];
+  for (const rowChunk of rowChunks) {
+    for (const positions of columnGroups) pageSpecs.push({ rowChunk, positions });
+  }
+
+  const newPages = pageSpecs.map(({ rowChunk, positions }, pageIndex) => {
+    const continuation = pageSpecs.length > 1
+      ? `<p class="continuation-label">Part ${pageIndex + 1}/${pageSpecs.length} · ส่วน ${pageIndex + 1}/${pageSpecs.length}</p>`
+      : '';
+    const blockId = `${first.splitFrom}-compacted${pageSpecs.length > 1 ? `-${pageIndex + 1}` : ''}`;
+    const table = fieldTableHtml(model, rowChunk, positions);
+    const block = `<section class="activity-block activity-block--major" data-block-id="${escapeHtml(blockId)}" data-split-from="${escapeHtml(first.splitFrom)}" data-repeat-heading="true" data-compacted-table="true">${first.headingHtml}${continuation}${pageIndex === 0 ? introHtml : ''}${table}</section>`;
+    const hasWriting = rowChunk.some(([, row]) => positions.some(position => row.get(position).writing));
+    return clonedPage($, first.page, block, pageIndex === 0 ? metaHtml : '', hasWriting);
+  });
+
+  for (const page of newPages) first.page.before(page);
+  for (const fragment of fragments) fragment.page.remove();
+}
+
+function compactRowGroup($, fragments, model) {
   const rowsPerPage = maxRowsPerPage(model.columnCount, model.rows);
   const chunks = [];
   for (let rowIndex = 0; rowIndex < model.rows.length; rowIndex += rowsPerPage) {
@@ -272,14 +313,9 @@ function compactGroup($, fragments, model) {
       ? `<p class="continuation-label">Part ${chunkIndex + 1}/${chunks.length} · ส่วน ${chunkIndex + 1}/${chunks.length}</p>`
       : '';
     const blockId = `${first.splitFrom}-compacted${chunks.length > 1 ? `-${chunkIndex + 1}` : ''}`;
-    const table = model.kind === 'field'
-      ? fieldTableHtml(model, chunk)
-      : rowTableHtml($, model, chunk);
+    const table = rowTableHtml($, model, chunk);
     const block = `<section class="activity-block activity-block--major" data-block-id="${escapeHtml(blockId)}" data-split-from="${escapeHtml(first.splitFrom)}" data-repeat-heading="true" data-compacted-table="true">${first.headingHtml}${continuation}${chunkIndex === 0 ? introHtml : ''}${table}</section>`;
-    const hasWriting = model.kind === 'field'
-      ? chunk.some(([, row]) => [...row.values()].some(field => field.writing))
-      : chunk.some(row => row.writing);
-    return clonedPage($, first.page, block, chunkIndex === 0 ? metaHtml : '', hasWriting);
+    return clonedPage($, first.page, block, chunkIndex === 0 ? metaHtml : '', chunk.some(row => row.writing));
   });
 
   for (const page of newPages) first.page.before(page);
@@ -327,7 +363,8 @@ export function compactExplicitDocument(html) {
       continue;
     }
 
-    compactGroup($, fragments, model);
+    if (model.kind === 'field') compactFieldGroup($, fragments, model);
+    else compactRowGroup($, fragments, model);
     compactedGroups += 1;
     index = cursor;
   }
