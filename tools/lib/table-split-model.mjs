@@ -1,5 +1,7 @@
 import { load } from 'cheerio';
 
+const WRITING_SELECTOR = '.writing-zone,.drawing-zone,.drawing-box,.writing-lines,.worksheet-lines,.lines,.line,.write-line,.tall,.worksheet-box';
+
 function isAllHeaderCells($, row) {
   if (!row) return false;
   const cells = $(row).children('th,td');
@@ -54,6 +56,10 @@ export function analyzeTableGroup(html) {
   unwrapActivityBlocks($, introRoot);
   cleanEmptyWrappers($, introRoot);
   const introHtml = introRoot.children().toArray().map(element => $.html(element)).join('');
+  const introTextLength = introRoot.text().replace(/\s+/g, ' ').trim().length;
+  const introListItems = introRoot.find('li').length;
+  const introWritingRegions = introRoot.find(WRITING_SELECTOR).length;
+  const introIsMajor = introWritingRegions > 0 || introListItems >= 3 || introTextLength > 420;
 
   return {
     headerHtml: headerRow.length ? `<thead>${$.html(headerRow[0])}</thead>` : '',
@@ -63,6 +69,10 @@ export function analyzeTableGroup(html) {
       html: $.html(row),
       text: $(row).text().replace(/\s+/g, ' ').trim()
     })),
-    introHtml
+    introHtml,
+    introTextLength,
+    introListItems,
+    introWritingRegions,
+    introIsMajor
   };
 }
