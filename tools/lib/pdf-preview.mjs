@@ -1,11 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
 import { createCanvas, DOMMatrix, ImageData, Path2D } from '@napi-rs/canvas';
 
+// pdfjs captures the platform Path2D/DOMMatrix implementations during module
+// evaluation. Initialise the canvas globals first, then load pdfjs dynamically
+// so vector paths are created by the same canvas implementation used to render.
 if (!globalThis.DOMMatrix) globalThis.DOMMatrix = DOMMatrix;
 if (!globalThis.ImageData) globalThis.ImageData = ImageData;
 if (!globalThis.Path2D) globalThis.Path2D = Path2D;
+
+const pdfjsLib = await import('pdfjs-dist/legacy/build/pdf.mjs');
 
 class NapiCanvasFactory {
   create(width, height) {
