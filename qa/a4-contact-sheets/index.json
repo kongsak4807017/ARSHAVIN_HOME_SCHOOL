@@ -735,8 +735,8 @@
         "MAKER-05:9",
         "MAKER-05:10",
         "MAKER-05:11",
-        "MAKER-05:12",
-        "MAKER-05:13"
+        "MAKER-06:1",
+        "MAKER-06:2"
       ]
     },
     {
@@ -744,15 +744,15 @@
       "sheet": 7,
       "path": "qa/a4-contact-sheets/maker-engineering/sheet-007.png",
       "pages": [
-        "MAKER-05:14",
-        "MAKER-05:15",
-        "MAKER-05:16",
-        "MAKER-05:17",
-        "MAKER-05:18",
-        "MAKER-05:19",
-        "MAKER-05:20",
-        "MAKER-05:21",
-        "MAKER-05:22"
+        "MAKER-06:3",
+        "MAKER-06:4",
+        "MAKER-06:5",
+        "MAKER-06:6",
+        "MAKER-06:7",
+        "MAKER-06:8",
+        "MAKER-06:9",
+        "MAKER-06:10",
+        "MAKER-06:11"
       ]
     },
     {
@@ -760,15 +760,15 @@
       "sheet": 8,
       "path": "qa/a4-contact-sheets/maker-engineering/sheet-008.png",
       "pages": [
-        "MAKER-05:23",
-        "MAKER-05:24",
-        "MAKER-05:25",
-        "MAKER-05:26",
-        "MAKER-06:1",
-        "MAKER-06:2",
-        "MAKER-06:3",
-        "MAKER-06:4",
-        "MAKER-06:5"
+        "MAKER-06:12",
+        "MAKER-06:13",
+        "MAKER-06:14",
+        "MAKER-07:1",
+        "MAKER-07:2",
+        "MAKER-07:3",
+        "MAKER-07:4",
+        "MAKER-07:5",
+        "MAKER-07:6"
       ]
     },
     {
@@ -776,15 +776,15 @@
       "sheet": 9,
       "path": "qa/a4-contact-sheets/maker-engineering/sheet-009.png",
       "pages": [
-        "MAKER-06:6",
-        "MAKER-06:7",
-        "MAKER-06:8",
-        "MAKER-06:9",
-        "MAKER-06:10",
-        "MAKER-06:11",
-        "MAKER-06:12",
-        "MAKER-06:13",
-        "MAKER-06:14"
+        "MAKER-07:7",
+        "MAKER-07:8",
+        "MAKER-07:9",
+        "MAKER-07:10",
+        "MAKER-07:11",
+        "MAKER-08:1",
+        "MAKER-08:2",
+        "MAKER-08:3",
+        "MAKER-08:4"
       ]
     },
     {
@@ -792,15 +792,15 @@
       "sheet": 10,
       "path": "qa/a4-contact-sheets/maker-engineering/sheet-010.png",
       "pages": [
-        "MAKER-07:1",
-        "MAKER-07:2",
-        "MAKER-07:3",
-        "MAKER-07:4",
-        "MAKER-07:5",
-        "MAKER-07:6",
-        "MAKER-07:7",
-        "MAKER-07:8",
-        "MAKER-07:9"
+        "MAKER-08:5",
+        "MAKER-08:6",
+        "MAKER-08:7",
+        "MAKER-08:8",
+        "MAKER-08:9",
+        "MAKER-09:1",
+        "MAKER-09:2",
+        "MAKER-09:3",
+        "MAKER-09:4"
       ]
     },
     {
@@ -808,15 +808,15 @@
       "sheet": 11,
       "path": "qa/a4-contact-sheets/maker-engineering/sheet-011.png",
       "pages": [
-        "MAKER-07:10",
-        "MAKER-07:11",
-        "MAKER-08:1",
-        "MAKER-08:2",
-        "MAKER-08:3",
-        "MAKER-08:4",
-        "MAKER-08:5",
-        "MAKER-08:6",
-        "MAKER-08:7"
+        "MAKER-09:5",
+        "MAKER-09:6",
+        "MAKER-09:7",
+        "MAKER-09:8",
+        "MAKER-09:9",
+        "MAKER-09:10",
+        "MAKER-10:1",
+        "MAKER-10:2",
+        "MAKER-10:3"
       ]
     },
     {
@@ -824,38 +824,9 @@
       "sheet": 12,
       "path": "qa/a4-contact-sheets/maker-engineering/sheet-012.png",
       "pages": [
-        "MAKER-08:8",
-        "MAKER-08:9",
-        "MAKER-09:1",
-        "MAKER-09:2",
-        "MAKER-09:3",
-        "MAKER-09:4",
-        "MAKER-09:5",
-        "MAKER-09:6",
-        "MAKER-09:7"
-      ]
-    },
-    {
-      "subject": "maker-engineering",
-      "sheet": 13,
-      "path": "qa/a4-contact-sheets/maker-engineering/sheet-013.png",
-      "pages": [
-        "MAKER-09:8",
-        "MAKER-09:9",
-        "MAKER-09:10",
-        "MAKER-10:1",
-        "MAKER-10:2",
-        "MAKER-10:3",
         "MAKER-10:4",
         "MAKER-10:5",
-        "MAKER-10:6"
-      ]
-    },
-    {
-      "subject": "maker-engineering",
-      "sheet": 14,
-      "path": "qa/a4-contact-sheets/maker-engineering/sheet-014.png",
-      "pages": [
+        "MAKER-10:6",
         "MAKER-10:7",
         "MAKER-10:8",
         "MAKER-10:9",

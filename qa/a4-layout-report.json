@@ -17792,11 +17792,11 @@
     },
     {
       "lessonId": "MAKER-05",
-      "pageCount": 26,
+      "pageCount": 11,
       "pages": [
         {
           "pageNumber": 1,
-          "declaredPageCount": 26,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -17867,7 +17867,7 @@
         },
         {
           "pageNumber": 2,
-          "declaredPageCount": 26,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -17877,24 +17877,14 @@
           "microSequence": false,
           "majorCount": 1,
           "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 1407.171875,
-              "bottom": 2164.828125,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
+          "hasWritingRegion": false,
+          "writingRegionCount": 0,
+          "largestWritingRegionHeight": 0,
+          "largestWritingRegionRatio": 0,
+          "writingRegions": [],
           "blocks": [
             {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-1-fields-1",
+              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-compacted-1",
               "major": true,
               "minor": false,
               "top": 1269.890625,
@@ -17909,7 +17899,7 @@
         },
         {
           "pageNumber": 3,
-          "declaredPageCount": 26,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -17919,24 +17909,14 @@
           "microSequence": false,
           "majorCount": 1,
           "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 2529.6875,
-              "bottom": 3287.34375,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
+          "hasWritingRegion": false,
+          "writingRegionCount": 0,
+          "largestWritingRegionHeight": 0,
+          "largestWritingRegionRatio": 0,
+          "writingRegions": [],
           "blocks": [
             {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-1-fields-2",
+              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-compacted-2",
               "major": true,
               "minor": false,
               "top": 2392.40625,
@@ -17951,7 +17931,7 @@
         },
         {
           "pageNumber": 4,
-          "declaredPageCount": 26,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -17961,24 +17941,14 @@
           "microSequence": false,
           "majorCount": 1,
           "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 3652.203125,
-              "bottom": 4409.859375,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
+          "hasWritingRegion": false,
+          "writingRegionCount": 0,
+          "largestWritingRegionHeight": 0,
+          "largestWritingRegionRatio": 0,
+          "writingRegions": [],
           "blocks": [
             {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-1-fields-3",
+              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-compacted-3",
               "major": true,
               "minor": false,
               "top": 3514.921875,
@@ -17993,637 +17963,7 @@
         },
         {
           "pageNumber": 5,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 4774.71875,
-              "bottom": 5532.375,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-1-fields-4",
-              "major": true,
-              "minor": false,
-              "top": 4637.4375,
-              "bottom": 5550.234375,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 6,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 5897.234375,
-              "bottom": 6654.890625,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-1-fields-5",
-              "major": true,
-              "minor": false,
-              "top": 5759.953125,
-              "bottom": 6672.75,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 7,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 7019.75,
-              "bottom": 7777.40625,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-1-fields-6",
-              "major": true,
-              "minor": false,
-              "top": 6882.46875,
-              "bottom": 7795.265625,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 8,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 8142.265625,
-              "bottom": 8899.921875,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-2-fields-1",
-              "major": true,
-              "minor": false,
-              "top": 8004.984375,
-              "bottom": 8917.78125,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 9,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 9264.78125,
-              "bottom": 10022.4375,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-2-fields-2",
-              "major": true,
-              "minor": false,
-              "top": 9127.5,
-              "bottom": 10040.296875,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 10,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 10387.296875,
-              "bottom": 11144.953125,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-2-fields-3",
-              "major": true,
-              "minor": false,
-              "top": 10250.015625,
-              "bottom": 11162.8125,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 11,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 11509.8125,
-              "bottom": 12267.46875,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-2-fields-4",
-              "major": true,
-              "minor": false,
-              "top": 11372.53125,
-              "bottom": 12285.328125,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 12,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 12632.328125,
-              "bottom": 13389.984375,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-2-fields-5",
-              "major": true,
-              "minor": false,
-              "top": 12495.046875,
-              "bottom": 13407.84375,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 13,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 13754.84375,
-              "bottom": 14512.5,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-2-fields-6",
-              "major": true,
-              "minor": false,
-              "top": 13617.5625,
-              "bottom": 14530.359375,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 14,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 14877.359375,
-              "bottom": 15635.015625,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-3-fields-1",
-              "major": true,
-              "minor": false,
-              "top": 14740.078125,
-              "bottom": 15652.875,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 15,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 15999.875,
-              "bottom": 16757.53125,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-3-fields-2",
-              "major": true,
-              "minor": false,
-              "top": 15862.59375,
-              "bottom": 16775.390625,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 16,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 17122.390625,
-              "bottom": 17880.046875,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-3-fields-3",
-              "major": true,
-              "minor": false,
-              "top": 16985.109375,
-              "bottom": 17897.90625,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 17,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 18244.90625,
-              "bottom": 19002.5625,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-3-fields-4",
-              "major": true,
-              "minor": false,
-              "top": 18107.625,
-              "bottom": 19020.421875,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 18,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 19367.421875,
-              "bottom": 20125.078125,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-3-fields-5",
-              "major": true,
-              "minor": false,
-              "top": 19230.140625,
-              "bottom": 20142.9375,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 19,
-          "declaredPageCount": 26,
-          "width": 793.6875,
-          "height": 1122.515625,
-          "contentHeight": 926,
-          "scrollHeight": 926,
-          "occupancy": 0.9857417656587473,
-          "intentionalSpace": true,
-          "microSequence": false,
-          "majorCount": 1,
-          "minorCount": 0,
-          "hasWritingRegion": true,
-          "writingRegionCount": 1,
-          "largestWritingRegionHeight": 757.65625,
-          "largestWritingRegionRatio": 0.818203293736501,
-          "writingRegions": [
-            {
-              "className": "writing-zone writing-zone--compact",
-              "top": 20489.9375,
-              "bottom": 21247.59375,
-              "left": 66.96875,
-              "right": 726.71875,
-              "width": 659.75,
-              "height": 757.65625
-            }
-          ],
-          "blocks": [
-            {
-              "id": "maker-05-2-ตารางเปรียบเทียบ-comparison-matrix-row-3-fields-6",
-              "major": true,
-              "minor": false,
-              "top": 20352.65625,
-              "bottom": 21265.453125,
-              "left": 49.109375,
-              "right": 744.578125,
-              "width": 695.46875,
-              "height": 912.796875
-            }
-          ],
-          "errors": []
-        },
-        {
-          "pageNumber": 20,
-          "declaredPageCount": 26,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -18640,8 +17980,8 @@
           "writingRegions": [
             {
               "className": "writing-zone writing-zone--fill",
-              "top": 21856.578125,
-              "bottom": 22380.171875,
+              "top": 5018.84375,
+              "bottom": 5542.4375,
               "left": 56.90625,
               "right": 736.78125,
               "width": 679.875,
@@ -18653,8 +17993,8 @@
               "id": "maker-05-3-fair-test",
               "major": false,
               "minor": true,
-              "top": 21475.171875,
-              "bottom": 21528.921875,
+              "top": 4637.4375,
+              "bottom": 4691.1875,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18664,8 +18004,8 @@
               "id": "maker-05-กิจกรรม-activity-2",
               "major": false,
               "minor": true,
-              "top": 21536.46875,
-              "bottom": 22387.96875,
+              "top": 4698.734375,
+              "bottom": 5550.234375,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18675,8 +18015,8 @@
           "errors": []
         },
         {
-          "pageNumber": 21,
-          "declaredPageCount": 26,
+          "pageNumber": 6,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -18693,8 +18033,8 @@
           "writingRegions": [
             {
               "className": "writing-zone writing-zone--fill",
-              "top": 22833.90625,
-              "bottom": 23502.6875,
+              "top": 5996.171875,
+              "bottom": 6664.953125,
               "left": 56.90625,
               "right": 736.78125,
               "width": 679.875,
@@ -18706,8 +18046,8 @@
               "id": "maker-05-4-สรุปโดยไม่เกินหลักฐาน-evidence-limited-conclusion",
               "major": false,
               "minor": true,
-              "top": 22597.6875,
-              "bottom": 23510.484375,
+              "top": 5759.953125,
+              "bottom": 6672.75,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18717,8 +18057,8 @@
           "errors": []
         },
         {
-          "pageNumber": 22,
-          "declaredPageCount": 26,
+          "pageNumber": 7,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -18735,8 +18075,8 @@
           "writingRegions": [
             {
               "className": "line",
-              "top": 23750.96875,
-              "bottom": 23792.53125,
+              "top": 6913.234375,
+              "bottom": 6954.796875,
               "left": 57.65625,
               "right": 146.984375,
               "width": 89.328125,
@@ -18744,8 +18084,8 @@
             },
             {
               "className": "line",
-              "top": 23750.96875,
-              "bottom": 23792.53125,
+              "top": 6913.234375,
+              "bottom": 6954.796875,
               "left": 169.65625,
               "right": 259.625,
               "width": 89.96875,
@@ -18753,8 +18093,8 @@
             },
             {
               "className": "writing-zone writing-zone--fill",
-              "top": 24151.765625,
-              "bottom": 24625.203125,
+              "top": 7314.03125,
+              "bottom": 7787.46875,
               "left": 56.90625,
               "right": 736.78125,
               "width": 679.875,
@@ -18766,8 +18106,8 @@
               "id": "maker-05-1-เกณฑ์และข้อจํากัด-criteria-and-constraints",
               "major": false,
               "minor": true,
-              "top": 23809.375,
-              "bottom": 23863.125,
+              "top": 6971.640625,
+              "bottom": 7025.390625,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18777,8 +18117,8 @@
               "id": "maker-05-กิจกรรม-activity-3",
               "major": false,
               "minor": true,
-              "top": 23870.671875,
-              "bottom": 24633,
+              "top": 7032.9375,
+              "bottom": 7795.265625,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18788,8 +18128,8 @@
           "errors": []
         },
         {
-          "pageNumber": 23,
-          "declaredPageCount": 26,
+          "pageNumber": 8,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -18806,8 +18146,8 @@
           "writingRegions": [
             {
               "className": "writing-zone writing-zone--fill",
-              "top": 25186.59375,
-              "bottom": 25747.71875,
+              "top": 8348.859375,
+              "bottom": 8909.984375,
               "left": 56.90625,
               "right": 736.78125,
               "width": 679.875,
@@ -18819,8 +18159,8 @@
               "id": "maker-05-2-คิดทั้งวงจรชีวิต-think-across-the-life-cycle",
               "major": false,
               "minor": true,
-              "top": 24842.71875,
-              "bottom": 24896.46875,
+              "top": 8004.984375,
+              "bottom": 8058.734375,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18830,8 +18170,8 @@
               "id": "maker-05-กิจกรรม-activity-4",
               "major": false,
               "minor": true,
-              "top": 24904.015625,
-              "bottom": 25755.515625,
+              "top": 8066.28125,
+              "bottom": 8917.78125,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18841,8 +18181,8 @@
           "errors": []
         },
         {
-          "pageNumber": 24,
-          "declaredPageCount": 26,
+          "pageNumber": 9,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -18859,8 +18199,8 @@
           "writingRegions": [
             {
               "className": "writing-zone writing-zone--fill",
-              "top": 26340.59375,
-              "bottom": 26870.234375,
+              "top": 9502.859375,
+              "bottom": 10032.5,
               "left": 56.90625,
               "right": 736.78125,
               "width": 679.875,
@@ -18872,8 +18212,8 @@
               "id": "maker-05-3-แผนความปลอดภัย-safety-plan",
               "major": false,
               "minor": true,
-              "top": 25965.234375,
-              "bottom": 26018.984375,
+              "top": 9127.5,
+              "bottom": 9181.25,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18883,8 +18223,8 @@
               "id": "maker-05-กิจกรรม-activity-5",
               "major": false,
               "minor": true,
-              "top": 26026.53125,
-              "bottom": 26878.03125,
+              "top": 9188.796875,
+              "bottom": 10040.296875,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18894,8 +18234,8 @@
           "errors": []
         },
         {
-          "pageNumber": 25,
-          "declaredPageCount": 26,
+          "pageNumber": 10,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -18912,8 +18252,8 @@
           "writingRegions": [
             {
               "className": "writing-zone writing-zone--compact",
-              "top": 27518,
-              "bottom": 27992.75,
+              "top": 10680.265625,
+              "bottom": 11155.015625,
               "left": 56.90625,
               "right": 736.78125,
               "width": 679.875,
@@ -18925,8 +18265,8 @@
               "id": "maker-05-4-decision-record",
               "major": false,
               "minor": true,
-              "top": 27087.75,
-              "bottom": 27141.5,
+              "top": 10250.015625,
+              "bottom": 10303.765625,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18936,8 +18276,8 @@
               "id": "maker-05-กิจกรรม-activity-6",
               "major": false,
               "minor": true,
-              "top": 27149.046875,
-              "bottom": 28000.546875,
+              "top": 10311.3125,
+              "bottom": 11162.8125,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
@@ -18947,8 +18287,8 @@
           "errors": []
         },
         {
-          "pageNumber": 26,
-          "declaredPageCount": 26,
+          "pageNumber": 11,
+          "declaredPageCount": 11,
           "width": 793.6875,
           "height": 1122.515625,
           "contentHeight": 926,
@@ -18965,8 +18305,8 @@
           "writingRegions": [
             {
               "className": "writing-zone writing-zone--fill",
-              "top": 28415.125,
-              "bottom": 29115.265625,
+              "top": 11577.390625,
+              "bottom": 12277.53125,
               "left": 56.90625,
               "right": 736.78125,
               "width": 679.875,
@@ -18978,8 +18318,8 @@
               "id": "maker-05-5-reflection",
               "major": false,
               "minor": true,
-              "top": 28210.265625,
-              "bottom": 29123.0625,
+              "top": 11372.53125,
+              "bottom": 12285.328125,
               "left": 49.109375,
               "right": 744.578125,
               "width": 695.46875,
