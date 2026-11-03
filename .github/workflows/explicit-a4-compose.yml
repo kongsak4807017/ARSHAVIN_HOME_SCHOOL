@@ -41,6 +41,7 @@ jobs:
         run: |
           python tools/refine-composer-source.py
           python tools/refine-table-splitting.py
+          python tools/refine-large-table-intros.py
           python tools/refine-a4-css.py
       - name: Compose explicit source pages
         run: npm run a4:compose
