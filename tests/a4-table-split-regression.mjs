@@ -39,4 +39,14 @@ assert.ok(headed.headerHtml.includes('ตัวเลือก'));
 assert.equal(headed.rows.length, 2);
 assert.doesNotMatch(headed.introHtml, /<table\b/i);
 
+const repairInput = `
+<section class="activity-block activity-block--major" data-block-id="maker-row">
+  <h2>กิจกรรม / Activity</h2>
+  <ol><li>วาดคานและอธิบายตำแหน่งแรง</li></ol>
+  <table><tbody><tr><td>2 หน่วย</td><td></td><td></td></tr></tbody></table>
+</section>`;
+const repairModel = analyzeTableGroup(repairInput);
+assert.doesNotMatch(repairModel.introHtml, /activity-block/i, 'repair intro must unwrap the existing activity block instead of nesting it again');
+assert.match(repairModel.introHtml, /วาดคาน/, 'repair intro must preserve the instructional list');
+
 console.log('PASS nested table split regression');
