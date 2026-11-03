@@ -36,6 +36,18 @@ function readPngDimensions(filePath) {
   }
 }
 
+function discoverPopplerPages(outputDir, prefix) {
+  const stem = `${prefix}-raw-`;
+  return fs.readdirSync(outputDir)
+    .filter(name => name.startsWith(stem) && name.endsWith('.png'))
+    .map(name => ({
+      name,
+      pageNumber: Number(name.slice(stem.length, -'.png'.length))
+    }))
+    .filter(entry => Number.isInteger(entry.pageNumber) && entry.pageNumber > 0)
+    .sort((a, b) => a.pageNumber - b.pageNumber);
+}
+
 /**
  * Render the committed PDF itself, not the source HTML, so visual QA covers
  * the exact artifact learners download. Poppler is deterministic on Linux
@@ -54,12 +66,20 @@ export async function renderPdfPages(pdfPath, outputDir, options = {}) {
   const dpi = Math.max(72, Math.round(72 * scale));
   await run('pdftoppm', ['-png', '-r', String(dpi), pdfPath, rawPrefix]);
 
-  const pages = [];
-  for (let pageNumber = 1; pageNumber <= pageCount; pageNumber++) {
-    const rawPath = `${rawPrefix}-${pageNumber}.png`;
-    if (!fs.existsSync(rawPath)) {
-      throw new Error(`Poppler did not create page ${pageNumber}/${pageCount}: ${pdfPath}`);
+  const rawPages = discoverPopplerPages(outputDir, prefix);
+  if (rawPages.length !== pageCount) {
+    throw new Error(`Poppler created ${rawPages.length}/${pageCount} pages for ${pdfPath}`);
+  }
+  rawPages.forEach((entry, index) => {
+    if (entry.pageNumber !== index + 1) {
+      throw new Error(`Poppler page sequence is not consecutive for ${pdfPath}: ${rawPages.map(page => page.pageNumber).join(', ')}`);
     }
+  });
+
+  const pages = [];
+  for (const rawPage of rawPages) {
+    const pageNumber = rawPage.pageNumber;
+    const rawPath = path.join(outputDir, rawPage.name);
     const outputPath = path.join(outputDir, `${prefix}-page-${String(pageNumber).padStart(3, '0')}.png`);
     fs.renameSync(rawPath, outputPath);
     const { width, height } = readPngDimensions(outputPath);
@@ -67,11 +87,6 @@ export async function renderPdfPages(pdfPath, outputDir, options = {}) {
       throw new Error(`Empty PDF preview page ${pageNumber}: ${pdfPath}`);
     }
     pages.push({ pageNumber, width, height, path: outputPath });
-  }
-
-  const unexpectedRaw = fs.readdirSync(outputDir).filter(name => name.startsWith(`${prefix}-raw-`));
-  if (unexpectedRaw.length) {
-    throw new Error(`Poppler produced unexpected page count for ${pdfPath}: ${unexpectedRaw.join(', ')}`);
   }
 
   return pages;
