@@ -34,6 +34,8 @@ jobs:
         run: node tests/a4-row-table-compaction-regression.mjs
       - name: Wide field-table compaction regression
         run: node tests/a4-wide-field-table-compaction-regression.mjs
+      - name: Blank continuation compaction regression
+        run: node tests/a4-blank-continuation-compaction-regression.mjs
       - name: Inline answer line regression
         run: node tests/a4-inline-answer-line-regression.mjs
       - name: PDF vector preview regression
