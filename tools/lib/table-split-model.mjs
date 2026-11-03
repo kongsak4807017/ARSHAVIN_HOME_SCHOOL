@@ -16,9 +16,17 @@ function cleanEmptyWrappers($, root) {
   });
 }
 
+function unwrapActivityBlocks($, root) {
+  root.find('.activity-block').toArray().reverse().forEach(element => {
+    const node = $(element);
+    node.replaceWith(node.contents());
+  });
+}
+
 /**
  * Extract a table and its surrounding instructional introduction without
- * ever serialising the original table back into introHtml.
+ * ever serialising the original table or an existing repair wrapper back
+ * into introHtml.
  */
 export function analyzeTableGroup(html) {
   const $ = load(`<div id="table-analysis-root">${html}</div>`, { decodeEntities: false });
@@ -43,6 +51,7 @@ export function analyzeTableGroup(html) {
   const introRoot = root.clone();
   introRoot.find('table').remove();
   introRoot.find('h1,h2,h3,.continuation-label').remove();
+  unwrapActivityBlocks($, introRoot);
   cleanEmptyWrappers($, introRoot);
   const introHtml = introRoot.children().toArray().map(element => $.html(element)).join('');
 
