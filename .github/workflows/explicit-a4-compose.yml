@@ -5,7 +5,7 @@ on:
     branches: [feat/explicit-a4-page-composer]
 
 concurrency:
-  group: explicit-a4-${{ github.ref_name }}
+  group: explicit-a4-push-v2-${{ github.ref_name }}
   cancel-in-progress: true
 
 permissions:
