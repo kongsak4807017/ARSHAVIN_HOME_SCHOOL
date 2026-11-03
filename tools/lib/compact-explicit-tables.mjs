@@ -1,7 +1,9 @@
 import { load } from 'cheerio';
 
 const FIELD_ID = /-row-(\d+)-fields?-(\d+)$/i;
+const ROW_ID = /-rows?-(\d+)-(\d+)$/i;
 const WRITING_SELECTOR = '.writing-zone,.drawing-zone,.drawing-box,.writing-lines,.worksheet-lines,.lines,.line,.write-line,.tall';
+const GENERATED_WRITING_COPY = /พื้นที่บันทึกหรืออธิบายเพิ่มเติม|Additional writing or explanation space/i;
 
 function escapeHtml(value) {
   return String(value || '')
@@ -11,7 +13,7 @@ function escapeHtml(value) {
     .replaceAll('"', '&quot;');
 }
 
-function pageFragment($, element) {
+function pageBlock($, element) {
   const page = $(element);
   const content = page.children('.print-page__content').first();
   const blocks = content.children('.activity-block');
@@ -19,13 +21,43 @@ function pageFragment($, element) {
   const block = blocks.first();
   if (block.attr('data-compacted-table') === 'true') return null;
   const splitFrom = block.attr('data-split-from');
-  const blockId = block.attr('data-block-id') || '';
-  const match = blockId.match(FIELD_ID);
-  if (!splitFrom || !match) return null;
+  if (!splitFrom) return null;
+  const meta = content.children('.learner-meta').first();
+  const heading = block.children('h1,h2,h3').first();
+  return {
+    page,
+    content,
+    block,
+    splitFrom,
+    blockId: block.attr('data-block-id') || '',
+    headingHtml: heading.length ? $.html(heading[0]) : '<h2>กิจกรรม / Activity</h2>',
+    metaHtml: meta.length ? $.html(meta[0]) : ''
+  };
+}
 
-  const fieldNodes = block.find('.table-card__field').toArray();
+function cleanIntro($, block, removableSelector) {
+  const clone = block.clone();
+  clone.children('h1,h2,h3,.continuation-label').remove();
+  clone.find(removableSelector).remove();
+  clone.find('.helper-text').each((_, element) => {
+    const helper = clone.find(element);
+    if (!GENERATED_WRITING_COPY.test(helper.text())) return;
+    const next = helper.next();
+    helper.remove();
+    if (next.is(WRITING_SELECTOR)) next.remove();
+  });
+  return (clone.html() || '').trim();
+}
+
+function fieldPageFragment($, element) {
+  const base = pageBlock($, element);
+  if (!base) return null;
+  const match = base.blockId.match(FIELD_ID);
+  if (!match) return null;
+
+  const fieldNodes = base.block.find('.table-card__field').toArray();
   if (!fieldNodes.length) return null;
-  if (block.find('table,.drawing-zone,.drawing-box,.tall').length) return null;
+  if (base.block.find('table,.drawing-zone,.drawing-box,.tall').length) return null;
 
   const rowIndex = Number(match[1]);
   const startIndex = Number(match[2]);
@@ -45,27 +77,71 @@ function pageFragment($, element) {
     };
   });
 
-  const heading = block.children('h1,h2,h3').first();
-  const headingHtml = heading.length ? $.html(heading[0]) : '<h2>กิจกรรม / Activity</h2>';
-  const introClone = block.clone();
-  introClone.children('h1,h2,h3,.continuation-label,.table-card').remove();
-  const introHtml = (introClone.html() || '').trim();
-  const meta = content.children('.learner-meta').first();
-
   return {
-    page,
-    block,
-    splitFrom,
+    ...base,
+    kind: 'field',
     rowIndex,
     startIndex,
     fields,
-    headingHtml,
-    introHtml,
-    metaHtml: meta.length ? $.html(meta[0]) : ''
+    introHtml: cleanIntro($, base.block, '.table-card')
   };
 }
 
-function compatibleGroup(fragments) {
+function rowPageFragment($, element) {
+  const base = pageBlock($, element);
+  if (!base) return null;
+  const match = base.blockId.match(ROW_ID);
+  if (!match) return null;
+
+  const tables = base.block.find('table').toArray();
+  if (tables.length !== 1) return null;
+  if (base.block.find('.drawing-zone,.drawing-box,.tall').length) return null;
+  const table = $(tables[0]).clone();
+  const head = table.children('thead').first();
+  const body = table.children('tbody').first();
+  const rows = body.children('tr').toArray();
+  if (!head.length || !body.length || !rows.length) return null;
+
+  const columnCount = Math.max(
+    head.find('tr').first().children('th,td').length,
+    ...rows.map(row => $(row).children('th,td').length)
+  );
+  if (columnCount < 2 || columnCount > 6) return null;
+  if (rows.some(row => $(row).children('th,td').length !== columnCount)) return null;
+
+  const headerSignature = head.text().replace(/\s+/g, ' ').trim();
+  const rowRecords = rows.map((row, index) => {
+    const node = $(row).clone();
+    const cells = node.children('th,td');
+    return {
+      order: Number(match[1]) + index,
+      html: $.html(node[0]),
+      textLength: node.text().replace(/\s+/g, ' ').trim().length,
+      writing: cells.toArray().some(cell => {
+        const cellNode = $(cell);
+        return !cellNode.text().trim() || cellNode.find(WRITING_SELECTOR).length > 0;
+      })
+    };
+  });
+
+  table.children('tbody').empty();
+  table.addClass('worksheet-table worksheet-table--compact');
+  table.attr('data-compacted-table', 'true');
+
+  return {
+    ...base,
+    kind: 'row',
+    startRow: Number(match[1]),
+    endRow: Number(match[2]),
+    columnCount,
+    headerSignature,
+    tableTemplateHtml: $.html(table[0]),
+    rows: rowRecords,
+    introHtml: cleanIntro($, base.block, 'table')
+  };
+}
+
+function compatibleFieldGroup(fragments) {
   if (fragments.length < 2) return null;
   const rows = new Map();
   const labels = new Map();
@@ -91,19 +167,46 @@ function compatibleGroup(fragments) {
     for (let position = 1; position <= columnCount; position++) if (!row.has(position)) return null;
   }
 
-  return { rows: orderedRows, labels, columnCount };
+  return { kind: 'field', rows: orderedRows, labels, columnCount };
+}
+
+function compatibleRowGroup(fragments) {
+  if (fragments.length < 2) return null;
+  const first = fragments[0];
+  if (fragments.some(fragment =>
+    fragment.columnCount !== first.columnCount ||
+    fragment.headerSignature !== first.headerSignature
+  )) return null;
+
+  const rows = fragments
+    .flatMap(fragment => fragment.rows)
+    .sort((a, b) => a.order - b.order);
+  if (!rows.length || rows.some(row => row.textLength > 520)) return null;
+  const orders = rows.map(row => row.order);
+  if (new Set(orders).size !== orders.length) return null;
+
+  return {
+    kind: 'row',
+    rows,
+    columnCount: first.columnCount,
+    tableTemplateHtml: first.tableTemplateHtml
+  };
 }
 
 function maxRowsPerPage(columnCount, rows) {
-  const maxCellText = Math.max(0, ...rows.flatMap(([, row]) => [...row.values()].map(field => field.textLength)));
-  if (maxCellText > 220) return 1;
+  const maxCellText = Math.max(0, ...rows.map(row => {
+    if (Array.isArray(row)) return Math.max(0, ...[...row[1].values()].map(field => field.textLength));
+    return row.textLength;
+  }));
+  if (maxCellText > 300) return 1;
+  if (maxCellText > 180) return 2;
   if (columnCount >= 5) return 2;
   if (columnCount === 4) return 3;
-  if (columnCount === 3) return 4;
-  return 5;
+  if (columnCount === 3) return 3;
+  return 4;
 }
 
-function tableHtml(model, rowChunk) {
+function fieldTableHtml(model, rowChunk) {
   const head = Array.from({ length: model.columnCount }, (_, index) => {
     const position = index + 1;
     return `<th scope="col">${escapeHtml(model.labels.get(position) || `ช่อง ${position} / Field ${position}`)}</th>`;
@@ -117,6 +220,16 @@ function tableHtml(model, rowChunk) {
     return `<tr>${cells}</tr>`;
   }).join('');
   return `<table class="worksheet-table worksheet-table--compact" data-compacted-table="true"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+}
+
+function rowTableHtml($, model, rowChunk) {
+  const table = load(model.tableTemplateHtml, { decodeEntities: false })('table').first();
+  const body = table.children('tbody').first();
+  body.empty();
+  for (const row of rowChunk) body.append(row.html);
+  table.attr('data-compacted-table', 'true');
+  table.addClass('worksheet-table worksheet-table--compact');
+  return $.html(table[0]);
 }
 
 function clonedPage($, template, blockHtml, metaHtml, intentionalSpace) {
@@ -144,10 +257,39 @@ function renumber($) {
   });
 }
 
+function compactGroup($, fragments, model) {
+  const rowsPerPage = maxRowsPerPage(model.columnCount, model.rows);
+  const chunks = [];
+  for (let rowIndex = 0; rowIndex < model.rows.length; rowIndex += rowsPerPage) {
+    chunks.push(model.rows.slice(rowIndex, rowIndex + rowsPerPage));
+  }
+
+  const first = fragments[0];
+  const introHtml = fragments.map(fragment => fragment.introHtml).find(Boolean) || '';
+  const metaHtml = fragments.map(fragment => fragment.metaHtml).find(Boolean) || '';
+  const newPages = chunks.map((chunk, chunkIndex) => {
+    const continuation = chunks.length > 1
+      ? `<p class="continuation-label">Part ${chunkIndex + 1}/${chunks.length} · ส่วน ${chunkIndex + 1}/${chunks.length}</p>`
+      : '';
+    const blockId = `${first.splitFrom}-compacted${chunks.length > 1 ? `-${chunkIndex + 1}` : ''}`;
+    const table = model.kind === 'field'
+      ? fieldTableHtml(model, chunk)
+      : rowTableHtml($, model, chunk);
+    const block = `<section class="activity-block activity-block--major" data-block-id="${escapeHtml(blockId)}" data-split-from="${escapeHtml(first.splitFrom)}" data-repeat-heading="true" data-compacted-table="true">${first.headingHtml}${continuation}${chunkIndex === 0 ? introHtml : ''}${table}</section>`;
+    const hasWriting = model.kind === 'field'
+      ? chunk.some(([, row]) => [...row.values()].some(field => field.writing))
+      : chunk.some(row => row.writing);
+    return clonedPage($, first.page, block, chunkIndex === 0 ? metaHtml : '', hasWriting);
+  });
+
+  for (const page of newPages) first.page.before(page);
+  for (const fragment of fragments) fragment.page.remove();
+}
+
 /**
  * Reconstruct compact writable tables that were previously exploded into
- * one or two fields per A4 page. Only consecutive, fully reconstructable
- * field fragments are changed. Complex/drawing fields are left untouched.
+ * one or two fields or one/few rows per A4 page. Only consecutive, fully
+ * reconstructable fragments are changed. Complex/drawing fields remain.
  */
 export function compactExplicitDocument(html) {
   const hadDoctype = /^\s*<!doctype html>/i.test(html);
@@ -157,47 +299,35 @@ export function compactExplicitDocument(html) {
   let compactedGroups = 0;
 
   for (let index = 0; index < originalPages.length;) {
-    const first = pageFragment($, originalPages[index]);
+    let first = fieldPageFragment($, originalPages[index]);
+    let fragmentReader = fieldPageFragment;
+    let compatibility = compatibleFieldGroup;
+    if (!first) {
+      first = rowPageFragment($, originalPages[index]);
+      fragmentReader = rowPageFragment;
+      compatibility = compatibleRowGroup;
+    }
     if (!first) {
       index += 1;
       continue;
     }
+
     const fragments = [first];
     let cursor = index + 1;
     while (cursor < originalPages.length) {
-      const candidate = pageFragment($, originalPages[cursor]);
+      const candidate = fragmentReader($, originalPages[cursor]);
       if (!candidate || candidate.splitFrom !== first.splitFrom) break;
       fragments.push(candidate);
       cursor += 1;
     }
 
-    const model = compatibleGroup(fragments);
+    const model = compatibility(fragments);
     if (!model) {
       index = cursor;
       continue;
     }
 
-    const rowsPerPage = maxRowsPerPage(model.columnCount, model.rows);
-    const chunks = [];
-    for (let rowIndex = 0; rowIndex < model.rows.length; rowIndex += rowsPerPage) {
-      chunks.push(model.rows.slice(rowIndex, rowIndex + rowsPerPage));
-    }
-
-    const template = first.page;
-    const introHtml = fragments.map(fragment => fragment.introHtml).find(Boolean) || '';
-    const metaHtml = fragments.map(fragment => fragment.metaHtml).find(Boolean) || '';
-    const newPages = chunks.map((chunk, chunkIndex) => {
-      const continuation = chunks.length > 1
-        ? `<p class="continuation-label">Part ${chunkIndex + 1}/${chunks.length} · ส่วน ${chunkIndex + 1}/${chunks.length}</p>`
-        : '';
-      const blockId = `${first.splitFrom}-compacted${chunks.length > 1 ? `-${chunkIndex + 1}` : ''}`;
-      const block = `<section class="activity-block activity-block--major" data-block-id="${escapeHtml(blockId)}" data-split-from="${escapeHtml(first.splitFrom)}" data-repeat-heading="true" data-compacted-table="true">${first.headingHtml}${continuation}${chunkIndex === 0 ? introHtml : ''}${tableHtml(model, chunk)}</section>`;
-      const hasWriting = chunk.some(([, row]) => [...row.values()].some(field => field.writing));
-      return clonedPage($, template, block, chunkIndex === 0 ? metaHtml : '', hasWriting);
-    });
-
-    for (const page of newPages) first.page.before(page);
-    for (const fragment of fragments) fragment.page.remove();
+    compactGroup($, fragments, model);
     compactedGroups += 1;
     index = cursor;
   }
