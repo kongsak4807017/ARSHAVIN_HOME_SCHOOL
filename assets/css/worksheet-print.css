@@ -49,7 +49,7 @@ td.tall,th.tall{display:table-cell!important;min-height:0!important;height:40mm!
 .writing-zone--fill{min-height:90mm}
 .answer-box,.box,.evidence-box,.vocabulary-box{height:auto;min-height:19mm;margin:1.2mm 0 1.8mm;padding:2.2mm;border:1.2pt solid #111;background:#fff}
 .tall,.drawing-box,.drawing-zone{min-height:60mm}
-span.check,i.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}
+span.check,ispan.check,i.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}
 input[type="checkbox"],input[type="radio"]{width:8mm;height:8mm}
 .intentional-space-note{font-size:14pt;line-height:1.2}
 

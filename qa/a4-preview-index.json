@@ -3505,6 +3505,18 @@
           "width": 686,
           "height": 971,
           "path": "qa/a4-previews/MAKER-01/maker-01-page-015.png"
+        },
+        {
+          "pageNumber": 16,
+          "width": 686,
+          "height": 971,
+          "path": "qa/a4-previews/MAKER-01/maker-01-page-016.png"
+        },
+        {
+          "pageNumber": 17,
+          "width": 686,
+          "height": 971,
+          "path": "qa/a4-previews/MAKER-01/maker-01-page-017.png"
         }
       ]
     },
@@ -4563,6 +4575,12 @@
           "width": 686,
           "height": 971,
           "path": "qa/a4-previews/MAKER-09/maker-09-page-021.png"
+        },
+        {
+          "pageNumber": 22,
+          "width": 686,
+          "height": 971,
+          "path": "qa/a4-previews/MAKER-09/maker-09-page-022.png"
         }
       ]
     },
