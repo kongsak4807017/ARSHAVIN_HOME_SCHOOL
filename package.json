@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "a4:compose": "node tools/compose-explicit-a4-pages.mjs",
+    "a4:compact": "node tools/compact-explicit-a4-pages.mjs",
     "a4:preflight": "node tools/preflight-a4-layout.mjs",
     "a4:repair": "node tools/repair-explicit-a4-pages.mjs --report qa/a4-layout-report.json",
     "print:generate": "node tools/generate-worksheet-pdfs.mjs",
