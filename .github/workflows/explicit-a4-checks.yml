@@ -28,6 +28,8 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - name: Nested table split regression
         run: node tests/a4-table-split-regression.mjs
+      - name: Compact writable table regression
+        run: node tests/a4-compact-table-regression.mjs
       - name: Inline answer line regression
         run: node tests/a4-inline-answer-line-regression.mjs
       - name: PDF vector preview regression
