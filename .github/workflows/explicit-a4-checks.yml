@@ -32,6 +32,8 @@ jobs:
         run: node tests/a4-inline-answer-line-regression.mjs
       - name: PDF vector preview regression
         run: node tests/pdf-preview-path2d-regression.mjs
+      - name: Intentional writing-space regression
+        run: node tests/a4-intentional-space-regression.mjs
       - name: Explicit source contract
         run: node tests/explicit-a4-source-static-checks.mjs
       - name: HB-11 regression contract
