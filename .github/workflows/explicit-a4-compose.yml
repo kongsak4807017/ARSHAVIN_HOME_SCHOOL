@@ -39,9 +39,12 @@ jobs:
           python tools/refine-a4-css.py
       - name: Compose explicit source pages
         run: npm run a4:compose
+      - name: Compact fragmented writable tables
+        run: npm run a4:compact
       - name: Verify source schema and focused regressions
         run: |
           node tests/a4-table-split-regression.mjs
+          node tests/a4-compact-table-regression.mjs
           node tests/a4-inline-answer-line-regression.mjs
           node tests/pdf-preview-path2d-regression.mjs
           node tests/explicit-a4-source-static-checks.mjs
@@ -67,6 +70,7 @@ jobs:
       - name: Re-verify explicit source after repairs
         run: |
           node tests/a4-table-split-regression.mjs
+          node tests/a4-compact-table-regression.mjs
           node tests/a4-inline-answer-line-regression.mjs
           node tests/pdf-preview-path2d-regression.mjs
           node tests/explicit-a4-source-static-checks.mjs
@@ -104,7 +108,7 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add package-lock.json tools/compose-explicit-a4-pages.mjs tools/repair-explicit-a4-pages.mjs assets/css/worksheet-print.css worksheets/student worksheets/print worksheets/print-bundles qa/a4-layout-report.json qa/a4-preview-index.json qa/a4-contact-sheets/index.json
+          git add package-lock.json tools/compose-explicit-a4-pages.mjs tools/compact-explicit-a4-pages.mjs tools/lib/compact-explicit-tables.mjs tools/repair-explicit-a4-pages.mjs assets/css/worksheet-print.css worksheets/student worksheets/print worksheets/print-bundles qa/a4-layout-report.json qa/a4-preview-index.json qa/a4-contact-sheets/index.json
           if git diff --cached --quiet; then
             echo 'No generated changes'
           else
