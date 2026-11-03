@@ -34,6 +34,8 @@ jobs:
         run: node tests/pdf-preview-path2d-regression.mjs
       - name: Intentional writing-space regression
         run: node tests/a4-intentional-space-regression.mjs
+      - name: A4 CSS idempotence regression
+        run: node tests/a4-css-idempotence-regression.mjs
       - name: Explicit source contract
         run: node tests/explicit-a4-source-static-checks.mjs
       - name: HB-11 regression contract
