@@ -42,12 +42,14 @@ jobs:
           python tools/refine-composer-source.py
           python tools/refine-table-splitting.py
           python tools/refine-large-table-intros.py
+          python tools/refine-inline-answer-lines.py
           python tools/refine-a4-css.py
       - name: Compose explicit source pages
         run: npm run a4:compose
-      - name: Verify source schema, table splitting and HB-11 regression
+      - name: Verify source schema and focused regressions
         run: |
           node tests/a4-table-split-regression.mjs
+          node tests/a4-inline-answer-line-regression.mjs
           node tests/explicit-a4-source-static-checks.mjs
           node tests/hb11-explicit-a4-regression.mjs
       - name: Converge DOM geometry
@@ -69,8 +71,13 @@ jobs:
       - name: Re-verify explicit source after repairs
         run: |
           node tests/a4-table-split-regression.mjs
+          node tests/a4-inline-answer-line-regression.mjs
           node tests/explicit-a4-source-static-checks.mjs
           node tests/hb11-explicit-a4-regression.mjs
+          if grep -R -n -E '_{8,}' worksheets/student/*.html; then
+            echo 'Long underscore answer lines remain in printable sources'
+            exit 1
+          fi
       - name: Generate and validate all PDFs
         run: |
           npm run print:generate
