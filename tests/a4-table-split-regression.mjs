@@ -49,4 +49,19 @@ const repairModel = analyzeTableGroup(repairInput);
 assert.doesNotMatch(repairModel.introHtml, /activity-block/i, 'repair intro must unwrap the existing activity block instead of nesting it again');
 assert.match(repairModel.introHtml, /วาดคาน/, 'repair intro must preserve the instructional list');
 
+const largeMakerIntro = `
+<section class="activity-block activity-block--major">
+  <h2>กิจกรรม / Activity</h2>
+  <ol>
+    <li>วาดคานหนึ่งแบบและทำเครื่องหมายจุดหมุน วัตถุ และแรงพยายาม<div class="worksheet-box tall"></div></li>
+    <li>ระบุประเภทของคาน</li>
+    <li>ทำนายผลเมื่อย้ายแรงให้ไกลจุดหมุน</li>
+    <li>เตรียมบันทึกตารางแบบจำลอง</li>
+  </ol>
+  <table><thead><tr><th>แขนแรง</th><th>แรงประมาณ</th><th>สิ่งที่สังเกต</th></tr></thead><tbody><tr><td>2 หน่วย</td><td></td><td></td></tr></tbody></table>
+</section>`;
+const makerModel = analyzeTableGroup(largeMakerIntro);
+assert.equal(makerModel.introIsMajor, true, 'a multi-step drawing introduction must receive its own authored A4 page before the table');
+assert.ok(makerModel.introWritingRegions >= 1, 'large drawing space must be detected');
+
 console.log('PASS nested table split regression');
