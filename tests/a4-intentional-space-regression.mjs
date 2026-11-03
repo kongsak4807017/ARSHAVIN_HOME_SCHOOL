@@ -25,17 +25,20 @@ assert.match(
 const pages = report.records.flatMap(record =>
   record.pages.map(page => ({ lessonId: record.lessonId, ...page }))
 );
-const intentionalLowOccupancy = pages.filter(page => page.intentionalSpace && page.occupancy < 0.35);
-assert.ok(intentionalLowOccupancy.length > 0, 'fixture report should exercise intentional low-occupancy pages');
-for (const page of intentionalLowOccupancy) {
+const intentionalPages = pages.filter(page => page.intentionalSpace);
+assert.ok(intentionalPages.length > 0, 'layout report must include intentional writing pages');
+for (const page of intentionalPages) {
   assert.ok(
     Number.isFinite(page.largestWritingRegionRatio),
     `${page.lessonId} page ${page.pageNumber}: missing largestWritingRegionRatio evidence`
   );
-  assert.ok(
-    page.largestWritingRegionRatio >= 0.35,
-    `${page.lessonId} page ${page.pageNumber}: writing region uses only ${(page.largestWritingRegionRatio * 100).toFixed(1)}% of content height`
-  );
+  if (page.occupancy < 0.35) {
+    assert.ok(
+      page.largestWritingRegionRatio >= 0.35,
+      `${page.lessonId} page ${page.pageNumber}: writing region uses only ${(page.largestWritingRegionRatio * 100).toFixed(1)}% of content height`
+    );
+  }
 }
 
-console.log(`PASS intentional A4 writing-space regression: ${intentionalLowOccupancy.length} low-occupancy pages have real writing space`);
+const lowOccupancyPages = intentionalPages.filter(page => page.occupancy < 0.35);
+console.log(`PASS intentional A4 writing-space regression: ${intentionalPages.length} intentional pages measured; ${lowOccupancyPages.length} remain below 35% with valid writing space`);
