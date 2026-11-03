@@ -3,10 +3,13 @@ from pathlib import Path
 path = Path('assets/css/worksheet-print.css')
 source = path.read_text(encoding='utf-8')
 
-source = source.replace(
-    '.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}',
-    'span.check,i.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}'
-)
+legacy_selector = '.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}'
+canonical_selector = 'span.check,i.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}'
+# Repair the historical repeated-substitution artifact once, then guard the
+# canonical selector so subsequent refinement runs are byte-stable.
+source = source.replace('span.check,ispan.check,i.check,.print-check{display:inline-block;width:8mm;height:8mm;margin-right:2mm;border:1.3pt solid #111;vertical-align:middle}', canonical_selector)
+if 'span.check,i.check,.print-check' not in source:
+    source = source.replace(legacy_selector, canonical_selector)
 
 additions = []
 if '.activity-block .checklist-text' not in source:
