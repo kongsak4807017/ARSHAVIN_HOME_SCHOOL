@@ -40,6 +40,7 @@ th{font-weight:800;background:#f2f2f2}
 td.lines,th.lines,td.line,th.line,td.write-line,th.write-line{display:table-cell!important;min-height:0!important;height:27mm!important;background:none!important;border:1.2pt solid #111!important;margin:0!important}
 td.tall,th.tall{display:table-cell!important;min-height:0!important;height:40mm!important}
 .write-line,.line{display:block;min-height:11mm;border-bottom:1.3pt solid #555;margin:1mm 0}
+.inline-write-line{display:inline-block;width:min(58mm,100%);min-width:32mm;height:.95em;margin:0 1mm;border-bottom:1.4pt solid #555;vertical-align:baseline;white-space:normal}
 .writing-lines,.worksheet-lines,.lines{display:block;min-height:32mm;background:repeating-linear-gradient(to bottom,#fff 0,#fff 10.2mm,#777 10.2mm,#777 10.5mm)}
 .writing-lines.large,.worksheet-lines.large,.lines.large{min-height:56mm}
 .writing-zone{display:block;min-height:50mm;margin-top:1.2mm;background:repeating-linear-gradient(to bottom,#fff 0,#fff 10.2mm,#777 10.2mm,#777 10.5mm)}
