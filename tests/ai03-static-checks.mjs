@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 
@@ -20,8 +21,8 @@ assert(!lesson.includes('draggable=') && !script.match(/drag(start|over|end)|dro
 assert(script.includes("arshavin.ai.databias.v1"), 'AI-03 local storage key missing');
 assert(script.includes('trainerComplete') && script.includes('fairnessComplete') && script.includes('quizComplete'), 'Completion gates missing');
 assert(!script.match(/fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon/), 'Outbound lesson network API detected');
-assert((worksheet.match(/class="worksheet"/g) || []).length === 2, 'AI-03 must have exactly two worksheet pages');
-assert(worksheet.includes('@page') && worksheet.includes('size:A4 portrait'), 'A4 print rule missing');
+assert(worksheetPageCount(worksheet) >= 2, 'AI-03 must have explicit worksheet pages');
+assert(worksheet.includes('worksheet-print.css'), 'A4 print rule missing');
 assert(guide.includes('Rubric 4 ระดับ') && guide.includes('Safeguarding, privacy and fairness boundary'), 'Teacher rubric or safeguard boundary missing');
 assert(lesson.includes('ไม่ขอชื่อ') && lesson.includes('ไม่ใช้ AI ตัดสินคุณค่า'), 'Child-data or human-value boundary missing');
 assert(index.includes('learning-from-data-and-bias.html') && index.includes('arshavin.ai.databias.v1'), 'Homepage or reset integration missing');

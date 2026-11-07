@@ -157,3 +157,10 @@ All notable interactive-web changes are recorded here.
 ### Print reliability
 - Canonical printing uses pre-rendered PDF with browser header/footer disabled during generation; student pages do not intentionally include date/time, URL, build SHA, or web UI chrome.
 - Browser HTML print remains a fallback, not the canonical print path.
+
+
+## 2026-11-08 — Explicit A4 worksheet correction
+- Rebuilt 52 lesson PDFs and five subject bundles from 509 explicitly authored pages; HB-11 uses seven whole activity pages.
+- Restored omitted instructions/safety boundaries and the Maker trial table; added baseline-content preservation checks.
+- Corrected response table writing space, blank continuation pages and meaningful occupancy validation; bundled Thai font and advanced offline cache to v56.
+- PR checks validate committed PDF/source equality and render every PDF page for visual evidence; PDF rebuilds no longer rewrite authored sources automatically.

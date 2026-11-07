@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 
@@ -26,8 +27,8 @@ assert(!/(fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script), 'Outbou
 assert(lesson.includes('ดัชนีสมมติ') && lesson.includes('ไม่ใช่ค่าการสูญเสียดินจริง'), 'Simulation limitation missing');
 assert(lesson.includes('อยู่ห่าง') && lesson.includes('แจ้งผู้ใหญ่'), 'Unstable-ground safety boundary missing');
 assert(guide.includes('ห้าม') && guide.includes('ตลิ่ง') && guide.includes('ล้างมือ'), 'Tray-investigation safety guidance missing');
-assert((worksheet.match(/class="worksheet"/g) || []).length === 2, 'Exactly two A4 worksheets required');
-assert(worksheet.includes('@page') && worksheet.includes('A4 portrait'), 'A4 print rule missing');
+assert(worksheetPageCount(worksheet) >= 2, 'Exactly explicit A4 worksheet pages required');
+assert(worksheet.includes('worksheet-print.css'), 'A4 print rule missing');
 assert(index.includes(lessonPath), 'Homepage link missing');
 assert(index.includes('arshavin.environment.soil.v1'), 'Homepage reset key missing');
 assert(shell.includes("id: 'ENV-03'") && shell.includes('arshavin.environment.soil.v1'), 'Learning shell integration missing');

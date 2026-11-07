@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -26,7 +27,7 @@ check('required files exist',()=>{[...lessons,...worksheets,...guides,...scripts
 check('JavaScript parses',()=>scripts.forEach(file=>new vm.Script(read(file),{filename:file})));
 check('bilingual lesson shell structure',()=>lessons.forEach(file=>{const html=read(file);assert.match(html,/<html lang="th">/);assert.match(html,/<h1>[\s\S]*<br>[\s\S]*<span>/);assert.match(html,/data-learning-shell/);assert.match(html,/assets\/js\/learning-shell\.js/)}));
 check('local links resolve',()=>{for(const file of ['index.html',...lessons,...worksheets,...guides]){const html=read(file),directory=path.dirname(file);for(const match of html.matchAll(/(?:href|src)="([^"#]+)"/g)){const target=match[1];if(/^(?:https?:|mailto:|data:)/.test(target))continue;assert.ok(exists(path.normalize(path.join(directory,target))),`${file} -> ${target}`)}}});
-check('worksheets retain two core activity sections',()=>worksheets.forEach(file=>{const html=read(file);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2,file);assert.ok(/@page\s*\{[\s\S]*size:\s*A4/.test(html)||/assets\/css\/site\.css/.test(html),file)}));
+check('explicit A4 worksheet pages',()=>worksheets.forEach(file=>{const html=read(file);assert.ok(worksheetPageCount(html) >= 2,file)}));
 check('homepage and shell expose all lessons and keys',()=>{const homepage=read('index.html'),shell=read('assets/js/learning-shell.js');lessons.forEach(file=>assert.ok(homepage.includes(file),file));['HB-01','HB-02','HB-03','HB-04','HB-05','HB-06','HB-07','HB-08','HB-09','HB-10','HB-11','HB-12','AI-01','AI-02','AI-03','AI-04','AI-05','AI-06','AI-07','AI-08','AI-09','AI-10','ENV-01','ENV-02','ENV-03','ENV-04','ENV-05','ENV-06','ENV-07','ENV-08','ENV-09','ENV-10','MAKER-01','MAKER-02','MAKER-03','MAKER-04','MAKER-05','MAKER-06','MAKER-07','MAKER-08','MAKER-09','MAKER-10','CIT-01','CIT-02','CIT-03','CIT-04','CIT-05','CIT-06','CIT-07','CIT-08','CIT-09','CIT-10'].forEach(id=>assert.ok(shell.includes(id),id));keys.forEach(key=>{assert.ok(homepage.includes(key),key);assert.ok(shell.includes(key),key)})});
 check('lesson scripts are local-only',()=>scripts.filter(file=>file.startsWith('assets/js/')&&!file.endsWith('learning-shell.js')).forEach(file=>assert.doesNotMatch(read(file),/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/,file)));
 check('offline precache',()=>{const sw=read('service-worker.js');[...scripts.filter(file=>file.startsWith('assets/js/')),...lessons,...worksheets,...guides].forEach(file=>assert.ok(sw.includes(`./${file}`),file));assert.match(sw,/arshavin-grade4-v\d+/)});

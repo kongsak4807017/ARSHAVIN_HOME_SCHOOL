@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
@@ -36,9 +37,7 @@ assert.match(lesson, /legend/);
 assert.match(lesson, /aria-live="polite"/);
 assert.match(lesson, /tabindex="-1"/);
 assert.doesNotMatch(combined, /dragstart|draggable="true"/);
-assert.match(worksheet, /@page\{size:A4 portrait/);
-assert.equal((worksheet.match(/class="worksheet"/g) || []).length, 2);
-assert.match(worksheet, /page-break-after|break-after/);
+assert.ok(worksheetPageCount(worksheet) >= 2);
 assert.match(guide, /Rubric 4 ระดับ/);
 assert.match(guide, /ไม่มี timer|no timer/i);
 assert.match(guide, /ไม่.*จำกัดอาหาร|does not promote restrictive eating|ไม่ส่งเสริมการจำกัดอาหาร/i);

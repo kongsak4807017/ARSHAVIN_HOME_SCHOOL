@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
@@ -25,8 +26,7 @@ assert.match(script,/ruleComplete/);
 assert.match(script,/decisionComplete/);
 assert.match(script,/quizComplete/);
 assert.doesNotMatch(script,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
-assert.equal((worksheet.match(/class="worksheet(?:\s|\")/g)||[]).length,2);
-assert.match(worksheet,/@page\{size:A4/);
+assert.ok(worksheetPageCount(worksheet) >= 2);
 assert.match(guide,/Rubric 4 ระดับ/);
 assert.match(guide,/ไม่เปิดเผยเหตุการณ์ขัดแย้งจริง/);
 for(const p of [lessonPath,scriptPath,worksheetPath,guidePath])assert.ok(sw.includes(`./${p}`),`offline precache missing ${p}`);

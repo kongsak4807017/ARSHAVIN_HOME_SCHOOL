@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const read=p=>fs.readFileSync(new URL(`../${p}`,import.meta.url),'utf8');
@@ -19,8 +20,7 @@ assert.match(script,/comparisonComplete/);
 assert.match(script,/designComplete/);
 assert.match(script,/quizComplete/);
 assert.doesNotMatch(script,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
-assert.equal((worksheet.match(/class="worksheet page"/g)||[]).length,2);
-assert.match(worksheet,/@page\{size:A4/);
+assert.ok(worksheetPageCount(worksheet) >= 2);
 assert.match(guide,/Rubric 4 ระดับ/);
 assert.match(guide,/ไม่มี timer|ไม่มีการแข่งขัน/);
 assert.match(shell,/MAKER-06/);

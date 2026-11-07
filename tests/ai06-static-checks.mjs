@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 const read=p=>fs.readFileSync(p,'utf8');
 const lesson=read('subjects/ai-science/recommendation-ranking-fair-choice.html');
@@ -17,7 +18,7 @@ ok('completion gates',script.includes('recommenderComplete')&&script.includes('f
 ok('no outbound APIs',!/(fetch\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script));
 ok('no child profiling',/ห้ามใช้ระบบนี้จัดอันดับหรือทำนายคุณค่าของเด็ก/.test(lesson)&&/profiling/.test(guide));
 ok('user control',/เปลี่ยนน้ำหนัก/.test(lesson)&&/ปิดคำแนะนำ/.test(worksheet));
-ok('exactly two A4 worksheets',(worksheet.match(/class="worksheet"/g)||[]).length===2&&worksheet.includes('@page{size:A4'));
+ok('explicit A4 worksheet pages',worksheetPageCount(worksheet) >= 2&&worksheet.includes('worksheet-print.css'));
 ok('teacher rubric',guide.includes('Rubric 4 ระดับ')&&guide.includes('AAC'));
 ok('shell integration',shell.includes("id: 'AI-06'")&&shell.includes('arshavin.ai.recommendation.v1'));
 ok('offline integration',/arshavin-grade4-v\d+/.test(sw)&&sw.includes('recommendation-ranking-fair-choice.html')&&sw.includes('recommendation-fair-choice-lesson.js'));

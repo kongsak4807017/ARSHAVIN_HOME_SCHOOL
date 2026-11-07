@@ -5,8 +5,8 @@ Grade 4 Interactive Web MVP — static GitHub Pages learning experience.
 
 ## Completion counters
 - Interactive bilingual lessons: **52 / 52**
-- A4 student worksheets: **104 / 104 minimum**
-- Teacher guides/rubrics: **51 complete guides**
+- A4 student worksheet packs: **52 / 52 — 509 explicitly authored pages**
+- Teacher guides/rubrics: **52 / 52 complete guides**
 - Subjects represented in the runtime: **5 / 5**
 - Human Body sequence: **12 / 12 complete**
 - AI Science sequence: **10 / 10 complete**
@@ -47,3 +47,12 @@ Run **end-to-end deployment-readiness QA** against the published GitHub Pages bu
 - [x] Homepage exposes five “Download all worksheets” subject PDF bundles.
 - [x] Service worker advanced to v55; PDF files use same-origin cache-on-first-request rather than install-time precache.
 - [ ] Final exact-head static CI and published GitHub Pages smoke test required before release merge.
+
+
+## 2026-11-08 — Explicit A4 remediation verification
+- All 52 packs now use authored A4 pages: Human Body 101; AI Science 94; Environment 115; Maker Engineering 92; Citizenship 107. Total 509 pages, including HB-11 7 pages.
+- Restored and pinned 1,292 canonical instructional/safety passages, the detailed HB-01 rubric and MAKER-09 three-round record table.
+- Removed promptless continuation pages; answer boxes/lines remain attached to their prompts. Actual child geometry replaces expanded-border occupancy.
+- Main table/body text is 22pt; supporting header text is at least 14pt. Bundled OFL Noto Sans Thai makes layout independent of workstation fonts.
+- Local browser smoke: 52 lesson routes, headings and PDF links, zero JavaScript errors; 390px homepage without horizontal overflow; cached HB-11 offline reload.
+- Local verification: 69/69 suites, all 509 PDF pages, all five bundle totals and independent visual review of 59/59 contact sheets PASS. Exact-head GitHub CI and published-file hashes are the remaining release gates for PR #59.

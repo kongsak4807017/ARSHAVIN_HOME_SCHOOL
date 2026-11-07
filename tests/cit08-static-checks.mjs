@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 const files={lesson:'subjects/citizenship/community-data-surveys-responsible-reporting.html',script:'assets/js/community-data-survey-lesson.js',worksheet:'worksheets/student/community-data-surveys-responsible-reporting-a4.html',guide:'worksheets/teacher-guides/community-data-surveys-responsible-reporting-guide.html',index:'index.html',shell:'assets/js/learning-shell.js',sw:'service-worker.js'};
 const text=Object.fromEntries(Object.entries(files).map(([k,p])=>[k,fs.readFileSync(p,'utf8')]));
@@ -11,8 +12,8 @@ assert(!/draggable=|ondrag|dragstart/.test(text.lesson),'drag-only interaction f
 assert(text.script.includes("arshavin.citizenship.data.v1"),'storage key missing');
 assert(text.script.includes('surveyComplete')&&text.script.includes('reportComplete')&&text.script.includes('quizComplete'),'completion gates missing');
 assert(!/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/.test(text.script),'outbound API found');
-assert((text.worksheet.match(/class="worksheet"/g)||[]).length===2,'worksheet must contain exactly two pages');
-assert(text.worksheet.includes('@page{size:A4 portrait')&&text.worksheet.includes('page-break-after'),'A4 print rules missing');
+assert(worksheetPageCount(text.worksheet) >= 2,'worksheet must contain explicit A4 pages');
+assert(text.worksheet.includes('worksheet-print.css'),'A4 print rules missing');
 assert(/ไม่เก็บแบบสำรวจจริง|ไม่ใช้ชื่อจริง|no real survey|ไม่เก็บ.*ชื่อ/.test(text.lesson+text.guide),'real-data privacy safeguard missing');
 assert(/ความคิดเห็นทางการเมือง/.test(text.lesson+text.guide),'political-opinion safeguard missing');
 assert(text.index.includes('community-data-surveys-responsible-reporting.html'),'homepage integration missing');

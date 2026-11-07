@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -23,8 +24,7 @@ assert.match(h,/role="status" aria-live="polite"/);
 assert.doesNotMatch(h,/draggable="true"/);
 assert.doesNotMatch(j,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
 ['sourceComplete','noticeComplete','quizComplete','arshavin.citizenship.media.v1'].forEach(x=>assert.match(j,new RegExp(x.replaceAll('.','\\.'))));
-assert.equal((w.match(/class="worksheet(?:\s|")/g)||[]).length,2);
-assert.match(w,/@page\{size:A4 portrait/);
+assert.ok(worksheetPageCount(w) >= 2);
 assert.match(g,/Rubric 4 ระดับ/);
 assert.match(g,/ไม่ให้เด็กสืบค้นบุคคล/);
 for(const f of files)assert.ok(sw.includes(`./${f}`),`offline ${f}`);

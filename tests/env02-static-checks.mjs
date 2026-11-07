@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
@@ -37,8 +38,7 @@ assert.match(script, /cycleComplete/);
 assert.match(script, /watershedComplete/);
 assert.match(script, /quizComplete/);
 assert.doesNotMatch(script, /fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
-assert.equal((worksheet.match(/class="worksheet(?:\s|\")/g) || []).length, 2);
-assert.match(worksheet, /@page\{size:A4 portrait/);
+assert.ok(worksheetPageCount(worksheet) >= 2);
 assert.match(guide, /Rubric 4 ระดับ/);
 assert.match(guide, /(ไม่|ห้าม)ชิมน้ำ(?:ทดลอง|จากแหล่งทดลอง)?/);
 required.forEach(path => assert.ok(sw.includes(`./${path}`) || path === scriptPath && sw.includes('./assets/js/water-cycle-lesson.js'), path));

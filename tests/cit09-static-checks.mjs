@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -29,8 +30,7 @@ assert.doesNotMatch(material,/draggable="true"/);
 assert.doesNotMatch(read(script),/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
 ['verificationComplete','helpComplete','quizComplete','arshavin.citizenship.rumours.v1'].forEach(value=>assert.ok(read(script).includes(value),value));
 const sheet=read(worksheet);
-assert.equal((sheet.match(/class="worksheet(?:\s|")/g)||[]).length,2);
-assert.match(sheet,/@page\s*\{[^}]*size:\s*A4/is);
+assert.ok(worksheetPageCount(sheet) >= 2);
 const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');
 [lesson,script,worksheet,guide].forEach(file=>{assert.ok(index.includes(file)||file!==lesson,file);assert.ok(sw.includes(`./${file}`),file)});
 assert.ok(shell.includes("id: 'CIT-09'"));

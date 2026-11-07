@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 const read=p=>fs.readFileSync(new URL(`../${p}`,import.meta.url),'utf8');
@@ -19,8 +20,8 @@ assert(!/(dragstart|draggable="true")/.test(lesson+script),'drag-only interactio
 assert(/arshavin\.maker\.pulleysgears\.v1/.test(script),'local progress key missing');
 assert(/try\{localStorage/.test(script)&&/catch\{\}/.test(script),'guarded storage missing');
 assert(!/(fetch\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script),'outbound network API found');
-assert((worksheet.match(/class="worksheet"/g)||[]).length===2,'worksheet must contain exactly two A4 pages');
-assert(/@page\{size:A4/.test(worksheet),'A4 print rule missing');
+assert(worksheetPageCount(worksheet) >= 2,'worksheet must contain exactly explicit A4 worksheet pages');
+assert(worksheet.includes('worksheet-print.css'),'A4 print rule missing');
 for(const phrase of ['ห้ามยกคน','จุดหนีบ','ผู้ใหญ่เป็นผู้ตัด'])assert((lesson+guide).includes(phrase),`safety phrase missing: ${phrase}`);
 for(const path of [lessonPath,scriptPath,worksheetPath,guidePath])assert(sw.includes(`./${path}`),`offline precache missing ${path}`);
 assert(/arshavin-grade4-v(?:1[0-9]|[2-9][0-9])/.test(sw),'current cache version missing');

@@ -1,0 +1,31 @@
+name: Rebuild authored A4 worksheet PDFs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - run: npm run print:full
+      - run: node tests/all-explicit-a4-pages.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: authored-a4-build
+          path: |
+            worksheets/print/
+            worksheets/print-bundles/
+            qa/
+          retention-days: 14

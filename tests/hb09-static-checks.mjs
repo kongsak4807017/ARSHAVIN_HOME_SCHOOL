@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -16,6 +17,6 @@ check('HB-09 bilingual accessible structure',()=>{const html=read(lesson);assert
 check('HB-09 science boundaries',()=>{const material=read(lesson)+read(guide)+read(worksheet);assert.match(material,/ด่านป้องกัน|barrier/i);assert.match(material,/ตรวจพบ|detect/i);assert.match(material,/ตอบสนอง|respond/i);assert.match(material,/ความจำ|memory/i);assert.match(material,/วัคซีน.*ฝึก|vaccines?.*train/is);assert.match(material,/ไม่รับรอง|not.*guarantee|protection.*never perfect/is);assert.match(material,/ไม่วินิจฉัย|not diagnostic/i)});
 check('HB-09 privacy and safeguarding',()=>{const material=read(lesson)+read(guide)+read(worksheet);assert.match(material,/ประวัติวัคซีน|vaccination history/i);assert.match(material,/ข้อมูลสุขภาพส่วนบุคคล|private health information/i);assert.match(material,/บุคลากรสุขภาพ|health.?care worker/i);assert.match(material,/ไม่ใช้เชื้อจริง|no real germs|สารคัดหลั่ง/i)});
 check('HB-09 local-only completion',()=>{const js=read(script);assert.match(js,/arshavin\.humanbody\.immunity\.v1/);['pathComplete','decisionComplete','quizComplete'].forEach(key=>assert.match(js,new RegExp(key)));assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/)});
-check('HB-09 worksheets are two A4 pages',()=>{const html=read(worksheet);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(html,/@page\s*\{[\s\S]*size:\s*A4/)});
+check('explicit A4 worksheet pages',()=>{const html=read(worksheet);assert.ok(worksheetPageCount(html) >= 2);});
 check('HB-09 integration and offline coverage',()=>{const home=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');assert.match(home,/HB-09/);assert.match(home,/arshavin\.humanbody\.immunity\.v1/);assert.match(shell,/HB-09/);assert.match(shell,/pathComplete && data\.decisionComplete && data\.quizComplete/);[lesson,script,worksheet,guide].forEach(file=>assert.ok(sw.includes(`./${file}`),file));assert.match(sw,/arshavin-grade4-v\d+/)});
 if(process.exitCode)process.exit(process.exitCode);

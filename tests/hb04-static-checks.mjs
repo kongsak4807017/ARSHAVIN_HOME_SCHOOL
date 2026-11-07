@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
@@ -29,8 +30,7 @@ assert.match(script, /arshavin\.humanbody\.breathing\.v1/);
 assert.match(script, /pathComplete/);
 assert.match(script, /airComplete/);
 assert.match(script, /quizComplete/);
-assert.equal((worksheet.match(/class="worksheet(?:\s|\")/g) || []).length, 2);
-assert.match(worksheet, /@page\{size:A4/);
+assert.ok(worksheetPageCount(worksheet) >= 2);
 assert.match(guide, /ไม่ทำ breath-holding/);
 assert.match(guide, /ใช้สถานการณ์จำลองเท่านั้น/);
 assert.match(guide, /Rubric 4 ระดับ/);

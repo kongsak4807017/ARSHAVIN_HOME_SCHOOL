@@ -1,0 +1,80 @@
+name: Explicit A4 page checks
+
+on:
+  pull_request:
+    paths:
+      - 'worksheets/student/**'
+      - 'assets/css/worksheet-print.css'
+      - 'tools/**'
+      - 'tests/*a4*.mjs'
+      - 'tests/helpers/**'
+      - 'worksheets/print/**'
+      - 'worksheets/print-bundles/**'
+      - 'tests/pdf-preview*.mjs'
+      - '.github/workflows/explicit-a4-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install locked tooling
+        run: npm ci
+      - name: Install Poppler renderer
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Curriculum and learner metadata preservation
+        run: |
+          node tests/a4-learner-metadata-regression.mjs
+          node tests/a4-instructional-content-preservation.mjs
+          node tests/a4-no-orphan-pages.mjs
+          node tests/a4-structure-regression.mjs
+      - name: Nested table split regression
+        run: node tests/a4-table-split-regression.mjs
+      - name: Compact writable table regression
+        run: node tests/a4-compact-table-regression.mjs
+      - name: Row-table compaction regression
+        run: node tests/a4-row-table-compaction-regression.mjs
+      - name: Wide field-table compaction regression
+        run: node tests/a4-wide-field-table-compaction-regression.mjs
+      - name: Blank continuation compaction regression
+        run: node tests/a4-blank-continuation-compaction-regression.mjs
+      - name: Inline answer line regression
+        run: node tests/a4-inline-answer-line-regression.mjs
+      - name: PDF vector preview regression
+        run: node tests/pdf-preview-path2d-regression.mjs
+      - name: Intentional writing-space regression
+        run: node tests/a4-intentional-space-regression.mjs
+      - name: A4 CSS idempotence regression
+        run: node tests/a4-css-idempotence-regression.mjs
+      - name: Explicit source contract
+        run: node tests/explicit-a4-source-static-checks.mjs
+      - name: HB-11 regression contract
+        run: node tests/hb11-explicit-a4-regression.mjs
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Actual table writing-space geometry
+        run: node tests/a4-table-writing-space-regression.mjs
+      - name: Validate all authored pages and committed PDFs
+        run: |
+          npm run a4:preflight
+          npm run print:validate
+          node tests/subject-download-bundles-static-checks.mjs
+      - name: Render committed PDFs and verify every page
+        run: |
+          npm run print:previews
+          npm run print:contact-sheets
+          node tests/all-explicit-a4-pages.mjs
+      - name: Upload all-page visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: explicit-a4-visual-qa
+          path: qa/
+          retention-days: 14

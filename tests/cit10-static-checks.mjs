@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -25,8 +26,8 @@ assert.match(material,/political profiling|ความคิดเห็นท�
 assert.match(material,/ไม่รับคำร้องจริง|not a real petition/i);
 assert.match(material,/child-only escalation|เพียงลำพัง/i);
 assert.match(material,/ข้อมูลรวม|aggregate/i);
-assert.equal((read(worksheet).match(/class="worksheet(?:\s|")/g)||[]).length,2);
-assert.match(read(worksheet),/@page\s*\{[^}]*size:A4 portrait/);
+assert.ok(worksheetPageCount(read(worksheet)) >= 2);
+assert.ok(worksheetPageCount(read(worksheet)) >= 2);
 ['canvasComplete','reviewComplete','quizComplete','arshavin.citizenship.capstone.v1'].forEach(token=>assert.match(read(script),new RegExp(token)));
 assert.doesNotMatch(read(script),/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
 assert.doesNotMatch(material,/draggable="true"|<input[^>]+type="file"/);

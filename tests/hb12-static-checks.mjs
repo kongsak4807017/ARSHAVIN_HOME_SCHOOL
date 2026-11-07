@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -25,8 +26,8 @@ assert.match(material,/no diagnosis|ไม่วินิจฉัย/i);
 assert.match(material,/personal health record|เวชระเบียน|ประวัติสุขภาพ/i);
 assert.match(material,/body comparison|เปรียบเทียบรูปร่าง/i);
 assert.match(material,/forced disclosure|บังคับเปิดเผย|ไม่บังคับเล่า/i);
-assert.equal((read(worksheet).match(/class="worksheet(?:\s|")/g)||[]).length,2);
-assert.match(read(worksheet),/@page\s*\{[^}]*size:A4 portrait/);
+assert.ok(worksheetPageCount(read(worksheet)) >= 2);
+assert.ok(worksheetPageCount(read(worksheet)) >= 2);
 ['systemsComplete','planComplete','quizComplete','arshavin.humanbody.capstone.v1'].forEach(token=>assert.match(read(script),new RegExp(token)));
 assert.doesNotMatch(read(script),/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
 assert.doesNotMatch(material,/draggable="true"|<input[^>]+type="file"/);

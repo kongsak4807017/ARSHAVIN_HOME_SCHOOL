@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 const root=process.cwd();
@@ -20,7 +21,7 @@ check('adult escalation safeguards',lesson.includes('บอกผู้ใหญ
 check('local only progress',script.includes('arshavin.humanbody.nervous.v1')&&script.includes('signalComplete')&&script.includes('safetyComplete')&&script.includes('quizComplete'));
 check('no outbound lesson APIs',!/(fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script));
 check('incomplete-answer feedback',(script.match(/กรุณาตอบให้ครบทั้ง 3 ข้อ/g)||[]).length===2);
-check('exactly two worksheets',(worksheet.match(/class="worksheet(?:\s|")/g)||[]).length===2&&worksheet.includes('@page{size:A4 portrait'));
+check('explicit A4 worksheet pages',worksheetPageCount(worksheet) >= 2&&worksheet.includes('worksheet-print.css'));
 check('teacher guide complete',guide.includes('60–90 นาที')&&guide.includes('Rubric 4 ระดับ')&&guide.includes('AAC')&&guide.includes('ไม่มี timer'));
 check('homepage integration',index.includes(lessonPath)&&index.includes('arshavin.humanbody.nervous.v1'));
 check('shell integration',shell.includes("id: 'HB-08'")&&shell.includes('nervous-system-brain-senses-responsible-health-information.html')&&shell.includes('arshavin.humanbody.nervous.v1'));

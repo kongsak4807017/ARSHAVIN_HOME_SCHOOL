@@ -1,4 +1,109 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAKER-08 ใบงานวงจรไฟฟ้าอย่างง่าย</title><style>@page{size:A4 portrait;margin:12mm}*{box-sizing:border-box}body{font-family:Arial,"Noto Sans Thai",sans-serif;color:#111;margin:0}.worksheet{min-height:273mm;page-break-after:always;padding:2mm}.worksheet:last-child{page-break-after:auto}h1{font-size:20pt;margin:0 0 4mm}h2{font-size:14pt}.meta{display:grid;grid-template-columns:1fr 1fr;gap:6mm}.line{border-bottom:1px solid #333;min-height:8mm}.box{border:1px solid #333;padding:4mm;margin:3mm 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm}table{width:100%;border-collapse:collapse}th,td{border:1px solid #333;padding:3mm;vertical-align:top}.write{height:18mm}.small{font-size:10pt}@media print{a{color:#111;text-decoration:none}}</style><link rel="stylesheet" href="../../assets/css/worksheet-print.css">
-</head><body>
-<section class="worksheet"><h1>ใบงาน 1: นักสืบเส้นทางวงจร<br><span>Worksheet 1: Circuit-Path Detective</span></h1><div class="meta"><p>ชื่อเล่น / Nickname: <span class="line">________________</span></p><p>วันที่ / Date: <span class="line">________________</span></p></div><div class="box"><h2>1) เติมส่วนประกอบ / Complete the parts</h2><p>แหล่งพลังงาน / Source → __________ → สวิตช์ / Switch → __________ → กลับสู่แหล่ง / Return to source</p><p>คำให้เลือก / Choices: สายตัวนำ / conductor; อุปกรณ์ใช้พลังงาน / load</p></div><div class="grid"><div class="box"><h2>2) วงจรเปิด / Open circuit</h2><p>วาดแผนภาพที่มีช่องว่างหนึ่งจุด / Draw one gap.</p><div class="write"></div><p>ผลที่คาด / Expected result: __________________</p></div><div class="box"><h2>3) วงจรปิด / Closed circuit</h2><p>วาดเส้นทางต่อเนื่องครบวงจร / Draw a complete path.</p><div class="write"></div><p>ผลที่คาด / Expected result: __________________</p></div></div><div class="box"><h2>4) พลังงานเปลี่ยนรูป / Energy transformation</h2><table><tr><th>อุปกรณ์ / Load</th><th>พลังงานออกที่ต้องการ / Intended output</th><th>พลังงานอื่น / Other output</th></tr><tr><td>หลอดไฟจำลอง / model lamp</td><td></td><td></td></tr><tr><td>มอเตอร์จำลอง / model motor</td><td></td><td></td></tr></table></div><div class="box"><h2>5) ข้อจำกัดของแบบจำลอง / Model limits</h2><p>แบบจำลองนี้ช่วยอธิบายอะไร? __________________________________________</p><p>แบบจำลองนี้ไม่รับรองอะไร? __________________________________________</p></div></section>
-<section class="worksheet"><h1>ใบงาน 2: ห้องออกแบบวงจรปลอดภัย<br><span>Worksheet 2: Safer Circuit Design Lab</span></h1><div class="box"><h2>1) ภารกิจสมมติ / Fictional mission</h2><p>ออกแบบวงจรแรงดันต่ำบนบัตรข้อมูล ให้สวิตช์ควบคุมไฟสัญญาณจำลอง โดยไม่ต่ออุปกรณ์จริง</p><p>Design a card-based low-voltage model where a switch controls a fictional signal light.</p></div><div class="box"><h2>2) เกณฑ์และข้อจำกัด / Criteria and constraints</h2><table><tr><th>ต้องมี / Must have</th><th>ห้าม / Must not</th></tr><tr><td class="write"></td><td class="write"></td></tr></table></div><div class="box"><h2>3) แผนภาพ / Diagram</h2><div style="height:55mm;border:1px dashed #555"></div><p class="small">ติดป้าย source, conductor, switch, load และลูกศรเส้นทาง / Label source, conductor, switch, load and path arrows.</p></div><div class="box"><h2>4) ตรวจทีละหนึ่งตัวแปร / One-variable-at-a-time check</h2><table><tr><th>รอบ / Trial</th><th>สิ่งที่คงเดิม / Kept same</th><th>สิ่งที่เปลี่ยน / Changed</th><th>ผล / Result</th></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td></tr></table></div><div class="box"><h2>5) Stop rule</h2><p>เมื่อพบความร้อน กลิ่นไหม้ ประกายไฟ ของเหลวรั่ว สายแตก หรือแบตเตอรี่ชำรุด ฉันจะ: __________________________</p><p>For heat, burning smell, sparks, leaks, broken wire or damaged battery, I will: __________________________</p></div><div class="box"><h2>6) สะท้อนคิด / Reflection</h2><p>เหตุใดห้ามต่อขั้วแบตเตอรี่เข้าหากันโดยตรง? __________________________________</p><p>Why is a direct battery-terminal connection unsafe? ______________________________</p></div></section></body></html>
+<!DOCTYPE html><html lang="th"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MAKER-08 ใบงานวงจรไฟฟ้าอย่างง่าย</title>
+<link rel="stylesheet" href="../../assets/css/worksheet-print.css">
+</head>
+<body class="worksheet-document">
+<main class="print-pack" data-lesson-id="MAKER-08">
+<section class="print-page" data-page="1" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">นักสืบเส้นทางวงจรWorksheet 1: Circuit-Path Detective</small></h1>
+  </header>
+  <div class="print-page__content"><div class="learner-meta"><p>ชื่อเล่น / Nickname: <span class="line"><span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></span></p><p>วันที่ / Date: <span class="line"><span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></span></p></div><section class="activity-block activity-block--minor" data-block-id="maker-08-1-เติมส่วนประกอบ-complete-the-parts"><div class="box"><h2>1) เติมส่วนประกอบ / Complete the parts</h2><p>แหล่งพลังงาน / Source → <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span> → สวิตช์ / Switch → <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span> → กลับสู่แหล่ง / Return to source</p><p>คำให้เลือก / Choices: สายตัวนำ / conductor; อุปกรณ์ใช้พลังงาน / load</p></div><p class="helper-text">พื้นที่เขียนหรือวาดเพิ่มเติม / Additional writing or drawing space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section></div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 1/9 · Page 1/9</span></footer>
+</section><section class="print-page" data-page="2" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">นักสืบเส้นทางวงจรWorksheet 1: Circuit-Path Detective</small></h1>
+  </header>
+  <div class="print-page__content"><section class="activity-block activity-block--minor" data-block-id="maker-08-2-วงจรเปิด-open-circuit"><div class="grid"><div class="box"><h2>2) วงจรเปิด / Open circuit</h2><p>วาดแผนภาพที่มีช่องว่างหนึ่งจุด / Draw one gap.</p><div class="write"></div><p>ผลที่คาด / Expected result: <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></p></div><div class="box"><h2>3) วงจรปิด / Closed circuit</h2><p>วาดเส้นทางต่อเนื่องครบวงจร / Draw a complete path.</p><div class="write"></div><p>ผลที่คาด / Expected result: <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></p></div></div><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section></div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 2/9 · Page 2/9</span></footer>
+</section>
+<section class="print-page" data-page="3" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">นักสืบเส้นทางวงจรWorksheet 1: Circuit-Path Detective</small></h1>
+  </header>
+  <div class="print-page__content"><section class="activity-block activity-block--major" data-block-id="maker-08-4-พลังงานเปลี่ยนรูป-energy-transformation-compacted" data-split-from="maker-08-4-พลังงานเปลี่ยนรูป-energy-transformation" data-repeat-heading="true" data-compacted-table="true"><h2>4) พลังงานเปลี่ยนรูป / Energy transformation</h2><div class="box"></div><table class="worksheet-table worksheet-table--compact" data-compacted-table="true"><thead><tr><th>อุปกรณ์ / Load</th><th>พลังงานออกที่ต้องการ / Intended output</th><th>พลังงานอื่น / Other output</th></tr></thead><tbody><tr><td>หลอดไฟจำลอง / model lamp</td><td></td><td></td></tr><tr><td>มอเตอร์จำลอง / model motor</td><td></td><td></td></tr></tbody></table></section></div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 3/9 · Page 3/9</span></footer>
+</section>
+
+<section class="print-page" data-page="4" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 1 / Worksheet 1<small class="supporting-english">นักสืบเส้นทางวงจรWorksheet 1: Circuit-Path Detective</small></h1>
+  </header>
+  <div class="print-page__content">
+
+    <section class="activity-block activity-block--minor" data-block-id="maker-08-5-ข้อจํากัดของแบบจําลอง-model-limits"><div class="box"><h2>5) ข้อจำกัดของแบบจำลอง / Model limits</h2><p>แบบจำลองนี้ช่วยอธิบายอะไร? <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></p><p>แบบจำลองนี้ไม่รับรองอะไร? <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></p></div><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 4/9 · Page 4/9</span></footer>
+</section>
+<section class="print-page" data-page="5" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">ห้องออกแบบวงจรปลอดภัยWorksheet 2: Safer Circuit Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+
+    <section class="activity-block activity-block--minor" data-block-id="maker-08-1-ภารกิจสมมติ-fictional-mission"><div class="box"><h2>1) ภารกิจสมมติ / Fictional mission</h2><p>ออกแบบวงจรแรงดันต่ำบนบัตรข้อมูล ให้สวิตช์ควบคุมไฟสัญญาณจำลอง โดยไม่ต่ออุปกรณ์จริง</p><p>Design a card-based low-voltage model where a switch controls a fictional signal light.</p></div><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 5/9 · Page 5/9</span></footer>
+</section>
+<section class="print-page" data-page="6" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">ห้องออกแบบวงจรปลอดภัยWorksheet 2: Safer Circuit Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+
+    <section class="activity-block activity-block--major" data-block-id="maker-08-2-เกณฑ์และข้อจํากัด-criteria-and-constraints-rows-1-1" data-split-from="maker-08-2-เกณฑ์และข้อจํากัด-criteria-and-constraints" data-repeat-heading="true"><h2>2) เกณฑ์และข้อจำกัด / Criteria and constraints</h2><div class="box"></div><table><thead><tr><th>ต้องมี / Must have</th><th>ห้าม / Must not</th></tr></thead><tbody><tr><td class="write"></td><td class="write"></td></tr></tbody></table><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 6/9 · Page 6/9</span></footer>
+</section>
+<section class="print-page" data-page="7" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">ห้องออกแบบวงจรปลอดภัยWorksheet 2: Safer Circuit Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+
+    <section class="activity-block activity-block--minor" data-block-id="maker-08-3-แผนภาพ-diagram"><div class="box"><h2>3) แผนภาพ / Diagram</h2><div></div><p class="small">ติดป้าย source, conductor, switch, load และลูกศรเส้นทาง / Label source, conductor, switch, load and path arrows.</p></div><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 7/9 · Page 7/9</span></footer>
+</section>
+<section class="print-page" data-page="8" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">ห้องออกแบบวงจรปลอดภัยWorksheet 2: Safer Circuit Design Lab</small></h1>
+  </header>
+  <div class="print-page__content"><section class="activity-block activity-block--major" data-block-id="maker-08-4-ตรวจทีละหนึ่งตัวแปร-one-variable-at-a-time-check-compacted" data-split-from="maker-08-4-ตรวจทีละหนึ่งตัวแปร-one-variable-at-a-time-check" data-repeat-heading="true" data-compacted-table="true"><h2>4) ตรวจทีละหนึ่งตัวแปร / One-variable-at-a-time check</h2><div class="box"></div><table class="worksheet-table worksheet-table--compact" data-compacted-table="true"><thead><tr><th scope="col">รอบ / Trial</th><th scope="col">สิ่งที่คงเดิม / Kept same</th><th scope="col">สิ่งที่เปลี่ยน / Changed</th><th scope="col">ผล / Result</th></tr></thead><tbody><tr><td>1</td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td></tr><tr><td>2</td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td></tr><tr><td>3</td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td><td class="handwriting-cell"><div class="writing-zone writing-zone--compact" aria-label="พื้นที่เขียน / Writing space"></div></td></tr></tbody></table></section></div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 8/9 · Page 8/9</span></footer>
+</section>
+
+
+
+
+
+
+
+
+<section class="print-page" data-page="9" data-page-count="9" data-intentional-space="true">
+  <header class="print-page__header">
+    <p class="print-page__kicker">ARSHAVIN HOME SCHOOL · MAKER-08</p>
+    <h1 class="print-page__title">ใบงาน 2 / Worksheet 2<small class="supporting-english">ห้องออกแบบวงจรปลอดภัยWorksheet 2: Safer Circuit Design Lab</small></h1>
+  </header>
+  <div class="print-page__content">
+
+    <section class="activity-block activity-block--minor" data-block-id="maker-08-5-stop-rule"><div class="box"><h2>5) Stop rule</h2><p>เมื่อพบความร้อน กลิ่นไหม้ ประกายไฟ ของเหลวรั่ว สายแตก หรือแบตเตอรี่ชำรุด ฉันจะ: <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></p><p>For heat, burning smell, sparks, leaks, broken wire or damaged battery, I will: <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></p></div></section>
+    <section class="activity-block activity-block--minor" data-block-id="maker-08-6-สะท้อนคิด-reflection"><div class="box"><h2>6) สะท้อนคิด / Reflection</h2><p>เหตุใดห้ามต่อขั้วแบตเตอรี่เข้าหากันโดยตรง? <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></p><p>Why is a direct battery-terminal connection unsafe? <span class="inline-write-line" aria-label="พื้นที่เขียนคำตอบ / Answer line"></span></p></div><p class="helper-text">พื้นที่บันทึกหรืออธิบายเพิ่มเติม / Additional writing or explanation space</p><div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div></section>
+  </div>
+  <footer class="print-page__footer"><span>ARSHAVIN HOME SCHOOL · MAKER-08</span><span>หน้า 9/9 · Page 9/9</span></footer>
+</section>
+</main>
+
+
+
+</body></html>

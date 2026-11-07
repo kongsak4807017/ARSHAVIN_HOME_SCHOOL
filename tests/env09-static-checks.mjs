@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 
 const files = {
@@ -38,8 +39,8 @@ assert(!/fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon/.test(script), 'ENV-09 m
 assert(combined.includes('ไม่เก็บ') && combined.includes('ที่อยู่') && combined.includes('การได้ยิน') && combined.includes('การมองเห็น'), 'Missing privacy and sensory-data safeguards');
 assert(combined.includes('ไม่ใช่เครื่องวัด') && combined.includes('ไม่ใช่การตรวจ'), 'Missing model and diagnostic limitations');
 assert(combined.includes('ไม่ให้เด็ก') && combined.includes('แสงจ้า'), 'Missing hazardous-observation safeguards');
-assert((worksheet.match(/class="worksheet"/g) || []).length === 2, 'Worksheet must contain exactly two A4 pages');
-assert(worksheet.includes('@page { size: A4 portrait') && worksheet.includes('page-break-after'), 'Missing A4 print rules');
+assert(worksheetPageCount(worksheet) >= 2, 'Worksheet must contain exactly explicit A4 worksheet pages');
+assert(worksheet.includes('worksheet-print.css'), 'Missing A4 print rules');
 assert(index.includes(files.lesson) && index.includes('ENV-09'), 'Homepage does not link ENV-09');
 assert(index.includes("arshavin.environment.noiselight.v1"), 'Homepage reset list missing ENV-09 key');
 assert(shell.includes("id: 'ENV-09'") && shell.includes("data.comparisonComplete && data.designComplete && data.quizComplete"), 'Learning shell missing ENV-09 contract');

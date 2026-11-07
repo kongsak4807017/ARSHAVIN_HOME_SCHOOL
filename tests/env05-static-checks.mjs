@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -15,6 +16,6 @@ check('ENV-05 JavaScript parses',()=>new vm.Script(read(script),{filename:script
 check('bilingual semantic controls',()=>{const html=read(lesson);assert.match(html,/<html lang="th">/);assert.match(html,/ENV-05/);assert.match(html,/<fieldset>/);assert.match(html,/<legend>/);assert.match(html,/aria-live="polite"/);assert.match(html,/tabindex="-1"/);assert.doesNotMatch(html,/draggable="true"/);});
 check('energy concepts and safeguards',()=>{const material=read(lesson)+read(worksheet)+read(guide);['energy','power','efficiency','energy label','standby'].forEach(term=>assert.match(material,new RegExp(term,'i')));assert.match(material,/กำลัง[\s\S]{0,180}เวลา|power[\s\S]{0,180}time/i);assert.match(material,/ไม่.*บิล|no.*bill/i);assert.match(material,/ไม่.*ที่อยู่|no.*address/i);assert.match(material,/ไม่.*ซ่อม.*ไฟ|not.*repair.*electrical/i);assert.match(material,/ผู้ใหญ่|adult/i);});
 check('local-only completion',()=>{const js=read(script);['flowComplete','choiceComplete','quizComplete','arshavin.environment.energy.v1'].forEach(term=>assert.match(js,new RegExp(term.replaceAll('.','\\.'))));assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);});
-check('exactly two A4 worksheets',()=>{const html=read(worksheet);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(html,/@page\s*\{[\s\S]*size:\s*A4/);});
+check('explicit A4 worksheet pages',()=>{const html=read(worksheet);assert.ok(worksheetPageCount(html) >= 2);});
 check('navigation and offline integration',()=>{const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');[lesson,script,worksheet,guide].forEach(file=>assert.ok(sw.includes(`./${file}`),file));assert.ok(index.includes(lesson));assert.ok(index.includes('arshavin.environment.energy.v1'));assert.ok(shell.includes('ENV-05'));assert.ok(shell.includes('arshavin.environment.energy.v1'));assert.match(sw,/arshavin-grade4-v\d+/);});
 if(process.exitCode)process.exit(process.exitCode);
