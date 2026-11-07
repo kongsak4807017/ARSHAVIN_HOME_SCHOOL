@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 const root=process.cwd();
@@ -19,7 +20,7 @@ check('fictional and privacy safeguards',lesson.includes('ทุกกรณี�
 check('local only progress',script.includes("arshavin.citizenship.fairness.v1")&&script.includes('criteriaComplete')&&script.includes('reviewComplete')&&script.includes('quizComplete'));
 check('no outbound lesson APIs',!/(fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script));
 check('incomplete-answer feedback',script.match(/กรุณาตอบให้ครบทั้ง 3 ข้อ/g)?.length===3);
-check('exactly two worksheets',(worksheet.match(/class="worksheet"/g)||[]).length===2&&worksheet.includes('@page{size:A4 portrait'));
+check('explicit A4 worksheet pages',worksheetPageCount(worksheet) >= 2&&worksheet.includes('worksheet-print.css'));
 check('teacher guide complete',guide.includes('60–90 นาที')&&guide.includes('Rubric 4 ระดับ')&&guide.includes('Safeguarding and privacy')&&guide.includes('AAC'));
 check('homepage integration',index.includes(lessonPath)&&index.includes('arshavin.citizenship.fairness.v1'));
 check('shell integration',shell.includes("id: 'CIT-06'")&&shell.includes('public-rules-fairness-reviewing-decisions.html')&&shell.includes('arshavin.citizenship.fairness.v1'));

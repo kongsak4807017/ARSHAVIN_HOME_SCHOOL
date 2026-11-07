@@ -33,6 +33,9 @@ function unwrapActivityBlocks($, root) {
 export function analyzeTableGroup(html) {
   const $ = load(`<div id="table-analysis-root">${html}</div>`, { decodeEntities: false });
   const root = $('#table-analysis-root');
+  if (root.find('table').length > 1) {
+    throw new Error('Activity contains multiple tables; author separate activity groups before splitting to preserve every record.');
+  }
   const table = root.find('table').first();
   if (!table.length) return null;
 

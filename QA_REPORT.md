@@ -71,3 +71,33 @@ CIT-10 was present on `main` at commit `f307889798ba8137483c1272191aec0d7937e750
 - Android/iPad native print-dialog behavior.
 - NVDA/VoiceOver end-to-end reading order.
 - Visual inspection of every one of the 232 PDF pages; automated geometry validation does not replace page-by-page human review.
+
+
+## 2026-11-08 — Explicit A4 implementation verification (PR #59)
+
+This section supersedes the historical two-page/232-page print results above.
+
+### Final artifacts and automated checks
+- 52 individual PDFs, 509 authored A4 pages. Source/PDF count equality, A4 geometry, text safety margins, visible generated-footer exclusions and no nested response-box overflow are enforced.
+- Five subject bundles: Human Body 101, AI Science 94, Environment 115, Maker Engineering 92, Citizenship 107 pages. Bundle totals equal member PDF totals.
+- HB-11: seven authored pages; Fictional scenarios, Consent checklist, Trusted-adult map, Help-seeking script and Privacy filter remain on complete intentional pages. No automatic split or blank tail.
+- 1,292 baseline instructional/safety passages preserved outside learner metadata; full HB-01 rubric and complete MAKER-09 three-trial/four-column record table restored.
+- All source pages have prompts. Response continuation compaction preserves authored writing lines; merged ordered lists retain continuous numbering and continuation labels are consecutive.
+- Table/body instructional text is 22pt with bundled Noto Sans Thai; supporting header translation is 14pt. Actual writing tables expand rather than leaving only an expanded outer frame.
+- Full local test run: 69 suites PASS. Local print pipeline and all-page inventory PASS.
+
+### Visual review coverage
+- All 59 final contact sheets inspected: Human Body sheets 1–12 (101 pages), AI sheets 1–11 (94), Environment sheets 1–13 (115), Maker sheets 1–11 (92), Citizenship sheets 1–12 (107).
+- Every one of 509 PDF pages appears exactly once in contact-sheet inventory; all 509 preview PNGs exist.
+- Full-size review includes all seven HB-11 pages, corrected MAKER-09 page 9, HB-12 pathway pages 9–10, ENV-06 page 14, and corrected ENV-09 page 3/CIT-06 page 10. Header/body table spacing, nested-border overlap and ordered-list restarts were corrected before signoff.
+- Independent final review: no outstanding Critical or Important findings. Last two corrected numbering pages were re-rendered and visually rechecked after the complete 59-sheet review.
+
+### Browser evidence
+- Desktop Chromium: all 52 lesson routes return HTTP 200, render headings and expose PDF downloads; zero page JavaScript errors.
+- Homepage at 390px: no horizontal overflow; desktop/mobile captures retained locally.
+- HB-11 cached offline reload PASS after service-worker activation. Cache advanced to v56 and includes bundled Thai font.
+
+### Release gates and limits
+- Exact final-head GitHub checks and published GitHub Pages file hashes must pass before reporting the live site complete. Final run/merge evidence is recorded in PR #59 and delivery message.
+- Physical printers, Android/iPad native print dialogs, Safari/Firefox/Edge and NVDA/VoiceOver are not claimed from this desktop Chromium verification.
+- Nonblocking design deviations: compact repeating page title 21pt/header 29mm and pilot safe padding retained (see DECISIONS); some intentional short-table continuations could be condensed further. These do not clip content or leave promptless/blank-tail pages.

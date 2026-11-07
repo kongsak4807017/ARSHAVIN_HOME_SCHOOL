@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 const read = p => fs.readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
@@ -14,8 +15,8 @@ assert(lesson.includes('fieldset') && lesson.includes('aria-live="polite"'), 'mi
 assert(!lesson.includes('draggable=') && !script.includes('dragstart'), 'must not depend on drag');
 assert(script.includes('arshavin.ai.patterns.v1') && script.includes('localStorage'), 'missing local-only progress');
 for (const api of ['fetch(', 'XMLHttpRequest', 'WebSocket', 'sendBeacon']) assert(!script.includes(api), `outbound API found: ${api}`);
-assert((worksheet.match(/class="worksheet"/g) || []).length === 2, 'worksheet must have exactly two A4 pages');
-assert(worksheet.includes('@page') && worksheet.includes('A4 portrait'), 'missing A4 print CSS');
+assert(worksheetPageCount(worksheet) >= 2, 'worksheet must have exactly explicit A4 worksheet pages');
+assert(worksheet.includes('worksheet-print.css'), 'missing A4 print CSS');
 assert(lesson.includes('ห้ามใช้กฎนี้จัดประเภท') && guide.includes('ห้ามใช้กฎจำแนก ประเมิน หรือจัดอันดับบุคคล'), 'missing child safeguard');
 assert(lesson.includes('../../worksheets/student/patterns-features-edge-cases-a4.html'), 'worksheet link missing');
 assert(lesson.includes('../../worksheets/teacher-guides/patterns-features-edge-cases-guide.html'), 'guide link missing');

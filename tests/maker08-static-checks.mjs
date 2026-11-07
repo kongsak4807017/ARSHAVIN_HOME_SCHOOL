@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -25,8 +26,7 @@ assert.match(all,/แจ้งผู้ใหญ่|alert an adult/i);
 assert.match(js,/arshavin\.maker\.circuits\.v1/);
 ['modelComplete','designComplete','quizComplete'].forEach(key=>assert.match(js,new RegExp(key)));
 assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
-assert.equal((sheets.match(/class="worksheet(?:\s|")/g)||[]).length,2);
-assert.match(sheets,/@page\s*\{[^}]*size\s*:\s*A4/is);
+assert.ok(worksheetPageCount(sheets) >= 2);
 assert.doesNotMatch(all,/draggable="true"/);
 const sw=read('service-worker.js');
 assert.match(sw,/arshavin-grade4-v\d+/);

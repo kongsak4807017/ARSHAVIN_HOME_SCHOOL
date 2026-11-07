@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 const read=p=>fs.readFileSync(new URL(`../${p}`,import.meta.url),'utf8');
@@ -17,8 +18,8 @@ assert(!/fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon/.test(script),'outbound 
 assert(script.includes("arshavin.ai.confidence.v1")&&script.includes('simulatorComplete')&&script.includes('stakesComplete')&&script.includes('quizComplete'),'guarded completion state missing');
 assert(lesson.includes('ไม่ใช้ AI ตัดสินคะแนน')&&guide.includes('ห้ามนำกิจกรรมไปจัดอันดับ'),'child decision safeguard missing');
 assert(lesson.includes('งดตอบ')&&lesson.includes('ส่งต่อให้มนุษย์')&&lesson.includes('เปิดทางให้ทบทวนผล'),'abstention, escalation or challenge language missing');
-assert((worksheet.match(/class="worksheet"/g)||[]).length===2,'worksheet must contain exactly two A4 pages');
-assert(worksheet.includes('@page{size:A4 portrait'),'A4 print rule missing');
+assert(worksheetPageCount(worksheet) >= 2,'worksheet must contain exactly explicit A4 worksheet pages');
+assert(worksheet.includes('worksheet-print.css'),'A4 print rule missing');
 assert(guide.includes('Rubric 4 ระดับ')&&guide.includes('ไม่มี drag-only interaction หรือ timer'),'teacher guidance incomplete');
 for(const p of ['subjects/ai-science/ai-decisions-confidence-human-escalation.html','assets/js/ai-confidence-lesson.js','worksheets/student/ai-decisions-confidence-human-escalation-a4.html','worksheets/teacher-guides/ai-decisions-confidence-human-escalation-guide.html'])assert(sw.includes(p),`offline asset missing: ${p}`);
 assert(/arshavin-grade4-v\d+/.test(sw),'versioned cache missing');

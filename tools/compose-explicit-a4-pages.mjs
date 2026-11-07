@@ -3,6 +3,7 @@ import path from 'node:path';
 import { load } from 'cheerio';
 import { analyzeTableGroup } from './lib/table-split-model.mjs';
 import { replaceLongUnderscores } from './lib/inline-answer-lines.mjs';
+import { isLearnerMetadata } from './lib/learner-metadata.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'data/grade4-print-resources.json'), 'utf8'));
@@ -80,11 +81,11 @@ function worksheetMeta($, worksheet) {
     return pieces.join('');
   }
   const first = worksheet.children('p').first();
-  if (first.length && /(ชื่อ|name|วันที่|date|รหัส)/i.test(first.text())) return outerHtml($, first[0]);
+  if (first.length && isLearnerMetadata(first.text())) return outerHtml($, first[0]);
   return '';
 }
 
-function collectGroups($, container) {
+export function collectGroups($, container) {
   const groups = [];
   let current = [];
   let skippedMeta = false;
@@ -103,7 +104,7 @@ function collectGroups($, container) {
 
     if (tag === 'header' || tag === 'h1') continue;
     if (/\bmeta\b/.test(classes)) { skippedMeta = true; continue; }
-    if (!skippedMeta && tag === 'p' && /(ชื่อ|name|วันที่|date|รหัส)/i.test(node.text())) {
+    if (!skippedMeta && !current.length && !groups.length && tag === 'p' && isLearnerMetadata(node.text())) {
       skippedMeta = true;
       continue;
     }
@@ -527,12 +528,14 @@ ${sourcePages}
   return { changed: finalOutput !== original, pages: pageCount };
 }
 
-let changed = 0;
-let pageTotal = 0;
-for (const record of records) {
-  const result = compose(record);
-  if (result.changed) changed++;
-  pageTotal += result.pages;
-  console.log(`${record.id}: ${result.pages} explicit pages${result.changed ? ' (composed)' : ' (already explicit)'}`);
+if (path.resolve(process.argv[1] || '') === path.join(root, 'tools/compose-explicit-a4-pages.mjs')) {
+  let changed = 0;
+  let pageTotal = 0;
+  for (const record of records) {
+    const result = compose(record);
+    if (result.changed) changed++;
+    pageTotal += result.pages;
+    console.log(`${record.id}: ${result.pages} explicit pages${result.changed ? ' (composed)' : ' (already explicit)'}`);
+  }
+  console.log(`composed ${changed}/${records.length} worksheet packs; ${pageTotal} source pages`);
 }
-console.log(`composed ${changed}/${records.length} worksheet packs; ${pageTotal} source pages`);

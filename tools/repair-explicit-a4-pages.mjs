@@ -33,11 +33,11 @@ function blockId($block, fallback) {
 function ensureIntentionalSpace($, $page) {
   $page.attr('data-intentional-space', 'true');
   const $content = $page.find('.print-page__content').first();
-  if ($content.find(WRITING_SELECTOR).length) return;
   const $block = $content.find('.activity-block').last();
   if (!$block.length) return;
+  if ($block.children('.writing-zone--fill').last().is(':last-child')) return;
   $block.append('<p class="helper-text">พื้นที่เขียนหรือวาดเพิ่มเติม / Additional writing or drawing space</p>');
-  $block.append('<div class="writing-zone writing-zone--medium" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div>');
+  $block.append('<div class="writing-zone writing-zone--fill" aria-label="พื้นที่เขียนเพิ่มเติม / Additional writing space"></div>');
 }
 
 function clonePage($, $template, blockHtml, metaHtml = '', intentional = false) {
@@ -220,7 +220,7 @@ for (const recordReport of report.records) {
     if (!$page.length) continue;
     if (hasError(pageReport, 'content overflow') || hasError(pageReport, 'block ')) {
       changed = repairOverflow($, $page, pageReport) || changed;
-    } else if (hasError(pageReport, 'low occupancy')) {
+    } else if (hasError(pageReport, 'low occupancy') || hasError(pageReport, 'intentional writing region') || hasError(pageReport, 'sparse intentional-space')) {
       ensureIntentionalSpace($, $page);
       changed = true;
     }

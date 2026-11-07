@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -15,6 +16,6 @@ check('AI-10 JavaScript parses',()=>new vm.Script(read(script),{filename:script}
 check('AI-10 bilingual semantic lesson',()=>{const html=read(lesson);assert.match(html,/<html lang="th">/);assert.match(html,/AI-10/);assert.match(html,/Responsible AI Capstone/);assert.match(html,/data-learning-shell data-current-lesson="AI-10"/);assert.match(html,/fieldset/);assert.match(html,/legend/);assert.match(html,/aria-live="polite"/);assert.match(html,/tabindex="-1"/)});
 check('GUIDE and capstone safeguards',()=>{const material=read(lesson)+read(worksheet)+read(guide);assert.match(material,/GUIDE/);assert.match(material,/data minimisation|ข้อมูลเท่าที่จำเป็น/i);assert.match(material,/human oversight|มนุษย์.*รับผิดชอบ/is);assert.match(material,/fairness|ความเป็นธรรม/i);assert.match(material,/model card|บัตรอธิบายแบบจำลอง/i);assert.match(material,/ไม่แน่ใจ|unknown/i);assert.match(material,/ห้าม.*จัดอันดับ.*เด็ก|no child profiling|ไม่สร้างโปรไฟล์เด็ก/is);assert.match(material,/สุขภาพ.*สิทธิ.*คะแนน.*การลงโทษ.*โอกาส|health.*rights.*scores.*punishment.*opportunity/is);assert.match(material,/ข้อมูลสมมติ|fictional data/i);assert.doesNotMatch(material,/draggable="true"/)});
 check('local-only completion gates',()=>{const js=read(script);assert.match(js,/arshavin\.ai\.capstone\.v1/);['canvasComplete','reviewComplete','quizComplete'].forEach(key=>assert.match(js,new RegExp(key)));assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/)});
-check('two A4 worksheets',()=>{const html=read(worksheet);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(html,/@page\{size:A4 portrait/);assert.match(html,/break-after:page/)});
+check('explicit A4 worksheet pages',()=>{const html=read(worksheet);assert.ok(worksheetPageCount(html) >= 2);});
 check('homepage shell and offline integration',()=>{const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');assert.match(index,/AI-10/);assert.match(index,/responsible-ai-capstone-question-design-verify-explain\.html/);assert.match(index,/arshavin\.ai\.capstone\.v1/);assert.match(shell,/id: 'AI-10'/);assert.match(shell,/canvasComplete && data\.reviewComplete && data\.quizComplete/);[lesson,script,worksheet,guide].forEach(file=>assert.ok(sw.includes(`./${file}`),file));assert.match(sw,/arshavin-grade4-v\d+/)});
 if(process.exitCode)process.exit(process.exitCode);

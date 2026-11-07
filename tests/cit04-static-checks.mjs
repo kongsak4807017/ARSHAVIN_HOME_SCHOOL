@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -16,6 +17,6 @@ check('bilingual semantic lesson',()=>{const html=read(lesson);assert.match(html
 check('CALM and fact-feeling-need-request concepts',()=>{const material=read(lesson)+read(worksheet)+read(guide);['Check safety','Attend and listen','Label facts','Make a workable request','fact','feeling','need','request'].forEach(term=>assert.match(material,new RegExp(term,'i')));});
 check('fictional and safeguarding boundaries',()=>{const material=read(lesson)+read(worksheet)+read(guide);assert.match(material,/สถานการณ์สมมติ|fictional/i);assert.match(material,/ไม่ขอให้เล่าความขัดแย้งจริง|not.*real conflict/i);assert.match(material,/ข่มขู่|threat/i);assert.match(material,/กลั่นแกล้ง|bully/i);assert.match(material,/ผู้ใหญ่ที่ไว้ใจได้|trusted adult/i);assert.match(material,/ไม่บังคับ.*ขอโทษ|not.*force.*apolog/i);});
 check('local-only completion',()=>{const js=read(script);assert.match(js,/arshavin\.citizenship\.dialogue\.v1/);['dialogueComplete','needsComplete','quizComplete'].forEach(key=>assert.match(js,new RegExp(key)));assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);});
-check('worksheets exactly two A4 pages',()=>{const html=read(worksheet);assert.equal((html.match(/class="worksheet(?:\s|")/g)||[]).length,2);assert.match(html,/@page\{size:A4/);});
+check('explicit A4 worksheet pages',()=>{const html=read(worksheet);assert.ok(worksheetPageCount(html) >= 2);});
 check('navigation and offline integration',()=>{const index=read('index.html'),shell=read('assets/js/learning-shell.js'),sw=read('service-worker.js');[lesson,script,worksheet,guide].forEach(file=>{assert.ok(index.includes(file)||file!==lesson,file);assert.ok(sw.includes(`./${file}`),file)});assert.match(index,/arshavin\.citizenship\.dialogue\.v1/);assert.match(shell,/CIT-04/);assert.match(shell,/arshavin\.citizenship\.dialogue\.v1/);assert.match(sw,/arshavin-grade4-v\d+/);});
 if(process.exitCode)process.exit(process.exitCode);

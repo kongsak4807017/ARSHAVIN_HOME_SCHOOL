@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -30,9 +31,7 @@ assert.match(all,/ไม่.*รับรอง|does not certify/i);
 assert.match(js,/arshavin\.maker\.heat\.v1/);
 ['comparisonComplete','designComplete','quizComplete'].forEach(key=>assert.match(js,new RegExp(key)));
 assert.doesNotMatch(js,/fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
-assert.equal((sheets.match(/class="worksheet(?:\s|")/g)||[]).length,2);
-assert.match(sheets,/@page\s*\{[^}]*size\s*:\s*A4/is);
-assert.match(sheets,/page-break-after|break-after/i);
+assert.ok(worksheetPageCount(sheets) >= 2);
 assert.doesNotMatch(all,/draggable="true"/);
 assert.doesNotMatch(html,/type="file"|getUserMedia|camera/i);
 const sw=read('service-worker.js');

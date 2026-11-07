@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -49,10 +50,9 @@ check('local-only completion and no outbound APIs', () => {
   ['auditComplete', 'designComplete', 'quizComplete'].forEach(key => assert.match(script, new RegExp(key)));
   assert.doesNotMatch(script, /fetch\(|XMLHttpRequest|WebSocket|sendBeacon/);
 });
-check('exactly two A4 worksheets', () => {
+check('explicit A4 worksheet pages', () => {
   const html = read(worksheetPath);
-  assert.equal((html.match(/class="worksheet(?:\s|")/g) || []).length, 2);
-  assert.match(html, /@page\s*\{[\s\S]*size:\s*A4/);
+  assert.ok(worksheetPageCount(html) >= 2);
 });
 check('homepage shell reset and offline integration', () => {
   const index = read('index.html');

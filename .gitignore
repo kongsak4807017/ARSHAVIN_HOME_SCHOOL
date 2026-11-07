@@ -1,0 +1,6 @@
+node_modules/
+.local-qa/
+*.log
+qa/a4-previews/
+qa/a4-contact-sheets/**/*.png
+.superpowers/

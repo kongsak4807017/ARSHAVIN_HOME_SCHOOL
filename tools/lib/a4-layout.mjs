@@ -48,9 +48,13 @@ export async function measurePack(page, record) {
           .filter(region => region.width > 1 && region.height > 1);
         const majorCount = blocks.filter(block => block.major).length;
         const minorCount = blocks.filter(block => block.minor).length;
-        const usedTop = blocks.length ? Math.min(...blocks.map(block => block.top)) : 0;
-        const usedBottom = blocks.length ? Math.max(...blocks.map(block => block.bottom)) : 0;
-        const occupancy = contentRect && blocks.length ? (usedBottom - usedTop) / contentRect.height : 0;
+        // A flex-expanded activity border is not instructional content or
+        // writing space. Measure its actual children to expose empty tails.
+        const contentItems = [...(content?.querySelectorAll('.activity-block > *') || [])]
+          .map(item => item.getBoundingClientRect()).filter(item => item.height > 1);
+        const usedTop = contentItems.length ? Math.min(...contentItems.map(item => item.top)) : 0;
+        const usedBottom = contentItems.length ? Math.max(...contentItems.map(item => item.bottom)) : 0;
+        const occupancy = contentRect && contentItems.length ? (usedBottom - usedTop) / contentRect.height : 0;
         const intentionalSpace = element.dataset.intentionalSpace === 'true';
         const microSequence = element.dataset.microSequence === 'true';
         const hasWritingRegion = writingRegions.length > 0;
@@ -67,6 +71,9 @@ export async function measurePack(page, record) {
         if (!contentRect || !headerRect || !footerRect) errors.push('missing header/content/footer geometry');
         if (header && header.scrollHeight > header.clientHeight + 2) errors.push(`header overflow ${header.scrollHeight - header.clientHeight}px`);
         if (footer && footer.scrollHeight > footer.clientHeight + 2) errors.push(`footer overflow ${footer.scrollHeight - footer.clientHeight}px`);
+        for (const box of content?.querySelectorAll('.box,.answer-box,.evidence-box,.table-card__field') || []) {
+          if (box.scrollHeight > box.clientHeight + 2) errors.push(`nested response box overflow ${box.scrollHeight - box.clientHeight}px`);
+        }
 
         if (contentRect) {
           const overflow = Math.max(0, content.scrollHeight - content.clientHeight);

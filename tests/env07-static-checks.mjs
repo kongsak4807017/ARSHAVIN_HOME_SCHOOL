@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 import vm from 'node:vm';
 const read=p=>fs.readFileSync(new URL(`../${p}`,import.meta.url),'utf8');
@@ -18,8 +19,8 @@ assert(/ไม่ต้องทำ fieldwork จริง|no fieldwork/.test(ma
 assert(js.includes("arshavin.environment.biodiversity.v1"),'Missing local progress key');
 assert(js.includes('foodwebComplete')&&js.includes('habitatComplete')&&js.includes('quizComplete'),'Missing completion gates');
 assert(!/(fetch\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(js),'Outbound API found');
-assert((ws.match(/class="worksheet"/g)||[]).length===2,'Worksheet must have exactly two pages');
-assert(ws.includes('@page')&&ws.includes('A4 portrait'),'Missing A4 print rule');
+assert(worksheetPageCount(ws) >= 2,'Worksheet must have explicit A4 pages');
+assert(ws.includes('worksheet-print.css'),'Missing A4 print rule');
 assert(teacher.includes('Rubric 4 ระดับ')&&teacher.includes('ไม่จับ ไม่ให้อาหาร'),'Missing rubric or observation safety guidance');
 for(const path of [lesson,script,worksheet,guide])assert(sw.includes(`./${path}`),`Offline cache missing ${path}`);
 assert(index.includes(lesson)&&index.includes("arshavin.environment.biodiversity.v1"),'Homepage integration missing');

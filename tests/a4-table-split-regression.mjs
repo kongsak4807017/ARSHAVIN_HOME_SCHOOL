@@ -64,4 +64,7 @@ const makerModel = analyzeTableGroup(largeMakerIntro);
 assert.equal(makerModel.introIsMajor, true, 'a multi-step drawing introduction must receive its own authored A4 page before the table');
 assert.ok(makerModel.introWritingRegions >= 1, 'large drawing space must be detected');
 
+assert.throws(() => analyzeTableGroup(`<section><h2>Two records</h2>${explicitHeader}${explicitHeader}</section>`), /multiple tables/i,
+  'multiple tables must fail explicitly instead of silently dropping every table after the first');
+
 console.log('PASS nested table split regression');

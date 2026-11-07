@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 
 const files = {
@@ -20,8 +21,8 @@ assert(/อากาศ|air/i.test(combined) && /น้ำ|water/i.test(combined
 assert(/arshavin\.environment\.capstone\.v1/.test(script), 'Local progress key missing');
 assert(/canvasComplete/.test(script) && /actionComplete/.test(script) && /quizComplete/.test(script), 'Completion gates missing');
 assert(!/(fetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script), 'Outbound API detected');
-assert((worksheet.match(/class="worksheet"/g) || []).length === 2, 'Worksheet must contain exactly two pages');
-assert(/size:A4 portrait|size: A4 portrait/.test(worksheet), 'A4 portrait CSS missing');
+assert(worksheetPageCount(worksheet) >= 2, 'Worksheet must contain explicit A4 pages');
+assert(worksheet.includes('worksheet-print.css'), 'A4 portrait CSS missing');
 assert(/พิกัดบ้าน|precise location/i.test(combined) && /ครัวเรือนเปราะบาง|household vulnerability/i.test(combined), 'Privacy boundary missing');
 assert(/ไม่ปีน|ไม่ลุยน้ำ|hazardous work|พื้นที่เสี่ยง/i.test(combined), 'Field-safety boundary missing');
 assert(/aria-live="polite"/.test(lesson) && /fieldset/.test(lesson) && /legend/.test(lesson), 'Accessible feedback or grouping missing');

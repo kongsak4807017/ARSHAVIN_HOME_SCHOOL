@@ -55,3 +55,18 @@
 - หน้าแรกมีปุ่มดาวน์โหลดใบงานรวมทั้งวิชา 5 กลุ่มวิชา
 - PDF เป็น A4 แบบตัวใหญ่ประมาณ 22pt พร้อมพื้นที่เขียนขนาดเหมาะกับลายมือเด็ก ป.5 และไม่มี browser date/time/URL header/footer ในตัวไฟล์
 - HTML worksheet เป็น fallback สำหรับการเข้าถึง; PDF คือไฟล์แนะนำสำหรับพิมพ์จริง
+
+
+## ตรวจสอบและสร้าง PDF
+
+ไฟล์ `worksheets/student/*-a4.html` เป็นหน้าต้นฉบับที่จัดวางไว้ชัดเจน: `.print-page` หนึ่งส่วนเท่ากับกระดาษ A4 หนึ่งหน้า ห้ามลดตัวอักษรหรือพึ่งการตัดหน้าอัตโนมัติเพื่อรักษาจำนวนหน้าเก่า
+
+```sh
+npm ci
+npx playwright install chromium
+npm run print:full
+node tests/all-explicit-a4-pages.mjs
+node tests/a4-instructional-content-preservation.mjs
+```
+
+ต้องติดตั้ง Poppler (`pdftoppm`) สำหรับภาพตรวจ PDF ด้วย ระบบสร้าง PDF รายบท 52 ไฟล์และรวมรายวิชา 5 ไฟล์ ตรวจขอบเขตหน้า จำนวนหน้า เนื้อหาคำแนะนำ และภาพครบทุกหน้าใน `qa/` การตรวจ PR จะอ่าน PDF ที่อยู่ใน commit จริง ส่วน workflow `Rebuild authored A4 worksheet PDFs` เรียกเองเพื่อสร้างไฟล์สำหรับตรวจ ไม่แก้ต้นฉบับหรือส่ง commit กลับอัตโนมัติ

@@ -1,4 +1,5 @@
 import { load } from 'cheerio';
+import { normalizeA4Structure } from './normalize-a4-structure.mjs';
 
 const FIELD_ID = /-row-(\d+)-fields?-(\d+)$/i;
 const ROW_ID = /-rows?-(\d+)-(\d+)$/i;
@@ -322,6 +323,51 @@ function compactRowGroup($, fragments, model) {
   for (const fragment of fragments) fragment.page.remove();
 }
 
+// Join only consecutive response fragments of the same activity. Keep every
+// prompt and handwriting line; leave long or complex activities untouched.
+function compactResponsePages($) {
+  const pages = $('.print-page').toArray();
+  let groups = 0;
+  const read = element => {
+    const fragment = pageBlock($, element);
+    if (!fragment || fragment.block.attr('data-compacted-response') === 'true') return null;
+    if (!/-part-\d+$/.test(fragment.blockId)) return null;
+    if (fragment.block.find('table,.table-card,img,svg,.drawing-zone,.drawing-box,.tall').length) return null;
+    const body = fragment.block.clone();
+    body.children('h1,h2,h3,.continuation-label').remove();
+    const lines = body.find('.line,.write-line').length;
+    if (!lines || body.find('.writing-zone,.writing-lines,.worksheet-lines,.lines').length) return null;
+    return { ...fragment, bodyHtml: body.html(), lines, textLength: body.text().trim().length };
+  };
+  for (let index = 0; index < pages.length;) {
+    const first = read(pages[index]);
+    if (!first) { index++; continue; }
+    const fragments = [first];
+    let cursor = index + 1;
+    while (cursor < pages.length) {
+      const next = read(pages[cursor]);
+      if (!next || next.splitFrom !== first.splitFrom || next.headingHtml !== first.headingHtml) break;
+      fragments.push(next);
+      cursor++;
+    }
+    const lines = fragments.reduce((sum, item) => sum + item.lines, 0);
+    const textLength = fragments.reduce((sum, item) => sum + item.textLength, 0);
+    if (fragments.length > 1 && lines <= 6 && textLength <= 240) {
+      const block = first.block.clone();
+      block.attr('data-block-id', `${first.splitFrom}-response`);
+      block.attr('data-compacted-response', 'true');
+      block.empty().append(first.headingHtml);
+      for (const fragment of fragments) block.append(fragment.bodyHtml);
+      const replacement = clonedPage($, first.page, $.html(block[0]), first.metaHtml, true);
+      first.page.before(replacement);
+      for (const fragment of fragments) fragment.page.remove();
+      groups++;
+    }
+    index = cursor;
+  }
+  return groups;
+}
+
 /**
  * Reconstruct compact writable tables that were previously exploded into
  * one or two fields or one/few rows per A4 page. Only consecutive, fully
@@ -369,8 +415,9 @@ export function compactExplicitDocument(html) {
     index = cursor;
   }
 
+  compactedGroups += compactResponsePages($);
   if (compactedGroups) renumber($);
-  let output = $.html();
+  let output = normalizeA4Structure($.html());
   if (hadDoctype && !/^\s*<!doctype html>/i.test(output)) output = `<!doctype html>\n${output}`;
   return {
     html: compactedGroups ? output : html,

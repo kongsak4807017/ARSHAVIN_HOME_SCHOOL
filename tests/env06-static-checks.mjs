@@ -1,3 +1,4 @@
+import { worksheetPageCount } from './helpers/worksheet-contract.mjs';
 import fs from 'node:fs';
 const read=p=>fs.readFileSync(p,'utf8');
 const lesson=read('subjects/environment/climate-weather-responsible-preparedness.html');
@@ -18,7 +19,7 @@ ok('completion gates',script.includes('evidenceComplete')&&script.includes('prep
 ok('no outbound APIs',!/(fetch\(|XMLHttpRequest|WebSocket|sendBeacon)/.test(script));
 ok('privacy safeguards',/ห้ามกรอกที่อยู่/.test(lesson)&&/home coordinates/.test(worksheet)&&/โรค ยา รายได้/.test(guide));
 ok('no hazard observation task',/ห้ามให้เด็กออกไปสังเกตน้ำหลาก/.test(guide)&&/ออกไปถ่ายวิดีโอ/.test(lesson));
-ok('exactly two A4 worksheets',(worksheet.match(/class="worksheet"/g)||[]).length===2&&worksheet.includes('@page{size:A4'));
+ok('explicit A4 worksheet pages',worksheetPageCount(worksheet) >= 2&&worksheet.includes('worksheet-print.css'));
 ok('teacher rubric',guide.includes('Rubric 4 ระดับ')&&guide.includes('AAC'));
 ok('shell integration',shell.includes("id: 'ENV-06'")&&shell.includes('arshavin.environment.climate.v1'));
 ok('offline integration',/arshavin-grade4-v\d+/.test(sw)&&sw.includes('climate-weather-responsible-preparedness.html')&&sw.includes('climate-weather-lesson.js'));

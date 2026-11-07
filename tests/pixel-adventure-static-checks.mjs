@@ -32,7 +32,7 @@ for (const token of ['.pixel-world','.biome-filter','.lesson-grid','image-render
 }
 assert.ok(css.includes('minmax(min(100%, 15rem), 1fr)'), 'lesson grid must survive narrow layouts and 200% zoom');
 assert.ok(css.includes('outline:4px solid'), 'visible focus styling must remain');
-assert.ok(sw.includes("const CACHE='arshavin-grade4-v55'"), 'offline cache must be version 55');
+assert.ok(sw.includes("const CACHE='arshavin-grade4-v56'"), 'offline cache must be version 56 for corrected PDF and font resources');
 assert.ok(sw.includes("'./assets/js/pixel-adventure-home.js'"), 'offline cache must include homepage controller');
 
 console.log('Pixel Adventure School static checks passed.');
